@@ -43,5 +43,230 @@
         "word_count": "485",
         "act_name": "Code of Criminal Procedure, 1898",
         "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_5.npy",
+        "chunk_filename": "crpc_chunk_5.txt",
+        "chunk_id": "5",
+        "section_count": "16",
+        "word_count": "457",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_6.npy",
+        "chunk_filename": "crpc_chunk_6.txt",
+        "chunk_id": "6",
+        "section_count": "17",
+        "word_count": "485",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_7.npy",
+        "chunk_filename": "crpc_chunk_7.txt",
+        "chunk_id": "7",
+        "section_count": "14",
+        "word_count": "500",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_8.npy",
+        "chunk_filename": "crpc_chunk_8.txt",
+        "chunk_id": "8",
+        "section_count": "18",
+        "word_count": "500",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_9.npy",
+        "chunk_filename": "crpc_chunk_9.txt",
+        "chunk_id": "9",
+        "section_count": "16",
+        "word_count": "495",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_10.npy",
+        "chunk_filename": "crpc_chunk_10.txt",
+        "chunk_id": "10",
+        "section_count": "18",
+        "word_count": "487",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_11.npy",
+        "chunk_filename": "crpc_chunk_11.txt",
+        "chunk_id": "11",
+        "section_count": "16",
+        "word_count": "489",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_12.npy",
+        "chunk_filename": "crpc_chunk_12.txt",
+        "chunk_id": "12",
+        "section_count": "15",
+        "word_count": "494",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_13.npy",
+        "chunk_filename": "crpc_chunk_13.txt",
+        "chunk_id": "13",
+        "section_count": "15",
+        "word_count": "476",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_14.npy",
+        "chunk_filename": "crpc_chunk_14.txt",
+        "chunk_id": "14",
+        "section_count": "18",
+        "word_count": "500",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_15.npy",
+        "chunk_filename": "crpc_chunk_15.txt",
+        "chunk_id": "15",
+        "section_count": "19",
+        "word_count": "482",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_16.npy",
+        "chunk_filename": "crpc_chunk_16.txt",
+        "chunk_id": "16",
+        "section_count": "19",
+        "word_count": "497",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_17.npy",
+        "chunk_filename": "crpc_chunk_17.txt",
+        "chunk_id": "17",
+        "section_count": "11",
+        "word_count": "498",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_18.npy",
+        "chunk_filename": "crpc_chunk_18.txt",
+        "chunk_id": "18",
+        "section_count": "19",
+        "word_count": "484",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_19.npy",
+        "chunk_filename": "crpc_chunk_19.txt",
+        "chunk_id": "19",
+        "section_count": "14",
+        "word_count": "470",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_20.npy",
+        "chunk_filename": "crpc_chunk_20.txt",
+        "chunk_id": "20",
+        "section_count": "18",
+        "word_count": "483",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_21.npy",
+        "chunk_filename": "crpc_chunk_21.txt",
+        "chunk_id": "21",
+        "section_count": "16",
+        "word_count": "482",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_22.npy",
+        "chunk_filename": "crpc_chunk_22.txt",
+        "chunk_id": "22",
+        "section_count": "20",
+        "word_count": "491",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_23.npy",
+        "chunk_filename": "crpc_chunk_23.txt",
+        "chunk_id": "23",
+        "section_count": "18",
+        "word_count": "481",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_24.npy",
+        "chunk_filename": "crpc_chunk_24.txt",
+        "chunk_id": "24",
+        "section_count": "17",
+        "word_count": "495",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_25.npy",
+        "chunk_filename": "crpc_chunk_25.txt",
+        "chunk_id": "25",
+        "section_count": "17",
+        "word_count": "473",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_26.npy",
+        "chunk_filename": "crpc_chunk_26.txt",
+        "chunk_id": "26",
+        "section_count": "16",
+        "word_count": "475",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_27.npy",
+        "chunk_filename": "crpc_chunk_27.txt",
+        "chunk_id": "27",
+        "section_count": "18",
+        "word_count": "487",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_28.npy",
+        "chunk_filename": "crpc_chunk_28.txt",
+        "chunk_id": "28",
+        "section_count": "16",
+        "word_count": "476",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_29.npy",
+        "chunk_filename": "crpc_chunk_29.txt",
+        "chunk_id": "29",
+        "section_count": "17",
+        "word_count": "480",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
     }
 ]
