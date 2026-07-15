@@ -1,0 +1,9 @@
+ACT: Pakistan Penal Code, 1860
+SECTION/ARTICLE: 49
+TITLE: Section 49
+CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+============================================================
+
+"Year", "Month":
+Wherever the word "year" or the word "month" is used, it is to be
+understood that the year or the month is to be reckoned according to the British calendar.

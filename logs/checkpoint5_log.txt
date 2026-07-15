@@ -1,0 +1,43 @@
+Embedding Generation Log
+========================
+
+Timestamp: 2026-07-11 14:13:35
+Mode: FULL
+Project root: C:\Users\HP\Desktop\Fast
+Model: BAAI/bge-small-en-v1.5
+Expected dimension: 384
+Total chunks in index: 26
+Chunks processed this run: 26
+Total embeddings on disk: 26
+Counts match: YES
+Dimensions match: YES
+
+Per-chunk verification:
+  [OK] constitution_article_8_chunk_0.txt -> dim=384
+  [OK] constitution_article_9_chunk_0.txt -> dim=384
+  [OK] constitution_article_9a_chunk_0.txt -> dim=384
+  [OK] constitution_article_10_chunk_0.txt -> dim=384
+  [OK] constitution_article_10_chunk_1.txt -> dim=384
+  [OK] constitution_article_10a_chunk_0.txt -> dim=384
+  [OK] constitution_article_11_chunk_0.txt -> dim=384
+  [OK] constitution_article_12_chunk_0.txt -> dim=384
+  [OK] constitution_article_13_chunk_0.txt -> dim=384
+  [OK] constitution_article_14_chunk_0.txt -> dim=384
+  [OK] constitution_article_15_chunk_0.txt -> dim=384
+  [OK] constitution_article_16_chunk_0.txt -> dim=384
+  [OK] constitution_article_17_chunk_0.txt -> dim=384
+  [OK] constitution_article_18_chunk_0.txt -> dim=384
+  [OK] constitution_article_19_chunk_0.txt -> dim=384
+  [OK] constitution_article_19a_chunk_0.txt -> dim=384
+  [OK] constitution_article_20_chunk_0.txt -> dim=384
+  [OK] constitution_article_21_chunk_0.txt -> dim=384
+  [OK] constitution_article_22_chunk_0.txt -> dim=384
+  [OK] constitution_article_23_chunk_0.txt -> dim=384
+  [OK] constitution_article_24_chunk_0.txt -> dim=384
+  [OK] constitution_article_25_chunk_0.txt -> dim=384
+  [OK] constitution_article_25a_chunk_0.txt -> dim=384
+  [OK] constitution_article_26_chunk_0.txt -> dim=384
+  [OK] constitution_article_27_chunk_0.txt -> dim=384
+  [OK] constitution_article_28_chunk_0.txt -> dim=384
+
+Checkpoint 5 ready: YES

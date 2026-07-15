@@ -1,0 +1,9 @@
+ACT: Pakistan Penal Code, 1860
+SECTION/ARTICLE: 50
+TITLE: Section 50
+CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+============================================================
+
+"Section":
+The word "section" denotes one of those portions of a chapter of this Code
+which are distinguished by prefixed numeral figures.

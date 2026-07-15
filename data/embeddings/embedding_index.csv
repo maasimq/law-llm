@@ -1,0 +1,27 @@
+embedding_filename,chunk_filename,original_filename,act_name,section_article_number,chunk_id,word_count,dimension
+constitution_article_8_chunk_0.npy,constitution_article_8_chunk_0.txt,constitution_article_8.txt,Constitution of Pakistan,8,0,323,384
+constitution_article_9_chunk_0.npy,constitution_article_9_chunk_0.txt,constitution_article_9.txt,Constitution of Pakistan,9,0,18,384
+constitution_article_9a_chunk_0.npy,constitution_article_9a_chunk_0.txt,constitution_article_9a.txt,Constitution of Pakistan,9A,0,17,384
+constitution_article_10_chunk_0.npy,constitution_article_10_chunk_0.txt,constitution_article_10.txt,Constitution of Pakistan,10,0,500,384
+constitution_article_10_chunk_1.npy,constitution_article_10_chunk_1.txt,constitution_article_10.txt,Constitution of Pakistan,10,1,297,384
+constitution_article_10a_chunk_0.npy,constitution_article_10a_chunk_0.txt,constitution_article_10a.txt,Constitution of Pakistan,10A,0,33,384
+constitution_article_11_chunk_0.npy,constitution_article_11_chunk_0.txt,constitution_article_11.txt,Constitution of Pakistan,11,0,110,384
+constitution_article_12_chunk_0.npy,constitution_article_12_chunk_0.txt,constitution_article_12.txt,Constitution of Pakistan,12,0,110,384
+constitution_article_13_chunk_0.npy,constitution_article_13_chunk_0.txt,constitution_article_13.txt,Constitution of Pakistan,13,0,39,384
+constitution_article_14_chunk_0.npy,constitution_article_14_chunk_0.txt,constitution_article_14.txt,Constitution of Pakistan,14,0,37,384
+constitution_article_15_chunk_0.npy,constitution_article_15_chunk_0.txt,constitution_article_15.txt,Constitution of Pakistan,15,0,42,384
+constitution_article_16_chunk_0.npy,constitution_article_16_chunk_0.txt,constitution_article_16.txt,Constitution of Pakistan,16,0,30,384
+constitution_article_17_chunk_0.npy,constitution_article_17_chunk_0.txt,constitution_article_17.txt,Constitution of Pakistan,17,0,155,384
+constitution_article_18_chunk_0.npy,constitution_article_18_chunk_0.txt,constitution_article_18.txt,Constitution of Pakistan,18,0,115,384
+constitution_article_19_chunk_0.npy,constitution_article_19_chunk_0.txt,constitution_article_19.txt,Constitution of Pakistan,19,0,77,384
+constitution_article_19a_chunk_0.npy,constitution_article_19a_chunk_0.txt,constitution_article_19a.txt,Constitution of Pakistan,19A,0,30,384
+constitution_article_20_chunk_0.npy,constitution_article_20_chunk_0.txt,constitution_article_20.txt,Constitution of Pakistan,20,0,52,384
+constitution_article_21_chunk_0.npy,constitution_article_21_chunk_0.txt,constitution_article_21.txt,Constitution of Pakistan,21,0,40,384
+constitution_article_22_chunk_0.npy,constitution_article_22_chunk_0.txt,constitution_article_22.txt,Constitution of Pakistan,22,0,165,384
+constitution_article_23_chunk_0.npy,constitution_article_23_chunk_0.txt,constitution_article_23.txt,Constitution of Pakistan,23,0,38,384
+constitution_article_24_chunk_0.npy,constitution_article_24_chunk_0.txt,constitution_article_24.txt,Constitution of Pakistan,24,0,356,384
+constitution_article_25_chunk_0.npy,constitution_article_25_chunk_0.txt,constitution_article_25.txt,Constitution of Pakistan,25,0,52,384
+constitution_article_25a_chunk_0.npy,constitution_article_25a_chunk_0.txt,constitution_article_25a.txt,Constitution of Pakistan,25A,0,32,384
+constitution_article_26_chunk_0.npy,constitution_article_26_chunk_0.txt,constitution_article_26.txt,Constitution of Pakistan,26,0,67,384
+constitution_article_27_chunk_0.npy,constitution_article_27_chunk_0.txt,constitution_article_27.txt,Constitution of Pakistan,27,0,210,384
+constitution_article_28_chunk_0.npy,constitution_article_28_chunk_0.txt,constitution_article_28.txt,Constitution of Pakistan,28,0,41,384

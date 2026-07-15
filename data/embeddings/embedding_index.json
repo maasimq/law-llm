@@ -1,0 +1,262 @@
+[
+    {
+        "embedding_filename": "constitution_article_8_chunk_0.npy",
+        "chunk_filename": "constitution_article_8_chunk_0.txt",
+        "original_filename": "constitution_article_8.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "8",
+        "chunk_id": "0",
+        "word_count": "323",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_9_chunk_0.npy",
+        "chunk_filename": "constitution_article_9_chunk_0.txt",
+        "original_filename": "constitution_article_9.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "9",
+        "chunk_id": "0",
+        "word_count": "18",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_9a_chunk_0.npy",
+        "chunk_filename": "constitution_article_9a_chunk_0.txt",
+        "original_filename": "constitution_article_9a.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "9A",
+        "chunk_id": "0",
+        "word_count": "17",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_10_chunk_0.npy",
+        "chunk_filename": "constitution_article_10_chunk_0.txt",
+        "original_filename": "constitution_article_10.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "chunk_id": "0",
+        "word_count": "500",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_10_chunk_1.npy",
+        "chunk_filename": "constitution_article_10_chunk_1.txt",
+        "original_filename": "constitution_article_10.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "chunk_id": "1",
+        "word_count": "297",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_10a_chunk_0.npy",
+        "chunk_filename": "constitution_article_10a_chunk_0.txt",
+        "original_filename": "constitution_article_10a.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10A",
+        "chunk_id": "0",
+        "word_count": "33",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_11_chunk_0.npy",
+        "chunk_filename": "constitution_article_11_chunk_0.txt",
+        "original_filename": "constitution_article_11.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "11",
+        "chunk_id": "0",
+        "word_count": "110",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_12_chunk_0.npy",
+        "chunk_filename": "constitution_article_12_chunk_0.txt",
+        "original_filename": "constitution_article_12.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "12",
+        "chunk_id": "0",
+        "word_count": "110",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_13_chunk_0.npy",
+        "chunk_filename": "constitution_article_13_chunk_0.txt",
+        "original_filename": "constitution_article_13.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "13",
+        "chunk_id": "0",
+        "word_count": "39",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_14_chunk_0.npy",
+        "chunk_filename": "constitution_article_14_chunk_0.txt",
+        "original_filename": "constitution_article_14.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "14",
+        "chunk_id": "0",
+        "word_count": "37",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_15_chunk_0.npy",
+        "chunk_filename": "constitution_article_15_chunk_0.txt",
+        "original_filename": "constitution_article_15.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "15",
+        "chunk_id": "0",
+        "word_count": "42",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_16_chunk_0.npy",
+        "chunk_filename": "constitution_article_16_chunk_0.txt",
+        "original_filename": "constitution_article_16.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "16",
+        "chunk_id": "0",
+        "word_count": "30",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_17_chunk_0.npy",
+        "chunk_filename": "constitution_article_17_chunk_0.txt",
+        "original_filename": "constitution_article_17.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "17",
+        "chunk_id": "0",
+        "word_count": "155",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_18_chunk_0.npy",
+        "chunk_filename": "constitution_article_18_chunk_0.txt",
+        "original_filename": "constitution_article_18.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "18",
+        "chunk_id": "0",
+        "word_count": "115",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_19_chunk_0.npy",
+        "chunk_filename": "constitution_article_19_chunk_0.txt",
+        "original_filename": "constitution_article_19.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "19",
+        "chunk_id": "0",
+        "word_count": "77",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_19a_chunk_0.npy",
+        "chunk_filename": "constitution_article_19a_chunk_0.txt",
+        "original_filename": "constitution_article_19a.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "19A",
+        "chunk_id": "0",
+        "word_count": "30",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_20_chunk_0.npy",
+        "chunk_filename": "constitution_article_20_chunk_0.txt",
+        "original_filename": "constitution_article_20.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "20",
+        "chunk_id": "0",
+        "word_count": "52",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_21_chunk_0.npy",
+        "chunk_filename": "constitution_article_21_chunk_0.txt",
+        "original_filename": "constitution_article_21.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "21",
+        "chunk_id": "0",
+        "word_count": "40",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_22_chunk_0.npy",
+        "chunk_filename": "constitution_article_22_chunk_0.txt",
+        "original_filename": "constitution_article_22.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "22",
+        "chunk_id": "0",
+        "word_count": "165",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_23_chunk_0.npy",
+        "chunk_filename": "constitution_article_23_chunk_0.txt",
+        "original_filename": "constitution_article_23.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "23",
+        "chunk_id": "0",
+        "word_count": "38",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_24_chunk_0.npy",
+        "chunk_filename": "constitution_article_24_chunk_0.txt",
+        "original_filename": "constitution_article_24.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "24",
+        "chunk_id": "0",
+        "word_count": "356",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_25_chunk_0.npy",
+        "chunk_filename": "constitution_article_25_chunk_0.txt",
+        "original_filename": "constitution_article_25.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "25",
+        "chunk_id": "0",
+        "word_count": "52",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_25a_chunk_0.npy",
+        "chunk_filename": "constitution_article_25a_chunk_0.txt",
+        "original_filename": "constitution_article_25a.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "25A",
+        "chunk_id": "0",
+        "word_count": "32",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_26_chunk_0.npy",
+        "chunk_filename": "constitution_article_26_chunk_0.txt",
+        "original_filename": "constitution_article_26.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "26",
+        "chunk_id": "0",
+        "word_count": "67",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_27_chunk_0.npy",
+        "chunk_filename": "constitution_article_27_chunk_0.txt",
+        "original_filename": "constitution_article_27.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "27",
+        "chunk_id": "0",
+        "word_count": "210",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "constitution_article_28_chunk_0.npy",
+        "chunk_filename": "constitution_article_28_chunk_0.txt",
+        "original_filename": "constitution_article_28.txt",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "28",
+        "chunk_id": "0",
+        "word_count": "41",
+        "dimension": 384
+    }
+]

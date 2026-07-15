@@ -1,0 +1,36 @@
+# Law LLM — Full Dependencies
+# ==============================
+# Requires: Python 3.11 (64-bit)
+#
+# Setup on a new PC:
+#   python -m venv .venv
+#   .venv\Scripts\activate          (Windows)
+#   source .venv/bin/activate       (macOS/Linux)
+#   pip install -r requirements.txt
+
+# --- Vector database ---
+chromadb==0.5.23
+
+# --- Embeddings (BAAI/bge-small-en-v1.5) ---
+sentence-transformers==3.4.1
+numpy==2.4.6
+torch==2.13.0
+transformers==4.57.6
+huggingface-hub==0.36.2
+tokenizers==0.20.3
+safetensors==0.8.0
+scipy==1.17.1
+scikit-learn==1.9.0
+tqdm==4.68.4
+
+# --- LLM API (Groq — Llama 3.3 70B) ---
+groq==0.25.0
+
+# --- Web UI ---
+streamlit==1.45.1
+
+# --- Environment & utilities ---
+python-dotenv==1.1.0
+requests==2.34.2
+PyYAML==6.0.3
+pillow==12.3.0

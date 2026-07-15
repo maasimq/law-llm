@@ -1,0 +1,13 @@
+ACT: Pakistan Penal Code, 1860
+SECTION/ARTICLE: 200
+TITLE: Section 200
+CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+============================================================
+
+Using as true such declaration knowing it to be false:
+Whoever corruptly uses or
+attempts to use as true any such declaration, knowing the same to be false in any material
+point, shall be punished in the same manner as if he gave false evidence.
+
+Explanation: A declaration, which is inadmissible merely upon the ground of some
+informality, is a declaration within the meaning of Sections 199 and 200.
