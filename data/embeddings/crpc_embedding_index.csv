@@ -1,0 +1,6 @@
+embedding_filename,chunk_filename,chunk_id,section_count,word_count,act_name,dimension
+crpc_chunk_0.npy,crpc_chunk_0.txt,0,13,490,"Code of Criminal Procedure, 1898",384
+crpc_chunk_1.npy,crpc_chunk_1.txt,1,17,459,"Code of Criminal Procedure, 1898",384
+crpc_chunk_2.npy,crpc_chunk_2.txt,2,17,487,"Code of Criminal Procedure, 1898",384
+crpc_chunk_3.npy,crpc_chunk_3.txt,3,18,488,"Code of Criminal Procedure, 1898",384
+crpc_chunk_4.npy,crpc_chunk_4.txt,4,10,485,"Code of Criminal Procedure, 1898",384

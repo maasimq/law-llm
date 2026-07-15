@@ -1,0 +1,14 @@
+CrPC Embedding Log
+==================
+
+Timestamp: 2026-07-16 01:04:37
+Model: BAAI/bge-small-en-v1.5
+Expected dimension: 384
+Chunks processed: 5
+All dimensions match: YES
+
+crpc_chunk_0.txt -> dim=384
+crpc_chunk_1.txt -> dim=384
+crpc_chunk_2.txt -> dim=384
+crpc_chunk_3.txt -> dim=384
+crpc_chunk_4.txt -> dim=384

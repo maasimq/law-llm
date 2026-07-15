@@ -1,0 +1,47 @@
+[
+    {
+        "embedding_filename": "crpc_chunk_0.npy",
+        "chunk_filename": "crpc_chunk_0.txt",
+        "chunk_id": "0",
+        "section_count": "13",
+        "word_count": "490",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_1.npy",
+        "chunk_filename": "crpc_chunk_1.txt",
+        "chunk_id": "1",
+        "section_count": "17",
+        "word_count": "459",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_2.npy",
+        "chunk_filename": "crpc_chunk_2.txt",
+        "chunk_id": "2",
+        "section_count": "17",
+        "word_count": "487",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_3.npy",
+        "chunk_filename": "crpc_chunk_3.txt",
+        "chunk_id": "3",
+        "section_count": "18",
+        "word_count": "488",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_4.npy",
+        "chunk_filename": "crpc_chunk_4.txt",
+        "chunk_id": "4",
+        "section_count": "10",
+        "word_count": "485",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
+    }
+]
