@@ -9,15 +9,15 @@
 #   pip install -r requirements.txt
 
 # --- Vector database ---
-chromadb==0.5.23
+chromadb
 
 # --- Embeddings (BAAI/bge-small-en-v1.5) ---
 sentence-transformers==3.4.1
 numpy==2.4.6
 torch==2.13.0
-transformers==4.57.6
+transformers
 huggingface-hub==0.36.2
-tokenizers==0.20.3
+tokenizers
 safetensors==0.8.0
 scipy==1.17.1
 scikit-learn==1.9.0
