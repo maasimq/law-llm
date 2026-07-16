@@ -30,7 +30,8 @@ def load_and_ingest():
     
     for index_file in index_files:
         if not os.path.exists(index_file):
-            print(f"Skipping {index_file}, not found.")
+            # Log missing index files to standard output
+            print(f"Skipping {index_file}, index file not found on disk.")
             continue
             
         print(f"\nProcessing index: {index_file}")
