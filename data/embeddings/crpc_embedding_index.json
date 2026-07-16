@@ -268,5 +268,14 @@
         "word_count": "480",
         "act_name": "Code of Criminal Procedure, 1898",
         "dimension": 384
+    },
+    {
+        "embedding_filename": "crpc_chunk_30.npy",
+        "chunk_filename": "crpc_chunk_30.txt",
+        "chunk_id": "30",
+        "section_count": "4",
+        "word_count": "341",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "dimension": 384
     }
 ]
