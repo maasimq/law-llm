@@ -68,12 +68,13 @@ def load_and_ingest():
                 ids.append(doc_id)
                 embeddings.append(emb)
                 documents.append(text_content)
-                metadatas.append({
-                    "act_name": row["act_name"],
-                    "section_article_number": row["section_article_number"],
-                    "chunk_id": int(row["chunk_id"]),
-                    "word_count": int(row["word_count"])
-                })
+                metadata = {
+                    "act_name": row.get("act_name", "Unknown"),
+                    "section_article_number": row.get("section_article_number") or row.get("section_number") or row.get("article_number") or "Unknown",
+                    "chunk_id": int(row.get("chunk_id", 0)),
+                    "word_count": int(row.get("word_count", 0))
+                }
+                metadatas.append(metadata)
                 
                 # Batch insert every 200 documents to optimize memory
                 if len(ids) >= 200:
