@@ -1,0 +1,277 @@
+[
+  {
+    "query": "How is a First Information Report (FIR) registered?",
+    "dense": [
+      {
+        "rank": 1,
+        "id": "constitution_article_10_chunk_1",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "snippet": "which the order has been made, and shall afford him the earliest opportunity of making a representation against the order: Provided that the authority making any such order may refuse to disclose facts which such authori",
+        "distance": 0.403893
+      },
+      {
+        "rank": 2,
+        "id": "crpc_chunk_11",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "section_article_number": "Unknown",
+        "snippet": "ACT: Code of Criminal Procedure, 1898\nSECTION: 164A\nTITLE: Medical examination of victim of rape, etc\nCHAPTER: \n============================================================\n\n164A. Medical examination of victim of rape, e",
+        "distance": 0.413559
+      },
+      {
+        "rank": 3,
+        "id": "crpc_chunk_9",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "section_article_number": "Unknown",
+        "snippet": "ACT: Code of Criminal Procedure, 1898\nSECTION: 134\nTITLE: Service or notification of order\nCHAPTER: \n============================================================\n\n134. Service or notification of order.\n\n\nACT: Code of Cri",
+        "distance": 0.414449
+      }
+    ],
+    "bm25": [
+      {
+        "rank": 1,
+        "id": "constitution_article_19a_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "19A",
+        "snippet": "19A.\tRight to information:\nEvery citizen shall have the right to have access to information in all matters of public importance subject to regulation and reasonable restrictions imposed by law.",
+        "score": 5.416762
+      },
+      {
+        "rank": 2,
+        "id": "constitution_article_8_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "8",
+        "snippet": "8\tLaws inconsistent with or in derogation of fundamental rights to be void.\n(1)\tAny law, or any custom or usage having the force of law, in so far as it is inconsistent with the rights conferred by this Chapter, shall, t",
+        "score": 5.10601
+      },
+      {
+        "rank": 3,
+        "id": "constitution_article_10_chunk_1",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "snippet": "which the order has been made, and shall afford him the earliest opportunity of making a representation against the order: Provided that the authority making any such order may refuse to disclose facts which such authori",
+        "score": 4.765394
+      }
+    ]
+  },
+  {
+    "query": "What is the procedure for police to arrest a person without a warrant?",
+    "dense": [
+      {
+        "rank": 1,
+        "id": "constitution_article_10_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "snippet": "10 Safeguards as to arrest and detention (1) No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest, nor shall he be denied the right to consult a",
+        "distance": 0.312704
+      },
+      {
+        "rank": 2,
+        "id": "crpc_chunk_3",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "section_article_number": "Unknown",
+        "snippet": "ACT: Code of Criminal Procedure, 1898\nSECTION: 53\nTITLE: Power to seize offensive weapons\nCHAPTER: \n============================================================\n\n53. Power to seize offensive weapons.\n\n\nACT: Code of Crimi",
+        "distance": 0.324346
+      },
+      {
+        "rank": 3,
+        "id": "crpc_chunk_5",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "section_article_number": "Unknown",
+        "snippet": "ACT: Code of Criminal Procedure, 1898\nSECTION: 81\nTITLE: Person arrested to be brought before Court without delay\nCHAPTER: \n============================================================\n\n81. Person arrested to be brought ",
+        "distance": 0.328939
+      }
+    ],
+    "bm25": [
+      {
+        "rank": 1,
+        "id": "constitution_article_10_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "snippet": "10 Safeguards as to arrest and detention (1) No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest, nor shall he be denied the right to consult a",
+        "score": 11.511535
+      },
+      {
+        "rank": 2,
+        "id": "constitution_article_10_chunk_1",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "snippet": "which the order has been made, and shall afford him the earliest opportunity of making a representation against the order: Provided that the authority making any such order may refuse to disclose facts which such authori",
+        "score": 6.792402
+      },
+      {
+        "rank": 3,
+        "id": "constitution_article_8_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "8",
+        "snippet": "8\tLaws inconsistent with or in derogation of fundamental rights to be void.\n(1)\tAny law, or any custom or usage having the force of law, in so far as it is inconsistent with the rights conferred by this Chapter, shall, t",
+        "score": 5.28431
+      }
+    ]
+  },
+  {
+    "query": "Under what circumstances can bail be granted in non-bailable offences?",
+    "dense": [
+      {
+        "rank": 1,
+        "id": "constitution_article_10_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "snippet": "10 Safeguards as to arrest and detention (1) No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest, nor shall he be denied the right to consult a",
+        "distance": 0.345527
+      },
+      {
+        "rank": 2,
+        "id": "constitution_article_12_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "12",
+        "snippet": "12\tProtection against retrospective punishment\n(1)\tNo law shall authorize the punishment of a person:-\n(a)\tfor an act or omission that was not punishable by law at the time of the act or omission; or\n(b)\tfor an offence b",
+        "distance": 0.349383
+      },
+      {
+        "rank": 3,
+        "id": "constitution_article_10_chunk_1",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "snippet": "which the order has been made, and shall afford him the earliest opportunity of making a representation against the order: Provided that the authority making any such order may refuse to disclose facts which such authori",
+        "distance": 0.360043
+      }
+    ],
+    "bm25": [
+      {
+        "rank": 1,
+        "id": "constitution_article_26_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "26",
+        "snippet": "26.\tNon-discrimination in respect of access to public places.\n(1)\tIn respect of access to places of public entertainment or resort not intended for religious purposes only, there shall be no discrimination against any ci",
+        "score": 3.827762
+      },
+      {
+        "rank": 2,
+        "id": "constitution_article_27_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "27",
+        "snippet": "27.\tSafeguard against discrimination in services.\n(1)\tNo citizen otherwise qualified for appointment in the service of Pakistan shall be discriminated against in respect of any such appointment on the ground only of race",
+        "score": 3.609069
+      },
+      {
+        "rank": 3,
+        "id": "constitution_article_11_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "11",
+        "snippet": "11\tSlavery, forced labour, etc. prohibited\n(1)\tSlavery is non-existent and forbidden and no law shall permit or facilitate its introduction into Pakistan in any form.\n(2)\tAll forms of forced labour and traffic in human b",
+        "score": 3.471021
+      }
+    ]
+  },
+  {
+    "query": "How is a search conducted during an investigation?",
+    "dense": [
+      {
+        "rank": 1,
+        "id": "crpc_chunk_11",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "section_article_number": "Unknown",
+        "snippet": "ACT: Code of Criminal Procedure, 1898\nSECTION: 164A\nTITLE: Medical examination of victim of rape, etc\nCHAPTER: \n============================================================\n\n164A. Medical examination of victim of rape, e",
+        "distance": 0.363997
+      },
+      {
+        "rank": 2,
+        "id": "crpc_chunk_18",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "section_article_number": "Unknown",
+        "snippet": "ACT: Code of Criminal Procedure, 1898\nSECTION: 351\nTITLE: Detention of offenders attending Court\nCHAPTER: \n============================================================\n\n351. Detention of offenders attending Court.\n\n\nACT:",
+        "distance": 0.383461
+      },
+      {
+        "rank": 3,
+        "id": "crpc_chunk_17",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "section_article_number": "Unknown",
+        "snippet": "ACT: Code of Criminal Procedure, 1898\nSECTION: 341\nTITLE: Procedure where accused does not understand proceedings\nCHAPTER: \n============================================================\n\n341. Procedure where accused does ",
+        "distance": 0.386575
+      }
+    ],
+    "bm25": [
+      {
+        "rank": 1,
+        "id": "constitution_article_10_chunk_1",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "snippet": "which the order has been made, and shall afford him the earliest opportunity of making a representation against the order: Provided that the authority making any such order may refuse to disclose facts which such authori",
+        "score": 4.907247
+      },
+      {
+        "rank": 2,
+        "id": "constitution_article_10_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "snippet": "10 Safeguards as to arrest and detention (1) No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest, nor shall he be denied the right to consult a",
+        "score": 4.229861
+      },
+      {
+        "rank": 3,
+        "id": "constitution_article_11_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "11",
+        "snippet": "11\tSlavery, forced labour, etc. prohibited\n(1)\tSlavery is non-existent and forbidden and no law shall permit or facilitate its introduction into Pakistan in any form.\n(2)\tAll forms of forced labour and traffic in human b",
+        "score": 3.552243
+      }
+    ]
+  },
+  {
+    "query": "What is the procedure for a magistrate to take cognizance of an offence?",
+    "dense": [
+      {
+        "rank": 1,
+        "id": "crpc_chunk_10",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "section_article_number": "Unknown",
+        "snippet": "ACT: Code of Criminal Procedure, 1898\nSECTION: 149\nTITLE: Police to prevent cognizable offences\nCHAPTER: \n============================================================\n\n149. Police to prevent cognizable offences.\n\n\nACT: C",
+        "distance": 0.313309
+      },
+      {
+        "rank": 2,
+        "id": "crpc_chunk_2",
+        "act_name": "Code of Criminal Procedure, 1898",
+        "section_article_number": "Unknown",
+        "snippet": "ACT: Code of Criminal Procedure, 1898\nSECTION: 35\nTITLE: Sentence in case of conviction of several offences at one trial\nCHAPTER: \n============================================================\n\n35. Sentence in case of con",
+        "distance": 0.326259
+      },
+      {
+        "rank": 3,
+        "id": "constitution_article_10_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "snippet": "10 Safeguards as to arrest and detention (1) No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest, nor shall he be denied the right to consult a",
+        "distance": 0.335392
+      }
+    ],
+    "bm25": [
+      {
+        "rank": 1,
+        "id": "constitution_article_10_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "10",
+        "snippet": "10 Safeguards as to arrest and detention (1) No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest, nor shall he be denied the right to consult a",
+        "score": 8.102944
+      },
+      {
+        "rank": 2,
+        "id": "constitution_article_12_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "12",
+        "snippet": "12\tProtection against retrospective punishment\n(1)\tNo law shall authorize the punishment of a person:-\n(a)\tfor an act or omission that was not punishable by law at the time of the act or omission; or\n(b)\tfor an offence b",
+        "score": 7.778865
+      },
+      {
+        "rank": 3,
+        "id": "constitution_article_13_chunk_0",
+        "act_name": "Constitution of Pakistan",
+        "section_article_number": "13",
+        "snippet": "13\tProtection against double punishment and self incrimination.\nNo person:-\n(a)\tshall be prosecuted or punished for the same offence more than once; or\n(b)\tshall, when accused of an offence, be compelled to be a witness ",
+        "score": 7.140733
+      }
+    ]
+  }
+]
