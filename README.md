@@ -41,6 +41,7 @@ All content is sourced exclusively from [pakistancode.gov.pk](https://pakistanco
 | LLM | Groq API — Llama 3.3 70B Versatile (free tier) | Answer generation |
 | Embeddings | `BAAI/bge-small-en-v1.5` (384 dimensions) | Text vectorization |
 | Vector DB | ChromaDB (local) | Chunk storage & retrieval |
+| Keyword Search | BM25 | Fast lexical retrieval over chunk corpus |
 | Orchestration | Plain Python (no LangChain/LlamaIndex) | Transparent pipeline |
 | Frontend | Streamlit | Chat-style web UI |
 | Deployment | Streamlit Community Cloud | Free public hosting |

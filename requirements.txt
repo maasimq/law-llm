@@ -10,6 +10,7 @@
 
 # --- Vector database ---
 chromadb
+rank-bm25
 
 # --- Embeddings (BAAI/bge-small-en-v1.5) ---
 sentence-transformers==3.4.1
