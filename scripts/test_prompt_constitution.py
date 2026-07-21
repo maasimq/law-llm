@@ -25,7 +25,7 @@ LOG_FILE       = PROJECT_ROOT / "logs"  / "checkpoint7_prompt_demo.txt"
 
 MODEL_NAME = "llama-3.3-70b-versatile"
 
-# 5 sample questions with their proxy embeddings (pre-saved .npy files)
+# Sample questions with their proxy embeddings (in-scope and out-of-scope tests)
 SAMPLE_QA = [
     {
         "question": "What are the rights of an arrested person under the Constitution of Pakistan?",
@@ -51,8 +51,14 @@ SAMPLE_QA = [
         "question": "Can a person be tried twice for the same offense in Pakistan?",
         "proxy_npy": "constitution_article_13_chunk_0.npy",
         "filter": {"act_name": "Constitution of Pakistan"}
+    },
+    {
+        "question": "What is the tax rate on rental income under Pakistani law?",
+        "proxy_npy": "constitution_article_10_chunk_0.npy",
+        "filter": {"act_name": "Constitution of Pakistan"}
     }
 ]
+
 
 
 def load_template():
