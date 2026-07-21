@@ -1,0 +1,294 @@
+Checkpoint 6: Constitution Test Queries Log
+===========================================
+Model used: BAAI/bge-small-en-v1.5 (pre-saved embeddings as query proxies)
+Total documents in ChromaDB: 57
+
+Query 1: What are the fundamental rights regarding arrest and detention?
+  Result 1:
+    - ID: constitution_article_10_chunk_0
+    - Article: 10
+    - Similarity Distance: 0.0000
+    - Snippet: 10 Safeguards as to arrest and detention (1) No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest, nor shall he be denied the right to consult and be defended by a legal prac...
+  Result 2:
+    - ID: constitution_article_10_chunk_1
+    - Article: 10
+    - Similarity Distance: 0.1711
+    - Snippet: which the order has been made, and shall afford him the earliest opportunity of making a representation against the order: Provided that the authority making any such order may refuse to disclose facts which such authority considers it to be against ...
+  Result 3:
+    - ID: constitution_article_27_chunk_0
+    - Article: 27
+    - Similarity Distance: 0.2523
+    - Snippet: 27.	Safeguard against discrimination in services. (1)	No citizen otherwise qualified for appointment in the service of Pakistan shall be discriminated against in respect of any such appointment on the ground only of race, religion, caste, sex, reside...
+  Result 4:
+    - ID: constitution_article_12_chunk_0
+    - Article: 12
+    - Similarity Distance: 0.2531
+    - Snippet: 12	Protection against retrospective punishment (1)	No law shall authorize the punishment of a person:- (a)	for an act or omission that was not punishable by law at the time of the act or omission; or (b)	for an offence by a penalty greater than, or o...
+  Result 5:
+    - ID: constitution_article_15_chunk_0
+    - Article: 15
+    - Similarity Distance: 0.3159
+    - Snippet: 15	Freedom of movement, etc. Every citizen shall have the right to remain in, and, subject to any reasonable restriction imposed by law in the public interest, enter and move freely throughout Pakistan and to reside and settle in any part thereof....
+
+--------------------------------------------------
+
+Query 2: Is slavery or forced labor allowed in Pakistan?
+  Result 1:
+    - ID: constitution_article_11_chunk_0
+    - Article: 11
+    - Similarity Distance: -0.0000
+    - Snippet: 11	Slavery, forced labour, etc. prohibited (1)	Slavery is non-existent and forbidden and no law shall permit or facilitate its introduction into Pakistan in any form. (2)	All forms of forced labour and traffic in human beings are prohibited. (3)	No c...
+  Result 2:
+    - ID: constitution_article_27_chunk_0
+    - Article: 27
+    - Similarity Distance: 0.2586
+    - Snippet: 27.	Safeguard against discrimination in services. (1)	No citizen otherwise qualified for appointment in the service of Pakistan shall be discriminated against in respect of any such appointment on the ground only of race, religion, caste, sex, reside...
+  Result 3:
+    - ID: constitution_article_12_chunk_0
+    - Article: 12
+    - Similarity Distance: 0.2751
+    - Snippet: 12	Protection against retrospective punishment (1)	No law shall authorize the punishment of a person:- (a)	for an act or omission that was not punishable by law at the time of the act or omission; or (b)	for an offence by a penalty greater than, or o...
+  Result 4:
+    - ID: constitution_article_15_chunk_0
+    - Article: 15
+    - Similarity Distance: 0.2797
+    - Snippet: 15	Freedom of movement, etc. Every citizen shall have the right to remain in, and, subject to any reasonable restriction imposed by law in the public interest, enter and move freely throughout Pakistan and to reside and settle in any part thereof....
+  Result 5:
+    - ID: constitution_article_26_chunk_0
+    - Article: 26
+    - Similarity Distance: 0.3059
+    - Snippet: 26.	Non-discrimination in respect of access to public places. (1)	In respect of access to places of public entertainment or resort not intended for religious purposes only, there shall be no discrimination against any citizen on the ground only of ra...
+
+--------------------------------------------------
+
+Query 3: What does the constitution say about the right to a fair trial?
+  Result 1:
+    - ID: constitution_article_10a_chunk_0
+    - Article: 10A
+    - Similarity Distance: 0.0000
+    - Snippet: 10A.	Right to fair trial: For the determination of his civil rights and obligations or in any criminal charge against him a person shall be entitled to a fair trial and due process....
+  Result 2:
+    - ID: constitution_article_25_chunk_0
+    - Article: 25
+    - Similarity Distance: 0.3221
+    - Snippet: 25	Equality of citizens. (1)	All citizens are equal before law and are entitled to equal protection of law. (2)	There shall be no discrimination on the basis of sex . (3)	Nothing in this Article shall prevent the State from making any special provisi...
+  Result 3:
+    - ID: constitution_article_19a_chunk_0
+    - Article: 19A
+    - Similarity Distance: 0.3481
+    - Snippet: 19A.	Right to information: Every citizen shall have the right to have access to information in all matters of public importance subject to regulation and reasonable restrictions imposed by law....
+  Result 4:
+    - ID: constitution_article_16_chunk_0
+    - Article: 16
+    - Similarity Distance: 0.3533
+    - Snippet: 16	Freedom of assembly. Every citizen shall have the right to assemble peacefully and without arms, subject to any reasonable restrictions imposed by law in the interest of public order....
+  Result 5:
+    - ID: constitution_article_17_chunk_0
+    - Article: 17
+    - Similarity Distance: 0.3549
+    - Snippet: 17.	Freedom of association: (1)	Every citizen shall have the right to form associations or unions, subject to any reasonable restrictions imposed by law in the interest of sovereignty or integrity of Pakistan, public order or morality. (2)	Every citi...
+
+--------------------------------------------------
+
+Query 4: Does the constitution guarantee freedom of speech and expression?
+  Result 1:
+    - ID: constitution_article_19_chunk_0
+    - Article: 19
+    - Similarity Distance: 0.0000
+    - Snippet: 19	Freedom of speech, etc. Every citizen shall have the right to freedom of speech and expression, and there shall be freedom of the press, subject to any reasonable restrictions imposed by law in the interest of the glory of Islam or the integrity, ...
+  Result 2:
+    - ID: constitution_article_15_chunk_0
+    - Article: 15
+    - Similarity Distance: 0.1966
+    - Snippet: 15	Freedom of movement, etc. Every citizen shall have the right to remain in, and, subject to any reasonable restriction imposed by law in the public interest, enter and move freely throughout Pakistan and to reside and settle in any part thereof....
+  Result 3:
+    - ID: constitution_article_17_chunk_0
+    - Article: 17
+    - Similarity Distance: 0.2094
+    - Snippet: 17.	Freedom of association: (1)	Every citizen shall have the right to form associations or unions, subject to any reasonable restrictions imposed by law in the interest of sovereignty or integrity of Pakistan, public order or morality. (2)	Every citi...
+  Result 4:
+    - ID: constitution_article_19a_chunk_0
+    - Article: 19A
+    - Similarity Distance: 0.2200
+    - Snippet: 19A.	Right to information: Every citizen shall have the right to have access to information in all matters of public importance subject to regulation and reasonable restrictions imposed by law....
+  Result 5:
+    - ID: constitution_article_23_chunk_0
+    - Article: 23
+    - Similarity Distance: 0.2280
+    - Snippet: 23	Provision as to property. Every citizen shall have the right to acquire, hold and dispose of property in any part of Pakistan, subject to the Constitution and any reasonable restrictions imposed by law in the public interest....
+
+--------------------------------------------------
+
+Query 5: What are the provisions for the equality of citizens?
+  Result 1:
+    - ID: constitution_article_25_chunk_0
+    - Article: 25
+    - Similarity Distance: 0.0000
+    - Snippet: 25	Equality of citizens. (1)	All citizens are equal before law and are entitled to equal protection of law. (2)	There shall be no discrimination on the basis of sex . (3)	Nothing in this Article shall prevent the State from making any special provisi...
+  Result 2:
+    - ID: constitution_article_26_chunk_0
+    - Article: 26
+    - Similarity Distance: 0.2139
+    - Snippet: 26.	Non-discrimination in respect of access to public places. (1)	In respect of access to places of public entertainment or resort not intended for religious purposes only, there shall be no discrimination against any citizen on the ground only of ra...
+  Result 3:
+    - ID: constitution_article_27_chunk_0
+    - Article: 27
+    - Similarity Distance: 0.2758
+    - Snippet: 27.	Safeguard against discrimination in services. (1)	No citizen otherwise qualified for appointment in the service of Pakistan shall be discriminated against in respect of any such appointment on the ground only of race, religion, caste, sex, reside...
+  Result 4:
+    - ID: constitution_article_19_chunk_0
+    - Article: 19
+    - Similarity Distance: 0.3026
+    - Snippet: 19	Freedom of speech, etc. Every citizen shall have the right to freedom of speech and expression, and there shall be freedom of the press, subject to any reasonable restrictions imposed by law in the interest of the glory of Islam or the integrity, ...
+  Result 5:
+    - ID: constitution_article_19a_chunk_0
+    - Article: 19A
+    - Similarity Distance: 0.3026
+    - Snippet: 19A.	Right to information: Every citizen shall have the right to have access to information in all matters of public importance subject to regulation and reasonable restrictions imposed by law....
+
+--------------------------------------------------
+
+Query 6: Is there a right to free and compulsory education for children?
+  Result 1:
+    - ID: constitution_article_25a_chunk_0
+    - Article: 25A
+    - Similarity Distance: 0.0000
+    - Snippet: 25A.	Right to education: The State shall provide free and compulsory education to all children of the age of five to sixteen years in such manner as may be determined by law....
+  Result 2:
+    - ID: constitution_article_22_chunk_0
+    - Article: 22
+    - Similarity Distance: 0.3060
+    - Snippet: 22	Safeguards as to educational institutions in respect of religion, etc. (1)	No person attending any educational institution shall be required to receive religious instruction, or take part in any religious ceremony, or attend religious worship, if ...
+  Result 3:
+    - ID: constitution_article_19a_chunk_0
+    - Article: 19A
+    - Similarity Distance: 0.3224
+    - Snippet: 19A.	Right to information: Every citizen shall have the right to have access to information in all matters of public importance subject to regulation and reasonable restrictions imposed by law....
+  Result 4:
+    - ID: constitution_article_17_chunk_0
+    - Article: 17
+    - Similarity Distance: 0.3249
+    - Snippet: 17.	Freedom of association: (1)	Every citizen shall have the right to form associations or unions, subject to any reasonable restrictions imposed by law in the interest of sovereignty or integrity of Pakistan, public order or morality. (2)	Every citi...
+  Result 5:
+    - ID: constitution_article_16_chunk_0
+    - Article: 16
+    - Similarity Distance: 0.3355
+    - Snippet: 16	Freedom of assembly. Every citizen shall have the right to assemble peacefully and without arms, subject to any reasonable restrictions imposed by law in the interest of public order....
+
+--------------------------------------------------
+
+Query 7: What protections exist for the dignity of man and privacy of home?
+  Result 1:
+    - ID: constitution_article_14_chunk_0
+    - Article: 14
+    - Similarity Distance: 0.0000
+    - Snippet: 14	Inviolability of dignity of man, etc. (1)	The dignity of man and, subject to law, the privacy of home, shall be inviolable. (2)	No person shall be subjected to torture for the purpose of extracting evidence....
+  Result 2:
+    - ID: constitution_article_9_chunk_0
+    - Article: 9
+    - Similarity Distance: 0.3189
+    - Snippet: 9	Security of person. No person shall be deprived of life or liberty save in accordance with law....
+  Result 3:
+    - ID: constitution_article_16_chunk_0
+    - Article: 16
+    - Similarity Distance: 0.3495
+    - Snippet: 16	Freedom of assembly. Every citizen shall have the right to assemble peacefully and without arms, subject to any reasonable restrictions imposed by law in the interest of public order....
+  Result 4:
+    - ID: constitution_article_10_chunk_1
+    - Article: 10
+    - Similarity Distance: 0.3591
+    - Snippet: which the order has been made, and shall afford him the earliest opportunity of making a representation against the order: Provided that the authority making any such order may refuse to disclose facts which such authority considers it to be against ...
+  Result 5:
+    - ID: constitution_article_26_chunk_0
+    - Article: 26
+    - Similarity Distance: 0.3595
+    - Snippet: 26.	Non-discrimination in respect of access to public places. (1)	In respect of access to places of public entertainment or resort not intended for religious purposes only, there shall be no discrimination against any citizen on the ground only of ra...
+
+--------------------------------------------------
+
+Query 8: Are citizens allowed to move freely throughout Pakistan?
+  Result 1:
+    - ID: constitution_article_15_chunk_0
+    - Article: 15
+    - Similarity Distance: 0.0000
+    - Snippet: 15	Freedom of movement, etc. Every citizen shall have the right to remain in, and, subject to any reasonable restriction imposed by law in the public interest, enter and move freely throughout Pakistan and to reside and settle in any part thereof....
+  Result 2:
+    - ID: constitution_article_23_chunk_0
+    - Article: 23
+    - Similarity Distance: 0.1668
+    - Snippet: 23	Provision as to property. Every citizen shall have the right to acquire, hold and dispose of property in any part of Pakistan, subject to the Constitution and any reasonable restrictions imposed by law in the public interest....
+  Result 3:
+    - ID: constitution_article_19_chunk_0
+    - Article: 19
+    - Similarity Distance: 0.1966
+    - Snippet: 19	Freedom of speech, etc. Every citizen shall have the right to freedom of speech and expression, and there shall be freedom of the press, subject to any reasonable restrictions imposed by law in the interest of the glory of Islam or the integrity, ...
+  Result 4:
+    - ID: constitution_article_17_chunk_0
+    - Article: 17
+    - Similarity Distance: 0.2040
+    - Snippet: 17.	Freedom of association: (1)	Every citizen shall have the right to form associations or unions, subject to any reasonable restrictions imposed by law in the interest of sovereignty or integrity of Pakistan, public order or morality. (2)	Every citi...
+  Result 5:
+    - ID: constitution_article_16_chunk_0
+    - Article: 16
+    - Similarity Distance: 0.2475
+    - Snippet: 16	Freedom of assembly. Every citizen shall have the right to assemble peacefully and without arms, subject to any reasonable restrictions imposed by law in the interest of public order....
+
+--------------------------------------------------
+
+Query 9: Can a person be punished for an act that was not an offense when it was done?
+  Result 1:
+    - ID: constitution_article_12_chunk_0
+    - Article: 12
+    - Similarity Distance: -0.0000
+    - Snippet: 12	Protection against retrospective punishment (1)	No law shall authorize the punishment of a person:- (a)	for an act or omission that was not punishable by law at the time of the act or omission; or (b)	for an offence by a penalty greater than, or o...
+  Result 2:
+    - ID: constitution_article_10_chunk_1
+    - Article: 10
+    - Similarity Distance: 0.2383
+    - Snippet: which the order has been made, and shall afford him the earliest opportunity of making a representation against the order: Provided that the authority making any such order may refuse to disclose facts which such authority considers it to be against ...
+  Result 3:
+    - ID: constitution_article_10_chunk_0
+    - Article: 10
+    - Similarity Distance: 0.2531
+    - Snippet: 10 Safeguards as to arrest and detention (1) No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest, nor shall he be denied the right to consult and be defended by a legal prac...
+  Result 4:
+    - ID: constitution_article_13_chunk_0
+    - Article: 13
+    - Similarity Distance: 0.2654
+    - Snippet: 13	Protection against double punishment and self incrimination. No person:- (a)	shall be prosecuted or punished for the same offence more than once; or (b)	shall, when accused of an offence, be compelled to be a witness against himself....
+  Result 5:
+    - ID: constitution_article_8_chunk_0
+    - Article: 8
+    - Similarity Distance: 0.2713
+    - Snippet: 8	Laws inconsistent with or in derogation of fundamental rights to be void. (1)	Any law, or any custom or usage having the force of law, in so far as it is inconsistent with the rights conferred by this Chapter, shall, to the extent of such inconsist...
+
+--------------------------------------------------
+
+Query 10: What are the safeguards against double jeopardy and self-incrimination?
+  Result 1:
+    - ID: constitution_article_13_chunk_0
+    - Article: 13
+    - Similarity Distance: 0.0000
+    - Snippet: 13	Protection against double punishment and self incrimination. No person:- (a)	shall be prosecuted or punished for the same offence more than once; or (b)	shall, when accused of an offence, be compelled to be a witness against himself....
+  Result 2:
+    - ID: constitution_article_12_chunk_0
+    - Article: 12
+    - Similarity Distance: 0.2654
+    - Snippet: 12	Protection against retrospective punishment (1)	No law shall authorize the punishment of a person:- (a)	for an act or omission that was not punishable by law at the time of the act or omission; or (b)	for an offence by a penalty greater than, or o...
+  Result 3:
+    - ID: constitution_article_9_chunk_0
+    - Article: 9
+    - Similarity Distance: 0.3192
+    - Snippet: 9	Security of person. No person shall be deprived of life or liberty save in accordance with law....
+  Result 4:
+    - ID: constitution_article_21_chunk_0
+    - Article: 21
+    - Similarity Distance: 0.3270
+    - Snippet: 21	Safeguard against taxation for purposes of any particular religion. No person shall be compelled to pay any special tax the proceeds of which are to be spent on the propagation or maintenance of any religion other than his own....
+  Result 5:
+    - ID: constitution_article_27_chunk_0
+    - Article: 27
+    - Similarity Distance: 0.3345
+    - Snippet: 27.	Safeguard against discrimination in services. (1)	No citizen otherwise qualified for appointment in the service of Pakistan shall be discriminated against in respect of any such appointment on the ground only of race, religion, caste, sex, reside...
+
+--------------------------------------------------

@@ -1,0 +1,117 @@
+Checkpoint 7: Prompt Template Demo
+====================================
+Model:    llama-3.3-70b-versatile
+Template: C:\Users\HP\Desktop\fast law llm rag\scripts\prompt_template.txt
+
+Question 1: What are the rights of an arrested person under the Constitution of Pakistan?
+
+Context retrieved:
+  [Constitution of Pakistan, Article 10]
+10 Safeguards as to arrest and detention (1) No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest, nor shall he be denied the right to consult and be defended by a legal practitioner of
+  [Constitution of Pakistan, Article 10]
+which the order has been made, and shall afford him the earliest opportunity of making a representation against the order: Provided that the authority making any such order may refuse to disclose facts which such authority considers it to be against the public 
+  [Constitution of Pakistan, Article 27]
+27.	Safeguard against discrimination in services.
+(1)	No citizen otherwise qualified for appointment in the service of Pakistan shall be discriminated against in respect of any such appointment on the ground only of race, religion, caste, sex, residence or plac
+
+Answer:
+Under Article 10 of the Constitution of Pakistan, the rights of an arrested person include: 
+1. The right to be informed of the grounds for their arrest as soon as possible, 
+2. The right to consult and be defended by a legal practitioner of their choice, 
+3. The right to be produced before a magistrate within 24 hours of their arrest, 
+4. The right not to be detained in custody beyond 24 hours without the authority of a magistrate. 
+A complex term "preventive detention" means detention of a person to prevent them from committing a crime, rather than as a punishment for a crime already committed. 
+
+Additionally, if a person is detained under a law providing for preventive detention, they have the right to be communicated the grounds for their detention within 15 days and to make a representation against the order, as stated in Clause 5 of Article 10. 
+
+It's also important to note that the Constitution provides for the establishment of a Review Board to review the case of a person detained under preventive detention laws, as mentioned in Clause 4 of Article 10. 
+
+Overall, these rights aim to protect the fundamental rights of an arrested person and ensure that they are treated fairly and justly under the law.
+
+------------------------------------------------------------
+
+Question 2: Is forced labor permitted in Pakistan?
+
+Context retrieved:
+  [Constitution of Pakistan, Article 11]
+11	Slavery, forced labour, etc. prohibited
+(1)	Slavery is non-existent and forbidden and no law shall permit or facilitate its introduction into Pakistan in any form.
+(2)	All forms of forced labour and traffic in human beings are prohibited.
+(3)	No child below 
+  [Constitution of Pakistan, Article 27]
+27.	Safeguard against discrimination in services.
+(1)	No citizen otherwise qualified for appointment in the service of Pakistan shall be discriminated against in respect of any such appointment on the ground only of race, religion, caste, sex, residence or plac
+  [Constitution of Pakistan, Article 12]
+12	Protection against retrospective punishment
+(1)	No law shall authorize the punishment of a person:-
+(a)	for an act or omission that was not punishable by law at the time of the act or omission; or
+(b)	for an offence by a penalty greater than, or of a kind di
+
+Answer:
+Under Article 11(2) of the Constitution of Pakistan, forced labour is prohibited. This means that no one can be made to work against their will in Pakistan.
+
+------------------------------------------------------------
+
+Question 3: What is the right to a fair trial under Pakistani law?
+
+Context retrieved:
+  [Constitution of Pakistan, Article 10A]
+10A.	Right to fair trial:
+For the determination of his civil rights and obligations or in any criminal charge against him a person shall be entitled to a fair trial and due process.
+  [Constitution of Pakistan, Article 25]
+25	Equality of citizens.
+(1)	All citizens are equal before law and are entitled to equal protection of law.
+(2)	There shall be no discrimination on the basis of sex .
+(3)	Nothing in this Article shall prevent the State from making any special provision for the 
+  [Constitution of Pakistan, Article 19A]
+19A.	Right to information:
+Every citizen shall have the right to have access to information in all matters of public importance subject to regulation and reasonable restrictions imposed by law.
+
+Answer:
+Under Article 10A of the Constitution of Pakistan, the right to a fair trial means that a person has the right to a just and unbiased hearing in a court of law to determine their civil rights, obligations, or any criminal charges against them. 
+
+In simple terms, a "fair trial" means that the court will listen to both sides of the case without favoring one side over the other, to ensure a just outcome.
+
+------------------------------------------------------------
+
+Question 4: What does the Constitution say about the right to education?
+
+Context retrieved:
+  [Constitution of Pakistan, Article 25A]
+25A.	Right to education:
+The State shall provide free and compulsory education to all children of the age of five to sixteen years in such manner as may be determined by law.
+  [Constitution of Pakistan, Article 22]
+22	Safeguards as to educational institutions in respect of religion, etc.
+(1)	No person attending any educational institution shall be required to receive religious instruction, or take part in any religious ceremony, or attend religious worship, if such instru
+  [Constitution of Pakistan, Article 19A]
+19A.	Right to information:
+Every citizen shall have the right to have access to information in all matters of public importance subject to regulation and reasonable restrictions imposed by law.
+
+Answer:
+Under Article 25A of the Constitution of Pakistan, the State is required to provide free and compulsory education to all children between the ages of five to sixteen years. This means that every child in this age group has the right to receive education without paying any fees, and it is compulsory, meaning they must attend school.
+
+------------------------------------------------------------
+
+Question 5: Can a person be tried twice for the same offense in Pakistan?
+
+Context retrieved:
+  [Constitution of Pakistan, Article 13]
+13	Protection against double punishment and self incrimination.
+No person:-
+(a)	shall be prosecuted or punished for the same offence more than once; or
+(b)	shall, when accused of an offence, be compelled to be a witness against himself.
+  [Constitution of Pakistan, Article 12]
+12	Protection against retrospective punishment
+(1)	No law shall authorize the punishment of a person:-
+(a)	for an act or omission that was not punishable by law at the time of the act or omission; or
+(b)	for an offence by a penalty greater than, or of a kind di
+  [Constitution of Pakistan, Article 9]
+9	Security of person.
+No person shall be deprived of life or liberty save in accordance with law.
+
+Answer:
+Under Article 13 of the Constitution of Pakistan, a person cannot be prosecuted or punished for the same offence more than once, which means they cannot be tried twice for the same crime. 
+
+(Note: "Prosecuted" means to take legal action against someone for a crime, in simple terms, it means to put someone on trial.)
+
+------------------------------------------------------------

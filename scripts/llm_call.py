@@ -69,7 +69,7 @@ def run_tests():
     with open(log_path, "w", encoding="utf-8") as f:
         f.write("\n".join(log_lines))
         
-    print(f"✅ Baseline answers saved to: {log_path}")
+    print(f"[OK] Baseline answers saved to: {log_path}")
 
 if __name__ == "__main__":
     run_tests()
