@@ -1,0 +1,93 @@
+{
+  "timestamp": "2026-07-24T02:02:41.068061",
+  "model": "llama-3.3-70b-versatile",
+  "template_file": "scripts/prompt_template.txt",
+  "total_questions": 5,
+  "results": [
+    {
+      "question": "What is the punishment for murder (Qatl-e-Amd) under the Pakistan Penal Code?",
+      "answer": "I do not have sufficient information in the provided legal text to answer this question. \n\nThe provided context is from the Code of Criminal Procedure, 1898, and does not mention the punishment for murder (Qatl-e-Amd) under the Pakistan Penal Code. Under Section 12 of the provided context, it mentions \"Protection against retrospective punishment\", but it does not specify the punishment for a specific crime like murder.",
+      "tokens_used": 2296,
+      "retrieved_sources": [
+        "Code of Criminal Procedure, 1898 - Unknown",
+        "Constitution of Pakistan - 12",
+        "Code of Criminal Procedure, 1898 - Unknown"
+      ],
+      "validation_checks": {
+        "cites_act_and_section": true,
+        "grounded_in_context": true,
+        "refuses_if_no_context": true,
+        "explains_simply": true
+      },
+      "checks_passed": "4/4"
+    },
+    {
+      "question": "How does the PPC define the offence of theft?",
+      "answer": "I do not have sufficient information in the provided legal text to answer this question. The provided context is from the Code of Criminal Procedure, 1898, and does not contain the definition of the offence of theft. The Pakistan Penal Code (PPC) is a separate law that defines various offences, including theft, but it is not included in the provided context.",
+      "tokens_used": 2765,
+      "retrieved_sources": [
+        "Code of Criminal Procedure, 1898 - Unknown",
+        "Code of Criminal Procedure, 1898 - Unknown",
+        "Code of Criminal Procedure, 1898 - Unknown"
+      ],
+      "validation_checks": {
+        "cites_act_and_section": true,
+        "grounded_in_context": true,
+        "refuses_if_no_context": true,
+        "explains_simply": true
+      },
+      "checks_passed": "4/4"
+    },
+    {
+      "question": "What are the penalties for criminal breach of trust under the Pakistan Penal Code?",
+      "answer": "I do not have sufficient information in the provided legal text to answer this question. The provided context is from the Code of Criminal Procedure, 1898, and does not mention the Pakistan Penal Code or penalties for criminal breach of trust.",
+      "tokens_used": 1720,
+      "retrieved_sources": [
+        "Code of Criminal Procedure, 1898 - Unknown",
+        "Constitution of Pakistan - 10",
+        "Constitution of Pakistan - 27"
+      ],
+      "validation_checks": {
+        "cites_act_and_section": true,
+        "grounded_in_context": true,
+        "refuses_if_no_context": true,
+        "explains_simply": true
+      },
+      "checks_passed": "4/4"
+    },
+    {
+      "question": "What does the PPC say about the right of private defence?",
+      "answer": "I do not have sufficient information in the provided legal text to answer this question. The provided context only discusses freedoms such as speech, information, and association under various Articles, but does not mention the Pakistan Penal Code (PPC) or the right of private defence.",
+      "tokens_used": 581,
+      "retrieved_sources": [
+        "Constitution of Pakistan - 19",
+        "Constitution of Pakistan - 19A",
+        "Constitution of Pakistan - 17"
+      ],
+      "validation_checks": {
+        "cites_act_and_section": true,
+        "grounded_in_context": false,
+        "refuses_if_no_context": true,
+        "explains_simply": true
+      },
+      "checks_passed": "3/4"
+    },
+    {
+      "question": "What is the punishment for forgery under the Pakistan Penal Code?",
+      "answer": "I do not have sufficient information in the provided legal text to answer this question. The provided context does not mention the punishment for forgery under the Pakistan Penal Code. It appears to be related to the Constitution of Pakistan and the Code of Criminal Procedure, 1898, but does not provide information on the specific punishment for forgery.",
+      "tokens_used": 1621,
+      "retrieved_sources": [
+        "Constitution of Pakistan - 12",
+        "Code of Criminal Procedure, 1898 - Unknown",
+        "Constitution of Pakistan - 10"
+      ],
+      "validation_checks": {
+        "cites_act_and_section": true,
+        "grounded_in_context": true,
+        "refuses_if_no_context": true,
+        "explains_simply": true
+      },
+      "checks_passed": "4/4"
+    }
+  ]
+}
