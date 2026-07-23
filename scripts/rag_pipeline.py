@@ -1,5 +1,7 @@
+import json
 import os
 import sys
+from datetime import datetime
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -14,6 +16,7 @@ from sentence_transformers import SentenceTransformer
 from bm25_index import BM25KeywordIndex
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+LOG_DIR = PROJECT_ROOT / "logs"
 
 load_dotenv()
 client_groq = Groq(api_key=os.getenv("GROQ_API_KEY"))
@@ -113,6 +116,43 @@ def run_rag_pipeline(query_text: str, filter_act: str | None = None):
     return answer, retrieved_docs
 
 
+def run_logging_pipeline(questions: list[str], log_file: str | None = None, filter_act: str | None = None):
+    """Run the pipeline over multiple questions and persist a structured JSON log."""
+    LOG_DIR.mkdir(exist_ok=True)
+
+    output_path = Path(log_file) if log_file else LOG_DIR / "pipeline_run_log.json"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    results = []
+    for index, question in enumerate(questions, start=1):
+        answer, retrieved_docs = answer_question(question, filter_act=filter_act)
+        results.append(
+            {
+                "question_id": index,
+                "question": question,
+                "filter_act": filter_act,
+                "answer": answer,
+                "retrieved_chunk_count": len(retrieved_docs),
+                "retrieved_chunks": retrieved_docs,
+            }
+        )
+
+    payload = {
+        "timestamp": datetime.now().isoformat(),
+        "model": LLM_MODEL,
+        "total_questions": len(questions),
+        "results": results,
+    }
+
+    with open(output_path, "w", encoding="utf-8") as handle:
+        json.dump(payload, handle, indent=2, ensure_ascii=False)
+
+    return payload
+
+
 if __name__ == "__main__":
-    sample_question = "What are the fundamental rights regarding arrest?"
-    run_rag_pipeline(sample_question, filter_act="Constitution of Pakistan")
+    sample_questions = [
+        "What are the safeguards as to arrest and detention under Article 10?",
+        "Does the Constitution prohibit forced labour and slavery?",
+    ]
+    run_logging_pipeline(sample_questions, filter_act="Constitution of Pakistan")
