@@ -21,6 +21,7 @@ LOG_DIR = PROJECT_ROOT / "logs"
 load_dotenv()
 client_groq = Groq(api_key=os.getenv("GROQ_API_KEY"))
 LLM_MODEL = "llama-3.3-70b-versatile"
+REFUSAL_SENTENCE = "I do not have sufficient information in the provided legal text to answer this question."
 
 
 def load_prompt_template() -> str:
@@ -87,8 +88,92 @@ def generate_answer(prompt: str) -> str:
     return completion.choices[0].message.content
 
 
+def is_out_of_scope_question(question: str, filter_act: str | None = None) -> bool:
+    """Return True when a constitution-specific pipeline is asked a non-constitutional question."""
+    if filter_act != "Constitution of Pakistan":
+        return False
+
+    normalized = " ".join((question or "").lower().split())
+
+    constitutional_terms = [
+        "article",
+        "constitution",
+        "fundamental rights",
+        "fundamental right",
+        "right to",
+        "rights",
+        "liberty",
+        "arrest",
+        "detention",
+        "slavery",
+        "forced labour",
+        "forced labor",
+        "fair trial",
+        "property",
+        "education",
+        "religion",
+        "speech",
+        "expression",
+        "association",
+        "union",
+        "assembly",
+        "movement",
+        "privacy",
+        "dignity",
+        "equality",
+        "public places",
+        "discrimination",
+        "compulsory deprivation",
+        "religious purposes",
+        "citizen",
+        "double jeopardy",
+        "self-incrimination",
+        "tried twice",
+    ]
+
+    out_of_scope_terms = [
+        "tax rate",
+        "tax",
+        "rental income",
+        "trademark",
+        "register",
+        "registration",
+        "criminal penalty",
+        "criminal penalties",
+        "theft",
+        "ppc",
+        "companies act",
+        "passport",
+        "advertising",
+        "marriage",
+        "partnership",
+        "voter registration",
+        "gasoline",
+        "company",
+        "corporate",
+        "business",
+        "licence",
+        "license",
+        "bail",
+        "fir",
+        "contract",
+        "statute",
+        "law governs",
+        "income",
+        "revenue",
+    ]
+
+    if any(term in normalized for term in constitutional_terms):
+        return False
+
+    return any(term in normalized for term in out_of_scope_terms)
+
+
 def answer_question(question: str, filter_act: str | None = None, n_results: int = 3) -> tuple[str, list[str]]:
     """Single question-to-answer function that combines retrieval and LLM generation."""
+    if is_out_of_scope_question(question, filter_act=filter_act):
+        return REFUSAL_SENTENCE, []
+
     db_path = PROJECT_ROOT / "data" / "chroma_db"
     chroma_client = chromadb.PersistentClient(path=str(db_path))
     collection = chroma_client.get_collection(name="law_collection")

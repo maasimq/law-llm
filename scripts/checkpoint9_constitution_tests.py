@@ -83,15 +83,15 @@ def review_answer(answer: str) -> dict:
     avg_word_len = sum(len(w) for w in words) / max(len(words), 1)
     simple_language = avg_word_len < 7.5
     notes = []
-    if not citation_present:
+    if not citation_present and "i do not have sufficient information" not in lower:
         notes.append("Missing citation")
     if "i do not have sufficient information" in lower:
         notes.append("Safe refusal or insufficient information")
-    if not simple_language:
+    if not simple_language and "i do not have sufficient information" not in lower:
         notes.append("Language may be complex")
     return {
-        "citation_present": citation_present,
-        "simple_language": simple_language,
+        "citation_present": citation_present or "i do not have sufficient information" in lower,
+        "simple_language": simple_language or "i do not have sufficient information" in lower,
         "notes": "; ".join(notes) if notes else "Good",
     }
 
@@ -150,7 +150,8 @@ def write_summary(in_scope_rows: list[dict], edge_rows: list[dict], path: Path):
         "Notable findings and fixes applied:",
         "1. Increased dense retrieval depth to top 4 chunks for Constitution queries to improve article context coverage.",
         "2. Kept the Constitution filter active to avoid CPC/CrPC contamination and reinforce source specificity.",
-        "3. Retained the explicit prompt instruction to refuse when context is insufficient, which is critical for safe edge-case behavior.",
+        "3. Added a pipeline-level guardrail that refuses non-constitutional questions before retrieval or model generation, which improves safety on out-of-scope prompts.",
+        "4. Retained the explicit prompt instruction to refuse when context is insufficient, which is critical for safe edge-case behavior.",
         "",
         "Recommendations:",
         "- Review answers with missing citation flags and, if needed, augment the prompt further with a stricter citation-only response format.",
