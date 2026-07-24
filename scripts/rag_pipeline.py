@@ -94,8 +94,12 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     collection = chroma_client.get_collection(name="law_collection")
     embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 
+    if filter_act == "Constitution of Pakistan" and n_results < 4:
+        n_results = 4
+
     dense_docs, _ = retrieve_context(question, collection, embed_model, top_k=n_results, filter_act=filter_act)
-    keyword_docs = retrieve_bm25_context(question, top_k=2)
+    keyword_top_k = 3 if filter_act == "Constitution of Pakistan" else 2
+    keyword_docs = retrieve_bm25_context(question, top_k=keyword_top_k)
 
     retrieved_docs = list(dict.fromkeys(dense_docs + keyword_docs))[:5]
     final_prompt = build_rag_prompt(question, retrieved_docs)
