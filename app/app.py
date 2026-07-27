@@ -215,6 +215,7 @@ def render_citations(sources: list[str]):
                 preview_line = line_str[:120] + ("..." if len(line_str) > 120 else "")
                 break
                 
+        preview_html = f'<div style="font-size:0.8rem; color:var(--text-muted); margin-top:6px; font-family:Inter,sans-serif;">{preview_line}</div>' if preview_line else ''
         st.markdown(
             f"""
             <div class="citation-badge-wrapper">
@@ -222,7 +223,7 @@ def render_citations(sources: list[str]):
                     <span class="citation-pill-badge">{badge_label}</span>
                     <span>{doc_title}</span>
                 </div>
-                {f'<div style="font-size:0.8rem; color:var(--text-muted); margin-top:6px; font-family:\'Inter\',sans-serif;">{preview_line}</div>' if preview_line else ''}
+                {preview_html}
             """,
             unsafe_allow_html=True
         )
