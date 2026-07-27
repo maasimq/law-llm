@@ -216,6 +216,7 @@ def render_citations(sources: list[str]):
                 break
                 
         preview_html = f'<div style="font-size:0.8rem; color:var(--text-muted); margin-top:6px; font-family:Inter,sans-serif;">{preview_line}</div>' if preview_line else ''
+        
         st.markdown(
             f"""
             <div class="citation-badge-wrapper">
