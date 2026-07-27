@@ -73,7 +73,11 @@ def retrieve_bm25_context(query_text: str, top_k: int = 2):
 
 def build_rag_prompt(query_text: str, retrieved_docs: list[str]) -> str:
     """Format the final prompt for the LLM using the loaded prompt template."""
-    context_block = "\n\n---\n\n".join(retrieved_docs)
+    # Truncate each document to ~4000 characters (approx 1000 tokens)
+    # This prevents hitting the 12,000 TPM limit on the Groq free tier
+    # for extremely large CrPC chunks.
+    truncated_docs = [doc[:4000] for doc in retrieved_docs]
+    context_block = "\n\n---\n\n".join(truncated_docs)
     template = load_prompt_template()
     return template.format(context=context_block, question=query_text)
 
