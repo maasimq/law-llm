@@ -46,35 +46,50 @@ SECTION_MARK_SVG = '''<svg class="section-mark-svg" viewBox="0 0 100 100" fill="
 
 def extract_citation_badge(chunk_text: str) -> tuple[str, str]:
     """
-    Extract a concise citation badge (e.g. 'PPC § 302', 'Art. 25', 'CrPC § 154')
-    and document title from raw chunk text.
+    Extract exact citation badge (e.g. 'CrPC § 497', 'PPC § 302', 'Art. 10')
+    and document title from structured chunk headers or text.
     """
+    lines = [line.strip() for line in chunk_text.split('\n') if line.strip()]
+    
+    act_header = None
+    sec_header = None
+    
+    for line in lines[:6]:
+        if line.startswith("ACT:"):
+            act_header = line.replace("ACT:", "").strip()
+        elif line.startswith("SECTION:") or line.startswith("SECTION/ARTICLE:"):
+            sec_header = line.split(":", 1)[1].strip()
+        elif line.startswith("ARTICLE:"):
+            sec_header = line.split(":", 1)[1].strip()
+
+    if act_header:
+        act_lower = act_header.lower()
+        if "criminal procedure" in act_lower or "crpc" in act_lower:
+            badge = f"CrPC § {sec_header}" if sec_header else "CrPC"
+            return badge, "Code of Criminal Procedure, 1898"
+        elif "penal code" in act_lower or "ppc" in act_lower:
+            badge = f"PPC § {sec_header}" if sec_header else "PPC"
+            return badge, "Pakistan Penal Code, 1860"
+        elif "constitution" in act_lower:
+            badge = f"Art. {sec_header}" if sec_header else "Constitution"
+            return badge, "Constitution of Pakistan"
+
+    # Fallback for chunks without explicit ACT: headers
     text_lower = chunk_text.lower()
-    
-    # Constitution
-    if "constitution" in text_lower or "article" in text_lower:
-        match = re.search(r'article\s*(\d+[a-z]?)', chunk_text, re.IGNORECASE)
-        badge = f"Art. {match.group(1).upper()}" if match else "Constitution"
-        return badge, "Constitution of Pakistan"
-    
-    # Pakistan Penal Code
-    elif "penal code" in text_lower or "ppc" in text_lower:
-        match = re.search(r'section\s*(\d+[a-z]?)', chunk_text, re.IGNORECASE)
-        badge = f"PPC § {match.group(1).upper()}" if match else "PPC"
-        return badge, "Pakistan Penal Code, 1860"
-    
-    # Code of Criminal Procedure
-    elif "criminal procedure" in text_lower or "crpc" in text_lower:
-        match = re.search(r'section\s*(\d+[a-z]?)', chunk_text, re.IGNORECASE)
+    if "code of criminal procedure" in text_lower or "crpc" in text_lower:
+        match = re.search(r'section\s*:\s*(\d+[a-z]?)', chunk_text, re.IGNORECASE) or re.search(r'section\s+(\d+[a-z]?)', chunk_text, re.IGNORECASE)
         badge = f"CrPC § {match.group(1).upper()}" if match else "CrPC"
         return badge, "Code of Criminal Procedure, 1898"
-    
-    # Fallback section regex
-    sec_match = re.search(r'section\s*(\d+[a-z]?)', chunk_text, re.IGNORECASE)
-    if sec_match:
-        return f"§ {sec_match.group(1).upper()}", "Statutory Authority"
-        
-    return "Ref. §", "Legal Reference Text"
+    elif "pakistan penal code" in text_lower or "ppc" in text_lower:
+        match = re.search(r'section\s*:\s*(\d+[a-z]?)', chunk_text, re.IGNORECASE) or re.search(r'section\s+(\d+[a-z]?)', chunk_text, re.IGNORECASE)
+        badge = f"PPC § {match.group(1).upper()}" if match else "PPC"
+        return badge, "Pakistan Penal Code, 1860"
+    elif "constitution" in text_lower or re.search(r'^\d+\s+[A-Z]', chunk_text):
+        match = re.search(r'^(\d+)\s+[A-Z]', chunk_text) or re.search(r'article\s+(\d+[a-z]?)', chunk_text, re.IGNORECASE)
+        badge = f"Art. {match.group(1)}" if match else "Constitution"
+        return badge, "Constitution of Pakistan"
+
+    return "Statute", "Legal Reference Text"
 
 
 def render_sidebar():
@@ -150,14 +165,56 @@ def render_empty_state():
                 st.session_state.pending_question = pill
 
 
+def clean_statutory_text(raw_text: str) -> str:
+    """Clean raw PDF extraction artifacts from statutory source text."""
+    lines = raw_text.split('\n')
+    cleaned_lines = []
+    
+    for line in lines:
+        stripped = line.strip()
+        # Skip header metadata lines
+        if (stripped.startswith("ACT:") or 
+            stripped.startswith("SECTION:") or 
+            stripped.startswith("SECTION/ARTICLE:") or 
+            stripped.startswith("ARTICLE:") or 
+            stripped.startswith("TITLE:") or 
+            stripped.startswith("CHAPTER:")):
+            continue
+        # Skip divider lines
+        if re.match(r'^={3,}$', stripped) or re.match(r'^-{3,}$', stripped):
+            continue
+        # Skip page number artifacts
+        if re.search(r'Page\s+\d+\s+of\s+\d+', stripped, re.IGNORECASE) or re.search(r'^\s*Page\s+\d+\s*$', stripped, re.IGNORECASE):
+            continue
+        # Skip footnote annotations e.g. "1 Subs. by...", "1 Ins., ibid.", "1* * *"
+        if re.match(r'^\d+\s+(Subs\.|Ins\.|Omitted|Added|Cls\.|Sch\.)', stripped, re.IGNORECASE) or re.match(r'^\d+\*\s*\*\s*\*$', stripped):
+            continue
+            
+        cleaned_lines.append(line)
+        
+    cleaned_text = '\n'.join(cleaned_lines).strip()
+    cleaned_text = re.sub(r'\n{3,}', '\n\n', cleaned_text)
+    return cleaned_text if cleaned_text else raw_text.strip()
+
+
 def render_citations(sources: list[str]):
-    """Render signature citation badges in accent color with expanders for full text."""
+    """Render signature citation badges with collapsed statutory text expanders."""
     if not sources:
         return
         
     st.markdown('<div class="citations-header">CITED STATUTORY SOURCES</div>', unsafe_allow_html=True)
     for src in sources:
         badge_label, doc_title = extract_citation_badge(src)
+        cleaned_src = clean_statutory_text(src)
+        
+        # Get first meaningful line for preview snippet
+        preview_line = ""
+        for line in cleaned_src.split('\n'):
+            line_str = line.strip()
+            if line_str and not line_str.startswith("ACT:") and not line_str.startswith("SECTION:"):
+                preview_line = line_str[:120] + ("..." if len(line_str) > 120 else "")
+                break
+                
         st.markdown(
             f"""
             <div class="citation-badge-wrapper">
@@ -165,11 +222,12 @@ def render_citations(sources: list[str]):
                     <span class="citation-pill-badge">{badge_label}</span>
                     <span>{doc_title}</span>
                 </div>
+                {f'<div style="font-size:0.8rem; color:var(--text-muted); margin-top:6px; font-family:\'Inter\',sans-serif;">{preview_line}</div>' if preview_line else ''}
             """,
             unsafe_allow_html=True
         )
         with st.expander("View Statutory Source Text →"):
-            st.markdown(f"```text\n{src}\n```")
+            st.markdown(f"```text\n{cleaned_src}\n```")
         st.markdown('</div>', unsafe_allow_html=True)
 
 
@@ -207,7 +265,16 @@ if "pending_question" not in st.session_state:
 
 render_sidebar()
 
-if not st.session_state.messages:
+# Check prefill & chat input BEFORE checking whether to render empty state
+prefill = st.session_state.pop("pending_question", None) if st.session_state.pending_question else None
+user_input = st.chat_input(placeholder="Ask about Bail, FIR, Theft, or Constitutional Rights...")
+
+if prefill and not user_input:
+    user_input = prefill
+
+has_conversation = bool(st.session_state.messages or user_input)
+
+if not has_conversation:
     render_empty_state()
 
 # Chat History
@@ -219,16 +286,7 @@ if st.session_state.messages:
             if msg["role"] == "assistant" and msg.get("sources"):
                 render_citations(msg["sources"])
 
-# ============================================================
-# CHAT INPUT
-# ============================================================
-prefill = st.session_state.pop("pending_question", None) if st.session_state.pending_question else None
-
-user_input = st.chat_input(placeholder="Ask about Bail, FIR, Theft, or Constitutional Rights...")
-
-if prefill and not user_input:
-    user_input = prefill
-
+# Active user query processing
 if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input, "sources": []})
 

@@ -174,8 +174,24 @@ def is_out_of_scope_question(question: str, filter_act: str | None = None) -> bo
     return any(term in normalized for term in out_of_scope_terms)
 
 
+def detect_act_from_query(query: str) -> str | None:
+    """Infer target Act from user query string if not explicitly passed."""
+    q_lower = query.lower()
+    if "crpc" in q_lower or "criminal procedure" in q_lower:
+        return "Code of Criminal Procedure, 1898"
+    elif "ppc" in q_lower or "penal code" in q_lower:
+        return "Pakistan Penal Code, 1860"
+    elif "constitution" in q_lower or "article" in q_lower:
+        return "Constitution of Pakistan"
+    return None
+
+
 def answer_question(question: str, filter_act: str | None = None, n_results: int = 3) -> tuple[str, list[str]]:
     """Single question-to-answer function that combines retrieval and LLM generation."""
+    # Automatically infer filter_act from query if not provided
+    if not filter_act:
+        filter_act = detect_act_from_query(question)
+
     if is_out_of_scope_question(question, filter_act=filter_act):
         return REFUSAL_SENTENCE, []
 
@@ -193,6 +209,15 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
 
     # Cap at 3 chunks total to stay under Groq free-tier TPM limits
     retrieved_docs = list(dict.fromkeys(dense_docs + keyword_docs))[:3]
+
+    # Guardrail: Check if a specific Act was requested but no matching chunks were retrieved
+    if filter_act and not retrieved_docs:
+        guardrail_msg = (
+            f"I couldn't find an exact match for that query in the {filter_act}. "
+            "Please verify the section number and Act name (e.g. Section 497 CrPC for Bail vs. Section 497 PPC for Adultery)."
+        )
+        return guardrail_msg, []
+
     final_prompt = build_rag_prompt(question, retrieved_docs)
     answer = generate_answer(final_prompt)
 
