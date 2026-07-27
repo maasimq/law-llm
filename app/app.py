@@ -39,8 +39,10 @@ if css_path.exists():
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # ============================================================
-# HELPER FUNCTIONS
+# HELPER FUNCTIONS & ASSETS
 # ============================================================
+
+SECTION_MARK_SVG = '''<svg class="section-mark-svg" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M54.8,24.6 C54.8,20.2 51.5,17 46.5,17 C41.2,17 37.5,20.8 37.2,26.2 L28,26.2 C28.5,15.6 36.2,8.5 46.7,8.5 C57.3,8.5 64.2,15.3 64.2,24.3 C64.2,32.2 58.7,37.3 50.8,39.6 L46.2,40.9 C41.5,42.2 38.3,45 38.3,49.2 C38.3,53.8 41.8,57.2 47,57.2 C52.7,57.2 56.6,53.2 57,47.5 L66.2,47.5 C65.7,58.3 57.8,65.7 46.8,65.7 C36.2,65.7 29,58.7 29,49.3 C29,41.2 34.7,36 42.5,33.7 L47.2,32.4 C52.2,31 54.8,28.4 54.8,24.6 Z M46.5,65.7 C57.3,65.7 64.2,72.7 64.2,81.7 C64.2,89.7 57.5,95.5 46.7,95.5 C36.2,95.5 28.5,88.4 28,77.8 L37.2,77.8 C37.5,83.2 41.2,87 46.5,87 C51.5,87 54.8,83.8 54.8,79.4 C54.8,75.6 52.2,73 47.2,71.6 L42.5,70.3 C34.7,68 29,62.8 29,54.7 C29,45.3 36.2,38.3 46.8,38.3 C57.8,38.3 65.7,45.7 66.2,56.5 L57,56.5 C56.6,50.8 52.7,46.8 47,46.8 C41.8,46.8 38.3,50.2 38.3,54.8 C38.3,59 41.5,61.8 46.2,63.1 L50.8,64.4 Z"/></svg>'''
 
 def extract_citation_badge(chunk_text: str) -> tuple[str, str]:
     """
@@ -78,11 +80,11 @@ def extract_citation_badge(chunk_text: str) -> tuple[str, str]:
 def render_sidebar():
     """Render the minimal, professional sidebar."""
     with st.sidebar:
-        # Branding with Section Mark Motif
+        # Branding with Section Mark Motif SVG
         st.markdown(
-            """
+            f"""
             <div class="sidebar-logo">
-                <span class="sidebar-section-mark">§</span>
+                <span class="sidebar-logo-icon">{SECTION_MARK_SVG}</span>
                 <div>
                     <h2>Law LLM</h2>
                     <p>Pakistani Legal Assistant</p>
@@ -127,9 +129,9 @@ def render_sidebar():
 def render_empty_state():
     """Render the quiet, professional legal hero screen."""
     st.markdown(
-        """
+        f"""
         <div class="hero-section">
-            <span class="hero-section-mark">§</span>
+            <div class="hero-section-mark-container">{SECTION_MARK_SVG}</div>
             <div class="hero-title">Pakistani Legal Assistant</div>
             <p class="hero-subtitle">Search statutory law and constitutional provisions with exact section citations.</p>
         </div>

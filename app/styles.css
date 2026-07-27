@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
 
 /* === Main container padding === */
 .main .block-container {
-    padding: 2.5rem 2rem 14rem !important;
+    padding: 2.5rem 2rem 10rem !important;
     max-width: 1100px !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -75,12 +75,19 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
     border-bottom: 1px solid var(--border);
     margin-bottom: 1.2rem;
 }
-.sidebar-section-mark {
-    font-family: 'Lora', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
+.sidebar-logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--accent-gold);
-    line-height: 1;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+.sidebar-logo-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--accent-gold);
 }
 .sidebar-logo h2 {
     font-size: 1.1rem;
@@ -149,13 +156,15 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
     text-align: center;
     padding: 3.5rem 1rem 2rem;
 }
-.hero-section-mark {
-    font-family: 'Lora', serif;
-    font-size: 3.5rem;
-    font-weight: 600;
-    color: var(--accent-gold);
-    margin-bottom: 0.5rem;
-    display: block;
+.hero-section-mark-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+}
+.hero-section-mark-container svg {
+    width: 52px;
+    height: 52px;
+    fill: var(--accent-gold);
 }
 .hero-title {
     font-family: 'Lora', Georgia, serif;
@@ -320,47 +329,84 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
 }
 
 /* ============================================================
-   CHAT INPUT
+   CHAT INPUT & FIXED BOTTOM CONTAINER
    ============================================================ */
+[data-testid="stBottom"] {
+    background-color: var(--bg-primary) !important;
+    border-top: 1px solid var(--border) !important;
+    padding: 1rem 1rem 1.5rem !important;
+    z-index: 99 !important;
+}
+
+[data-testid="stBottom"] > div {
+    max-width: 850px !important;
+    margin: 0 auto !important;
+}
+
 [data-testid="stChatInput"] {
-    position: fixed;
-    bottom: 1.8rem;
+    position: relative !important;
+    bottom: auto !important;
+    max-width: 850px !important;
+    margin: 0 auto !important;
+    left: auto !important;
+    right: auto !important;
     background: transparent !important;
     border: none !important;
+    box-shadow: none !important;
     padding: 0 !important;
-    width: 100% !important;
-    max-width: 850px !important;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    z-index: 100;
 }
+
+/* Strip any unwanted borders, focus rings, or red underlines from inner containers */
+[data-testid="stChatInput"] *,
+[data-testid="stChatInput"] *::before,
+[data-testid="stChatInput"] *::after {
+    border-bottom: none !important;
+    outline: none !important;
+}
+
+[data-testid="stChatInput"] > div,
+[data-baseweb="input"],
+[data-baseweb="base-input"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Textarea styling: generous left padding to prevent clipping placeholder text */
 [data-testid="stChatInput"] textarea {
     background: #141923 !important;
     border: 1px solid var(--border) !important;
     border-radius: var(--radius-md) !important;
     color: var(--text-primary) !important;
-    font-size: 0.98rem !important;
-    padding: 1.1rem 1.4rem !important;
-    min-height: 56px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    font-size: 0.95rem !important;
+    padding: 0.95rem 3.5rem 0.95rem 1.4rem !important;
+    line-height: 1.5 !important;
+    min-height: 54px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
     transition: var(--transition);
 }
+
 [data-testid="stChatInput"] textarea:focus {
     border-color: var(--accent-gold-border) !important;
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.12) !important;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15) !important;
+    outline: none !important;
 }
+
 [data-testid="stChatInput"] textarea::placeholder {
     color: var(--text-muted) !important;
 }
+
+/* Adjust send button */
 [data-testid="stChatInput"] button {
     background: var(--accent-gold) !important;
     color: #0D1117 !important;
     border-radius: 6px !important;
     height: 36px !important;
     width: 36px !important;
-    bottom: 10px !important;
+    bottom: 9px !important;
     right: 10px !important;
+    border: none !important;
 }
 [data-testid="stChatInput"] button:hover {
     background: var(--accent-gold-light) !important;
@@ -406,12 +452,9 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
    ============================================================ */
 @media (max-width: 768px) {
     .main .block-container {
-        padding: 1.5rem 1rem 12rem !important;
+        padding: 1.5rem 1rem 10rem !important;
     }
     .hero-title {
         font-size: 1.8rem;
-    }
-    [data-testid="stChatInput"] {
-        padding: 0 1rem !important;
     }
 }
