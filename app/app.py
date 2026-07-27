@@ -1,32 +1,30 @@
 """
 Law LLM — Pakistani Legal Assistant
-Premium Streamlit UI (Redesigned)
+Premium AI SaaS UI Redesign
 ====================================
-UI-only redesign. All backend logic (RAG pipeline, ChromaDB,
-Groq API, embeddings, prompt templates) is unchanged.
-Only the presentation layer has been updated.
 """
 
 import sys
 import os
 import time
 from pathlib import Path
+import re
 
 import streamlit as st
 
 # ---------------------------------------------------------------------------
-# Path setup — make backend scripts importable
+# Path setup
 # ---------------------------------------------------------------------------
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
-from rag_pipeline import run_rag_pipeline  # noqa: E402  (backend untouched)
+from rag_pipeline import run_rag_pipeline
 
 # ---------------------------------------------------------------------------
 # Page configuration
 # ---------------------------------------------------------------------------
 st.set_page_config(
-    page_title="Law LLM — Pakistani Legal Assistant",
+    page_title="Law LLM",
     page_icon="⚖️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -41,362 +39,226 @@ if css_path.exists():
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # ============================================================
-# HELPER — UI component builders (pure frontend, no backend)
+# HELPER — ICONS (Lucide SVGs)
+# ============================================================
+SHIELD_SCALES_LOGO = '''<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-half"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 22V2"/></svg>'''
+BOOK_ICON = '''<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>'''
+CHECK_ICON = '''<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>'''
+LIGHTBULB_ICON = '''<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>'''
+WARNING_ICON = '''<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>'''
+
+# ============================================================
+# UI COMPONENTS
 # ============================================================
 
 def render_sidebar():
-    """Render the redesigned sidebar with logo, sources, suggestions, disclaimer."""
+    """Render the redesigned sidebar."""
     with st.sidebar:
-        # --- Logo ---
+        # Branding
         st.markdown(
-            """
+            f"""
             <div class="sidebar-logo">
-                <span style="font-size:2rem">⚖️</span>
-                <h2>Law LLM</h2>
-                <p>Pakistani Legal Assistant</p>
+                {SHIELD_SCALES_LOGO}
+                <div>
+                    <h2>LAW LLM</h2>
+                    <p>Pakistani Legal Assistant</p>
+                </div>
             </div>
             """,
             unsafe_allow_html=True,
         )
 
-        # --- Legal Sources ---
-        st.markdown('<div class="sidebar-section">📚 Sources</div>', unsafe_allow_html=True)
-        sources = [
-            ("#3B82F6", "Pakistan Penal Code"),
-            ("#10B981", "Constitution of Pakistan"),
-            ("#F59E0B", "Code of Criminal Procedure"),
-        ]
-        for color, name in sources:
+        st.markdown('<hr style="margin: 0 0 1rem; border-color: rgba(255,255,255,0.08)">', unsafe_allow_html=True)
+
+        # Sources
+        st.markdown(f'<div class="sidebar-section">{BOOK_ICON} Legal Sources</div>', unsafe_allow_html=True)
+        sources = ["Pakistan Penal Code", "Constitution", "Criminal Procedure Code"]
+        for src in sources:
             st.markdown(
                 f"""
                 <div class="source-item">
-                    <span class="source-dot" style="background:{color}"></span>
-                    ✓ {name}
+                    <span class="source-icon">{CHECK_ICON}</span> {src}
                 </div>
                 """,
-                unsafe_allow_html=True,
+                unsafe_allow_html=True
             )
 
-        # --- Suggested Questions (clickable) ---
-        st.markdown('<div class="sidebar-section">💡 Try Asking</div>', unsafe_allow_html=True)
-        suggestions = ["Bail", "FIR", "Theft", "Fundamental Rights", "Murder"]
+        st.markdown('<hr style="margin: 1rem 0; border-color: rgba(255,255,255,0.08)">', unsafe_allow_html=True)
+
+        # Examples
+        st.markdown(f'<div class="sidebar-section">{LIGHTBULB_ICON} Example Questions</div>', unsafe_allow_html=True)
+        suggestions = ["Bail", "FIR", "Theft", "Murder"]
         for s in suggestions:
-            if st.button(f"• {s}", key=f"sidebar_{s}", use_container_width=True):
+            if st.button(f"• {s}", key=f"sidebar_{s}"):
                 st.session_state.pending_question = s
 
-        # --- Clear chat ---
-        st.markdown('<div style="margin-top:1rem"></div>', unsafe_allow_html=True)
-        if st.button("🗑️ Clear Conversation", key="clear_chat", use_container_width=True):
+        # Clear
+        st.markdown('<div style="margin-top:1.5rem"></div>', unsafe_allow_html=True)
+        if st.button("🗑️ Clear Chat", key="clear_chat"):
             st.session_state.messages = []
             st.rerun()
 
-        # --- Disclaimer ---
+        # Disclaimer
         st.markdown(
-            """
+            f"""
             <div class="sidebar-disclaimer">
-                ⚠️ <strong>Disclaimer</strong><br>
-                This assistant provides informational guidance only.
-                It is <strong>not legal advice</strong>. Consult a qualified lawyer.
+                <strong>{WARNING_ICON} Disclaimer</strong>
+                Informational use only.<br>Not legal advice.
             </div>
             """,
             unsafe_allow_html=True,
         )
 
-
-def render_hero():
-    """Render the hero section with title, subtitle, feature cards, and stats."""
+def render_empty_state():
+    """Render the empty state/hero section."""
     st.markdown(
-        """
+        f"""
         <div class="hero-section">
-            <span class="hero-icon">⚖️</span>
-            <div class="hero-title">Law LLM</div>
-            <p class="hero-subtitle">
-                Pakistan's AI Legal Assistant<br>
-                <span style="font-size:0.9rem; color:#64748B;">
-                Ask questions about Pakistani law in plain English.<br>
-                Powered by Retrieval-Augmented Generation using verified legal sources.
-                </span>
-            </p>
+            <div class="hero-icon">{SHIELD_SCALES_LOGO}</div>
+            <div class="hero-title">How can I help today?</div>
+            <p class="hero-subtitle">Ask anything about Pakistani law. Get clear explanations backed by exact legal citations.</p>
         </div>
         """,
         unsafe_allow_html=True,
     )
-
-    # Feature cards
-    st.markdown(
-        """
-        <div class="cards-row">
-            <div class="feature-card">
-                <span class="card-icon">⚡</span>
-                <div class="card-title">Fast Search</div>
-                <div class="card-desc">Instant semantic search through Pakistani law using vector embeddings.</div>
-            </div>
-            <div class="feature-card">
-                <span class="card-icon">📚</span>
-                <div class="card-title">Verified Sources</div>
-                <div class="card-desc">Only official legal documents — PPC, CrPC, Constitution.</div>
-            </div>
-            <div class="feature-card">
-                <span class="card-icon">🧠</span>
-                <div class="card-title">AI Explanation</div>
-                <div class="card-desc">Complex legal language explained simply for everyone.</div>
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-    # Stats row
-    st.markdown(
-        """
-        <div class="stats-row">
-            <div class="stat-card">
-                <span class="stat-icon">📚</span>
-                <span class="stat-value">3 Legal Acts</span>
-                <span class="stat-label">Data Sources</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-icon">📄</span>
-                <span class="stat-value">1,000+ Sections</span>
-                <span class="stat-label">Legal Passages</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-icon">⚡</span>
-                <span class="stat-value">Fast Responses</span>
-                <span class="stat-label">Groq LPU Inference</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-icon">🔒</span>
-                <span class="stat-value">Secure & Private</span>
-                <span class="stat-label">Local ChromaDB</span>
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
-def render_suggestions():
-    """Render clickable suggested-question pills below the hero."""
-    st.markdown('<div class="suggestions-label">Suggested Questions</div>', unsafe_allow_html=True)
-    pills = [
-        "What is Bail?",
-        "How to register an FIR?",
-        "Punishment for Theft",
-        "Fundamental Rights",
-        "How does anticipatory bail work?",
-        "Constitution Article 25",
-    ]
+    
+    st.markdown('<div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin: 1rem 0 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Popular Questions</div>', unsafe_allow_html=True)
+    
+    # Suggestions
+    pills = ["Bail", "FIR", "Theft", "Murder", "Fundamental Rights"]
+    st.markdown('<div class="suggestions-container">', unsafe_allow_html=True)
     cols = st.columns(len(pills))
     for col, pill in zip(cols, pills):
         with col:
             if st.button(pill, key=f"pill_{pill}"):
                 st.session_state.pending_question = pill
+    st.markdown('</div>', unsafe_allow_html=True)
 
+    # Tech stack
+    st.markdown(
+        """
+        <div class="tech-stack-badges">
+            <span>Powered by</span>
+            <span>Groq</span>
+            <span>Llama 3.3</span>
+            <span>ChromaDB</span>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-def render_message(role: str, content: str, sources: list = None):
-    """Render a single chat message bubble with avatar and optional sources."""
-    if role == "user":
-        st.markdown(
-            f"""
-            <div class="msg-user">
-                <div class="avatar avatar-user">👤</div>
-                <div>
-                    <div class="msg-label">You</div>
-                    <div class="bubble-user">{content}</div>
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-    else:
-        st.markdown(
-            f"""
-            <div class="msg-assistant">
-                <div class="avatar avatar-assistant">⚖️</div>
-                <div style="flex:1; min-width:0;">
-                    <div class="msg-label">Law LLM</div>
-                    <div class="bubble-assistant">{content}</div>
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-        # Reference cards
-        if sources:
-            st.markdown(
-                '<div class="refs-container"><div class="refs-title">📘 Legal References</div>',
-                unsafe_allow_html=True,
-            )
-            for src in sources:
-                st.markdown(
-                    f'<div class="ref-card">{src}</div>',
-                    unsafe_allow_html=True,
-                )
-            st.markdown("</div>", unsafe_allow_html=True)
+def parse_reference(raw_chunk_text: str) -> str:
+    """Extract a clean title from the raw chunk text (e.g. 'Pakistan Penal Code - Section 302')."""
+    lines = raw_chunk_text.strip().split("\\n")
+    if len(lines) > 1:
+        # Usually the first line contains the act and section info if chunking was done well
+        first_line = lines[0].strip()
+        if len(first_line) > 10 and len(first_line) < 80:
+            return first_line
+    return "Legal Document Snippet"
 
-        # Expandable retrieved text
-        if sources:
-            with st.expander("▼ View Retrieved Legal Text"):
-                for i, src in enumerate(sources, 1):
-                    st.markdown(
-                        f"**Chunk {i}:** `{src}`",
-                    )
-
-
-def run_pipeline_with_steps(question: str):
-    """
-    Calls the backend RAG pipeline while displaying a native spinner.
-    Returns (answer, source_labels). Backend logic is NOT modified here.
-    """
-    with st.spinner("Searching legal database and generating response..."):
-        # Call the actual backend pipeline (UNCHANGED)
-        answer, retrieved_docs = run_rag_pipeline(question)
-
-    # Build display-friendly source labels from raw retrieved text
-    source_labels = [
-        f"📄 Chunk {i + 1}: {doc[:120].strip()}..."
-        for i, doc in enumerate(retrieved_docs)
+def run_pipeline_with_loading(question: str):
+    """Run RAG pipeline with sequential loading messages."""
+    status_placeholder = st.empty()
+    
+    # Sequential loading experience
+    steps = [
+        "⚖️ Searching legal database...",
+        "📚 Retrieving relevant sections...",
+        "🧠 Generating legal explanation...",
+        "✅ Formatting response..."
     ]
-
-    return answer, source_labels
-
+    
+    for step in steps:
+        with status_placeholder.status(step, expanded=False, state="running"):
+            time.sleep(0.5)
+            
+    with status_placeholder.status(steps[-1], expanded=False, state="running"):
+        answer, retrieved_docs = run_rag_pipeline(question)
+        
+    status_placeholder.empty()
+    return answer, retrieved_docs
 
 def render_footer():
-    """Render the footer with tech stack badges."""
     st.markdown(
         """
         <div class="app-footer">
-            <strong style="color:#CBD5E1">Law LLM</strong> — Pakistani Legal Assistant<br>
-            <span style="color:#64748B">Not Legal Advice · For Academic & Research Use Only</span>
-            <div class="footer-badges">
-                <span class="footer-badge">🤖 Llama 3.3 70B</span>
-                <span class="footer-badge">⚡ Groq API</span>
-                <span class="footer-badge">🗄️ ChromaDB</span>
-                <span class="footer-badge">🎈 Streamlit</span>
-                <span class="footer-badge">🏛️ FAST-NUCES Lahore</span>
-            </div>
+            <strong>Law LLM</strong> — Pakistani Legal Assistant<br>
+            Powered by Llama 3.3 • Groq API • ChromaDB • Streamlit<br>
+            <span style="opacity: 0.7;">Not Legal Advice</span>
         </div>
         """,
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
 
-
 # ============================================================
-# SESSION STATE INITIALISATION
+# STATE INITIALISATION
 # ============================================================
 if "messages" not in st.session_state:
     st.session_state.messages = []
-
-if "disclaimer_accepted" not in st.session_state:
-    st.session_state.disclaimer_accepted = False
-
 if "pending_question" not in st.session_state:
     st.session_state.pending_question = None
 
 # ============================================================
-# DISCLAIMER GATE
-# ============================================================
-if not st.session_state.disclaimer_accepted:
-    st.markdown(
-        """
-        <div style="max-width:560px; margin:8rem auto; text-align:center;">
-            <span style="font-size:3rem">⚖️</span>
-            <h1 style="font-size:2rem; font-weight:800; margin:0.8rem 0 0.4rem;">Law LLM</h1>
-            <p style="color:#CBD5E1; margin-bottom:2rem;">Pakistani Legal Assistant</p>
-            <div style="background:#1E293B; border:1px solid rgba(245,158,11,0.3);
-                        border-radius:12px; padding:1.2rem 1.5rem; text-align:left;
-                        margin-bottom:1.5rem;">
-                <p style="color:#F59E0B; font-weight:600; margin:0 0 0.4rem">⚠️ Disclaimer</p>
-                <p style="color:#CBD5E1; font-size:0.88rem; line-height:1.65; margin:0;">
-                    This tool is for <strong>informational and academic purposes only</strong>.
-                    It is not a substitute for professional legal advice. Answers are generated
-                    from a curated database and may not reflect the most recent amendments.
-                    Always consult a qualified lawyer for legal matters.
-                </p>
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-    col1, col2, col3 = st.columns([1, 1, 1])
-    with col2:
-        if st.button("I understand — Enter App", key="accept_disclaimer", use_container_width=True):
-            st.session_state.disclaimer_accepted = True
-            st.rerun()
-    st.stop()
-
-# ============================================================
-# MAIN APP (after disclaimer accepted)
+# MAIN APP
 # ============================================================
 
-# Sidebar
 render_sidebar()
 
-# Main content area
 if not st.session_state.messages:
-    render_hero()
-    st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
-    render_suggestions()
-    st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
+    render_empty_state()
 
-# Chat history using native st.chat_message
+# Chat History
 if st.session_state.messages:
+    st.markdown('<div class="chat-wrapper">', unsafe_allow_html=True)
     for msg in st.session_state.messages:
         with st.chat_message(msg["role"], avatar="👤" if msg["role"] == "user" else "⚖️"):
             st.markdown(msg["content"])
             
-            # Show sources if assistant
+            # Reference Expanders
             if msg["role"] == "assistant" and msg.get("sources"):
-                st.markdown('<div class="refs-title">📘 Legal References</div>', unsafe_allow_html=True)
                 for src in msg["sources"]:
-                    st.markdown(f'<div class="ref-card">{src}</div>', unsafe_allow_html=True)
+                    title = parse_reference(src)
+                    st.markdown(f'<div class="ref-card-container"><div class="ref-header"><span class="ref-icon">{BOOK_ICON}</span>{title}</div>', unsafe_allow_html=True)
+                    with st.expander("View Details →"):
+                        st.markdown(f"```text\n{src}\n```")
+                    st.markdown('</div>', unsafe_allow_html=True)
 
 # ============================================================
 # CHAT INPUT
 # ============================================================
-# Handle suggestion pills / sidebar button pre-fill
 prefill = st.session_state.pop("pending_question", None) if st.session_state.pending_question else None
 
-user_input = st.chat_input(
-    placeholder="Ask anything about Pakistani law...",
-)
+user_input = st.chat_input(placeholder="Ask anything about Pakistani law...")
 
-# Allow pill/sidebar button to act as input
 if prefill and not user_input:
     user_input = prefill
 
 if user_input:
-    # Append user message
     st.session_state.messages.append({"role": "user", "content": user_input, "sources": []})
 
-    # Render user message bubble immediately on screen
     with st.chat_message("user", avatar="👤"):
         st.markdown(user_input)
 
-    # Render assistant response with spinner
     with st.chat_message("assistant", avatar="⚖️"):
         try:
-            answer, source_labels = run_pipeline_with_steps(user_input)
+            answer, source_chunks = run_pipeline_with_loading(user_input)
         except Exception as e:
-            answer = (
-                f"Sorry, an error occurred while processing your question. "
-                f"Please check your API key and ChromaDB setup.\n\n**Details:** {str(e)}"
-            )
-            source_labels = []
+            answer = f"**Error:** Could not connect to the backend. Please check API keys.\n\n`{str(e)}`"
+            source_chunks = []
 
         st.markdown(answer)
-        if source_labels:
-            st.markdown('<div class="refs-title">📘 Legal References</div>', unsafe_allow_html=True)
-            for src in source_labels:
-                st.markdown(f'<div class="ref-card">{src}</div>', unsafe_allow_html=True)
-    
-    # Append assistant message to state
+        
+        if source_chunks:
+            for src in source_chunks:
+                title = parse_reference(src)
+                st.markdown(f'<div class="ref-card-container"><div class="ref-header"><span class="ref-icon">{BOOK_ICON}</span>{title}</div>', unsafe_allow_html=True)
+                with st.expander("View Details →"):
+                    st.markdown(f"```text\n{src}\n```")
+                st.markdown('</div>', unsafe_allow_html=True)
+                
     st.session_state.messages.append(
-        {"role": "assistant", "content": answer, "sources": source_labels}
+        {"role": "assistant", "content": answer, "sources": source_chunks}
     )
 
-# ============================================================
-# FOOTER
-# ============================================================
 render_footer()
