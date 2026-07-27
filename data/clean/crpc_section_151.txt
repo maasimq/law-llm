@@ -1,9 +1,9 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 151
-TITLE: Arrest to prevent such offences
+TITLE: Arrest to prevent such offences.__A police­officer knowing of a design to commit any cognizable
 CHAPTER: 
 ============================================================
 
-151. Arrest to prevent such offences.
- Page 6 of 319
-152. Prevention of injury to public property.
+151. Arrest to prevent such offences.__A police­officer knowing of a design to commit any cognizable
+offence may arrest, without orders from a Magistrate and without a warrant, the person so designing, if it
+appears to such officer that the commission of the offence cannot be otherwise prevented.

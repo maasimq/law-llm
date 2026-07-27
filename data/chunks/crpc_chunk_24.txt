@@ -1,165 +1,45 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 473
-TITLE: Procedure where lunatic prisoner is reported capable of making his defence
+SECTION: 59
+TITLE: Arrest by private persons and procedure on such arrest.­2[(1) Any private person may arrest any
 CHAPTER: 
 ============================================================
 
-473. Procedure where lunatic prisoner is reported capable of making his defence.
+59. Arrest by private persons and procedure on such arrest.­2[(1) Any private person may arrest any
+person who in his view commits a non­bailable and cognizable offence, or any proclaimed offender, and
+without unnecessary delay, shall make over any person so arrested to a police­officer, or, in the absence of a
+police­officer, take such person or cause him to be taken in custody to the nearest police­station.]
+
+ (2) If there is reason to believe that such person comes under the provisions of section 54, a police­
+officer shall re­arrest him.
+
+ (3) If there is reason to believe that he has committed a non­cognizable offence, and he refuses on the
+demand of a police­officer to give his name and residence, or gives a name or residence which such officer
+has reason to believe to be false, he shall be dealt with under the provisions of section 57. If there is no
+sufficient reason to believe that he has committed any offence, he shall be at once released.
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 474
-TITLE: Procedure where lunatic detained under section 466 or 471 is declared fit to be
+SECTION: 60
+TITLE: Person arrested to be taken before Magistrate or officer in charge of police­station. A police
 CHAPTER: 
 ============================================================
 
-474. Procedure where lunatic detained under section 466 or 471 is declared fit to be
- released.
+60. Person arrested to be taken before Magistrate or officer in charge of police­station. A police
+officer making an arrest without warrant shall, without unnecessary delay and subject to the provisions
+herein contained as to bail, take or send the person arrested before a Magistrate having jurisdiction in the
+case, or before the officer in charge of a police­station.
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 475
-TITLE: Delivery of lunatic to care of relative or friend
+SECTION: 61
+TITLE: Persons arrested not to be detained more than twenty­four hours. No police­officer shall detain
 CHAPTER: 
 ============================================================
 
-475. Delivery of lunatic to care of relative or friend.
- CHAPTER XXXV
- PROCEEDINGS IN CASE OF CERTAIN OFFENCES AFFECTING THE
- ADMINISTRATION OF JUSTICE.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 476
-TITLE: Procedure in cases mentioned in section 195
-CHAPTER: 
-============================================================
-
-476. Procedure in cases mentioned in section 195.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 476A
-TITLE: Forwarding of cases for trial by Courts having jurisdiction
-CHAPTER: 
-============================================================
-
-476A. Forwarding of cases for trial by Courts having jurisdiction.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 476B
-TITLE: [Omitted
-CHAPTER: 
-============================================================
-
-476B. [Omitted.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 477
-TITLE: [Repealed
-CHAPTER: 
-============================================================
-
-477. [Repealed.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 478
-TITLE: [Omitted
-CHAPTER: 
-============================================================
-
-478. [Omitted.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 479
-TITLE: [Omitted
-CHAPTER: 
-============================================================
-
-479. [Omitted.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 480
-TITLE: Procedure in certain cases of contempt
-CHAPTER: 
-============================================================
-
-480. Procedure in certain cases of contempt.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 481
-TITLE: Record in such cases
-CHAPTER: 
-============================================================
-
-481. Record in such cases.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 482
-TITLE: Procedure where Court considers that case should not be dealt with under
-CHAPTER: 
-============================================================
-
-482. Procedure where Court considers that case should not be dealt with under
- section 480.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 483
-TITLE: When Registrar or Sub­Registrar to be deemed a Civil Court within sections 480
-CHAPTER: 
-============================================================
-
-483. When Registrar or Sub­Registrar to be deemed a Civil Court within sections 480
- and 482.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 484
-TITLE: Discharge of offender on submission of apology
-CHAPTER: 
-============================================================
-
-484. Discharge of offender on submission of apology.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 485
-TITLE: Imprisonment or committal of person refusing to answer or produce document
-CHAPTER: 
-============================================================
-
-485. Imprisonment or committal of person refusing to answer or produce document.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 486
-TITLE: Appeals from convictions in contempt cases
-CHAPTER: 
-============================================================
-
-486. Appeals from convictions in contempt cases.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 487
-TITLE: Certain Judges and Magistrates not to try offences referred to in section 195
-CHAPTER: 
-============================================================
-
-487. Certain Judges and Magistrates not to try offences referred to in section 195
- when committed before themselves.
- CHAPTER XXXVI
- [Omitted.]
- Page 14 of 319
- CHAPTER XXXVII
- DIRECTIONS OF THE NATURE OF A HABEAS CORPUS
+61. Persons arrested not to be detained more than twenty­four hours. No police­officer shall detain
+in custody a person arrested without warrant for a longer period than under all the circumstances of the case
+is reasonable, and such period shall not, in the absence of a special order of a Magistrate under section 167,
+exceed twenty­four hours exclusive of the time necessary for the journey from the place of arrest to the
+Magistrate’s Court.
 
 

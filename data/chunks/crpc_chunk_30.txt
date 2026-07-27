@@ -1,80 +1,69 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 562
-TITLE: Powers of Court to release certain convicted offenders on probation of good
+SECTION: 77
+TITLE: Warrants to whom directed.­(1) A warrant of arrest shall ordinarily be directed to one or more
 CHAPTER: 
 ============================================================
 
-562. Powers of Court to release certain convicted offenders on probation of good
- conduct instead of sentencing to punishment.
- Conviction and release with admonition.
+77. Warrants to whom directed.­(1) A warrant of arrest shall ordinarily be directed to one or more
+police­officers, 1* * *; but 2[any Court] issuing such a warrant may, if its immediate execution is necessary
+and no police­officer is immediately available, direct it to any other person or persons; and such person or
+persons shall execute the same.
+
+ (2) Warrants to several persons. When a warrant is directed to more officers or persons than one, it
+may be executed by all, or by any one or more, of them.
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 563
-TITLE: Provision in case of offender failing to observe conditions of his recognizances
+SECTION: 78
+TITLE: Warrant may be directed to land­holders, etc.­(1) A 5[Magistrate of the first Class] may direct a
 CHAPTER: 
 ============================================================
 
-563. Provision in case of offender failing to observe conditions of his recognizances.
+78. Warrant may be directed to land­holders, etc.­(1) A 5[Magistrate of the first Class] may direct a
+warrant to any landholder, farmer or manager of land within his district or sub­division for the arrest of any
+escaped convict, proclaimed offender or person who has been accused of a non­bailable offence, and who
+has eluded pursuit.
+
+ (2) Such landholder, farmer or manager shall acknowledge in writing the receipt of the warrant, and shall
+execute it if the person for whose arrest it was issued, is in, or enters on, his land or farm, of the land under
+his charge.
+
+ (3) When the person against whom such warrant is issued is arrested, he shall be made over with the
+warrant to the nearest police­officer, who shall cause him to be taken before a Magistrate having jurisdiction
+in the case, unless security is taken under section 76.
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 564
-TITLE: Conditions as to abode of offender
+SECTION: 79
+TITLE: Warrant directed to police­officer. A warrant directed to any police­officer may also be executed
 CHAPTER: 
 ============================================================
 
-564. Conditions as to abode of offender.
- Previously convicted offenders
+79. Warrant directed to police­officer. A warrant directed to any police­officer may also be executed
+by any other police­officer whose name is endorsed upon the warrant by the officer to whom it is directed or
+endorsed.
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 565
-TITLE: Order for notifying address of previously convicted offender
+SECTION: 80
+TITLE: Notification of substance of warrant. The police­officer or other person executing a warrant of
 CHAPTER: 
 ============================================================
 
-565. Order for notifying address of previously convicted offender.
-SCHEDULE
- [Repealed.]
-I.
-SCHEDULE
- TABULAR STATEMENT OF OFFENCES.
-II.
-SCHEDULE
- ORDINARY POWERS OF PROVINCIAL MAGISTRATES.
-III.
-SCHEDULE ADDITIONAL POWERS WITH WHICH PROVINCIAL MAGISTRATES
-IV. MAY BE INVESTED.
-SCHEDULE
- FORMS
-V.
+80. Notification of substance of warrant. The police­officer or other person executing a warrant of
+arrest shall notify the substance thereof to the person to be arrested, and, if so required, shall show him the
+warrant.
 
- Page 17 of 319
- The Code of Criminal Procedure
- 1ACT NO. V OF 1898
 
- [22nd March, 1898]
+ACT: Code of Criminal Procedure, 1898
+SECTION: 81
+TITLE: Person arrested to be brought before Court without delay. The police­officer or other person
+CHAPTER: 
+============================================================
 
- An Act to consolidate and amend the law relating to the Criminal Procedure.
-
- WHEREAS it is expedient to consolidate and amend the law relating to Criminal Procedure; It is hereby
-enacted as follows:­
-
- PART I
- PRELIMINARY
- CHAPTER I
-
- 1. Short title. commencement.__(1) This Act may be called the Code of Criminal Procedure, 1898
-; and it shall come into force on the first day of July, 1898.
-
- (2) Extent. It extends to 2[the whole of Pakistan]; but, in the absence of any specific provision to the
-contrary, nothing herein contained shall affect any special or local law now in force, or any special
-jurisdiction or power conferred, or any special form of procedure prescribed, by any other law for the time
-being in force, 3* * *.
- 3* * * * * * *
-
- 2. [Repeal of enactments, notifications, etc., under repealed Acts. Pending cases.] Rep. by the Repealing
-and Amending Act, 1914 (X of 1914).
+81. Person arrested to be brought before Court without delay. The police­officer or other person
+executing a warrant of arrest shall (subject to the provisions of Section 76 as to security) without
+unnecessary delay bring the person arrested before the Court before which he is required by law to produce
+such person.
 
 

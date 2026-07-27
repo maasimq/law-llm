@@ -19,8 +19,9 @@ def chunk_crpc_sections(inventory_csv, clean_dir, chunks_dir, max_words=500):
     - This respects section boundaries (no section is split)
     """
     
+    inventory_csv = os.path.join(clean_dir, "crpc_index.csv")
     if not os.path.exists(inventory_csv):
-        print(f"❌ Inventory file not found: {inventory_csv}")
+        print(f"Error: crpc_index.csv not found at {inventory_csv}")
         return False
     
     os.makedirs(chunks_dir, exist_ok=True)
@@ -34,13 +35,12 @@ def chunk_crpc_sections(inventory_csv, clean_dir, chunks_dir, max_words=500):
     with open(inventory_csv, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
-            if row.get('source') and 'Code of Criminal Procedure' in row['source']:
-                crpc_files.append(row)
+            crpc_files.append(row)
     
     print(f"[1/3] Loading {len(crpc_files)} CrPC sections...")
     
     if not crpc_files:
-        print("❌ No CrPC sections found in inventory")
+        print("Error: No CrPC sections found in inventory")
         return False
     
     # Load section contents
@@ -48,7 +48,7 @@ def chunk_crpc_sections(inventory_csv, clean_dir, chunks_dir, max_words=500):
     for row in crpc_files:
         filepath = os.path.join(clean_dir, row['filename'])
         if not os.path.exists(filepath):
-            print(f"⚠ File not found: {row['filename']}")
+            print(f"Warning: File not found: {row['filename']}")
             continue
         
         try:
@@ -63,10 +63,10 @@ def chunk_crpc_sections(inventory_csv, clean_dir, chunks_dir, max_words=500):
                 'word_count': len(content.split())
             })
         except Exception as e:
-            print(f"⚠ Error reading {row['filename']}: {e}")
+            print(f"Error reading {row['filename']}: {e}")
             continue
     
-    print(f"  ✓ Loaded {len(sections_data)} sections")
+    print(f"  [OK] Loaded {len(sections_data)} sections")
     
     # Create chunks aligned to section boundaries
     print(f"\n[2/3] Creating chunks (max {max_words} words per chunk)...")
@@ -103,7 +103,7 @@ def chunk_crpc_sections(inventory_csv, clean_dir, chunks_dir, max_words=500):
             'word_count': current_chunk_words
         })
     
-    print(f"  ✓ Created {len(chunks)} chunks")
+    print(f"  [OK] Created {len(chunks)} chunks")
     
     # Save chunks and create index
     print(f"\n[3/3] Saving chunks...")
@@ -145,7 +145,7 @@ def chunk_crpc_sections(inventory_csv, clean_dir, chunks_dir, max_words=500):
             'act_name': 'Code of Criminal Procedure, 1898'
         })
         
-        print(f"  ✓ {chunk_filename}")
+        print(f"  [OK] {chunk_filename}")
         print(f"    - Sections: {','.join(section_nums)}")
         print(f"    - Word count: {word_count}")
     
@@ -169,7 +169,7 @@ def chunk_crpc_sections(inventory_csv, clean_dir, chunks_dir, max_words=500):
     avg_chunk_words = total_words / len(chunks) if chunks else 0
     
     print(f"\n{'='*70}")
-    print("✅ CrPC CHUNKING COMPLETE")
+    print("[SUCCESS] CrPC CHUNKING COMPLETE")
     print(f"{'='*70}")
     print(f"  Chunks created: {len(chunks)}")
     print(f"  Total sections: {len(sections_data)}")

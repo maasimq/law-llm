@@ -1,7 +1,9 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 560
-TITLE: Officers concerned in sales not to purchase or bid for property
+TITLE: Officers concerned in sales not to purchase or bid for property. A public servant having any
 CHAPTER: 
 ============================================================
 
-560. Officers concerned in sales not to purchase or bid for property.
+560. Officers concerned in sales not to purchase or bid for property. A public servant having any
+duty to perform in connection with the sale of any property under this Code shall not purchase or bid for the
+property.

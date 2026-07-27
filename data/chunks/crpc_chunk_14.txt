@@ -1,167 +1,74 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 222
-TITLE: Particulars as to time, place and person
+SECTION: 38
+TITLE: 4* * *
 CHAPTER: 
 ============================================================
 
-222. Particulars as to time, place and person.
+38. 4* * *
+D.—Conferment, Continuance and Cancellation of Powers
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 223
-TITLE: When manner of committing offence must be stated
+SECTION: 39
+TITLE: Mode of conferring powers.­(1) In conferring powers under this Code the 5[Provincial
 CHAPTER: 
 ============================================================
 
-223. When manner of committing offence must be stated.
+39. Mode of conferring powers.­(1) In conferring powers under this Code the 5[Provincial
+Government] may by order, empower persons specially by name or in virtue of their office or
+classes of officials generally by their official titles.
+
+ (2) Every such order shall take effect from the date on which it is communicated to the person
+so empowered.
+
+1 Omitted & subs. by Ord. 12 of 1972, s.2 & Sch.
+2 Subs. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s.7, for “aggregate”.
+3 The explanation and illustration to section 35, rep. ibid.
+4 Omitted by Ord. 37 of 2001, ss.17­19(w.e.f. 14­8­2001).
+5 Subs. by A.O., 1937, for “L.G.”.
+
+ Page 30 of 319
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 224
-TITLE: Words in charge taken in sense of law under which offence is punishable
+SECTION: 40
+TITLE: Powers of officers appointed. Whenever any person holding an office in the service of Government
 CHAPTER: 
 ============================================================
 
-224. Words in charge taken in sense of law under which offence is punishable.
+40. Powers of officers appointed. Whenever any person holding an office in the service of Government
+who has been invested with any powers under this Code throughout any local area is 1[appointed] to an
+equal or higher office of the same nature, within a like local area under the same 2[Provincial Government],
+he shall, unless the 2[Provincial Government] otherwise directs, or has otherwise directed, 3* * * exercise
+the same powers in the local area 4[in which] he is so 1[appointed].
+ 7[41. Withdrawal of Powers.­ The Provincial Government may, on the recommendations of the High
+Court, withdraw all or any power conferred by it under this Code on any person or Magistrate].
+
+ PART III
+
+ GENERAL PROVISIONS
+
+ ______
+
+ CHAPTER IV
+
+ OF AID AND INFORMATION TO THE MAGISTRATES, THE POLICE AND PERSONS
+ MAKING ARRESTS.
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 225
-TITLE: Effect of errors
+SECTION: 42
+TITLE: Public when to assist Magistrate and Police. Every person is bound to assist a Magistrate
 CHAPTER: 
 ============================================================
 
-225. Effect of errors.
+42. Public when to assist Magistrate and Police. Every person is bound to assist a Magistrate
+6[,Justice of the Peace] or police­officer reasonably demanding his aid, 5* * *,__
 
+ (a) in the taking or preventing the escape of any other person whom such Magistrate or police­
+ officer is authorized to arrest;
 
-ACT: Code of Criminal Procedure, 1898
-SECTION: 226
-TITLE: [Omitted
-CHAPTER: 
-============================================================
-
-226. [Omitted.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 227
-TITLE: Court may alter charge
-CHAPTER: 
-============================================================
-
-227. Court may alter charge.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 228
-TITLE: When trial may proceed immediately after alteration
-CHAPTER: 
-============================================================
-
-228. When trial may proceed immediately after alteration.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 229
-TITLE: When new trial may be directed, or trial suspended
-CHAPTER: 
-============================================================
-
-229. When new trial may be directed, or trial suspended.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 230
-TITLE: Stay of proceedings if prosecution of offence in altered charge require previous
-CHAPTER: 
-============================================================
-
-230. Stay of proceedings if prosecution of offence in altered charge require previous
- sanction.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 231
-TITLE: Recall of witnesses which charge altered
-CHAPTER: 
-============================================================
-
-231. Recall of witnesses which charge altered.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 232
-TITLE: Effect of material error
-CHAPTER: 
-============================================================
-
-232. Effect of material error.
- Joinder of Charges
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 233
-TITLE: Separate charged for distinct offences
-CHAPTER: 
-============================================================
-
-233. Separate charged for distinct offences.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 234
-TITLE: Three offences of same kind within year may be charged together
-CHAPTER: 
-============================================================
-
-234. Three offences of same kind within year may be charged together.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 235
-TITLE: Trial for more than one offence
-CHAPTER: 
-============================================================
-
-235. Trial for more than one offence.
- Offence falling within two definitions.
- Acts constituting one offence, but constituting when combined a different
- offence.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 236
-TITLE: When it is doubtful what offence has been committed
-CHAPTER: 
-============================================================
-
-236. When it is doubtful what offence has been committed.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 237
-TITLE: When a person is charged with one offence, he can be convicted of another
-CHAPTER: 
-============================================================
-
-237. When a person is charged with one offence, he can be convicted of another.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 238
-TITLE: When offence proved included in offence charged
-CHAPTER: 
-============================================================
-
-238. When offence proved included in offence charged.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 239
-TITLE: What persons may be charged jointly
-CHAPTER: 
-============================================================
-
-239. What persons may be charged jointly.
+ (b) in the prevention or suppression of a breach of the peace, or in the prevention of any injury
+ attempted to be committed to any railway, canal, telegraph or public property.
 
 

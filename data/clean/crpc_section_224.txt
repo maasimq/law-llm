@@ -1,7 +1,9 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 224
-TITLE: Words in charge taken in sense of law under which offence is punishable
+TITLE: Words in charge taken in sense of law under which offence is punishable. In every
 CHAPTER: 
 ============================================================
 
-224. Words in charge taken in sense of law under which offence is punishable.
+224. Words in charge taken in sense of law under which offence is punishable. In every
+charge words used in describing an offence shall be deemed to have been used in the sense
+attached to them respectively by the law under which such offence is punishable.

@@ -1,7 +1,10 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 518
-TITLE: Order may take form of reference to District or Sub­divisional Magistrate
+TITLE: Order may take form of reference to District. In lieu of itself passing an order under section
 CHAPTER: 
 ============================================================
 
-518. Order may take form of reference to District or Sub­divisional Magistrate.
+518. Order may take form of reference to District. In lieu of itself passing an order under section
+517, the Court may direct the property to be delivered to 1[a Magistrate of the First Class] who shall in such
+cases deal with it as if it had been seized by the police and the Seizure had been reported to him in the
+manner hereinafter mentioned.

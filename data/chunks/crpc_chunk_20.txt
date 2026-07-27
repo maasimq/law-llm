@@ -1,165 +1,45 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 382C
-TITLE: Scandalous or false and frivolous pleas to be considered in passing sentence
+SECTION: 53
+TITLE: Power to seize offensive weapons. The officer or other person making any arrest under this Code
 CHAPTER: 
 ============================================================
 
-382C. Scandalous or false and frivolous pleas to be considered in passing sentence.
+53. Power to seize offensive weapons. The officer or other person making any arrest under this Code
+may take from the person arrested any offensive weapons which he has about his person, and shall deliver
+all weapons so taken to the Court or officer before which or whom the officer or person making the arrest is
+required by this Code to produce the person arrested.
 
+ 1["53A. Examination of person accused of rape, etc. by medical practitioner.__(1) When a person is
+arrested on a charge of committing an offence of rape unnatural offence or sexual abuse or an attempt to
+commit rape, unnatural offence or sexual abuse under section 376,section 377 and section 377B repectively
+and there are reasonable grounds for believing that an examination of the arrested person will afford
+evidence as to the commission of such offence, it shall be lawful for a registered medical practitioner
+employed in a hospital run by the Government or by a local authority to make such an examination of the
+ arrested person and to use such force as is reasonably necessary for that purpose.
 
-ACT: Code of Criminal Procedure, 1898
-SECTION: 383
-TITLE: Execution of sentences of imprisonment for life or imprisonment in other cases
-CHAPTER: 
-============================================================
+ (2) The registered medical practioner conducting examination under sub­section (1) shall, without delay,
+examine such person and prepare a report of his examination giving the following particulars,namely:__
 
-383. Execution of sentences of imprisonment for life or imprisonment in other cases.
+ (a) name and address of the accused and of the person by whom he was brough;
 
+ (b) age of the accused;
 
-ACT: Code of Criminal Procedure, 1898
-SECTION: 384
-TITLE: Direction of warrant for execution
-CHAPTER: 
-============================================================
+ (c) marks of injury, if any,on person of the accused;
 
-384. Direction of warrant for execution.
+ (d) description of material taken from person of the accused for DNA profiling;and
 
+ (e) other material particulars in reasonable detail.
 
-ACT: Code of Criminal Procedure, 1898
-SECTION: 385
-TITLE: Warrant with whom to be lodged
-CHAPTER: 
-============================================================
+ (3) The report under sub­section (2) shall state precisely the reasons for each conclusion arrived at.
 
-385. Warrant with whom to be lodged.
+ (4) The exact time of commencement and completion of the examination under sub­section (1) shall
+also be noted in the report under sub­section (2). The registered medical practioner shall, without delay,
+forward the report to the investigating officer who shall forward it to the Magistrate through public
+prosecutor reffered to in section 173 as part of the report referred to in that section.".
 
+1 Added by XLIV of 2016,s.7.
 
-ACT: Code of Criminal Procedure, 1898
-SECTION: 386
-TITLE: Warrant for levy of fine
-CHAPTER: 
-============================================================
-
-386. Warrant for levy of fine.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 387
-TITLE: Effect of such warrant
-CHAPTER: 
-============================================================
-
-387. Effect of such warrant.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 388
-TITLE: Suspension of execution of sentence of imprisonment
-CHAPTER: 
-============================================================
-
-388. Suspension of execution of sentence of imprisonment.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 389
-TITLE: Who may issue warrant
-CHAPTER: 
-============================================================
-
-389. Who may issue warrant.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 390
-TITLE: Execution of sentence of whipping only
-CHAPTER: 
-============================================================
-
-390. Execution of sentence of whipping only.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 391
-TITLE: Execution of sentence of whipping, in addition to imprisonment
-CHAPTER: 
-============================================================
-
-391. Execution of sentence of whipping, in addition to imprisonment.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 392
-TITLE: Mode of inflicting punishment
-CHAPTER: 
-============================================================
-
-392. Mode of inflicting punishment.
- Limit of number of stripes.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 393
-TITLE: Not to be executed by instalments
-CHAPTER: 
-============================================================
-
-393. Not to be executed by instalments.
- Exemptions.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 394
-TITLE: Whipping not to be inflicted if offender not in fit state of health
-CHAPTER: 
-============================================================
-
-394. Whipping not to be inflicted if offender not in fit state of health.
- Stay of execution.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 395
-TITLE: Procedure if punishment cannot be inflicted under section 394
-CHAPTER: 
-============================================================
-
-395. Procedure if punishment cannot be inflicted under section 394.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 396
-TITLE: Execution of sentence on escaped convicts
-CHAPTER: 
-============================================================
-
-396. Execution of sentence on escaped convicts.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 397
-TITLE: Sentence on offender already sentenced for another offence
-CHAPTER: 
-============================================================
-
-397. Sentence on offender already sentenced for another offence.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 398
-TITLE: Saving as to sections 396 and 397
-CHAPTER: 
-============================================================
-
-398. Saving as to sections 396 and 397.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 399
-TITLE: Confinement of youthful offenders in reformatories
-CHAPTER: 
-============================================================
-
-399. Confinement of youthful offenders in reformatories.
+ Page 35 of 319
+ B.—Arrest without Warrant
 
 

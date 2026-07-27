@@ -246,35 +246,12 @@ def render_message(role: str, content: str, sources: list = None):
 
 def run_pipeline_with_steps(question: str):
     """
-    Calls the backend RAG pipeline while displaying animated loading steps.
+    Calls the backend RAG pipeline while displaying a native spinner.
     Returns (answer, source_labels). Backend logic is NOT modified here.
     """
-    loading_placeholder = st.empty()
-
-    steps = [
-        ("⚖️", "Searching legal database..."),
-        ("📚", "Retrieving relevant sections..."),
-        ("🧠", "Generating AI explanation..."),
-    ]
-
-    # Animate loading steps
-    for icon, msg in steps:
-        loading_placeholder.markdown(
-            f"""
-            <div class="loading-step">
-                <span class="loading-dot"></span>
-                <span>{icon} {msg}</span>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-        time.sleep(0.6)
-
-    # Call the actual backend pipeline (UNCHANGED)
-    answer, retrieved_docs = run_rag_pipeline(question)
-
-    # Clear the loading indicator
-    loading_placeholder.empty()
+    with st.spinner("Searching legal database and generating response..."):
+        # Call the actual backend pipeline (UNCHANGED)
+        answer, retrieved_docs = run_rag_pipeline(question)
 
     # Build display-friendly source labels from raw retrieved text
     source_labels = [
@@ -357,25 +334,23 @@ if not st.session_state.disclaimer_accepted:
 render_sidebar()
 
 # Main content area
-render_hero()
-
-st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
-
-# Suggested questions (only when no conversation yet)
 if not st.session_state.messages:
+    render_hero()
+    st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
     render_suggestions()
     st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
-# Chat history
+# Chat history using native st.chat_message
 if st.session_state.messages:
-    st.markdown('<div class="chat-wrapper">', unsafe_allow_html=True)
     for msg in st.session_state.messages:
-        render_message(
-            role=msg["role"],
-            content=msg["content"],
-            sources=msg.get("sources"),
-        )
-    st.markdown("</div>", unsafe_allow_html=True)
+        with st.chat_message(msg["role"], avatar="👤" if msg["role"] == "user" else "⚖️"):
+            st.markdown(msg["content"])
+            
+            # Show sources if assistant
+            if msg["role"] == "assistant" and msg.get("sources"):
+                st.markdown('<div class="refs-title">📘 Legal References</div>', unsafe_allow_html=True)
+                for src in msg["sources"]:
+                    st.markdown(f'<div class="ref-card">{src}</div>', unsafe_allow_html=True)
 
 # ============================================================
 # CHAT INPUT
@@ -396,24 +371,30 @@ if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input, "sources": []})
 
     # Render user message bubble immediately on screen
-    render_message(role="user", content=user_input)
+    with st.chat_message("user", avatar="👤"):
+        st.markdown(user_input)
 
-    # Run pipeline with animated steps
-    try:
-        answer, source_labels = run_pipeline_with_steps(user_input)
-    except Exception as e:
-        answer = (
-            f"Sorry, an error occurred while processing your question. "
-            f"Please check your API key and ChromaDB setup.\n\n**Details:** {str(e)}"
-        )
-        source_labels = []
+    # Render assistant response with spinner
+    with st.chat_message("assistant", avatar="⚖️"):
+        try:
+            answer, source_labels = run_pipeline_with_steps(user_input)
+        except Exception as e:
+            answer = (
+                f"Sorry, an error occurred while processing your question. "
+                f"Please check your API key and ChromaDB setup.\n\n**Details:** {str(e)}"
+            )
+            source_labels = []
 
-    # Append assistant message
+        st.markdown(answer)
+        if source_labels:
+            st.markdown('<div class="refs-title">📘 Legal References</div>', unsafe_allow_html=True)
+            for src in source_labels:
+                st.markdown(f'<div class="ref-card">{src}</div>', unsafe_allow_html=True)
+    
+    # Append assistant message to state
     st.session_state.messages.append(
         {"role": "assistant", "content": answer, "sources": source_labels}
     )
-
-    st.rerun()
 
 # ============================================================
 # FOOTER

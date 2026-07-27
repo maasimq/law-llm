@@ -1,7 +1,10 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 129
-TITLE: Use of military force
+TITLE: Use of military force. If any such assembly cannot be otherwise dispersed, and if it is necessary
 CHAPTER: 
 ============================================================
 
-129. Use of military force.
+129. Use of military force. If any such assembly cannot be otherwise dispersed, and if it is necessary
+for the public security that it should be dispersed, 8[the police officer of the highest rank not below an
+Assistant Superintendent, or Deputy Superintendent of Police] who is present may cause it to be dispersed
+by 9[the armed forces].

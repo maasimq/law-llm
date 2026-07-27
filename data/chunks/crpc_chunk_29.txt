@@ -1,158 +1,53 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 546A
-TITLE: Order of payment of certain fees paid by complainant in non­cognizable cases
+SECTION: 74
+TITLE: Proof of service in such cases and when serving 1[person] not present.­(1) When a summons
 CHAPTER: 
 ============================================================
 
-546A. Order of payment of certain fees paid by complainant in non­cognizable cases.
+74. Proof of service in such cases and when serving 1[person] not present.­(1) When a summons
+issued by a Court is served outside the local limits of its jurisdiction, and in any case where the 1[person]
+who has served a summons is not present at the hearing of the case, an affidavit, purporting to be made
+before a Magistrate, that such summons has been served, and a duplicate of the summons purporting to be
+endorsed (in manner provided by section 69 and section 70) by the person to whom it was delivered or
+tendered or with whom it was left, shall be admissible in evidence, and the statements made therein shall be
+deemed to be correct unless and until the contrary is proved.
+
+ (2) The affidavit mentioned in this section may be attached to the duplicate of the summons and
+returned to the Court.
+
+ B.­Warrant of Arrest
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 547
-TITLE: Moneys ordered to be paid recoverable as fines
+SECTION: 75
+TITLE: Form of warrant of arrest.­(1) Every Warrant of arrest issued by a Court under this Code shall be
 CHAPTER: 
 ============================================================
 
-547. Moneys ordered to be paid recoverable as fines.
+75. Form of warrant of arrest.­(1) Every Warrant of arrest issued by a Court under this Code shall be
+in writing, signed by the presiding officer, or in the case of a Bench of Magistrates, by any member of such
+Bench; and shall bear the seal of the Court.
+
+ (2) Continuance of warrant of arrest. Every such warrant shall remain in force until it is cancelled by
+the Court which issued it, or until it is executed.
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 548
-TITLE: Copies of proceedings
+SECTION: 76
+TITLE: 4[86A. Procedure for removal in custody to Tribal Area. Where a person arrested under section 85 is
 CHAPTER: 
 ============================================================
 
-548. Copies of proceedings.
+76.
+ 4[86A. Procedure for removal in custody to Tribal Area. Where a person arrested under section 85 is
+to be removed in custody to any place in the Tribal Areas, he shall be produced before a Magistrate within
+the local limits of whose jurisdiction the arrest was made, and such Magistrate in directing the removal shall
+hear the case in the same manner and have the same jurisdiction and powers, as nearly as may be, including
+the power to order the production of evidence, as if the person arrested were charged with an offence
+committed within the jurisdiction of such Magistrate; and such Magistrate shall direct the removal of the
+arrested person in custody if he is satisfied that the evidence produced before him raises a strong or probable
+presumption that the person arrested committed the offence mentioned in the warrant.]
 
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 549
-TITLE: Delivery to military authorities of persons liable to be tried by Court­martial
-CHAPTER: 
-============================================================
-
-549. Delivery to military authorities of persons liable to be tried by Court­martial.
- Apprehension of such persons.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 550
-TITLE: Powers to police to seize property suspected to be stolen
-CHAPTER: 
-============================================================
-
-550. Powers to police to seize property suspected to be stolen.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 551
-TITLE: Powers of superior officers of police
-CHAPTER: 
-============================================================
-
-551. Powers of superior officers of police.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 552
-TITLE: Powers to compel restoration of abducted females
-CHAPTER: 
-============================================================
-
-552. Powers to compel restoration of abducted females.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 553
-TITLE: [Repealed
-CHAPTER: 
-============================================================
-
-553. [Repealed.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 554
-TITLE: Power of High Courts to make rules for inspection of records of subordinate
-CHAPTER: 
-============================================================
-
-554. Power of High Courts to make rules for inspection of records of subordinate
- Courts.
- Power of High Courts to make rules for other purposes.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 555
-TITLE: Forms
-CHAPTER: 
-============================================================
-
-555. Forms.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 556
-TITLE: Case in which Judge or Magistrate is personally interested
-CHAPTER: 
-============================================================
-
-556. Case in which Judge or Magistrate is personally interested.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 557
-TITLE: Practising pleader not to sit as Magistrate in certain Courts
-CHAPTER: 
-============================================================
-
-557. Practising pleader not to sit as Magistrate in certain Courts.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 558
-TITLE: Power to decide language of Courts
-CHAPTER: 
-============================================================
-
-558. Power to decide language of Courts.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 559
-TITLE: Provision for powers of Judges and Magistrates being exercised by their
-CHAPTER: 
-============================================================
-
-559. Provision for powers of Judges and Magistrates being exercised by their
- successors in office.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 560
-TITLE: Officers concerned in sales not to purchase or bid for property
-CHAPTER: 
-============================================================
-
-560. Officers concerned in sales not to purchase or bid for property.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 561
-TITLE: [Repealed
-CHAPTER: 
-============================================================
-
-561. [Repealed.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 561A
-TITLE: Saving of inherent power of High Court
-CHAPTER: 
-============================================================
-
-561A. Saving of inherent power of High Court.
- First offenders
+ C.—Proclamation and Attachment
 
 

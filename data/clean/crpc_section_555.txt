@@ -1,7 +1,9 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 555
-TITLE: Forms
+TITLE: Forms. Subject to the powers conferred by Section 8[554], and by 9[Articles 202 and 203 of the
 CHAPTER: 
 ============================================================
 
-555. Forms.
+555. Forms. Subject to the powers conferred by Section 8[554], and by 9[Articles 202 and 203 of the
+Constitution], the forms set forth in the Fifth Schedule, with such variation as the circumstances of each
+case require, may be used for the respective purposes therein mentioned, and if used shall be sufficient.

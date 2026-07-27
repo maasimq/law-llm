@@ -1,8 +1,35 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 179
-TITLE: Accused triable in district where act is done or where consequence ensues
+TITLE: Accused triable in, district where act is done or where consequence ensues. When a Person is
 CHAPTER: 
 ============================================================
 
-179. Accused triable in district where act is done or where consequence ensues.
-180.. Place of trial where act is offence by reason of relation to other offence.
+179. Accused triable in, district where act is done or where consequence ensues. When a Person is
+accused of the Commission of any offence by reason of anything which has been done, and of any
+consequence which has ensued, such offence may be inquired into or tried by a Court within the local limits
+of whose jurisdiction any such thing has been done, or any such consequence has ensued.
+
+ Illustrations
+
+ (a) A is wounded within the local limits of the jurisdiction of Court X, and dies within the local limits
+ of the jurisdiction of Court Z. The offence of the culpable homicide of A may be inquired into or
+ tried by X or Z.
+
+ (b) A is wounded within the local limits of the jurisdiction of Court X, and is, during ten days within
+ the local limits of the jurisdiction of Court Y, and during ten days more within the local limits of
+ the jurisdiction of Court Z, unable in the local limits of the jurisdiction of either Court Y, or
+
+1 Subs. by A.O., 1937, for “L.G”.
+2 Subs. by the Law Reforms Ordinance, 1972 (12 of 1972), s. 2. and Sch., for “committed for trial in any district may be tried in any sessions division”.
+3 Subs. ibid., for “Proviso” which had previously been amended by Act 13 of 1916, s.2 and Sch., A.O, 1937, A.O., 1961, Art 2 and sch. (w.e.f 23rd March, 1956) and A.O., 1964, Art. 2 and Sch.
+
+ Page 90 of 319
+ Court Z, to follow his ordinary pursuits. The offence of causing grievous hurt to A may be inquired into
+or tried by X, Y or Z.
+
+ (c) A is put in fear of injury within the local limits of the jurisdiction of Court X, and is thereby induced,
+within the local limits of the jurisdiction of Court Y, to deliver property to the person who put him in fear.
+The offence of extortion committed on A may be inquired into or tried either by X or Y.
+
+ (d) A is wounded in the 1[State of Junagadh], and dies of his wounds in 2[Karachi]. The offence of
+causing A's death may be inquired into and tried in 2[Karachi].

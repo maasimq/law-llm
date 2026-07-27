@@ -30,54 +30,44 @@ def clean_whitespace(text):
 def parse_crpc_sections(raw_text):
     """
     Parse CrPC text and extract individual sections.
-    Sections are identified by pattern: newline + number + period + space + title
-    
-    Returns list of dicts: [{number, title, text}, ...]
     """
     sections = []
     
-    # Clean the raw text first
+    # Skip the Table of Contents by finding where the actual law starts
+    start_idx = raw_text.find("enacted as follows:")
+    if start_idx != -1:
+        raw_text = raw_text[start_idx:]
+    
     text = strip_html_tags(raw_text)
-    text = clean_whitespace(text)
     
-    # Split by section markers: \n followed by digits (with optional letter) and period
-    # Pattern: newline, one or more digits optionally followed by A-Z, period, space, then title text
-    # We use positive lookahead to keep the section number
-    parts = re.split(r'\n(?=\d+[A-Z]?\.?\s+)', text)
+    # Pattern: newline, optional spaces, section number, period, space, title
+    pattern = re.compile(r'\n\s*(\d+[A-Z]?)\.\s+([^\n]+)')
+    matches = list(pattern.finditer(text))
     
-    for part in parts:
-        part = part.strip()
-        if not part or len(part) < 5:  # Skip empty or very short parts
+    for i in range(len(matches)):
+        m = matches[i]
+        sec_num = m.group(1).strip()
+        title = m.group(2).strip()
+        
+        # The body is from the end of this match to the start of the next match
+        body_start = m.end()
+        body_end = matches[i+1].start() if i + 1 < len(matches) else len(text)
+        body = text[body_start:body_end].strip()
+        
+        # The title sometimes continues into the body if it's long, or is just the first sentence
+        full_text = m.group(0).strip() + "\n" + body
+        full_text = clean_whitespace(full_text)
+        
+        if title.lower() in ['[repealed.]', '[omitted.]', 'rep. by', '[']:
             continue
-        
-        # Extract section number and title
-        # Pattern: number (with optional letter) + period + title (until next sentence or newline)
-        match = re.match(r'^(\d+[A-Z]?)\.\s+(.+?)(?:\n|$)', part, re.DOTALL)
-        
-        if match:
-            sec_num = match.group(1).strip()
-            title_text = match.group(2).strip()
             
-            # Extract clean title (first sentence or line)
-            # Take text until first period or newline with capital letter
-            title_match = re.match(r'^([^.\n]*?)(?:\.|$)', title_text)
-            if title_match:
-                title = title_match.group(1).strip()
-            else:
-                # Fallback: take first 50 chars or until newline
-                title = title_text.split('\n')[0][:100].strip()
-            
-            # Skip entries that are just headers like "[Repealed.]" or "[Omitted.]"
-            if title.lower() in ['[repealed.]', '[omitted.]', '[omitted.]', 'rep. by', '[']:
-                continue
-            
-            sections.append({
-                "number": sec_num,
-                "title": title,
-                "text": part,
-                "chapter": "",
-                "act": "Code of Criminal Procedure, 1898"
-            })
+        sections.append({
+            "number": sec_num,
+            "title": title[:100],  # Limit title length
+            "text": full_text,
+            "chapter": "",
+            "act": "Code of Criminal Procedure, 1898"
+        })
     
     return sections
 
@@ -126,7 +116,7 @@ def save_sections(sections, output_dir, prefix):
             "word_count": word_count
         })
         
-        print(f"  ✓ {filename} ({word_count} words)")
+        print(f"   {filename} ({word_count} words)")
     
     return saved
 
@@ -141,45 +131,45 @@ def main():
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     os.chdir(project_root)
     
-    crpc_file = os.path.join(os.path.expanduser("~"), "Downloads", "CrPC.txt")
+    crpc_file = os.path.join("data", "raw", "crpc", "CrPC.txt")
     clean_dir = os.path.join("data", "clean")
     
     # Check if input file exists
     if not os.path.exists(crpc_file):
-        print(f"\n❌ ERROR: CrPC.txt not found at {crpc_file}")
+        print(f"\nERROR: CrPC.txt not found at {crpc_file}")
         return 1
     
-    print(f"\n📄 Input file: {crpc_file}")
-    print(f"📁 Output directory: {clean_dir}")
+    print(f"\n Input file: {crpc_file}")
+    print(f" Output directory: {clean_dir}")
     
     # Read raw file
     print("\n[1/4] Reading raw CrPC file...")
     try:
         with open(crpc_file, "r", encoding="utf-8", errors="replace") as f:
             raw_text = f.read()
-        print(f"  ✓ Loaded {len(raw_text):,} characters")
+        print(f"   Loaded {len(raw_text):,} characters")
     except Exception as e:
-        print(f"  ❌ Error reading file: {e}")
+        print(f"   Error reading file: {e}")
         return 1
     
     # Parse sections
     print("\n[2/4] Parsing sections...")
     try:
         sections = parse_crpc_sections(raw_text)
-        print(f"  ✓ Extracted {len(sections)} sections")
+        print(f"   Extracted {len(sections)} sections")
         if sections:
             print(f"    Range: Section {sections[0]['number']} to {sections[-1]['number']}")
     except Exception as e:
-        print(f"  ❌ Error parsing sections: {e}")
+        print(f"   Error parsing sections: {e}")
         return 1
     
     # Save individual section files
     print("\n[3/4] Saving individual section files...")
     try:
         saved_records = save_sections(sections, clean_dir, "crpc_section")
-        print(f"  ✓ Saved {len(saved_records)} files")
+        print(f"   Saved {len(saved_records)} files")
     except Exception as e:
-        print(f"  ❌ Error saving sections: {e}")
+        print(f"   Error saving sections: {e}")
         return 1
     
     # Write index CSV
@@ -193,13 +183,13 @@ def main():
             )
             writer.writeheader()
             writer.writerows(saved_records)
-        print(f"  ✓ Created {csv_file}")
+        print(f"   Created {csv_file}")
     except Exception as e:
-        print(f"  ❌ Error writing CSV: {e}")
+        print(f"   Error writing CSV: {e}")
         return 1
     
     print("\n" + "=" * 70)
-    print("✅ CrPC Processing Complete!")
+    print(" CrPC Processing Complete!")
     print(f"   {len(saved_records)} sections saved to {clean_dir}")
     print("=" * 70)
     

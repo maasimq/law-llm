@@ -1,158 +1,60 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 164A
-TITLE: Medical examination of victim of rape, etc
+SECTION: 32
+TITLE: Sentences which Magistrates may pass.­(1) The Courts of Magistrates may pass the following
 CHAPTER: 
 ============================================================
 
-164A. Medical examination of victim of rape, etc.
+32. Sentences which Magistrates may pass.­(1) The Courts of Magistrates may pass the following
+sentences namely:__
+
+ (a) Courts 5* * *of Imprisonment for a term not exceeding 6[Three Years] including such
+ Magistrates of the first class: solitary confinement as is authorized by law; Fine not exceeding 7[forty
+ five thousands] rupees; 8[arsh; daman;] whipping.
+
+ (b) Courts of Magistrates of Imprisonment for a term not exceeding 9[one year], including such solitary
+ the second class: confinement as is authorized by law;
+
+ Fine not exceeding 7[fifteen thousands] rupees; 10* * *
+
+ (c) Courts of Magistrates of Impresonment for a term not exceeding one month;
+ the third class.
+ Fine not exceeding 7[three thousand] rupees.
+
+1 S. 29A was ins. by Act 12 of 1923, s.6.
+2 Subs. & Ins. by ord. XII of 1972, s.2 & Sch. as amended by Act. XXIII of 1997, &.3.
+3 Subs. by ord. 37 of 2001, s.15(w . e . f 14 ­ 08 ­ 2001).
+4 The words “transportation for a term exceeding seven years or of” rep. by the Criminal Procedure (Amdt.) Act, 1974 (25 of 1974), s.2 and Sch., (w.e.f. 13­4­72).
+5 The words “of Presidency Magistrates and” omitted by A.O., 1949, Sch.,
+6 Subs. by Ordinance 12 of 1972, s.2 and Sch., for “two years”.
+7 Subs. by Ord. 85 of 02, s. 3.
+8 Ins. by Act, II of 1997, s.11.
+9 Subs. by Ordinance 12 of 1972, s.2 and Sch., for “six months”.
+10 The words “whipping (if specially empowered)” rep. by the whipping Act, 1909 (4 of 1909), s.8 and Sch.
+
+ Page 28 of 319
+ (2) The Court of any Magistrate may pass any lawful sentence, combining any of the sentences which it
+is authorized by law to pass.
+ 1* * * * * * *
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 164B
-TITLE: DNA test
+SECTION: 33
+TITLE: Power of Magistrate to sentence to imprisonment in default of fine.­(1) The Court of any
 CHAPTER: 
 ============================================================
 
-164B. DNA test.
+33. Power of Magistrate to sentence to imprisonment in default of fine.­(1) The Court of any
+Magistrate may award such terms of imprisonment in default of payment of fine as is authorized by law in
+case of such default:
 
+ Proviso as to certain cases:­ Provided that—
 
-ACT: Code of Criminal Procedure, 1898
-SECTION: 165
-TITLE: Search by police­officer
-CHAPTER: 
-============================================================
+ (a) the term is not in excess of the Magistrate’s powers under this Code;
 
-165. Search by police­officer.
+ (b) in any case decided by a Magistrate where imprisonment has been awarded as part of the substantive sentence, the period of
+ imprisonment awarded in default of payment of the fine shall not exceed one­fourth of the period of imprisonment which such M agistrate is competent to inflict as punishment for the offence
+ otherwise than as imprisonment in default of payment of the fine.
 
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 166
-TITLE: When officer incharge of police station may require another to issue search
-CHAPTER: 
-============================================================
-
-166. When officer incharge of police station may require another to issue search
- warrant.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 167
-TITLE: Procedure when investigation cannot be completed in twenty­four hours
-CHAPTER: 
-============================================================
-
-167. Procedure when investigation cannot be completed in twenty­four hours.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 168
-TITLE: Report of investigation by subordinate police­officer
-CHAPTER: 
-============================================================
-
-168. Report of investigation by subordinate police­officer.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 169
-TITLE: Release of accused when evidence deficient
-CHAPTER: 
-============================================================
-
-169. Release of accused when evidence deficient.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 170
-TITLE: Case to be sent to magistrate when evidence is sufficient
-CHAPTER: 
-============================================================
-
-170. Case to be sent to magistrate when evidence is sufficient.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 171
-TITLE: Complaints and witnesses not to be required to accompany police­officer
-CHAPTER: 
-============================================================
-
-171. Complaints and witnesses not to be required to accompany police­officer.
- Complainants and witnesses not to be subjected to restraint.
- Recusant complainant or witness may be forwarded in custody.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 172
-TITLE: Diary of proceedings in investigation
-CHAPTER: 
-============================================================
-
-172. Diary of proceedings in investigation.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 173
-TITLE: Report of police­officer
-CHAPTER: 
-============================================================
-
-173. Report of police­officer.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 174
-TITLE: Police to inquire and report on suicide, etc
-CHAPTER: 
-============================================================
-
-174. Police to inquire and report on suicide, etc.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 175
-TITLE: Power to summon persons
-CHAPTER: 
-============================================================
-
-175. Power to summon persons.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 176
-TITLE: Inquiry by magistrate into cause of death
-CHAPTER: 
-============================================================
-
-176. Inquiry by magistrate into cause of death.
- Power to disinter corpses.
- PART VI
- PROCEEDINGS IN PROSECUTIONS
- CHAPTER XV
- OF THE JURISDICTION OF THE CRIMINAL COURTS IN INQUIRIES
- AND TRIALS.
- A.­Place of Inquiry or Trial.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 177
-TITLE: Ordinary place of inquiry and trial
-CHAPTER: 
-============================================================
-
-177. Ordinary place of inquiry and trial.
-
- Page 7 of 319
-178. Power to order cases to be tried in different sessions divisions.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 179
-TITLE: Accused triable in district where act is done or where consequence ensues
-CHAPTER: 
-============================================================
-
-179. Accused triable in district where act is done or where consequence ensues.
-180.. Place of trial where act is offence by reason of relation to other offence.
+ (2) The imprisonment awarded under this section may be in addition to a substantive sentence of imprisonment for the maximum term awardable by the M agistrate under Section 32.
 
 

@@ -1,8 +1,10 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 99G
-TITLE: Jurisdiction barred
+TITLE: Jurisdiction barred. No order passed or action taken under section 99A shall be called in
 CHAPTER: 
 ============================================================
 
-99G. Jurisdiction barred.
- C.­Discovery of Persons wrongfully confined.
+99G. Jurisdiction barred. No order passed or action taken under section 99A shall be called in
+question in any Court otherwise than in accordance with the provisions of section 99B.]
+
+ C.—Discovery of persons wrongfully confined

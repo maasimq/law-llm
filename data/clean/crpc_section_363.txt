@@ -1,7 +1,9 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 363
-TITLE: Remarks respecting demeanour of witness
+TITLE: Remarks respecting demeanour of witness. When a Sessions Judge or Magistrate has
 CHAPTER: 
 ============================================================
 
-363. Remarks respecting demeanour of witness.
+363. Remarks respecting demeanour of witness. When a Sessions Judge or Magistrate has
+recorded the evidence of a witness, he shall also record such remarks (if any) as he thinks
+material respecting the demeanour of such witness whilst under examination.

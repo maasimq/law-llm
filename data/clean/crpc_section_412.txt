@@ -1,7 +1,10 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 412
-TITLE: No appeal in certain cases when accused pleads guilty
+TITLE: No appeal in certain cases when accused pleads guilty. Notwithstanding anything hereinbefore
 CHAPTER: 
 ============================================================
 
-412. No appeal in certain cases when accused pleads guilty.
+412. No appeal in certain cases when accused pleads guilty. Notwithstanding anything hereinbefore
+contained where an accused person has pleaded guilty and has been convicted by 3[a High Court], a Court
+of Session 4* * *or Magistrate of the first class on such plea, there shall be no appeal except as to the extent
+or legality of the sentence.

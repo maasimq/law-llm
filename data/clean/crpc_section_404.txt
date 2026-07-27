@@ -1,7 +1,8 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 404
-TITLE: Unless otherwise provided, no appeal to lie
+TITLE: Unless otherwise provided, no appeal to lie. No appeal shall lie from any judgment or order of a
 CHAPTER: 
 ============================================================
 
-404. Unless otherwise provided, no appeal to lie.
+404. Unless otherwise provided, no appeal to lie. No appeal shall lie from any judgment or order of a
+Criminal Court except as provided for by this Code or by any other law for the time being in force.

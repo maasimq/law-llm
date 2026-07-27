@@ -1,7 +1,16 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 194
-TITLE: Cognizance of offences by High Court
+TITLE: Cognizance of offences by High Court.__(1) The High Court may take cognizance of any offence
 CHAPTER: 
 ============================================================
 
-194. Cognizance of offences by High Court.
+194. Cognizance of offences by High Court.__(1) The High Court may take cognizance of any offence
+8
+ * * * in manner hereinafter provided.
+
+ [Nothing herein contained shall be deemed to affect the provisions of any Letters Patent or Order by
+ 9
+
+which a High Court is constituted or continued, or any other provision of this Code.]
+
+ 10* * * * * *

@@ -1,178 +1,45 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 431
-TITLE: Abatement of appeals
+SECTION: 57
+TITLE: Refusal to give name and residence.­(1) When any person who in the presence of a
 CHAPTER: 
 ============================================================
 
-431. Abatement of appeals.
- CHAPTER XXXII
- OF REFERENCE AND REVISION
-432­434. [Omitted.]
+57. Refusal to give name and residence.­(1) When any person who in the presence of a
+police­officer has committed or has been accused of committing a non­cognizable offence refuses,
+on demand of such officer, to give his name and residence or gives a name or residence which such
+officer has reason to believe to be false, he may be arrested by such officer in order that his name
+or residence may be ascertained.
+
+ (2) When the true name and residence of such person have been ascertained, he shall be
+released on his executing a bond, with or without sureties, to appear before a Magistrate 3[having
+jurisdiction,] if so required:
+
+ Provided that, if such person is not resident in 4[Pakistan], the bond shall be secured by a surety
+or sureties resident in 4[Pakistan].
+
+ (3) Should the true name and residence of such person not be ascertained within twenty­four
+hours from the time of arrest or should he fail to execute the bond, or, if so required to furnish
+sufficient sureties, he shall forthwith be forwarded to the nearest Magistrate having jurisdiction.
+
+1 Sub­section (2) as amended by the City of Bombay Police Act, 1902 (Bom. 4 of 1902), s.2 (1) and Sch. A, omitted by A.O., 1949, Sch.
+2 Ins. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s.11.
+3 Ins. by the Law Reforms Ordinance, 1972 (12 of 1972), s.2 and Sch.
+4 Subs. by the Central Laws (Statue Reform) Ordinance, 1960 (21 of 1960), s.3 and 2nd Sch. (with effect from the 14th October, 1955), for “the Provinces and the Capital of the Federation”, which had
+been subs. by A.O., 1949, Arts. 3 (2) and 4, for “British India”.
+
+ Page 38 of 319
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 435
-TITLE: Power to call for records of inferior Courts
+SECTION: 58
+TITLE: Pursuit of offenders into other jurisdictions. A police­officer may, for the purpose of arresting
 CHAPTER: 
 ============================================================
 
-435. Power to call for records of inferior Courts.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 436
-TITLE: Power to order inquiry
-CHAPTER: 
-============================================================
-
-436. Power to order inquiry.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 437
-TITLE: [Omitted
-CHAPTER: 
-============================================================
-
-437. [Omitted.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 438
-TITLE: Report to High Court
-CHAPTER: 
-============================================================
-
-438. Report to High Court.
-
- Page 13 of 319
-439. High Court's powers of revision.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 439A
-TITLE: Sessions Judge's powers of revision
-CHAPTER: 
-============================================================
-
-439A. Sessions Judge's powers of revision.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 440
-TITLE: Optional with Court to hear parties
-CHAPTER: 
-============================================================
-
-440. Optional with Court to hear parties.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 441
-TITLE: [Omitted
-CHAPTER: 
-============================================================
-
-441. [Omitted.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 442
-TITLE: High Court's order to be certified to lower Court or Magistrate
-CHAPTER: 
-============================================================
-
-442. High Court's order to be certified to lower Court or Magistrate.
- PART VIII
- SPECIAL PROCEEDINGS
- CHAPTER XXXIII
- [Omitted.]
- CHAPTER XXXIV
- LUNATICS
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 464
-TITLE: Procedure in case of accused being lunatic
-CHAPTER: 
-============================================================
-
-464. Procedure in case of accused being lunatic.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 465
-TITLE: Procedure in case of person sent for trial Court of Session or High Court being
-CHAPTER: 
-============================================================
-
-465. Procedure in case of person sent for trial Court of Session or High Court being
- lunatic.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 466
-TITLE: Release of lunatic pending investigation or trial
-CHAPTER: 
-============================================================
-
-466. Release of lunatic pending investigation or trial.
- Custody of lunatic.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 467
-TITLE: Resumption of inquiry or trial
-CHAPTER: 
-============================================================
-
-467. Resumption of inquiry or trial.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 468
-TITLE: Procedure on accused appearing before Magistrate or Court
-CHAPTER: 
-============================================================
-
-468. Procedure on accused appearing before Magistrate or Court.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 469
-TITLE: When accused appears to have been insane
-CHAPTER: 
-============================================================
-
-469. When accused appears to have been insane.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 470
-TITLE: Judgment of acquittal on ground of lunacy
-CHAPTER: 
-============================================================
-
-470. Judgment of acquittal on ground of lunacy.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 471
-TITLE: Person acquitted on such ground to be detained in safe custody
-CHAPTER: 
-============================================================
-
-471. Person acquitted on such ground to be detained in safe custody.
- Power of Provincial Government to relieve Inspector General of certain
- functions.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 472
-TITLE: [Repealed
-CHAPTER: 
-============================================================
-
-472. [Repealed.]
+58. Pursuit of offenders into other jurisdictions. A police­officer may, for the purpose of arresting
+without warrant any person whom he is authorized to arrest under this Chapter, pursue such person into
+anyplace in 1[Pakistan].
+ 3[Explanation.­In this section, “police­officer” includes a police­officer acting under this Code as
+in force in Azad Jammu and Kashmir.].
 
 

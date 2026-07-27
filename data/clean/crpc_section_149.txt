@@ -1,7 +1,8 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 149
-TITLE: Police to prevent cognizable offences
+TITLE: Police to prevent cognizable offences.__Every police­officer may interpose for the purpose of
 CHAPTER: 
 ============================================================
 
-149. Police to prevent cognizable offences.
+149. Police to prevent cognizable offences.__Every police­officer may interpose for the purpose of
+preventing, and shall, to the best of his ability, prevent, the commission of any cognizable offence.

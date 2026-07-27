@@ -1,8 +1,13 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 77
-TITLE: Warrants to whom directed
+TITLE: Warrants to whom directed.­(1) A warrant of arrest shall ordinarily be directed to one or more
 CHAPTER: 
 ============================================================
 
-77. Warrants to whom directed.
- Warrants to several persons.
+77. Warrants to whom directed.­(1) A warrant of arrest shall ordinarily be directed to one or more
+police­officers, 1* * *; but 2[any Court] issuing such a warrant may, if its immediate execution is necessary
+and no police­officer is immediately available, direct it to any other person or persons; and such person or
+persons shall execute the same.
+
+ (2) Warrants to several persons. When a warrant is directed to more officers or persons than one, it
+may be executed by all, or by any one or more, of them.

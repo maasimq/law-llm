@@ -1,7 +1,25 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 200
-TITLE: Examination of complainant
+TITLE: Examination of complainant: 1* * *, a Magistrate taking cognizance of an offence on complaint
 CHAPTER: 
 ============================================================
 
-200. Examination of complainant.
+200. Examination of complainant: 1* * *, a Magistrate taking cognizance of an offence on complaint
+shall at once examine the complainant upon oath, and the substance of the examination shall be reduced to
+writing and shall be signed by the complainant, and also by the Magistrate :
+
+ Provided as follows:_
+
+ (a) when the complaint is made in writing, nothing herein contained shall be deemed to require a
+ Magistrate to examine the complainant before transferring the case under section 192, 2[or
+ sending it to the Court of Session];
+
+ 3[(aa) when the complaint is made in writing nothing herein contained shall be deemed to require
+ the examination of a complainant in any case in which the complaint has been made by a Court
+ or by a public servant acting or purporting to act in the discharge of his official duties;]
+
+ 4* * * * *
+
+ (c) when the case has been transferred under section 192 and the Magistrate so transferring it has
+ already examined the complainant, the Magistrate to whom it is so transferred shall not be
+ bound to re­examine the complainant.

@@ -1,11 +1,10 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 73
-TITLE: Service of summons outside local limits
+TITLE: Service of summons outside local limits. When a Court desires that a summons issued by it shall be
 CHAPTER: 
 ============================================================
 
-73. Service of summons outside local limits.
-
- Page 3 of 319
-74. Proof of service in such cases and when serving person not present.
- B.­Warrant of arrest.
+73. Service of summons outside local limits. When a Court desires that a summons issued by it shall be
+served at any place outside the local limits of its jurisdiction, it shall ordinarily send such summons in
+duplicate to a Magistrate within the local limits of whose jurisdiction the person summoned resides or is, to
+be there served.

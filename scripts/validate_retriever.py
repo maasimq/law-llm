@@ -63,8 +63,10 @@ def run_retriever_validation():
     for i, query in enumerate(TEST_QUERIES, 1):
         print(f"Test Query {i}/10: '{query}'")
 
+        # BGE models require a prefix for retrieval queries
+        prefixed_query = "Represent this sentence for searching relevant passages: " + query
         # Encode the query into a 384-dimensional vector
-        query_embedding = model.encode(query).tolist()
+        query_embedding = model.encode(prefixed_query, normalize_embeddings=True).tolist()
 
         # Retrieve the top-3 most similar chunks from ChromaDB
         results = collection.query(

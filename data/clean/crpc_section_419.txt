@@ -1,7 +1,9 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 419
-TITLE: Petition of appeal
+TITLE: Petition of appeal. Every appeal shall be made in the form of petition in writing presented by the
 CHAPTER: 
 ============================================================
 
-419. Petition of appeal.
+419. Petition of appeal. Every appeal shall be made in the form of petition in writing presented by the
+appellant or his pleader, and every such petition shall (unless the Court to which it is presented otherwise
+directs) be accompanied by a copy of the judgment or order appealed against 2* * *.

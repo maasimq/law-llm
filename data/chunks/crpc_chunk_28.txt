@@ -1,152 +1,40 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 535
-TITLE: Effect of omission to prepare charge
+SECTION: 72
+TITLE: 5[Service on servant of State [Statutory body or Company].­(1) Where the person
 CHAPTER: 
 ============================================================
 
-535. Effect of omission to prepare charge.
+72. 5[Service on servant of State [Statutory body or Company].­(1) Where the person
+summoned is in the active service of the 6[State] or of a 7[8[a]statutory body or a company], the
+Court issuing the summons shall ordinarily send it in duplicate to the head of the office in which
+such person is employed; and such head shall thereupon cause the summons to be served in
+manner provided by Section 69, and shall return it to the Court under his signature with the
+endorsement required by that section.
+
+ (2) Such signature shall be evidence of due service.
+
+1 Sub­Section (3) omitted by A.O., 1949, Sch.
+2 The words “if so required by the serving officer” omitted by the Law Reforms Ordinance, 1972 (12 of 1972), s.2 and Sch.
+3 Subs. by the Central Laws (Statue Reform) Ordinance, 1960 (21 of 1960), s. 3 and 2nd Sch. (with effect from the 14th October, 1955), for “the Provinces and the Capital of the Federation”, which had
+been subs. by A.O., 1949, Arts. 3 (2) and 4, for “British India”.
+4 The words and commas “or, in a presidency­towns, with his servant residing with him” rep. by the Federal Laws (Revision and Declaration) Act, 1951 (26 of 1951), s.3 and II Sch.
+5 Subs. by Ordinance 12 of 1972, s.2 and Sch., for “Service on servant of State or of Railway Company”.
+6 Subs. by A.O., 1961, Art. 2 and Sch. (with effect from the 23rd March, 1956), for “Crown” which had been subs. by A.O., 1937, for “Govt.”
+7 Subs. by Ordinance 12 of 1972, s. 2 and Sch., for “Railway Company”.
+8 Sic. “a” is superfluous.
+
+ Page 41 of 319
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 536
-TITLE: [Omitted
+SECTION: 73
+TITLE: Service of summons outside local limits. When a Court desires that a summons issued by it shall be
 CHAPTER: 
 ============================================================
 
-536. [Omitted.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 537
-TITLE: Finding or sentence when reversible by reason of error or omission in charge or
-CHAPTER: 
-============================================================
-
-537. Finding or sentence when reversible by reason of error or omission in charge or
- other proceedings.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 538
-TITLE: Attachment not illegal, person making same not trespasser for defect or want of
-CHAPTER: 
-============================================================
-
-538. Attachment not illegal, person making same not trespasser for defect or want of
- form in proceedings.
- CHAPTER XLVI
- MISCELLANEOUS
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 539
-TITLE: Courts and persons before whom affidavits may be sworn
-CHAPTER: 
-============================================================
-
-539. Courts and persons before whom affidavits may be sworn.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 539A
-TITLE: Affidavit in proof of conduct of public servant
-CHAPTER: 
-============================================================
-
-539A. Affidavit in proof of conduct of public servant.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 539B
-TITLE: Local inspection
-CHAPTER: 
-============================================================
-
-539B. Local inspection.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 540
-TITLE: Power to summon material witness or examine person present
-CHAPTER: 
-============================================================
-
-540. Power to summon material witness or examine person present.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 540A
-TITLE: Provision for inquiries and trial being held in the absence of accused in certain
-CHAPTER: 
-============================================================
-
-540A. Provision for inquiries and trial being held in the absence of accused in certain
- cases.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 541
-TITLE: Power to appoint place of imprisonment
-CHAPTER: 
-============================================================
-
-541. Power to appoint place of imprisonment.
- Removal to criminal jail of accused or convicted persons who are in
- Page 16 of 319
- confinement in civil jail, and their return to the civil jail.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 542
-TITLE: [Repealed
-CHAPTER: 
-============================================================
-
-542. [Repealed.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 543
-TITLE: Interpreter to be bound to interpret truthfully
-CHAPTER: 
-============================================================
-
-543. Interpreter to be bound to interpret truthfully.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 544
-TITLE: Expenses of complainants and witnesses
-CHAPTER: 
-============================================================
-
-544. Expenses of complainants and witnesses.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 544A
-TITLE: Compensation to the heirs to the person killed, etc
-CHAPTER: 
-============================================================
-
-544A. Compensation to the heirs to the person killed, etc.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 545
-TITLE: Power of Court to pay expenses of compensation out of fine
-CHAPTER: 
-============================================================
-
-545. Power of Court to pay expenses of compensation out of fine.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 546
-TITLE: Payments to be taken into account in subsequent suit
-CHAPTER: 
-============================================================
-
-546. Payments to be taken into account in subsequent suit.
+73. Service of summons outside local limits. When a Court desires that a summons issued by it shall be
+served at any place outside the local limits of its jurisdiction, it shall ordinarily send such summons in
+duplicate to a Magistrate within the local limits of whose jurisdiction the person summoned resides or is, to
+be there served.
 
 

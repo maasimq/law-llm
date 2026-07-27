@@ -1,105 +1,103 @@
 import os
-import csv
-import json
-import numpy as np
 import chromadb
+import numpy as np
 from tqdm import tqdm
 
+def get_metadata_from_filename(filename):
+    """Extract act name and section/article number from filename."""
+    if filename.startswith("constitution"):
+        act = "Constitution of Pakistan"
+        # constitution_article_10_chunk_0.txt -> 10
+        parts = filename.replace("constitution_article_", "").split("_chunk")
+        sec = parts[0].upper()
+    elif filename.startswith("crpc"):
+        act = "Code of Criminal Procedure, 1898"
+        sec = "Unknown"  # the crpc chunking didn't put sections in filename
+    elif filename.startswith("ppc"):
+        act = "Pakistan Penal Code, 1860"
+        # ppc_section_302_chunk_0.txt -> 302
+        parts = filename.replace("ppc_section_", "").split("_chunk")
+        sec = parts[0].upper()
+    else:
+        act = "Unknown"
+        sec = "Unknown"
+    return act, sec
+
 def load_and_ingest():
-    print("Initializing ChromaDB Persistent Client...")
-    
-    # Create the chroma database directory if it doesn't exist
     db_path = os.path.join("data", "chroma_db")
     os.makedirs(db_path, exist_ok=True)
     
-    # Persistent client saves everything to disk
     client = chromadb.PersistentClient(path=db_path)
     
-    # Create or get collection
-    collection = client.get_or_create_collection(
+    # Delete the existing collection so we can do a fresh, complete ingest
+    try:
+        client.delete_collection("law_collection")
+    except Exception:
+        pass
+        
+    collection = client.create_collection(
         name="law_collection",
-        metadata={"hnsw:space": "cosine"} # bge-small-en-v1.5 works best with cosine similarity
+        metadata={"hnsw:space": "cosine"}
     )
 
-    index_files = [
-        os.path.join("data", "embeddings", "embedding_index.csv"),
-        os.path.join("data", "embeddings", "crpc_embedding_index.csv")
-    ]
+    chunks_dir = os.path.join("data", "chunks")
+    embeddings_dir = os.path.join("data", "embeddings")
     
+    txt_files = [f for f in os.listdir(chunks_dir) if f.endswith(".txt")]
+    
+    ids = []
+    embeddings = []
+    documents = []
+    metadatas = []
     total_inserted = 0
     
-    for index_file in index_files:
-        if not os.path.exists(index_file):
-            # Log missing index files to standard output
-            print(f"Skipping {index_file}, index file not found on disk.")
+    print(f"Found {len(txt_files)} legal chunks on disk. Starting complete ingestion...")
+    
+    for filename in tqdm(txt_files, desc="Ingesting to ChromaDB"):
+        chunk_path = os.path.join(chunks_dir, filename)
+        emb_filename = filename.replace(".txt", ".npy")
+        emb_path = os.path.join(embeddings_dir, emb_filename)
+        
+        if not os.path.exists(emb_path):
             continue
             
-        print(f"\nProcessing index: {index_file}")
-        with open(index_file, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
+        with open(chunk_path, 'r', encoding='utf-8') as f:
+            text_content = f.read()
             
-            ids = []
-            embeddings = []
-            metadatas = []
-            documents = []
+        emb = np.load(emb_path).tolist()
+        
+        act_name, sec_num = get_metadata_from_filename(filename)
+        doc_id = filename.replace('.txt', '')
+        
+        ids.append(doc_id)
+        embeddings.append(emb)
+        documents.append(text_content)
+        metadatas.append({
+            "act_name": act_name,
+            "section_article_number": sec_num
+        })
+        
+        if len(ids) >= 200:
+            collection.add(
+                ids=ids,
+                embeddings=embeddings,
+                documents=documents,
+                metadatas=metadatas
+            )
+            total_inserted += len(ids)
+            ids, embeddings, documents, metadatas = [], [], [], []
             
-            # Progress bar for visual tracking
-            for row in tqdm(rows, desc="Ingesting to ChromaDB"):
-                chunk_filename = row['chunk_filename']
-                emb_filename = row['embedding_filename']
-                
-                chunk_path = os.path.join("data", "chunks", chunk_filename)
-                emb_path = os.path.join("data", "embeddings", emb_filename)
-                
-                if not os.path.exists(chunk_path) or not os.path.exists(emb_path):
-                    continue
-                    
-                # Read vector array and convert to native python list for ChromaDB
-                emb = np.load(emb_path).tolist()
-                
-                # Read raw text content
-                with open(chunk_path, 'r', encoding='utf-8') as tf:
-                    text_content = tf.read()
-                
-                # Use chunk filename (without extension) as a unique UUID
-                doc_id = chunk_filename.replace('.txt', '')
-                
-                ids.append(doc_id)
-                embeddings.append(emb)
-                documents.append(text_content)
-                metadata = {
-                    "act_name": row.get("act_name", "Unknown"),
-                    "section_article_number": row.get("section_article_number") or row.get("section_number") or row.get("article_number") or "Unknown",
-                    "chunk_id": int(row.get("chunk_id", 0)),
-                    "word_count": int(row.get("word_count", 0))
-                }
-                metadatas.append(metadata)
-                
-                # Batch insert every 200 documents to optimize memory
-                if len(ids) >= 200:
-                    collection.add(
-                        ids=ids,
-                        embeddings=embeddings,
-                        documents=documents,
-                        metadatas=metadatas
-                    )
-                    total_inserted += len(ids)
-                    # Reset buffers
-                    ids, embeddings, documents, metadatas = [], [], [], []
-            
-            # Insert any remaining documents
-            if len(ids) > 0:
-                collection.add(
-                    ids=ids,
-                    embeddings=embeddings,
-                    documents=documents,
-                    metadatas=metadatas
-                )
-                total_inserted += len(ids)
+    if len(ids) > 0:
+        collection.add(
+            ids=ids,
+            embeddings=embeddings,
+            documents=documents,
+            metadatas=metadatas
+        )
+        total_inserted += len(ids)
 
-    print(f"\n✅ Successfully ingested {total_inserted} chunks into ChromaDB.")
-    print(f"📊 Total documents currently in collection: {collection.count()}")
+    print(f"\nSuccessfully ingested {total_inserted} chunks into ChromaDB.")
+    print(f"Total documents currently in collection: {collection.count()}")
 
 if __name__ == "__main__":
     load_and_ingest()

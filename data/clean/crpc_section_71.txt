@@ -1,7 +1,11 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 71
-TITLE: Procedure when service cannot be effected as before provided
+TITLE: Procedure when service cannot be effected as before provided. If service in the manner
 CHAPTER: 
 ============================================================
 
-71. Procedure when service cannot be effected as before provided.
+71. Procedure when service cannot be effected as before provided. If service in the manner
+mentioned in sections 69 and 70 cannot by the exercise of due diligence be effected, the serving
+officer shall affix one of the duplicates of the summons to some conspicuous part of the house or
+homestead in which the person summoned ordinarily resides; and thereupon the summons shall be
+deemed to have been duly served.

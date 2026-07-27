@@ -1,7 +1,12 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 440
-TITLE: Optional with Court to hear parties
+TITLE: Optional with Court to hear parties. No party has any right to be heard either personally or by
 CHAPTER: 
 ============================================================
 
-440. Optional with Court to hear parties.
+440. Optional with Court to hear parties. No party has any right to be heard either personally or by
+pleader before any Court when exercising its powers of revision :
+
+ Provided that the Court may, if it thinks fit, when exercising such powers, hear any party either
+personally or by pleader, and that nothing in this section shall be deemed to affect section 439, sub­section
+(2).

@@ -45,7 +45,8 @@ ANSWER:"""
 
 def retrieve_context(query_text: str, collection, embed_model, top_k: int = 3, filter_act: str | None = None):
     """Retrieve the top matching dense vector chunks from ChromaDB."""
-    query_embedding = embed_model.encode(query_text).tolist()
+    prefixed_query = "Represent this sentence for searching relevant passages: " + query_text
+    query_embedding = embed_model.encode(prefixed_query, normalize_embeddings=True).tolist()
     query_params = {
         "query_embeddings": [query_embedding],
         "n_results": top_k,

@@ -1,7 +1,71 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 238
-TITLE: When offence proved included in offence charged
+TITLE: When offence proved included in offence charged.­(1) When a person is charged with an offence
 CHAPTER: 
 ============================================================
 
-238. When offence proved included in offence charged.
+238. When offence proved included in offence charged.­(1) When a person is charged with an offence
+consisting of several particulars, a combination of some only of which constitutes, a complete minor
+offence, and such combination is proved, that the remaining particulars are not proved, he may be convicted
+of the minor offence, though he was not charged with it.
+
+ (2) When a person is charged with an offence and facts are proved which reduce it to a minor offence,
+he may be convicted of the minor offence, although he is not charged with it.
+
+1 Sub­section (2) rep. by the Code of Criminal Procedure (Amendment) Act, 1923 (18 of 1923), s. 63.
+
+ Page 112 of 319
+ [(2A) When a person is charged with an offence, he may be convicted of an attempt to commit such
+ 1
+
+offence although the attempt is not separately charged.]
+
+ (3) Nothing in this section shall be deemed to authorize a conviction of any offence referred to in
+section 198 or section 199 when no complaint has been made as required by that section.
+
+ Illustrations
+
+ (a) A is charged, under section 407 of the Pakistan Penal Code (XLV of 1860), with criminal breach
+ of trust in respect of property entrusted to him as a carrier. It appears, that he did commit
+ criminal breach of trust under section 406 in respect of the property, but that it was not entrusted
+ to him as a carrier. He may be convicted of criminal breach of trust under section 406.
+
+ (b) A is charged, under section 325 of the Pakistan Penal Code (XLV of 1860), with causing
+ grievous hurt. He proves that he acted on grave and sudden provocation. He may be convicted
+ under section 335 of that Code.
+
+ [239. What persons may be charged jointly. The following persons may be charged and tried
+ 2
+
+together, namely:__
+
+ (a) persons accused of the same offence committed in the course of the same transaction;
+
+ (b) persons accused of an offence and persons accused of abetment, or of an attempt to commit
+ such offence;
+
+ (c) persons accused of more than one offence of the same kind, within the meaning of section 234
+ committed by them jointly within the period of twelve months;
+
+ (d) persons accused of different offences committed in the course of the same transaction;
+
+ (e) persons accused of an offence which includes theft, extortion, or criminal misappropriation, and
+ persons accused of receiving or retaining, or assisting in the disposal or concealment of, property
+ possession of which is alleged to have been transferred by any such offence committed by the
+ first­named persons, or of abetment of or attempting to commit any such last­named offence;
+
+ (f) persons accused of offences under sections 411 and 414 of the Pakistan Penal Code (XLV of
+ 1860) or either of those sections in respect of stolen property the possession of which has been
+ transferred by one offence; and
+
+ (g) persons accused of any offence under Chapter XIl of the Pakistan Penal Code (XLV of 1860)
+ relating to counterfeit coin, and persons accused of any other offence under the said
+
+1 Sub­section (2A) ins. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s. 64.
+2 Subs. ibid., s. 65, for original s. 239.
+
+ Page 113 of 319
+ Chapter relating to the same coin, or of abetment of or attempting to commit any such offence;
+
+ and the provisions contained in the former part of this Chapter shall, so far as may be, apply to all such
+charges.]

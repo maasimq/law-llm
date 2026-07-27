@@ -1,9 +1,7 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 7
-TITLE: Sessions divisions and districts
+TITLE: Power to try summarily, section 260.
 CHAPTER: 
 ============================================================
 
-7. Sessions divisions and districts.
- Power to alter divisions and districts.
- Existing divisions and districts maintained till altered.
+7. Power to try summarily, section 260.

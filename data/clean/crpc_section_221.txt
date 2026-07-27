@@ -1,12 +1,26 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 221
-TITLE: Charge to state offence
+TITLE: Charge to state offence.__ (1) Every charge under this Code shall state the offence with which the
 CHAPTER: 
 ============================================================
 
-221. Charge to state offence.
- Specific name of offence sufficient description.
- How stated where offence has no specific name.
- What implied in charge.
- Language of charge.
- Previous conviction when to be set out.
+221. Charge to state offence.__ (1) Every charge under this Code shall state the offence with which the
+accused is charged.
+
+ (2) Specific name of offence sufficient description. If the law which creates the offence gives it any
+specific name, the offence may be described in the charge by that name only.
+
+ (3) How stated where offence has no specific name. If the law which creates the offence does not give
+it any specific name, so much of the definition of the offence must be stated as to give the accused notice of
+the matter with which he is charged.
+
+ (4) The law and section of the law against which the offence is said to have been committed shall be
+mentioned in the charge.
+
+ (5) What implied in charge. The fact that the charge is made is equivalent to a statement that every
+legal condition required by law to constitute the offence charged was fulfilled in the particular case.
+ 3
+ [(6) Language of charge. The charge shall be written either in English or in the language of the Court.]
+
+1 Subs. by the Law Reforms Ordinance, 1972 (12 of 1972), s.2 and sch., for “Magistrate”.
+2 Chapter XVIII was previously amended by the Criminal Law Amendment Act, 1923 (12 of 1923), s. 9, A.O., 1949, Sch., Code of Criminal Precedure (Amdt.) Act, 1923 (18 of 1923), s. 57 and A.O,

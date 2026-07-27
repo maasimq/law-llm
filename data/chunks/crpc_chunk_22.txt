@@ -1,181 +1,50 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 412
-TITLE: No appeal in certain cases when accused pleads guilty
+SECTION: 655
+TITLE: Arrest of vagabonds, habitual robbers, etc.­(1) Any officer in charge of a police­station may, in
 CHAPTER: 
 ============================================================
 
-412. No appeal in certain cases when accused pleads guilty.
+655. Arrest of vagabonds, habitual robbers, etc.­(1) Any officer in charge of a police­station may, in
+like manner, arrest or cause to be arrested­
+
+ (a) any person found taking precautions to conceal his presence within the limits of such station,
+ under circumstances which afford reason to believe that he is taking such precautions with a
+ view to committing a cognizable offence ; or
+
+ (b) any person within the limits of such station who has not ostensible means of subsistence, or who
+ cannot give a satisfactory account of himself; or
+
+ (c) any person who is by repute an habitual robber, house­breaker or thief, or an habitual receiver of
+ stolen property knowing it to be stolen, or who by repute habitually commits extortion or in
+ order to the committing of extortion habitually puts or attempts to put persons in fear of injury.
+
+1 Subs. by the Central Laws (Statue Reform) Ordinance, 1960 (21 of 1960), s.3 and 2nd Sch. (with effect from the 14th October, 1955), for “the Provinces and the Capital of the Federation”. Which had
+been subs. by A.O., 1949, Arts. 3 (2) and 4, for “British India”.
+2 The words “or under the Fugitive Offenders Act, 1881,” omitted by the Federal Laws (Revision and Declaration) Ordinance, 1981 (27 of 1981), s.3 and Second Sch.
+3 The word “and” rep. by the Repealing and Amending Act, 1927 (10 of 1927), s.3 and Sch. II.
+4 Ins. by the Code of Criminal Procedure (Amendment) Act, 1923 (18 of 1923), s.10.
+5 Sub­section (2) as amended by the City of Bombay Police Act, 1902 (Bom. 4 of 1902), s.2 (1) and Sch. A, omitted by A.O., 1949, Sch.
+6 In the N.W.F.P., any police­officer may exercise the powers conferred by this section on a police­officer in charge of a police­station, see the N.W.F.P. Law and Justice Regulation, 1901 (7 of 1901),
+s.13.
+
+ Page 37 of 319
+ 1* * * * * * *
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 413
-TITLE: No appeal in petty cases
+SECTION: 56
+TITLE: Procedure when police officer deputes subordinate to arrest without warrant.­(1)
 CHAPTER: 
 ============================================================
 
-413. No appeal in petty cases.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 414
-TITLE: No appeal from certain summary convictions
-CHAPTER: 
-============================================================
-
-414. No appeal from certain summary convictions.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 415
-TITLE: Proviso to sections 413 and 414
-CHAPTER: 
-============================================================
-
-415. Proviso to sections 413 and 414.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 415A
-TITLE: Special right of appeal in certain cases
-CHAPTER: 
-============================================================
-
-415A. Special right of appeal in certain cases.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 416
-TITLE: [Repealed
-CHAPTER: 
-============================================================
-
-416. [Repealed.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 417
-TITLE: Appeal in case of acquittal
-CHAPTER: 
-============================================================
-
-417. Appeal in case of acquittal.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 418
-TITLE: Appeal on what matters admissible
-CHAPTER: 
-============================================================
-
-418. Appeal on what matters admissible.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 419
-TITLE: Petition of appeal
-CHAPTER: 
-============================================================
-
-419. Petition of appeal.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 420
-TITLE: Procedure when appellant in jail
-CHAPTER: 
-============================================================
-
-420. Procedure when appellant in jail.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 421
-TITLE: Summary dismissal of appeal
-CHAPTER: 
-============================================================
-
-421. Summary dismissal of appeal.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 422
-TITLE: Notice of appeal
-CHAPTER: 
-============================================================
-
-422. Notice of appeal.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 423
-TITLE: Powers of Appellate Court in disposing of appeal
-CHAPTER: 
-============================================================
-
-423. Powers of Appellate Court in disposing of appeal.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 424
-TITLE: Judgments of subordinate Appellate Courts
-CHAPTER: 
-============================================================
-
-424. Judgments of subordinate Appellate Courts.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 425
-TITLE: Order by High Court on appeal to be certified to lower Court
-CHAPTER: 
-============================================================
-
-425. Order by High Court on appeal to be certified to lower Court.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 426
-TITLE: Suspension of sentence pending appeals
-CHAPTER: 
-============================================================
-
-426. Suspension of sentence pending appeals.
- Release of appellant on bail.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 427
-TITLE: Arrest of accused in appeal from acquittal
-CHAPTER: 
-============================================================
-
-427. Arrest of accused in appeal from acquittal.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 428
-TITLE: Appeallate court may take further evidence or direct it to be taken
-CHAPTER: 
-============================================================
-
-428. Appeallate court may take further evidence or direct it to be taken.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 429
-TITLE: Procedure where judges of Court of Appeal are equally divided
-CHAPTER: 
-============================================================
-
-429. Procedure where judges of Court of Appeal are equally divided.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 430
-TITLE: Finality of orders on appeal
-CHAPTER: 
-============================================================
-
-430. Finality of orders on appeal.
+56. Procedure when police officer deputes subordinate to arrest without warrant.­(1)
+When any officer in charge of a police­station 2[or any police­officer making an investigation
+under­Chapter XIV] requires any officer subordinate to him to arrest without a warrant (otherwise
+than in his presence) any person who may lawfully be arrested without a warrant, he shall deliver
+to the officer required to make the arrest an order in writing, specifying the person to be arrested
+and the offence or other cause for which the arrest is to be made. 2[The officer so required shall,
+before making the arrest, notify to the person to be arrested the substance of the order and, if so
+required by such person, shall show him the order.]
+ 1* * * * * * *
 
 

@@ -1,10 +1,16 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 67
-TITLE: Provisions of sections 47, 48 and 49 to apply to arrests under section 66
+TITLE: Provisions of sections 47, 48 and 49 to apply to arrests under section 66. The
 CHAPTER: 
 ============================================================
 
-67. Provisions of sections 47, 48 and 49 to apply to arrests under section 66.
+67. Provisions of sections 47, 48 and 49 to apply to arrests under section 66. The
+provisions of sections 47, 48 and 49 shall apply to arrests under section 66, although the person
+making any such arrest is not acting under a warrant and is not a police­officer having authority to
+arrest.
+
+ ___________
+
  CHAPTER VI
  OF PROCESSES TO COMPEL APPEARANCE
- A.­Summons.
+ A.­Summons

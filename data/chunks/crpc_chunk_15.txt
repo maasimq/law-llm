@@ -1,183 +1,40 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 241
-TITLE: Procedure in trial of cases
+SECTION: 43
+TITLE: Aid to person other than police­officer, executing warrant. When a warrant is directed to a
 CHAPTER: 
 ============================================================
 
-241. Procedure in trial of cases.
+43. Aid to person other than police­officer, executing warrant. When a warrant is directed to a
+person other than a police­officer, any other person may aid in the execution of such warrant, if the person
+to whom the warrant is directed be near at hand and acting in the execution of the warrant.
+
+1 Subs. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s. 8, for “transferred”.
+2 Subs. by A.O., 1937, for “L.G.”.
+3 The words “continue to” rep. by Act 18 of 1923, s. 8.
+4 Subs. ibid., for “to which”.
+5 The words “whether within or without the presidency­towns” omitted by A.O., 1961, Art.2 and Sch. (with effect from the 2nd March, 1956).
+6 Subs., added and ins. by Ord. 12 of 1972, s. 2 and Sch.
+7 Subs. by Ord. 37 of 2001, s.20 (w.e.f. 14­8­2001).
+
+ Page 31 of 319
 
 
 ACT: Code of Criminal Procedure, 1898
-SECTION: 241A
-TITLE: Supply of statements and documents to the accused
+SECTION: 44
+TITLE: Public to give information of certain offences.­1[(1) Every person aware of the commission of, or
 CHAPTER: 
 ============================================================
 
-241A. Supply of statements and documents to the accused.
+44. Public to give information of certain offences.­1[(1) Every person aware of the commission of, or
+of the intention of any other person to commit, any offence punishable under any of the following sections
+of the Pakistan Penal Code, namely, 121, 121A, 122, 123, 123A, 124, 124A, 125, 126, 130, 143, 144, 145,
+147, 148, 153A, 161, 162, 163, 164, 165, 168, 170, 231, 232, 255, 302, 303, 304, 304A, 364A, 382, 392,
+393, 394, 395, 396, 397, 398, 399, 402, 435, 436, 449, 450, 456, 457, 458, 459, 460 and 489A, shall, in the
+absence of reasonable excuse, the burden of proving which shall lie upon the person so aware, forthwith
+give information to the nearest Magistrate 7[Justice of the Peace] or police­officer of such commission or
+intention.]
 
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 242
-TITLE: Charge to be framed
-CHAPTER: 
-============================================================
-
-242. Charge to be framed.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 243
-TITLE: Conviction on admission of truth of accusation
-CHAPTER: 
-============================================================
-
-243. Conviction on admission of truth of accusation.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 244
-TITLE: Procedure when no such admission is made
-CHAPTER: 
-============================================================
-
-244. Procedure when no such admission is made.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 244A
-TITLE: Statement made under section 164
-CHAPTER: 
-============================================================
-
-244A. Statement made under section 164.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 245
-TITLE: Acquittal
-CHAPTER: 
-============================================================
-
-245. Acquittal.
- Sentence.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 245A
-TITLE: Procedure in cases of previous convictions
-CHAPTER: 
-============================================================
-
-245A. Procedure in cases of previous convictions.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 246
-TITLE: [Omitted
-CHAPTER: 
-============================================================
-
-246. [Omitted.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 247
-TITLE: Non­appearance of complainant
-CHAPTER: 
-============================================================
-
-247. Non­appearance of complainant.
- Page 9 of 319
-248. Withdrawal of complaint.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 249
-TITLE: Power to stop proceeding when no complaint
-CHAPTER: 
-============================================================
-
-249. Power to stop proceeding when no complaint.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 249A
-TITLE: Power of magistrate to acquit accused at any stage
-CHAPTER: 
-============================================================
-
-249A. Power of magistrate to acquit accused at any stage.
- Frivolous Accusations in cases tried by Magistrate
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 250
-TITLE: False, frivolous or vexatious accusations
-CHAPTER: 
-============================================================
-
-250. False, frivolous or vexatious accusations.
- CHAPTER XXI
- [Omitted.]
- CHAPTER XXII
- OF SUMMARY TRIALS
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 260
-TITLE: Power to try summarily
-CHAPTER: 
-============================================================
-
-260. Power to try summarily.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 261
-TITLE: Power to invest Bench of Magistrates invested with less powers
-CHAPTER: 
-============================================================
-
-261. Power to invest Bench of Magistrates invested with less powers.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 262
-TITLE: Procedure prescribed in Chapter XX applicable
-CHAPTER: 
-============================================================
-
-262. Procedure prescribed in Chapter XX applicable.
- Limit of imprisonment.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 263
-TITLE: Record in cases where there is no appeal
-CHAPTER: 
-============================================================
-
-263. Record in cases where there is no appeal.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 264
-TITLE: Record in appealable cases
-CHAPTER: 
-============================================================
-
-264. Record in appealable cases.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 265
-TITLE: Language of record and judgment
-CHAPTER: 
-============================================================
-
-265. Language of record and judgment.
- Bench may be authorized to employ clerk
- CHAPTER XXIIA
- TRIALS BEFORE HIGH COURTS AND COURTS OF SESSION
+ (2) For the purposes of this section the term “offence” includes any act committed at any place out of
+2[Pakistan] which would constitute an offence if committed in 2[Pakistan].
 
 

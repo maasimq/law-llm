@@ -1,7 +1,18 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 233
-TITLE: Separate charged for distinct offences
+TITLE: Separate charges for distinct offences. For every distinct offence of which any person is accused
 CHAPTER: 
 ============================================================
 
-233. Separate charged for distinct offences.
+233. Separate charges for distinct offences. For every distinct offence of which any person is accused
+there shall be a separate charge, and every such charge shall be tried separately, except in the cases
+mentioned in sections 234, 235, 236 and 239.
+
+ Illustration
+
+ A is accused of a theft on one occasion, and of causing grievous hurt on another occasion. A must be
+separately charged and separately tried for the theft and causing grievous hurt.
+
+1 Ins. by the Law Reforms Ordinance, 1972 (12 of 1972) s. 2 and Sch.
+
+ Page 109 of 319

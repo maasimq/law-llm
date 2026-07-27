@@ -1,10 +1,32 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 512
-TITLE: Record of evidence in absence of accused
+TITLE: Record of evidence in absence of accused._(1) If it is proved that an accused person has
 CHAPTER: 
 ============================================================
 
-512. Record of evidence in absence of accused.
- Record of evidence when offender unknown.
+512. Record of evidence in absence of accused._(1) If it is proved that an accused person has
+absconded, and that there is no immediate prospect of arresting him, the Court competent to try or 4[send for
+trial to the Court of Session or High Court] such person for the offence complained of may, in his absence,
+examine the witnesses (if any) produced on behalf of the prosecution, and record their depositions. Any
+such deposition may, on the arrest of such person, be given in evidence against him on the inquiry into, or
+trial for, the offence with which he is charged, if the deponent is dead or incapable of giving evidence or his
+attendance cannot be procured without an amount of delay, expanse or inconvenience which, under the
+circumstances of the case, would be unreasonable.
+
+1 Subs. by Ordinance 12 of 1972, s.2 and Sch., for “section 510”.
+2 Ins. by the Code of Criminal Procedure (Amdt.) Ordinance, 1983 (5 of 1983), s.2.
+3 Subs by the Law Reforms (Amdt.) Act, 1976 (21 of 1976), s.2 and Sch, for “and shall, if so. requested by any party to such inquiry, trial or “proceeding,”, (w.e.f. 18­4­76).
+4 Subs. by the Law Reforms Ordinance, 1972 (12 of 1972), s.2 and Sch., for “commit for trail”.
+
+ Page 179 of 319
+ (2) Record of evidence when offender unknown. If it appears that an offence punishable with death or
+1
+ [imprisonment for life] has been committed by some person or persons unknown, the High Court may direct
+that any Magistrate of the first class shall hold an inquiry and examine any witnesses who can give evidence
+concerning the offence. Any depositions so taken may be given in evidence against any person who is
+subsequently accused of the offence, if the deponent is dead or incapable of giving evidence or beyond the
+limits of 2[Pakistan].
+
  CHAPTER XLII
+
  PROVISIONS AS TO BONDS

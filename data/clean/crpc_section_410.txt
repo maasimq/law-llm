@@ -1,7 +1,8 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 410
-TITLE: Appeal from sentence of Court of Session
+TITLE: Appeal from sentence of Court of Session. Any person convicted on a trial held by a Sessions
 CHAPTER: 
 ============================================================
 
-410. Appeal from sentence of Court of Session.
+410. Appeal from sentence of Court of Session. Any person convicted on a trial held by a Sessions
+Judge, or an Additional Sessions Judge, may appeal to the High Court.

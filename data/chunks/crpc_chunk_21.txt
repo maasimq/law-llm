@@ -1,157 +1,53 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 400
-TITLE: Return of warrant on execution of sentence
+SECTION: 54
+TITLE: When police may arrest without warrant.­(1) Any police­officer may, without an order from a
 CHAPTER: 
 ============================================================
 
-400. Return of warrant on execution of sentence.
- CHAPTER XXIX
- OF SUSPENSIONS, REMISSIONS AND COMMUNICATIONS OF
- SENTENCES.
+54. When police may arrest without warrant.­(1) Any police­officer may, without an order from a
+Magistrate and without a warrant, arrest—
 
+ first, any person who has been concerned in any cognizable offence or against whom a reasonable
+complaint has been made or credible information has been received, or a reasonable suspicion exists of his
+having been so concerned;
 
-ACT: Code of Criminal Procedure, 1898
-SECTION: 401
-TITLE: Power to suspend or remit sentences
-CHAPTER: 
-============================================================
+ secondly, any person having in his possession without lawful excuse, the burden of proving which
+excuse shall lie on such person, any implement of house­breaking;
 
-401. Power to suspend or remit sentences.
+ thirdly, any person who has been proclaimed as an offender either under this Code or by order of the
+1[Provincial Government];
 
+ fourthly, any person in whose possession anything is found which may reasonably be suspected to be
+stolen property 2[and] who may reasonably be suspected of having committed an offence with reference to
+such thing ;
 
-ACT: Code of Criminal Procedure, 1898
-SECTION: 402
-TITLE: Power to commute punishment
-CHAPTER: 
-============================================================
+ fifthly, any person who obstructs a police­officer while in the execution of his duty, or who
+has escaped, or attempts to escape, from lawful custody ;
 
-402. Power to commute punishment.
+ sixthly, any person reasonably suspected of being a deserter from 3[the armed forces of Pakistan] 4* *
+*5* * *
 
+1 Subs. by A.O., 1937, for “L.G.”.
+2 Subs. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s.10, for “or”.
+3 Subs. by A.O., 1961, Art. 2 and Sch. (with effect from the 23rd March, 1956), for “Her Majesty’s Army, Navy or Air Force”, which had been subs. by the Repealing and Amending Act, 1927 (10 of
+1927), s.2 and Sch. I, for “Army or Navy”.
+4 The words “or from any unit of [force of an Acceding State] declared under the Extrardition Act, 1903, to be a unit desertion from which is an extradition offence” omitted by the Federal Laws
+(Revision and Declaration) Ordinance, 1981 (27 of 1981), s. 3 and Second Schedule which were amended by the Code of Criminal Procedure (Amdt.) Ordinance, 1944 (48 of 1944), s.2 and the Federal
+Laws (Revision and Declaration) Act, 1951 (26 of 1951), s.4 and Third Sch., to read as above.
+5 The words “or of belonging to Her Majesty’s Indian Marine Service and being illegally absent from that service” rep. by the Amending Act, 1934 (35 of 1934), s.2 and Sch.
 
-ACT: Code of Criminal Procedure, 1898
-SECTION: 402A
-TITLE: Sentence of death
-CHAPTER: 
-============================================================
+ Page 36 of 319
+ seventhly, any person who has been concerned in, or against whom a reasonable complaint has been
+made or credible information has been received or a reasonable suspicion exists of his having been
+concerned in, any act committed at any place out of 1[Pakistan] which, if committed in 1[Pakistan], would
+have been punishable as an offence; and for which he is, under any law relating to extradition 2* * *or
+otherwise, liable to be apprehended or detained in custody in 1[Pakistan.] 3*;
 
-402A. Sentence of death.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 402B
-TITLE: Certain restrictions on the exercise of powers by Provincial Government
-CHAPTER: 
-============================================================
-
-402B. Certain restrictions on the exercise of powers by Provincial Government.
- CHAPTER XXX
- OF PREVIOUS ACQUITTALS OR CONVICTIONS
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 403
-TITLE: Person once convicted or acquitted not to be tried for same offence
-CHAPTER: 
-============================================================
-
-403. Person once convicted or acquitted not to be tried for same offence.
- Page 12 of 319
- PART VII
- OF APPEAL, REFERENCE AND REVISION.
- CHAPTER XXXI
- OF APPEALS
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 404
-TITLE: Unless otherwise provided, no appeal to lie
-CHAPTER: 
-============================================================
-
-404. Unless otherwise provided, no appeal to lie.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 405
-TITLE: Appeal from order rejecting application for restoration of attached property
-CHAPTER: 
-============================================================
-
-405. Appeal from order rejecting application for restoration of attached property.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 406
-TITLE: Appeal from order requiring security for keeping the peace or for good
-CHAPTER: 
-============================================================
-
-406. Appeal from order requiring security for keeping the peace or for good
- behaviour.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 406A
-TITLE: Appeal from order refusing to accept or rejecting a surety
-CHAPTER: 
-============================================================
-
-406A. Appeal from order refusing to accept or rejecting a surety.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 407
-TITLE: Appeal from sentence of Magistrate of the second or third class
-CHAPTER: 
-============================================================
-
-407. Appeal from sentence of Magistrate of the second or third class.
- Transfer of appeals to first class Magistrate.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 408
-TITLE: Appeal from sentence of Assistant Sessions Judge or Magistrate of the first
-CHAPTER: 
-============================================================
-
-408. Appeal from sentence of Assistant Sessions Judge or Magistrate of the first
- class.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 409
-TITLE: Appeals to Court of Session how heard
-CHAPTER: 
-============================================================
-
-409. Appeals to Court of Session how heard.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 410
-TITLE: Appeal from sentence of Court of Session
-CHAPTER: 
-============================================================
-
-410. Appeal from sentence of Court of Session.
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 411
-TITLE: [Omitted
-CHAPTER: 
-============================================================
-
-411. [Omitted.]
-
-
-ACT: Code of Criminal Procedure, 1898
-SECTION: 411A
-TITLE: Appeal from sentence of High Court
-CHAPTER: 
-============================================================
-
-411A. Appeal from sentence of High Court.
+ eighthly, any released convict committing a breach of any rule made under section 565, sub­section (3);
+ 4[ninthly, any person for whose arrest a requisition has been received from another police­officer,
+provided that the requisition specifies the person to be arrested and the offence or other cause for which the
+arrest is to be made and it appears therefrom that the person might lawfully be arrested without a warrant by
+the officer who issued the requisition.]
+ 5* * * * * * *
 
 

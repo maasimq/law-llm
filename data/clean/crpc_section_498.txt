@@ -1,7 +1,20 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 498
-TITLE: Power to direct admission to bail or reduction of bail
+TITLE: Power to direct admission to bail or reduction of bail. The amount of every bond executed
 CHAPTER: 
 ============================================================
 
-498. Power to direct admission to bail or reduction of bail.
+498. Power to direct admission to bail or reduction of bail. The amount of every bond executed
+under this Chapter shall be fixed with due regard to the circumstances of the case, and shall not be excessive
+; and the High Court or Court of Session may, in any case, whether there be an appeal on conviction or not,
+direct that any person be admitted to bail, or that the bail required by a police­officer or Magistrate be
+reduced.
+
+ [498A. No bail to be granted to a person not in custody, in court or against whom no case is
+ 4
+
+registered, etc. Nothing in section 497 or section 498 shall be deemed to require or authorise a Court to
+release on bail, or to direct to be admitted to bail, any person who is not in custody or is not present in court
+or against whom no case stands registered for the time being and an order for the release of a person on bail,
+or a direction that a person be admitted to bail, shall be effective only in respect of the case that so stands
+registered against him and is specified in the order or direction.]

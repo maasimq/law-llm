@@ -1,7 +1,9 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 168
-TITLE: Report of investigation by subordinate police­officer
+TITLE: Report of investigation by subordinate police­officer. When any subordinate police­officer has
 CHAPTER: 
 ============================================================
 
-168. Report of investigation by subordinate police­officer.
+168. Report of investigation by subordinate police­officer. When any subordinate police­officer has
+made any investigation under this Chapter, he shall report the result of such investigation to the officer in
+charge of the police­station.

@@ -1,7 +1,11 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 99D
-TITLE: Order of High Court setting aside forfeiture
+TITLE: Order of High Court setting aside forfeiture.__(1) On receipt of the application, the 1[High
 CHAPTER: 
 ============================================================
 
-99D. Order of High Court setting aside forfeiture.
+99D. Order of High Court setting aside forfeiture.__(1) On receipt of the application, the 1[High
+Court] shall, if it is not satisfied that the issue of the newspaper, or the book or other document, in respect of
+which the application has been made, contained 2[treasonable or] 3[seditious or other matter of such a
+nature as is] referred to in sub­section (1) of section 99A, set aside the order of forfeiture.
+ 4* * * * * * *

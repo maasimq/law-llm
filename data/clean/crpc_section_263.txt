@@ -1,7 +1,47 @@
 ACT: Code of Criminal Procedure, 1898
 SECTION: 263
-TITLE: Record in cases where there is no appeal
+TITLE: Record in cases where there is no appeal. In cases where no appeal lies, the Magistrate or Bench
 CHAPTER: 
 ============================================================
 
-263. Record in cases where there is no appeal.
+263. Record in cases where there is no appeal. In cases where no appeal lies, the Magistrate or Bench
+of Magistrates need not record the evidence of the witnesses or frame a formal charge; but he or they shall
+enter in such form as the 2[Provincial Government] may direct the following particulars :__
+
+1 Provisio omitted by the Law Reforms Ordinance, 1972 (12 of 1972), s.2 and Sch.
+2 Subs. by A.O., 1937, for “L.G”.
+3 Ins. by ord. 12 of 1972, s. 2. and sch.
+4 Subs. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s. 75, for “and 447”.
+5 Ins. ibid., s. 75.
+6 Subs. by Ordinance 12 of 1972, s.2 and Sch., for “for summons and warrant­cases”.
+7 Subs. ibid., for sub­section (1) .
+8 Subs. by ord. 85 of 02, s. 5.
+
+ Page 120 of 319
+ (a) the serial number;
+
+ (b) the date of the commission of the offence;
+
+ (c) the date of the report or complaint;
+
+ (d) the name of the complainant (if any);
+
+ (e) the name, parentage and residence of the accused ;
+
+ (f) the offence complained of and the offence (if any) proved, and in cases coming under clause (d),
+ clause (e), clause (f) or clause (g) of sub­section (1) of section 260 the value of the property in
+ respect of which the offence has been committed ;
+
+ (g) the plea of the accused and his examination (if any);
+
+ (h) the finding, and, in the case of a conviction, a brief statement of the reasons therefor ;
+
+ (i) the sentence or other final order; and
+
+ (j) the date on which the proceedings terminated.
+
+ [264. Record in appealable cases. In every case tried summarily by a Magistrate or Bench in which an
+ 1
+
+appeal lies, such Magistrate or Bench shall record the substance of the evidence and also the particulars
+mentioned in section 263 and shall, before passing any sentence record a judgment in the case.]
