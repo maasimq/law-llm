@@ -395,6 +395,9 @@ if user_input:
     # Append user message
     st.session_state.messages.append({"role": "user", "content": user_input, "sources": []})
 
+    # Render user message bubble immediately on screen
+    render_message(role="user", content=user_input)
+
     # Run pipeline with animated steps
     try:
         answer, source_labels = run_pipeline_with_steps(user_input)
