@@ -73,10 +73,10 @@ def retrieve_bm25_context(query_text: str, top_k: int = 2):
 
 def build_rag_prompt(query_text: str, retrieved_docs: list[str]) -> str:
     """Format the final prompt for the LLM using the loaded prompt template."""
-    # Truncate each document to ~4000 characters (approx 1000 tokens)
-    # This prevents hitting the 12,000 TPM limit on the Groq free tier
-    # for extremely large CrPC chunks.
-    truncated_docs = [doc[:4000] for doc in retrieved_docs]
+    # Truncate each document to ~3000 characters (approx 750 tokens)
+    # With 3 chunks max, total context stays under ~2250 tokens + prompt,
+    # well within Groq free-tier 12,000 TPM limit.
+    truncated_docs = [doc[:3000] for doc in retrieved_docs]
     context_block = "\n\n---\n\n".join(truncated_docs)
     template = load_prompt_template()
     return template.format(context=context_block, question=query_text)
@@ -188,10 +188,11 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
         n_results = 4
 
     dense_docs, _ = retrieve_context(question, collection, embed_model, top_k=n_results, filter_act=filter_act)
-    keyword_top_k = 3 if filter_act == "Constitution of Pakistan" else 2
+    keyword_top_k = 2 if filter_act == "Constitution of Pakistan" else 1
     keyword_docs = retrieve_bm25_context(question, top_k=keyword_top_k)
 
-    retrieved_docs = list(dict.fromkeys(dense_docs + keyword_docs))[:5]
+    # Cap at 3 chunks total to stay under Groq free-tier TPM limits
+    retrieved_docs = list(dict.fromkeys(dense_docs + keyword_docs))[:3]
     final_prompt = build_rag_prompt(question, retrieved_docs)
     answer = generate_answer(final_prompt)
 
