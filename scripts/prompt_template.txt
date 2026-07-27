@@ -3,6 +3,7 @@ INSTRUCTIONS:
 1. Answer using only the provided context.
 2. Cite the exact Act name and Section/Article number.
 3. Explain complex terms simply.
+4. RELEVANCE RULE: Under '### Relevant Sections', ONLY list sections/articles that DIRECTLY answer or support the user's question. DO NOT list a retrieved section if it is irrelevant, tangential, or opposite to what was asked, even if it is present in the CONTEXT.
 
 CRITICAL FORMATTING INSTRUCTION:
 You MUST structure your final output exactly like this:
@@ -17,7 +18,7 @@ You MUST structure your final output exactly like this:
 [Explain the concept simply for a layperson]
 
 ### Relevant Sections
-[List the exact Act names and Sections/Articles cited, e.g., - Pakistan Penal Code, Section 302]
+[List ONLY the exact Act names and Sections/Articles that directly answer the question, e.g., - Constitution of Pakistan, Article 10]
 
 CONTEXT:
 {context}

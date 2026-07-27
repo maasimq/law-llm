@@ -205,6 +205,10 @@ def render_citations(sources: list[str]):
     st.markdown('<div class="citations-header">CITED STATUTORY SOURCES</div>', unsafe_allow_html=True)
     for src in sources:
         badge_label, doc_title = extract_citation_badge(src)
+        # Skip untagged chunks that lack a valid Act name or Section/Article identifier
+        if badge_label == "Statute" or "Legal Reference Text" in doc_title:
+            continue
+
         cleaned_src = clean_statutory_text(src)
         
         # Get first meaningful line for preview snippet
@@ -267,17 +271,15 @@ if "pending_question" not in st.session_state:
 
 render_sidebar()
 
-# Check prefill & chat input BEFORE checking whether to render empty state
+# PERSISTENT HEADER: Render logo, title, subtitle, and popular topics unconditionally
+render_empty_state()
+
+# Handle prefill & chat input
 prefill = st.session_state.pop("pending_question", None) if st.session_state.pending_question else None
 user_input = st.chat_input(placeholder="Ask about Bail, FIR, Theft, or Constitutional Rights...")
 
 if prefill and not user_input:
     user_input = prefill
-
-has_conversation = bool(st.session_state.messages or user_input)
-
-if not has_conversation:
-    render_empty_state()
 
 # Chat History
 if st.session_state.messages:

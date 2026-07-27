@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -43,30 +44,61 @@ USER QUESTION:
 ANSWER:"""
 
 
-def retrieve_context(query_text: str, collection, embed_model, top_k: int = 3, filter_act: str | None = None):
-    """Retrieve the top matching dense vector chunks from ChromaDB."""
+def retrieve_context(query_text: str, collection, embed_model, top_k: int = 3, filter_act: str | None = None, max_distance: float = 0.65):
+    """Retrieve the top matching dense vector chunks from ChromaDB, filtered by similarity distance."""
     prefixed_query = "Represent this sentence for searching relevant passages: " + query_text
     query_embedding = embed_model.encode(prefixed_query, normalize_embeddings=True).tolist()
     query_params = {
         "query_embeddings": [query_embedding],
         "n_results": top_k,
+        "include": ["documents", "metadatas", "distances"]
     }
     if filter_act:
         query_params["where"] = {"act_name": filter_act}
 
     results = collection.query(**query_params)
-    return results.get("documents", [[]])[0], results.get("metadatas", [[]])[0]
+    docs = results.get("documents", [[]])[0]
+    distances = results.get("distances", [[]])[0]
+    metadatas = results.get("metadatas", [[]])[0]
+
+    filtered_docs = []
+    filtered_metas = []
+    for doc, dist, meta in zip(docs, distances, metadatas):
+        # Cosine distance: lower is more similar (0 = identical, 1 = orthogonal)
+        if dist <= max_distance:
+            filtered_docs.append(doc)
+            filtered_metas.append(meta)
+
+    return filtered_docs, filtered_metas
 
 
-def retrieve_bm25_context(query_text: str, top_k: int = 2):
-    """Retrieve additional keyword-based chunks using the BM25 index."""
+def retrieve_bm25_context(query_text: str, filter_act: str | None = None, top_k: int = 2):
+    """Retrieve additional keyword-based chunks using the BM25 index with Act filtering."""
     try:
         bm25_index = BM25KeywordIndex.from_chunk_index(
             PROJECT_ROOT / "data" / "chunks" / "chunk_index.csv",
             PROJECT_ROOT / "data" / "chunks",
         )
-        results = bm25_index.search(query_text, top_k=top_k)
-        return [item["text"] for item in results]
+        # Search a larger set if we need to filter by Act
+        results = bm25_index.search(query_text, top_k=top_k * 4 if filter_act else top_k)
+        
+        filtered_texts = []
+        for item in results:
+            text = item.get("text", "")
+            if filter_act:
+                act_lower = filter_act.lower()
+                text_lower = text.lower()
+                if "constitution" in act_lower and ("constitution" not in text_lower and not text_lower.startswith("10 ") and not text_lower.startswith("25 ") and "article" not in text_lower):
+                    continue
+                elif "penal code" in act_lower and ("penal code" not in text_lower and "ppc" not in text_lower):
+                    continue
+                elif "criminal procedure" in act_lower and ("criminal procedure" not in text_lower and "crpc" not in text_lower):
+                    continue
+            filtered_texts.append(text)
+            if len(filtered_texts) >= top_k:
+                break
+
+        return filtered_texts
     except Exception:
         return []
 
@@ -174,6 +206,8 @@ def is_out_of_scope_question(question: str, filter_act: str | None = None) -> bo
     return any(term in normalized for term in out_of_scope_terms)
 
 
+import csv
+
 def detect_act_from_query(query: str) -> str | None:
     """Infer target Act from user query string if not explicitly passed."""
     q_lower = query.lower()
@@ -186,11 +220,99 @@ def detect_act_from_query(query: str) -> str | None:
     return None
 
 
+def extract_requested_statute(query_text: str) -> tuple[str | None, str | None]:
+    """
+    Detect explicit section/article queries e.g.
+    'Article 10A', 'Article 10', 'Section 497', 'Section 302 PPC', '497 CrPC'.
+    Returns (act_name, section_article_number).
+    """
+    q_lower = query_text.lower()
+    act = detect_act_from_query(query_text)
+    
+    # Check for Article XX or Article XXA
+    art_match = re.search(r'article\s*(\d+[a-z]?)', q_lower)
+    if art_match:
+        sec = art_match.group(1).upper()
+        return "Constitution of Pakistan", sec
+
+    # Check for Section XXX or Section XXXA
+    sec_match = re.search(r'section\s*(\d+[a-z]?)', q_lower)
+    if sec_match:
+        sec = sec_match.group(1).upper()
+        return act, sec
+
+    # Check for number + Act e.g. "497 crpc" or "302 ppc"
+    num_act_match = re.search(r'(\d+[a-z]?)\s*(crpc|ppc)', q_lower)
+    if num_act_match:
+        sec = num_act_match.group(1).upper()
+        act_key = num_act_match.group(2)
+        target_act = "Code of Criminal Procedure, 1898" if act_key == "crpc" else "Pakistan Penal Code, 1860"
+        return target_act, sec
+
+    return act, None
+
+
+def get_exact_chunk_by_statute(target_act: str, target_sec: str) -> str | None:
+    """Look up exact chunk text for given Act and Section/Article."""
+    try:
+        chunks_dir = PROJECT_ROOT / "data" / "chunks"
+        sec_clean = target_sec.lower().strip()
+        
+        # 1. Direct filename check for Constitution & PPC
+        if "constitution" in target_act.lower():
+            fname = f"constitution_article_{sec_clean}_chunk_0.txt"
+            fpath = chunks_dir / fname
+            if fpath.exists():
+                with open(fpath, "r", encoding="utf-8") as handle:
+                    return handle.read()
+
+        elif "penal code" in target_act.lower() or "ppc" in target_act.lower():
+            fname = f"ppc_section_{sec_clean}_chunk_0.txt"
+            fpath = chunks_dir / fname
+            if fpath.exists():
+                with open(fpath, "r", encoding="utf-8") as handle:
+                    return handle.read()
+
+        # 2. CSV index lookup
+        csv_path = chunks_dir / "chunk_index.csv"
+        if csv_path.exists():
+            with open(csv_path, "r", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    act = row.get("act_name", "").strip()
+                    sec = row.get("section_article_number", "").strip().upper()
+                    if act.lower() == target_act.lower() and sec == target_sec.upper():
+                        chunk_file = chunks_dir / row["chunk_filename"]
+                        if chunk_file.exists():
+                            with open(chunk_file, "r", encoding="utf-8") as handle:
+                                return handle.read()
+
+        # 3. Header text scanning fallback
+        for file in chunks_dir.glob("*.txt"):
+            with open(file, "r", encoding="utf-8", errors="ignore") as f:
+                header = [f.readline() for _ in range(6)]
+                header_text = "".join(header).upper()
+                target_str = f"SECTION: {target_sec.upper()}"
+                target_str2 = f"SECTION/ARTICLE: {target_sec.upper()}"
+                if target_str in header_text or target_str2 in header_text:
+                    f.seek(0)
+                    return f.read()
+
+    except Exception as e:
+        print(f"[EXACT MATCH LOOKUP ERROR] {e}", file=sys.stderr)
+        
+    return None
+
+
 def answer_question(question: str, filter_act: str | None = None, n_results: int = 3) -> tuple[str, list[str]]:
     """Single question-to-answer function that combines retrieval and LLM generation."""
-    # Automatically infer filter_act from query if not provided
-    if not filter_act:
-        filter_act = detect_act_from_query(question)
+    target_act, target_sec = extract_requested_statute(question)
+    exact_match_chunk = None
+    
+    if target_act and target_sec:
+        exact_match_chunk = get_exact_chunk_by_statute(target_act, target_sec)
+
+    filter_act = target_act or filter_act or detect_act_from_query(question)
 
     if is_out_of_scope_question(question, filter_act=filter_act):
         return REFUSAL_SENTENCE, []
@@ -205,10 +327,26 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
 
     dense_docs, _ = retrieve_context(question, collection, embed_model, top_k=n_results, filter_act=filter_act)
     keyword_top_k = 2 if filter_act == "Constitution of Pakistan" else 1
-    keyword_docs = retrieve_bm25_context(question, top_k=keyword_top_k)
+    keyword_docs = retrieve_bm25_context(question, filter_act=filter_act, top_k=keyword_top_k)
+
+    all_docs = []
+    if exact_match_chunk:
+        all_docs.append(exact_match_chunk)
+
+    for doc in dense_docs + keyword_docs:
+        if doc not in all_docs:
+            all_docs.append(doc)
+
+    # If an exact match was found (e.g. Article 10A), restrict to matching target Act chunks only
+    if exact_match_chunk and target_act:
+        filtered_all = []
+        for d in all_docs:
+            if d == exact_match_chunk or target_act.lower() in d.lower():
+                filtered_all.append(d)
+        all_docs = filtered_all
 
     # Cap at 3 chunks total to stay under Groq free-tier TPM limits
-    retrieved_docs = list(dict.fromkeys(dense_docs + keyword_docs))[:3]
+    retrieved_docs = all_docs[:3]
 
     # Guardrail: Check if a specific Act was requested but no matching chunks were retrieved
     if filter_act and not retrieved_docs:

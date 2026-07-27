@@ -3,19 +3,22 @@ import chromadb
 import numpy as np
 from tqdm import tqdm
 
-def get_metadata_from_filename(filename):
-    """Extract act name and section/article number from filename."""
+def get_metadata_from_filename(filename, text_content=""):
+    """Extract act name and section/article number from filename or text header."""
     if filename.startswith("constitution"):
         act = "Constitution of Pakistan"
-        # constitution_article_10_chunk_0.txt -> 10
         parts = filename.replace("constitution_article_", "").split("_chunk")
         sec = parts[0].upper()
     elif filename.startswith("crpc"):
         act = "Code of Criminal Procedure, 1898"
-        sec = "Unknown"  # the crpc chunking didn't put sections in filename
+        sec = "Unknown"
+        for line in text_content.split("\n")[:6]:
+            line_str = line.strip()
+            if line_str.startswith("SECTION:"):
+                sec = line_str.split(":", 1)[1].strip()
+                break
     elif filename.startswith("ppc"):
         act = "Pakistan Penal Code, 1860"
-        # ppc_section_302_chunk_0.txt -> 302
         parts = filename.replace("ppc_section_", "").split("_chunk")
         sec = parts[0].upper()
     else:
@@ -66,7 +69,7 @@ def load_and_ingest():
             
         emb = np.load(emb_path).tolist()
         
-        act_name, sec_num = get_metadata_from_filename(filename)
+        act_name, sec_num = get_metadata_from_filename(filename, text_content)
         doc_id = filename.replace('.txt', '')
         
         ids.append(doc_id)

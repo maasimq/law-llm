@@ -154,7 +154,7 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
    ============================================================ */
 .hero-section {
     text-align: center;
-    padding: 3.5rem 1rem 2rem;
+    padding: 1.5rem 1rem 1rem;
 }
 .hero-section-mark-container {
     display: flex;
