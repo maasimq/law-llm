@@ -25,7 +25,7 @@ from rag_pipeline import run_rag_pipeline
 # ---------------------------------------------------------------------------
 st.set_page_config(
     page_title="Law LLM — Pakistani Legal Assistant",
-    page_icon="§",
+    page_icon="⚖️",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -214,7 +214,7 @@ if not st.session_state.messages:
 if st.session_state.messages:
     st.markdown('<div class="chat-wrapper">', unsafe_allow_html=True)
     for msg in st.session_state.messages:
-        with st.chat_message(msg["role"], avatar="👤" if msg["role"] == "user" else "§"):
+        with st.chat_message(msg["role"], avatar="👤" if msg["role"] == "user" else "⚖️"):
             st.markdown(msg["content"])
             if msg["role"] == "assistant" and msg.get("sources"):
                 render_citations(msg["sources"])
@@ -235,7 +235,7 @@ if user_input:
     with st.chat_message("user", avatar="👤"):
         st.markdown(user_input)
 
-    with st.chat_message("assistant", avatar="§"):
+    with st.chat_message("assistant", avatar="⚖️"):
         try:
             answer, source_chunks = run_pipeline_with_loading(user_input)
         except Exception as e:
