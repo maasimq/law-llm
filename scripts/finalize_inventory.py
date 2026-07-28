@@ -16,6 +16,7 @@ def parse_section_number(sec):
 def finalize_inventory():
     """Merge all legal source indices into a unified master inventory."""
     
+    # Start the inventory build process and make sure paths are resolved from the project root.
     print("\n" + "="*70)
     print("FINALIZING LEGAL DOCUMENT INVENTORY")
     print("="*70)
@@ -26,7 +27,7 @@ def finalize_inventory():
     
     clean_dir = "data/clean"
     
-    # Read existing indices
+    # Read the existing source-specific indexes so they can be combined into one master file.
     print("\n[1/4] Reading source indices...")
     
     # Constitution index
@@ -58,22 +59,22 @@ def finalize_inventory():
     else:
         print("  ⚠ CrPC index not found")
     
-    # Combine all sources
+    # Combine all available sources into a single list before sorting and exporting.
     print("\n[2/4] Merging indices...")
     
     all_rows = const_rows + crpc_rows
     
-    # Sort by act and section number
+    # Sort by act name and section/article number for consistent ordering.
     all_rows.sort(key=lambda x: (x['act_name'], parse_section_number(x['section_number']), str(x['section_number'])))
     
     print(f"  ✓ Combined {len(all_rows)} total entries")
     print(f"    - Constitution: {len(const_rows)} articles")
     print(f"    - CrPC: {len(crpc_rows)} sections")
     
-    # Data quality checks
+    # Validate the merged inventory for missing values and missing files before writing output.
     print("\n[3/4] Running data quality checks...")
     
-    # Check for missing values
+    # Check for missing values in required fields.
     missing_count = 0
     for row in all_rows:
         for key in ['filename', 'act_name', 'section_number', 'word_count', 'source']:
@@ -85,7 +86,7 @@ def finalize_inventory():
     else:
         print("  ✓ No missing values")
     
-    # Check file existence
+    # Check whether each referenced file actually exists on disk.
     missing_files = []
     for row in all_rows:
         filepath = os.path.join(clean_dir, row['filename'])
@@ -99,7 +100,7 @@ def finalize_inventory():
     else:
         print(f"  ✓ All {len(all_rows)} files exist")
     
-    # Summary statistics
+    # Print summary statistics for the merged inventory.
     print("\n[4/4] Inventory Summary:")
     print(f"  Total entries: {len(all_rows)}")
     
@@ -110,7 +111,7 @@ def finalize_inventory():
         avg_words = total_words / len(all_rows)
         print(f"  Average section length: {avg_words:.0f} words")
     
-    # Group by act
+    # Group rows by act to show a simple breakdown of content by source.
     acts = {}
     for row in all_rows:
         act = row['act_name']
@@ -126,7 +127,7 @@ def finalize_inventory():
         if data['count'] > 0:
             print(f"    - Avg length: {data['words'] / data['count']:.0f} words")
     
-    # Save master index
+    # Save the merged rows as the final master inventory CSV.
     print("\n" + "="*70)
     master_csv = os.path.join(clean_dir, "master_inventory.csv")
     
