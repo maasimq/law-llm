@@ -85,9 +85,9 @@ def extract_citation_badge(chunk_text: str) -> tuple[str, str]:
         match = re.search(r'section\s*:\s*(\d+[a-z]?)', chunk_text, re.IGNORECASE) or re.search(r'section\s+(\d+[a-z]?)', chunk_text, re.IGNORECASE)
         badge = f"PPC § {match.group(1).upper()}" if match else "PPC"
         return badge, "Pakistan Penal Code, 1860"
-    elif "constitution" in text_lower or re.search(r'^\d+\s+[A-Z]', chunk_text):
-        match = re.search(r'^(\d+)\s+[A-Z]', chunk_text) or re.search(r'article\s+(\d+[a-z]?)', chunk_text, re.IGNORECASE)
-        badge = f"Art. {match.group(1)}" if match else "Constitution"
+    elif "constitution" in text_lower or re.search(r'^(\d+[A-Za-z]?)\.\s', chunk_text):
+        match = re.search(r'^(\d+[A-Za-z]?)\.\s', chunk_text) or re.search(r'article\s+(\d+[a-z]?)', chunk_text, re.IGNORECASE)
+        badge = f"Art. {match.group(1).upper()}" if match else "Constitution"
         return badge, "Constitution of Pakistan"
 
     return "Statute", "Legal Reference Text"

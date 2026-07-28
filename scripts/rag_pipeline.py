@@ -12,7 +12,7 @@ if str(SCRIPT_DIR) not in sys.path:
 import chromadb
 from dotenv import load_dotenv
 from groq import Groq
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer, CrossEncoder
 
 from bm25_index import BM25KeywordIndex
 
@@ -23,6 +23,42 @@ load_dotenv()
 client_groq = Groq(api_key=os.getenv("GROQ_API_KEY"))
 LLM_MODEL = "llama-3.3-70b-versatile"
 REFUSAL_SENTENCE = "I do not have sufficient information in the provided legal text to answer this question."
+
+# ============================================================
+# LEGAL ALIASES — map common terms/shorthand to exact (Act, Section) references
+# ============================================================
+LEGAL_ALIASES = {
+    "fir": [("Code of Criminal Procedure, 1898", "154")],
+    "first information report": [("Code of Criminal Procedure, 1898", "154")],
+    "bail": [("Code of Criminal Procedure, 1898", "497"), ("Code of Criminal Procedure, 1898", "498")],
+    "theft": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379")],
+    "murder": [("Pakistan Penal Code, 1860", "299"), ("Pakistan Penal Code, 1860", "300"), ("Pakistan Penal Code, 1860", "302")],
+    "robbery": [("Pakistan Penal Code, 1860", "390"), ("Pakistan Penal Code, 1860", "392")],
+    "dacoity": [("Pakistan Penal Code, 1860", "391"), ("Pakistan Penal Code, 1860", "395")],
+    "kidnapping": [("Pakistan Penal Code, 1860", "359"), ("Pakistan Penal Code, 1860", "360")],
+    "abduction": [("Pakistan Penal Code, 1860", "362")],
+    "forgery": [("Pakistan Penal Code, 1860", "463"), ("Pakistan Penal Code, 1860", "464")],
+    "defamation": [("Pakistan Penal Code, 1860", "499"), ("Pakistan Penal Code, 1860", "500")],
+    "adultery": [("Pakistan Penal Code, 1860", "497")],
+    "fair trial": [("Constitution of Pakistan", "10A")],
+    "right to fair trial": [("Constitution of Pakistan", "10A")],
+    "fundamental rights": [("Constitution of Pakistan", "8")],
+    "arrest": [("Constitution of Pakistan", "10"), ("Code of Criminal Procedure, 1898", "54")],
+    "detention": [("Constitution of Pakistan", "10")],
+    "search warrant": [("Code of Criminal Procedure, 1898", "96"), ("Code of Criminal Procedure, 1898", "97")],
+    "freedom of speech": [("Constitution of Pakistan", "19")],
+    "right to education": [("Constitution of Pakistan", "25A")],
+    "equality": [("Constitution of Pakistan", "25")],
+    "slavery": [("Constitution of Pakistan", "11")],
+    "forced labour": [("Constitution of Pakistan", "11")],
+    "privacy": [("Constitution of Pakistan", "14")],
+    "dignity": [("Constitution of Pakistan", "14")],
+    "property": [("Constitution of Pakistan", "23"), ("Constitution of Pakistan", "24")],
+    "religion": [("Constitution of Pakistan", "20")],
+    "mischief": [("Pakistan Penal Code, 1860", "425"), ("Pakistan Penal Code, 1860", "426")],
+    "cheating": [("Pakistan Penal Code, 1860", "415"), ("Pakistan Penal Code, 1860", "420")],
+    "hurt": [("Pakistan Penal Code, 1860", "332"), ("Pakistan Penal Code, 1860", "337")],
+}
 
 
 def load_prompt_template() -> str:
@@ -44,7 +80,7 @@ USER QUESTION:
 ANSWER:"""
 
 
-def retrieve_context(query_text: str, collection, embed_model, top_k: int = 3, filter_act: str | None = None, max_distance: float = 0.65):
+def retrieve_context(query_text: str, collection, embed_model, top_k: int = 3, filter_act: str | None = None, max_distance: float = 0.50):
     """Retrieve the top matching dense vector chunks from ChromaDB, filtered by similarity distance."""
     prefixed_query = "Represent this sentence for searching relevant passages: " + query_text
     query_embedding = embed_model.encode(prefixed_query, normalize_embeddings=True).tolist()
@@ -63,17 +99,26 @@ def retrieve_context(query_text: str, collection, embed_model, top_k: int = 3, f
 
     filtered_docs = []
     filtered_metas = []
+    filtered_dists = []
     for doc, dist, meta in zip(docs, distances, metadatas):
         # Cosine distance: lower is more similar (0 = identical, 1 = orthogonal)
         if dist <= max_distance:
             filtered_docs.append(doc)
             filtered_metas.append(meta)
+            filtered_dists.append(dist)
 
-    return filtered_docs, filtered_metas
+    return filtered_docs, filtered_metas, filtered_dists
 
 
 def retrieve_bm25_context(query_text: str, filter_act: str | None = None, top_k: int = 2):
-    """Retrieve additional keyword-based chunks using the BM25 index with Act filtering."""
+    """Retrieve additional keyword-based chunks using the BM25 index with Act filtering.
+    Returns list of text strings (backward-compatible)."""
+    scored = retrieve_bm25_scored(query_text, filter_act=filter_act, top_k=top_k)
+    return [item["text"] for item in scored]
+
+
+def retrieve_bm25_scored(query_text: str, filter_act: str | None = None, top_k: int = 2):
+    """Retrieve keyword-based chunks with BM25 scores and metadata for hybrid fusion."""
     try:
         bm25_index = BM25KeywordIndex.from_chunk_index(
             PROJECT_ROOT / "data" / "chunks" / "chunk_index.csv",
@@ -81,8 +126,8 @@ def retrieve_bm25_context(query_text: str, filter_act: str | None = None, top_k:
         )
         # Search a larger set if we need to filter by Act
         results = bm25_index.search(query_text, top_k=top_k * 4 if filter_act else top_k)
-        
-        filtered_texts = []
+
+        filtered = []
         for item in results:
             text = item.get("text", "")
             if filter_act:
@@ -94,13 +139,99 @@ def retrieve_bm25_context(query_text: str, filter_act: str | None = None, top_k:
                     continue
                 elif "criminal procedure" in act_lower and ("criminal procedure" not in text_lower and "crpc" not in text_lower):
                     continue
-            filtered_texts.append(text)
-            if len(filtered_texts) >= top_k:
+            filtered.append({"text": text, "score": item.get("score", 0.0), "metadata": item.get("metadata", {})})
+            if len(filtered) >= top_k:
                 break
 
-        return filtered_texts
+        return filtered
     except Exception:
         return []
+
+
+def hybrid_retrieve(query_text: str, collection, embed_model, filter_act: str | None = None,
+                    dense_top_k: int = 6, bm25_top_k: int = 6, final_top_k: int = 5,
+                    dense_weight: float = 0.6, bm25_weight: float = 0.4, return_scores: bool = False):
+    """Hybrid retrieval: merge dense + BM25 results via weighted score fusion.
+
+    Dense similarity is converted from cosine distance (0=best, 1=worst) to a
+    similarity score (1=best, 0=worst), then both scores are min-max normalized
+    to [0,1] before weighted combination.
+    """
+    # 1. Dense retrieval (fetch more candidates for merging)
+    dense_docs, dense_metas, dense_dists = retrieve_context(
+        query_text, collection, embed_model, top_k=dense_top_k, filter_act=filter_act
+    )
+    # Convert distance to similarity: sim = 1 - dist
+    dense_sims = [1.0 - d for d in dense_dists]
+
+    # 2. BM25 retrieval
+    bm25_results = retrieve_bm25_scored(query_text, filter_act=filter_act, top_k=bm25_top_k)
+
+    # 3. Build candidate map keyed by doc text (deduplicated)
+    candidates = {}  # doc_text -> {"dense_sim": float, "bm25_score": float}
+
+    for doc, sim in zip(dense_docs, dense_sims):
+        candidates[doc] = {"dense_sim": sim, "bm25_score": 0.0}
+
+    for item in bm25_results:
+        text = item["text"]
+        if text in candidates:
+            candidates[text]["bm25_score"] = item["score"]
+        else:
+            candidates[text] = {"dense_sim": 0.0, "bm25_score": item["score"]}
+
+    if not candidates:
+        return []
+
+    # 4. Min-max normalize each score dimension to [0, 1]
+    all_dense = [c["dense_sim"] for c in candidates.values()]
+    all_bm25 = [c["bm25_score"] for c in candidates.values()]
+
+    dense_min, dense_max = min(all_dense), max(all_dense)
+    bm25_min, bm25_max = min(all_bm25), max(all_bm25)
+
+    dense_range = dense_max - dense_min if dense_max != dense_min else 1.0
+    bm25_range = bm25_max - bm25_min if bm25_max != bm25_min else 1.0
+
+    # 5. Compute weighted fusion score
+    scored = []
+    for doc_text, scores in candidates.items():
+        norm_dense = (scores["dense_sim"] - dense_min) / dense_range
+        norm_bm25 = (scores["bm25_score"] - bm25_min) / bm25_range
+        final_score = dense_weight * norm_dense + bm25_weight * norm_bm25
+        scored.append((doc_text, final_score))
+
+    # 6. Sort by final score descending, return top_k
+    scored.sort(key=lambda x: x[1], reverse=True)
+    if return_scores:
+        return scored[:final_top_k]
+    return [doc for doc, _ in scored[:final_top_k]]
+
+
+def rerank_with_cross_encoder(query: str, candidates: list[str], top_k: int = 3) -> list[str]:
+    """Re-rank candidate chunks using a cross-encoder model."""
+    if not candidates:
+        return []
+    
+    try:
+        # Initialize the cross-encoder model (downloads on first use)
+        cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+        
+        # Prepare pairs for scoring
+        pairs = [[query, doc] for doc in candidates]
+        
+        # Predict scores
+        scores = cross_encoder.predict(pairs)
+        
+        # Sort candidates by score descending
+        scored = list(zip(candidates, scores))
+        scored.sort(key=lambda x: x[1], reverse=True)
+        
+        # Return top_k docs
+        return [doc for doc, _ in scored[:top_k]]
+    except Exception as e:
+        print(f"[CROSS-ENCODER ERROR] Falling back to pre-reranked order: {e}", file=sys.stderr)
+        return candidates[:top_k]
 
 
 def build_rag_prompt(query_text: str, retrieved_docs: list[str]) -> str:
@@ -220,11 +351,43 @@ def detect_act_from_query(query: str) -> str | None:
     return None
 
 
+def resolve_alias_chunks(query_text: str) -> list[str]:
+    """Check query against LEGAL_ALIASES and fetch exact chunks for any matches."""
+    q_lower = query_text.lower().strip()
+    chunks = []
+
+    # Check exact match first, then substring match for multi-word aliases
+    matched_refs = []
+    if q_lower in LEGAL_ALIASES:
+        matched_refs = LEGAL_ALIASES[q_lower]
+    else:
+        # Check if any alias key appears as a standalone term in the query
+        for alias_key, refs in LEGAL_ALIASES.items():
+            if len(alias_key) > 2 and alias_key in q_lower:
+                matched_refs.extend(refs)
+
+    # Deduplicate
+    seen = set()
+    unique_refs = []
+    for ref in matched_refs:
+        if ref not in seen:
+            seen.add(ref)
+            unique_refs.append(ref)
+
+    for act_name, section_num in unique_refs:
+        chunk = get_exact_chunk_by_statute(act_name, section_num)
+        if chunk and chunk not in chunks:
+            chunks.append(chunk)
+
+    return chunks
+
+
 def extract_requested_statute(query_text: str) -> tuple[str | None, str | None]:
     """
     Detect explicit section/article queries e.g.
     'Article 10A', 'Article 10', 'Section 497', 'Section 302 PPC', '497 CrPC'.
     Returns (act_name, section_article_number).
+    act_name is None when the query has a bare section number with no Act qualifier.
     """
     q_lower = query_text.lower()
     act = detect_act_from_query(query_text)
@@ -239,7 +402,7 @@ def extract_requested_statute(query_text: str) -> tuple[str | None, str | None]:
     sec_match = re.search(r'section\s*(\d+[a-z]?)', q_lower)
     if sec_match:
         sec = sec_match.group(1).upper()
-        return act, sec
+        return act, sec  # act may be None for bare "Section 154"
 
     # Check for number + Act e.g. "497 crpc" or "302 ppc"
     num_act_match = re.search(r'(\d+[a-z]?)\s*(crpc|ppc)', q_lower)
@@ -250,6 +413,21 @@ def extract_requested_statute(query_text: str) -> tuple[str | None, str | None]:
         return target_act, sec
 
     return act, None
+
+
+def get_all_acts_for_section(section_num: str) -> list[str]:
+    """For a bare section number, find all Acts that contain that section."""
+    ALL_ACTS = [
+        "Code of Criminal Procedure, 1898",
+        "Pakistan Penal Code, 1860",
+        "Constitution of Pakistan",
+    ]
+    found_acts = []
+    for act in ALL_ACTS:
+        chunk = get_exact_chunk_by_statute(act, section_num)
+        if chunk:
+            found_acts.append(act)
+    return found_acts
 
 
 def get_exact_chunk_by_statute(target_act: str, target_sec: str) -> str | None:
@@ -307,10 +485,31 @@ def get_exact_chunk_by_statute(target_act: str, target_sec: str) -> str | None:
 def answer_question(question: str, filter_act: str | None = None, n_results: int = 3) -> tuple[str, list[str]]:
     """Single question-to-answer function that combines retrieval and LLM generation."""
     target_act, target_sec = extract_requested_statute(question)
-    exact_match_chunk = None
-    
-    if target_act and target_sec:
-        exact_match_chunk = get_exact_chunk_by_statute(target_act, target_sec)
+
+    # Step 1a: Alias lookup — check query against LEGAL_ALIASES
+    alias_chunks = resolve_alias_chunks(question)
+
+    # Step 1b: Exact-match lookup for explicit section/article references
+    exact_chunks = []
+    if target_sec:
+        if target_act:
+            # Act is known — fetch that specific chunk
+            chunk = get_exact_chunk_by_statute(target_act, target_sec)
+            if chunk:
+                exact_chunks.append(chunk)
+        else:
+            # Bare section number (e.g. "Section 497") — fetch from ALL matching Acts
+            matching_acts = get_all_acts_for_section(target_sec)
+            for act in matching_acts:
+                chunk = get_exact_chunk_by_statute(act, target_sec)
+                if chunk and chunk not in exact_chunks:
+                    exact_chunks.append(chunk)
+
+    # Merge alias + exact match (alias first, then exact, deduplicated)
+    priority_chunks = []
+    for c in alias_chunks + exact_chunks:
+        if c not in priority_chunks:
+            priority_chunks.append(c)
 
     filter_act = target_act or filter_act or detect_act_from_query(question)
 
@@ -322,36 +521,31 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     collection = chroma_client.get_collection(name="law_collection")
     embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 
-    if filter_act == "Constitution of Pakistan" and n_results < 4:
-        n_results = 4
+    # Step 3: Hybrid retrieval — merge dense + BM25 with weighted score fusion
+    hybrid_scored = hybrid_retrieve(
+        question, collection, embed_model,
+        filter_act=filter_act,
+        dense_top_k=max(n_results, 6),
+        bm25_top_k=6,
+        final_top_k=10,  # Fetch more for reranking
+        return_scores=True
+    )
+    
+    hybrid_docs = [doc for doc, score in hybrid_scored]
 
-    dense_docs, _ = retrieve_context(question, collection, embed_model, top_k=n_results, filter_act=filter_act)
-    keyword_top_k = 2 if filter_act == "Constitution of Pakistan" else 1
-    keyword_docs = retrieve_bm25_context(question, filter_act=filter_act, top_k=keyword_top_k)
+    # Step 4: Cross-encoder re-ranking (with latency shortcut)
+    # If the top hybrid candidate has a dominant score margin (> 0.15) over the second,
+    # skip the expensive cross-encoder step.
+    if len(hybrid_scored) > 1 and (hybrid_scored[0][1] - hybrid_scored[1][1]) > 0.15:
+        reranked_docs = hybrid_docs[:n_results]
+    else:
+        reranked_docs = rerank_with_cross_encoder(question, hybrid_docs, top_k=n_results)
 
-    all_docs = []
-    if exact_match_chunk:
-        all_docs.append(exact_match_chunk)
-
-    for doc in dense_docs + keyword_docs:
+    # Build final list: priority chunks first, then reranked hybrid results, deduplicated
+    all_docs = list(priority_chunks)
+    for doc in reranked_docs:
         if doc not in all_docs:
             all_docs.append(doc)
-
-    # If an exact match was found (e.g. Article 10A or Section 497), restrict to relevant target Act chunks
-    if exact_match_chunk and target_act:
-        filtered_all = [exact_match_chunk]
-        if target_sec:
-            sec_num = target_sec.upper()
-            for d in all_docs[1:]:
-                d_upper = d.upper()
-                # Only keep secondary chunk if it matches the target act and specifically mentions the section/topic
-                if target_act.lower() in d.lower() and (f"SECTION: {sec_num}" in d_upper or f"ARTICLE: {sec_num}" in d_upper or ("BAIL" in d_upper if sec_num == "497" else False)):
-                    filtered_all.append(d)
-        else:
-            for d in all_docs[1:]:
-                if target_act.lower() in d.lower():
-                    filtered_all.append(d)
-        all_docs = filtered_all
 
     # Cap at 3 chunks total to stay under Groq free-tier TPM limits
     retrieved_docs = all_docs[:3]
