@@ -7,6 +7,7 @@ Institutional Legal Reference Design
 import sys
 import os
 import time
+import html
 from pathlib import Path
 import re
 
@@ -202,13 +203,18 @@ def render_citations(sources: list[str]):
     if not sources:
         return
         
-    st.markdown('<div class="citations-header">CITED STATUTORY SOURCES</div>', unsafe_allow_html=True)
+    valid_sources = []
     for src in sources:
         badge_label, doc_title = extract_citation_badge(src)
-        # Skip untagged chunks that lack a valid Act name or Section/Article identifier
-        if badge_label == "Statute" or "Legal Reference Text" in doc_title:
-            continue
+        if badge_label != "Statute" and "Legal Reference Text" not in doc_title:
+            valid_sources.append(src)
 
+    if not valid_sources:
+        return
+
+    st.markdown('<div class="citations-header">CITED STATUTORY SOURCES</div>', unsafe_allow_html=True)
+    for src in valid_sources:
+        badge_label, doc_title = extract_citation_badge(src)
         cleaned_src = clean_statutory_text(src)
         
         # Get first meaningful line for preview snippet
@@ -218,23 +224,24 @@ def render_citations(sources: list[str]):
             if line_str and not line_str.startswith("ACT:") and not line_str.startswith("SECTION:"):
                 preview_line = line_str[:120] + ("..." if len(line_str) > 120 else "")
                 break
-                
-        preview_html = f'<div style="font-size:0.8rem; color:var(--text-muted); margin-top:6px; font-family:Inter,sans-serif;">{preview_line}</div>' if preview_line else ''
+
+        preview_html = f'<div class="citation-preview">{html.escape(preview_line)}</div>' if preview_line else ''
         
         st.markdown(
             f"""
             <div class="citation-badge-wrapper">
                 <div class="citation-title">
-                    <span class="citation-pill-badge">{badge_label}</span>
-                    <span>{doc_title}</span>
+                    <span class="citation-pill-badge">{html.escape(badge_label)}</span>
+                    <span>{html.escape(doc_title)}</span>
                 </div>
                 {preview_html}
+            </div>
             """,
             unsafe_allow_html=True
         )
         with st.expander("View Statutory Source Text →"):
-            st.markdown(f"```text\n{cleaned_src}\n```")
-        st.markdown('</div>', unsafe_allow_html=True)
+            escaped_text = html.escape(cleaned_src)
+            st.markdown(f'<div class="statutory-source-box">{escaped_text}</div>', unsafe_allow_html=True)
 
 
 def run_pipeline_with_loading(question: str):

@@ -337,12 +337,20 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
         if doc not in all_docs:
             all_docs.append(doc)
 
-    # If an exact match was found (e.g. Article 10A), restrict to matching target Act chunks only
+    # If an exact match was found (e.g. Article 10A or Section 497), restrict to relevant target Act chunks
     if exact_match_chunk and target_act:
-        filtered_all = []
-        for d in all_docs:
-            if d == exact_match_chunk or target_act.lower() in d.lower():
-                filtered_all.append(d)
+        filtered_all = [exact_match_chunk]
+        if target_sec:
+            sec_num = target_sec.upper()
+            for d in all_docs[1:]:
+                d_upper = d.upper()
+                # Only keep secondary chunk if it matches the target act and specifically mentions the section/topic
+                if target_act.lower() in d.lower() and (f"SECTION: {sec_num}" in d_upper or f"ARTICLE: {sec_num}" in d_upper or ("BAIL" in d_upper if sec_num == "497" else False)):
+                    filtered_all.append(d)
+        else:
+            for d in all_docs[1:]:
+                if target_act.lower() in d.lower():
+                    filtered_all.append(d)
         all_docs = filtered_all
 
     # Cap at 3 chunks total to stay under Groq free-tier TPM limits
@@ -358,6 +366,21 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
 
     final_prompt = build_rag_prompt(question, retrieved_docs)
     answer = generate_answer(final_prompt)
+
+    # If the answer is a refusal / out-of-scope response, return empty sources so no irrelevant citation cards render
+    answer_lower = answer.lower()
+    refusal_keywords = [
+        "do not have sufficient information",
+        "does not mention",
+        "does not provide",
+        "not mentioned",
+        "no relevant information",
+        "not explicitly stated",
+        "not contained in the provided",
+        "not provided in the given context",
+    ]
+    if REFUSAL_SENTENCE in answer or any(kw in answer_lower for kw in refusal_keywords):
+        return answer, []
 
     return answer, retrieved_docs
 
