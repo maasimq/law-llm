@@ -22,7 +22,11 @@ import streamlit as st
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
-from rag_pipeline import run_rag_pipeline
+# Force clear cache so Streamlit picks up new functions in rag_pipeline
+if "rag_pipeline" in sys.modules:
+    del sys.modules["rag_pipeline"]
+
+from rag_pipeline import run_rag_pipeline, generate_chat_title
 
 # ---------------------------------------------------------------------------
 # Page configuration
@@ -142,7 +146,10 @@ def save_session():
     # Auto-generate title from first user message if missing
     if not st.session_state.session_title:
         first_user_msg = next((m["content"] for m in st.session_state.messages if m["role"] == "user"), "New Conversation")
-        st.session_state.session_title = first_user_msg[:40] + ("..." if len(first_user_msg) > 40 else "")
+        if first_user_msg == "New Conversation":
+            st.session_state.session_title = first_user_msg
+        else:
+            st.session_state.session_title = generate_chat_title(first_user_msg)
         
     history_dir = get_history_dir()
     filepath = history_dir / f"{st.session_state.session_id}.json"
@@ -194,19 +201,7 @@ def render_sidebar():
             unsafe_allow_html=True,
         )
 
-        # Mode Selector
-        st.markdown('<div class="sidebar-section">Assistant Mode</div>', unsafe_allow_html=True)
-        
-        mode = st.radio(
-            "Mode", 
-            ["Layman", "Advocate"], 
-            index=0 if st.session_state.get("chat_mode", "Layman") == "Layman" else 1,
-            label_visibility="collapsed",
-            help="Layman: Simple explanations. Advocate: Formal drafting & analysis."
-        )
-        if mode != st.session_state.get("chat_mode"):
-            st.session_state.chat_mode = mode
-            st.rerun()
+        # Removed mode selector from sidebar
 
         st.markdown('<hr style="margin: 1.5rem 0 1rem; border-color: rgba(255,255,255,0.06)">', unsafe_allow_html=True)
 
@@ -228,10 +223,14 @@ def render_sidebar():
                 with col1:
                     is_active = (s["id"] == st.session_state.get("session_id"))
                     btn_type = "primary" if is_active else "secondary"
-                    if st.button(f"💬 {s['title']}", key=f"load_{s['id']}", help=s['created_at'], use_container_width=True):
+                    display_title = s['title']
+                    if len(display_title) > 28:
+                        display_title = display_title[:26] + "..."
+                    
+                    if st.button(display_title, key=f"load_{s['id']}", help=s['title'], use_container_width=True, type=btn_type):
                         load_session(s["id"])
                 with col2:
-                    if st.button("🗑️", key=f"del_{s['id']}", help="Delete chat"):
+                    if st.button(":material/delete:", key=f"del_{s['id']}", help="Delete chat"):
                         delete_session(s["id"])
 
         st.markdown('<hr style="margin: 1.5rem 0 1rem; border-color: rgba(255,255,255,0.06)">', unsafe_allow_html=True)
@@ -270,22 +269,14 @@ def render_empty_state():
         <div class="hero-section">
             <div class="hero-section-mark-container">{SECTION_MARK_SVG}</div>
             <div class="hero-title">Pakistani Legal Assistant</div>
-            <p class="hero-subtitle">Search statutory law and constitutional provisions with exact section citations.<br>
-            <span style="opacity: 0.8; font-family: 'Noto Nastaliq Urdu', serif;">(آپ قانون کے متعلق سوالات اردو میں بھی پوچھ سکتے ہیں)</span></p>
+            <p class="hero-subtitle">Search statutory law and constitutional provisions with exact section citations.</p>
+            <p class="hero-subtitle urdu-subtitle" style="margin-top: 1rem; opacity: 0.8; font-family: 'Noto Nastaliq Urdu', serif;">(آپ قانون کے متعلق سوالات اردو میں بھی پوچھ سکتے ہیں)</p>
         </div>
         """,
         unsafe_allow_html=True,
     )
     
-    st.markdown('<div class="suggestions-label">Popular Topics</div>', unsafe_allow_html=True)
-    
-    # Main-panel popular questions pills
-    pills = ["Bail", "FIR", "Theft", "Murder", "Fundamental Rights"]
-    cols = st.columns(len(pills))
-    for col, pill in zip(cols, pills):
-        with col:
-            if st.button(pill, key=f"pill_{pill}", use_container_width=True):
-                st.session_state.pending_question = pill
+    # Popular topics removed as per user request
 
 
 def clean_statutory_text(raw_text: str) -> str:
@@ -318,6 +309,19 @@ def clean_statutory_text(raw_text: str) -> str:
     cleaned_text = '\n'.join(cleaned_lines).strip()
     cleaned_text = re.sub(r'\n{3,}', '\n\n', cleaned_text)
     return cleaned_text if cleaned_text else raw_text.strip()
+
+
+def render_markdown_rtl(text: str):
+    """Renders text in RTL format if it contains Urdu/Arabic characters."""
+    if bool(re.search(r'[\u0600-\u06FF]', text)):
+        # We wrap in a div but also use st.markdown. 
+        # Streamlit parses markdown inside div if separated by newlines.
+        st.markdown(
+            f'<div dir="rtl" style="text-align: right; font-family: \'Jameel Noori Nastaleeq\', \'Noto Nastaliq Urdu\', sans-serif; font-size: 1.15rem; line-height: 2;">\n\n{text}\n\n</div>',
+            unsafe_allow_html=True
+        )
+    else:
+        st.markdown(text)
 
 
 def render_citations(sources: list[str]):
@@ -375,17 +379,7 @@ def run_pipeline_with_loading(question: str):
     return answer, retrieved_docs
 
 
-def render_footer():
-    st.markdown(
-        """
-        <div class="app-footer">
-            <strong>Law LLM — Pakistani Legal Assistant</strong><br>
-            Verified RAG Engine • PPC, CrPC & Constitution<br>
-            <span style="opacity: 0.6;">Informational Use Only</span>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+# Footer removed as per user request
 
 
 # ============================================================
@@ -416,6 +410,31 @@ render_empty_state()
 # Handle prefill & chat input
 prefill = st.session_state.pop("pending_question", None) if st.session_state.pending_question else None
 
+# Strip emojis for the actual internal state
+current_mode = st.session_state.get("chat_mode", "Layman")
+default_pill = "🗣️ Layman" if current_mode == "Layman" else "⚖️ Advocate"
+
+selected_pill = st.pills(
+    "Mode",
+    options=["🗣️ Layman", "⚖️ Advocate"],
+    selection_mode="single",
+    default=default_pill,
+    label_visibility="collapsed"
+)
+
+if selected_pill:
+    new_mode = "Layman" if "Layman" in selected_pill else "Advocate"
+    if new_mode != current_mode:
+        st.session_state.chat_mode = new_mode
+        st.rerun()
+
+st.markdown(
+    '<div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: -1.2rem; margin-bottom: 1.5rem;">'
+    'Advocate mode adds FIR and case brief drafting.'
+    '</div>',
+    unsafe_allow_html=True
+)
+
 mode_placeholder = "Ask about Bail, FIR, Theft... / ضمانت، چوری یا قانون کے بارے میں پوچھیں"
 if st.session_state.chat_mode == "Advocate":
     mode_placeholder = "Draft an FIR, prepare a case brief, or ask a legal question..."
@@ -425,12 +444,16 @@ user_input = st.chat_input(placeholder=mode_placeholder)
 if prefill and not user_input:
     user_input = prefill
 
+# Recover from interrupted generation (e.g. user clicked sidebar during generation)
+if not user_input and st.session_state.messages and st.session_state.messages[-1]["role"] == "user":
+    user_input = st.session_state.messages.pop()["content"]
+
 # Chat History
 if st.session_state.messages:
     st.markdown('<div class="chat-wrapper">', unsafe_allow_html=True)
     for msg in st.session_state.messages:
         with st.chat_message(msg["role"], avatar="👤" if msg["role"] == "user" else "⚖️"):
-            st.markdown(msg["content"])
+            render_markdown_rtl(msg["content"])
             if msg["role"] == "assistant" and msg.get("sources"):
                 render_citations(msg["sources"])
 
@@ -439,7 +462,7 @@ if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input, "sources": []})
 
     with st.chat_message("user", avatar="👤"):
-        st.markdown(user_input)
+        render_markdown_rtl(user_input)
 
     with st.chat_message("assistant", avatar="⚖️"):
         try:
@@ -454,7 +477,18 @@ if user_input:
                 answer = "I couldn't find relevant statutory provisions in the PPC, CrPC, or Constitution for that query — try rephrasing, or ask about Bail, FIR, Theft, or Fundamental Rights."
             source_chunks = []
 
-        st.markdown(answer)
+        render_markdown_rtl(answer)
+        
+        # Hide citations for refusals and conversational responses
+        is_refusal = (
+            "restricted to Advocate mode" in answer or
+            "legal assistant for Pakistani law" in answer or
+            "legal advocate for Pakistani law" in answer
+        )
+        
+        if is_refusal:
+            source_chunks = []
+            
         if source_chunks:
             render_citations(source_chunks)
                 
@@ -463,5 +497,3 @@ if user_input:
     )
     # Save session after each turn
     save_session()
-
-render_footer()

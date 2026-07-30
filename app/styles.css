@@ -153,6 +153,77 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
 }
 
 /* ============================================================
+   SIDEBAR RECENT CHATS (PILL UI)
+   ============================================================ */
+/* The row container */
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"] {
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 2px 4px;
+    margin-bottom: 2px;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    gap: 0 !important; /* Remove gap between columns */
+}
+
+/* Hover state for the entire row (like Screenshot 1) */
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"]:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Make both buttons transparent so they merge into the row */
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"] button {
+    background: transparent !important;
+    border: none !important;
+    padding: 6px 8px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    box-shadow: none !important;
+}
+
+/* Chat Title Button (Left) */
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"] [data-testid="column"]:first-child button p {
+    text-align: left !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    color: var(--text-primary) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+/* Delete Button Container (Right) */
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"] [data-testid="column"]:last-child {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Delete Button Icon */
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"] [data-testid="column"]:last-child button p {
+    font-size: 1rem !important;
+    margin: 0;
+    color: #9ca3af !important; /* Muted gray by default */
+    transition: color 0.15s ease, transform 0.1s ease;
+}
+
+/* Delete Button Hover Effect */
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"] [data-testid="column"]:last-child button:hover p {
+    color: #f87171 !important; /* Bright red on hover */
+    transform: scale(1.1);
+}
+
+/* Active Chat State */
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"]:has(button[kind="primary"]) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Active Chat Title Text */
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"]:has(button[kind="primary"]) [data-testid="column"]:first-child button p {
+    color: var(--accent-gold) !important;
+}
+
+/* ============================================================
    HERO / EMPTY STATE SECTION
    ============================================================ */
 .hero-section {
@@ -181,10 +252,11 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
 .hero-subtitle {
     font-size: 1rem;
     color: var(--text-secondary);
-    max-width: 560px;
     margin: 0 auto 2rem;
     line-height: 1.6;
     font-weight: 400;
+    text-align: center;
+    width: 100%;
 }
 
 /* ============================================================
@@ -201,8 +273,25 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
 }
 
 /* ============================================================
-   CHAT MESSAGES
+   CHAT MESSAGES & TOGGLE
    ============================================================ */
+/* Center the parent wrapper in Streamlit */
+div[data-testid="stElementContainer"]:has(div[data-testid="stPills"]) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+[data-testid="stPills"] {
+    justify-content: center;
+    background: var(--bg-surface);
+    padding: 6px;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    margin: 0 auto 2rem;
+    width: max-content;
+}
+
 .chat-wrapper { margin-top: 1rem; }
 
 [data-testid="stChatMessage"] {

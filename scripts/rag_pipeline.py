@@ -31,7 +31,7 @@ LEGAL_ALIASES = {
     "fir": [("Code of Criminal Procedure, 1898", "154")],
     "first information report": [("Code of Criminal Procedure, 1898", "154")],
     "bail": [("Code of Criminal Procedure, 1898", "497"), ("Code of Criminal Procedure, 1898", "498")],
-    "theft": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379")],
+    "theft": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379"), ("Pakistan Penal Code, 1860", "380")],
     "murder": [("Pakistan Penal Code, 1860", "299"), ("Pakistan Penal Code, 1860", "300"), ("Pakistan Penal Code, 1860", "302")],
     "robbery": [("Pakistan Penal Code, 1860", "390"), ("Pakistan Penal Code, 1860", "392")],
     "dacoity": [("Pakistan Penal Code, 1860", "391"), ("Pakistan Penal Code, 1860", "395")],
@@ -98,18 +98,6 @@ def load_advocate_prompt_template() -> str:
         with open(template_path, "r", encoding="utf-8") as handle:
             return handle.read()
     return ""
-INSTRUCTIONS:
-1. Answer using only the provided context.
-2. Cite the exact Act name and Section/Article number.
-3. Explain complex terms simply.
-CONVERSATION HISTORY (if any):
-{history}
-CONTEXT:
-{context}
-USER QUESTION:
-{question}
-ANSWER:"""
-
 
 def retrieve_context(query_text: str, collection, embed_model, top_k: int = 3, filter_act: str | None = None, max_distance: float = 0.50):
     """Retrieve the top matching dense vector chunks from ChromaDB, filtered by similarity distance."""
@@ -538,12 +526,32 @@ def get_exact_chunk_by_statute(target_act: str, target_sec: str) -> str | None:
     return None
 
 
+def translate_query_to_english(query: str) -> str:
+    """Translates Urdu/Roman Urdu queries to English for better retrieval."""
+    try:
+        response = client_groq.chat.completions.create(
+            model="llama3-8b-8192",  # Ultra-fast model
+            messages=[
+                {"role": "system", "content": "You are a translation assistant. If the text is in Urdu or Roman Urdu, translate it to English. If it is already in English, return it exactly as is. ONLY output the English translation, no quotation marks or explanations."},
+                {"role": "user", "content": query}
+            ],
+            temperature=0.1,
+            max_tokens=60
+        )
+        return response.choices[0].message.content.strip(' "')
+    except Exception as e:
+        print(f"[QUERY TRANSLATION ERROR] {e}", file=sys.stderr)
+        return query
+
+
 def answer_question(question: str, filter_act: str | None = None, n_results: int = 3, conversation_history: list[dict] | None = None, mode: str = "layman") -> tuple[str, list[str]]:
     """Single question-to-answer function that combines retrieval and LLM generation."""
-    target_act, target_sec = extract_requested_statute(question)
+    search_query = translate_query_to_english(question)
+    
+    target_act, target_sec = extract_requested_statute(search_query)
 
     # Step 1a: Alias lookup — check query against LEGAL_ALIASES
-    alias_chunks = resolve_alias_chunks(question)
+    alias_chunks = resolve_alias_chunks(search_query)
 
     # Step 1b: Exact-match lookup for explicit section/article references
     exact_chunks = []
@@ -567,7 +575,7 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
         if c not in priority_chunks:
             priority_chunks.append(c)
 
-    filter_act = target_act or filter_act or detect_act_from_query(question)
+    filter_act = target_act or filter_act or detect_act_from_query(search_query)
 
     # Note: We no longer hardcode an out-of-scope refusal here.
     # The LLM's dynamic formatting rules handle conversational/unrelated queries naturally.
@@ -579,7 +587,7 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
 
     # Step 3: Hybrid retrieval — merge dense + BM25 with weighted score fusion
     hybrid_scored = hybrid_retrieve(
-        question, collection, embed_model,
+        search_query, collection, embed_model,
         filter_act=filter_act,
         dense_top_k=max(n_results, 6),
         bm25_top_k=6,
@@ -595,7 +603,7 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     if len(hybrid_scored) > 1 and (hybrid_scored[0][1] - hybrid_scored[1][1]) > 0.15:
         reranked_docs = hybrid_docs[:n_results]
     else:
-        reranked_docs = rerank_with_cross_encoder(question, hybrid_docs, top_k=n_results)
+        reranked_docs = rerank_with_cross_encoder(search_query, hybrid_docs, top_k=n_results)
 
     # Build final list: priority chunks first, then reranked hybrid results, deduplicated
     all_docs = list(priority_chunks)
@@ -644,6 +652,24 @@ def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversatio
     print(answer)
     print("====================")
     return answer, retrieved_docs
+
+
+def generate_chat_title(user_message: str) -> str:
+    """Generate a brief 3-5 word title for the chat based on the first user message."""
+    try:
+        response = client_groq.chat.completions.create(
+            model="llama3-8b-8192",  # Fast model for title generation
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant. Generate a brief 2-5 word title for the chat session based on the user's first message. Do not include quotes or any other text, just the title."},
+                {"role": "user", "content": user_message}
+            ],
+            temperature=0.3,
+            max_tokens=15
+        )
+        return response.choices[0].message.content.strip(' "')
+    except Exception as e:
+        print(f"[TITLE GENERATION ERROR] {e}", file=sys.stderr)
+        return user_message[:40] + ("..." if len(user_message) > 40 else "")
 
 
 def run_logging_pipeline(questions: list[str], log_file: str | None = None, filter_act: str | None = None):
