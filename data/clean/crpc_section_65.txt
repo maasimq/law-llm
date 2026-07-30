@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 65
-TITLE: Arrest by or in presence of Magistrate. Any Magistrate may at any time arrest or direct
+SECTION/ARTICLE: 65
+TITLE: Arrest by or in presence of Magistrate.
 CHAPTER: 
 ============================================================
 

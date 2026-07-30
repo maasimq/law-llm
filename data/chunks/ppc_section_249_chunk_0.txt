@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 249
 TITLE: Section 249
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Altering appearance of Pakistan coin with intent that it shall pass as coin of

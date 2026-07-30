@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 172
-TITLE: Diary of proceedings in investigation._(1) Every police­officer making an investigation under this
+SECTION/ARTICLE: 172
+TITLE: Diary of proceedings in investigation._(1) Every police­officer making an investigation under this.
 CHAPTER: 
 ============================================================
 
@@ -9,7 +9,7 @@ Chapter shall day by day enter his proceedings in the investigation in a diary, 
 the information reached him the time at which he began and closed his investigation, the place or places
 visited by him, and a statement of the circumstances ascertained through his investigation.
 
- (2) Any Criminal Court may send for the police­diaries of a case under inquiry or trial in such Court,
+(2) Any Criminal Court may send for the police­diaries of a case under inquiry or trial in such Court,
 and may use such diaries, not as evidence in the case, but to aid it in such inquiry or trial. Neither the
 accused nor his agents shall be entitled to call for such diaries, nor shall he or they be entitled to see them
 merely because they are referred to by the Court; but, if they are used by the police­officer who made them,

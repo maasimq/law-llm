@@ -1,8 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 474
 TITLE: Section 474
-CHAPTER: CHAPTER XVIII — OF OFFENCES RELATING TO DOCUMENTS AND TO TRADE OR
-            PROPERTY MARKS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Having possession of document described in Section 466 or 467 knowing it to

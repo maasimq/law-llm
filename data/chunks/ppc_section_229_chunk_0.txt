@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 229
-TITLE: Section 229
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Personation of a Juror or assessor:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Personation of a Juror or assessor:

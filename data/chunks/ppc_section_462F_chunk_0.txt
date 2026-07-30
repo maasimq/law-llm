@@ -1,11 +1,10 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 462F
-TITLE: Section 462F
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+TITLE: Damaging or destructing the transmission or transportation lines, etc.:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Damaging or destructing the transmission or transportation lines, etc.:
-
 Any person who damages or destructs any transmission or transportation
 lines by an act of subversion by explosive material or in any other
 manner so as to disrupt the supply of petroleum shall be punished with

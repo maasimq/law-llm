@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 196
-TITLE: Section 196
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Using evidence known to be false:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Using evidence known to be false:

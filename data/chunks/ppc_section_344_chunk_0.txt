@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 344
-TITLE: Section 344
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Wrongful confinement for ten or more days:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Wrongful confinement for ten or more days:

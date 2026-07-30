@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 408
-TITLE: Appeal from sentence of Assistant Sessions Judge or [Judicial] Magistrate. Any person
+SECTION/ARTICLE: 408
+TITLE: Appeal from sentence of Assistant Sessions Judge or [Judicial] Magistrate.
 CHAPTER: 
 ============================================================
 
@@ -8,13 +8,13 @@ CHAPTER:
 convicted on a trial held by an Assistant Sessions Judge, 3[or a Judicial Magistrate], 4[Special Magistrate], or
 any person sentenced under section 349 5* * * may appeal to the Court of Session :
 
- Provided as follows :­
+Provided as follows :­
 
- 6* * * * * * *
+6*                         *                           *                          *                         *                 *       *
 
- (b) When in any case an Assistant Sessions Judge or a Magistrate specially empowered under
- section 30 passes any sentence of imprisonment for a term exceeding four years, 7* * * the
- appeal 8[of all or any of the accused convicted at such trial] shall lie to the High Court ;
+(b) When in any case an Assistant Sessions Judge or a Magistrate specially empowered under
+section 30 passes any sentence of imprisonment for a term exceeding four years, 7* * * the
+appeal 8[of all or any of the accused convicted at such trial] shall lie to the High Court ;
 
 1 For periods of limitation, see the Limitation Act, 1908 (9 of 1908), s.3 and Sch. I, second division.
 2 Subs. by order 37 of 2001, s. 65 (w.e.f 14­08­2001).
@@ -26,17 +26,17 @@ For enforcement of this amendment in the provinces see, para 2 of foot note 3 on
 7 The words “or any sentence of transportation" omitted by the Criminal Procedure (Amdt.) Act, 1974 (25 of 1974), s.2 and Sch. (w.e.f 13­4­72).
 8 Ins. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923) s. 112.
 
- Page 153 of 319
- (c) when any person is convicted by a Magistrate of an offence under section 124A of the Pakistan
- Penal Code (XLV of 1860), the appeal shall lie to the High Court.
+Page 153 of 319
+(c) when any person is convicted by a Magistrate of an offence under section 124A of the Pakistan
+Penal Code (XLV of 1860), the appeal shall lie to the High Court.
 
- 1[409. Appeals to Court of Session how heard.­ Subject to the provisions of this section, an appeal
+1[409. Appeals to Court of Session how heard.­ Subject to the provisions of this section, an appeal
 to the Court of Session or Sessions Judge shall be heard by the Sessions Judge or by an Additional Sessions
 Judge or an Assistant Sessions Judge :
 
- Provided that an Additional Sessions Judge shall hear only such appeals as the Provincial
+Provided that an Additional Sessions Judge shall hear only such appeals as the Provincial
 Government may, by general or special order, direct or as the Sessions Judge of the division may make over
 to him :
 
- Provided further that no such appeal shall be heard by an Assistant Sessions Judge unless the appeal is
+Provided further that no such appeal shall be heard by an Assistant Sessions Judge unless the appeal is
 of a person convicted on a trial held by any Magistrate of the second class or third class].

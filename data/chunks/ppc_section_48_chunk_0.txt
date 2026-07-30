@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 48
-TITLE: Section 48
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+TITLE: "Vessel":
+CHAPTER: INTRODUCTION
 ============================================================
 
 "Vessel":

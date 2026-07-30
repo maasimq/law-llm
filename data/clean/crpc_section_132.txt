@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 132
-TITLE: Protection against prosecution for act done under this Chapter. No prosecution against any
+SECTION/ARTICLE: 132
+TITLE: Protection against prosecution for act done under this Chapter.
 CHAPTER: 
 ============================================================
 
@@ -8,14 +8,14 @@ CHAPTER:
 person for any act purporting to be done under this Chapter shall be instituted in any Criminal Court, except
 with the sanction of the 4[Provincial Government] ; and___
 
- (a) no 5* * * police officer acting under this Chapter in good faith,
- (b) no officer acting under section 131 in good faith,
- (c) no person doing any act in good faith, in compliance with a requisition under section 128 or
- section 130, 6[or section 131­A]. and
- (d) no inferior officer, or soldier, 7[sailor or airman in the armed forces], doing any act in obedience
- to any order which he was bound to obey,
+(a) no 5* * * police officer acting under this Chapter in good faith,
+(b) no officer acting under section 131 in good faith,
+(c) no person doing any act in good faith, in compliance with a requisition under section 128 or
+section 130, 6[or section 131­A]. and
+(d) no inferior officer, or soldier, 7[sailor or airman in the armed forces], doing any act in obedience
+to any order which he was bound to obey,
 
- shall be deemed to have thereby committed an offence :
+shall be deemed to have thereby committed an offence :
 
 1 Subs, added and ins. by Ord. 37 of 2001, ss. 38­41 (w.e.f. 14­8­2001).
 2 Subs. by A.O., 1961, Art. 2 and Sch., for “Her Majesty’s” (with effect from the 23rd March, 1961).
@@ -25,45 +25,45 @@ with the sanction of the 4[Provincial Government] ; and___
 6 Ins. by Ord. 81 of 02, ss. 4­5.
 7 Subs. by the Code of Criminal Procedure (Amdt.) Act, 1975 (49 of 1975), s. 4, for “or volunteer” (w.e.f 24­4­75).
 
- Page 68 of 319
- 1[Provided that no such prosecution shall be instituted in any Criminal Court against any officer or
+Page 68 of 319
+1[Provided that no such prosecution shall be instituted in any Criminal Court against any officer or
 2[soldier, sailor or airman in the armed forces] except with the sanction of the 3[Federal Government].]
 
- 4[132A.__Definitions. In this Chapter,__
+4[132A.__Definitions. In this Chapter,__
 
- (a) the expression "armed forces" means the military, naval and air forces, operating as land forces
- and includes 5* * * any other armed forces of Pakistan so operating ;
- 6[(aa) the expression “civil armed forces” means the Pakistan Rangers, Frointier Corps, Frontier
- Constabulary, Balochistan Constabulary, Pakistan Coast Gaurds or any other force as the
- Federal Government may notify. ]
- (b) "officer", in relation to the armed forces, means a person commissioned, gazetted or in pay as an
- officer of the armed forces and includes a junior commissioned officer, a warrant officer, a petty
- officer and a non­commissioned officer ; and
- (c) "soldier" includes a member of the force constituted under the Act referred to in clause (a).].
+(a) the expression "armed forces" means the military, naval and air forces, operating as land forces
+and includes 5* * * any other armed forces of Pakistan so operating ;
+6[(aa) the expression “civil armed forces” means the Pakistan Rangers, Frointier Corps, Frontier
+Constabulary, Balochistan Constabulary, Pakistan Coast Gaurds or any other force as the
+Federal Government may notify. ]
+(b) "officer", in relation to the armed forces, means a person commissioned, gazetted or in pay as an
+officer of the armed forces and includes a junior commissioned officer, a warrant officer, a petty
+officer and a non­commissioned officer ; and
+(c) "soldier" includes a member of the force constituted under the Act referred to in clause (a).].
 
- CHAPTER X
- PUBLIC NUISANCES
- 7[133. Conditional order for removal of nuisance.__(1) Whenever a 8[Magistrate of the first class]
+CHAPTER X
+PUBLIC NUISANCES
+7[133. Conditional order for removal of nuisance.__(1) Whenever a 8[Magistrate of the first class]
 considers, on receiving a police­report or other information and on taking such evidence (if any) as he thinks
 fit,
 
- that any unlawful obstruction or nuisance should be removed from any way, river or channel which is or
+that any unlawful obstruction or nuisance should be removed from any way, river or channel which is or
 may be lawfully used by the public, or from any public place, or
 
- that the conduct of any trade or occupation, or the keeping of any goods or merchandise, is injurious to
+that the conduct of any trade or occupation, or the keeping of any goods or merchandise, is injurious to
 the health or physical comfort of the community, and that in consequence such trade or occupation should
 be prohibited or regulated or such goods or merchandise should be removed or the keeping thereof
 regulated, or
 
- that the construction of any building, or the disposal of any substance, as likely to occasion
+that the construction of any building, or the disposal of any substance, as likely to occasion
 conflagration or explosion, should be prevented or stopped, or
 
- that any building, tent or structure, or any tree is in such a condition that it is likely to fall and thereby
+that any building, tent or structure, or any tree is in such a condition that it is likely to fall and thereby
 cause injury to persons living or carrying on business in the neighbourhood or passing by, and that in
 consequence the removal, repair or support of such building, tent or structure, or the removal or support of
 such tree, is necessary, or
 
- that any tank, well or excavation adjacent to any such way or public place should be fenced in such
+that any tank, well or excavation adjacent to any such way or public place should be fenced in such
 manner as to prevent danger arising to the public, or
 
 1 This proviso was ins. by the Devolution Act, 1920 (38 of 1920), s.2 and Sch. I.
@@ -75,38 +75,38 @@ manner as to prevent danger arising to the public, or
 7 Subs. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s. 24 for the original section 133.
 8 Subs. by Ord. 37 of 2001, s. 43 (w.e.f. 14­8­2001).
 
- Page 69 of 319
- that any dangerous animal should be destroyed, confined or otherwise disposed of,
+Page 69 of 319
+that any dangerous animal should be destroyed, confined or otherwise disposed of,
 
- such Magistrate may make a conditional order requiring the person causing such obstruction or
+such Magistrate may make a conditional order requiring the person causing such obstruction or
 nuisance, or carrying on such trade or occupation, or keeping any such goods or merchandise, or owning,
 possessing or controlling such building, tent, structure, substance, tank, well or excavation, or owning or
 possessing such animal or tree, within a time to be fixed in the order,
 
- to remove such obstruction or nuisance ; or
+to remove such obstruction or nuisance ; or
 
- to desist from carrying on, or to remove or regulate in such manner as may be directed, such trade or
+to desist from carrying on, or to remove or regulate in such manner as may be directed, such trade or
 occupation; or
 
- to remove such goods or merchandise, to regulate the keeping thereof in such manner as may be
+to remove such goods or merchandise, to regulate the keeping thereof in such manner as may be
 directed ; or
 
- to prevent or stop the erection of, or to remove, repair or support, such building, tent or structure ; or
+to prevent or stop the erection of, or to remove, repair or support, such building, tent or structure ; or
 
- to remove or support such tree ; or
+to remove or support such tree ; or
 
- to alter the disposal of such substance ; or
+to alter the disposal of such substance ; or
 
- to fence such tank, well or excavation, as the case may be ; or
+to fence such tank, well or excavation, as the case may be ; or
 
- to destroy, confine or dispose of such dangerous animal in the manner provided in the said order ;
+to destroy, confine or dispose of such dangerous animal in the manner provided in the said order ;
 
- or, if he objects so to do,
+or, if he objects so to do,
 
- to appear before himself or some other 1[Magistrate of the first class], at a time and place to be fixed by
+to appear before himself or some other 1[Magistrate of the first class], at a time and place to be fixed by
 the order, and move to have the order set aside or modified in the manner hereinafter provided.
 
- (2) No order duly made by a Magistrate under this section shall be called in question in any Civil Court.
+(2) No order duly made by a Magistrate under this section shall be called in question in any Civil Court.
 
- Explanation.___ A “public place” includes also property belonging to the State, camping grounds and
+Explanation.___ A “public place” includes also property belonging to the State, camping grounds and
 grounds left unoccupied for sanitary or recreative purposes.]

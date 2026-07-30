@@ -1,24 +1,24 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 466
-TITLE: Release of lunatic pending investigation or trial.­(1) Whenever an accused person is found to be
+SECTION/ARTICLE: 466
+TITLE: Release of lunatic pending investigation or trial.­(1) Whenever an accused person is found to be.
 CHAPTER: 
 ============================================================
 
 466. Release of lunatic pending investigation or trial.­(1) Whenever an accused person is found to be
 of unsound mind and incapable of making his defence, the Magistrate or Court, as the case may be,
 4
- [whether the case is one in which bail may be taken or not], may release him on sufficient security being
+[whether the case is one in which bail may be taken or not], may release him on sufficient security being
 given that he shall be properly taken care of and shall be prevented from doing injury to himself or to any
 other person, and for his appearance when required before the Magistrate or Court or such officer as the
 Magistrate or Court appoints in this behalf.
 
- [(2) Custody of lunatic. If the case is one in which, in the opinion of the Magistrate or Court, bail
- 5
+[(2) Custody of lunatic. If the case is one in which, in the opinion of the Magistrate or Court, bail
+5
 
 should not be taken, or if sufficient security is not given, the Magistrate or Court, as the case may be,
 shall order the accused to be detained in safe custody in such place and manner as he or it may think fit, and
 shall report the action taken to the 6[Provincial Government]:
 
- Provided that no order for the detention of the accused in a lunatic asylum shall be made otherwise than
+Provided that no order for the detention of the accused in a lunatic asylum shall be made otherwise than
 in accordance with such rules as the 6[Provincial Government] may have made under the Lunacy Act,
 1912.]

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 421
 TITLE: Section 421
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+CHAPTER: INTRODUCTION
 ============================================================
 
 Dishonest or fraudulent removal or concealment of property to prevent

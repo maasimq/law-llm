@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 175
-TITLE: Power to summon persons.__(1) A police­officer proceeding under section 174 may, by order in
+SECTION/ARTICLE: 175
+TITLE: Power to summon persons.__(1) A police­officer proceeding under section 174 may, by order in.
 CHAPTER: 
 ============================================================
 
@@ -10,5 +10,5 @@ person who appears to be acquainted with the facts of the case. Every person so 
 to attend and to answer truly all questions other than questions the answers to which would have a tendency
 to expose him to a criminal charge, or to a penalty or forfeiture.
 
- (2) If the facts do not disclose a cognizable offence to which section 170 applies, such persons shall not
+(2) If the facts do not disclose a cognizable offence to which section 170 applies, such persons shall not
 be required by the police­officer to attend a Magistrate's Court.

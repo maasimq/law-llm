@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 12
 TITLE: "Public".
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 "Public".

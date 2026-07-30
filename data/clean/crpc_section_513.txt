@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 513
-TITLE: Deposit instead of recognizance. When any person is required by any Court or officer to execute
+SECTION/ARTICLE: 513
+TITLE: Deposit instead of recognizance.
 CHAPTER: 
 ============================================================
 

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 134
-TITLE: Section 134
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Abetment of such assault, if the assault is committed:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Abetment of such assault, if the assault is committed:

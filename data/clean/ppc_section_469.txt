@@ -1,8 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 469
-TITLE: Section 469
-CHAPTER: CHAPTER XVIII — OF OFFENCES RELATING TO DOCUMENTS AND TO TRADE OR
-            PROPERTY MARKS
+TITLE: Forgery for purpose of harming reputation:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Forgery for purpose of harming reputation:

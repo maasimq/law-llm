@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 248
-TITLE: Withdrawal of complaint. If a complainant, at any time before a final order is passed in any case
+SECTION/ARTICLE: 248
+TITLE: Withdrawal of complaint.
 CHAPTER: 
 ============================================================
 

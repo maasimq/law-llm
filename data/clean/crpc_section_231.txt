@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 231
-TITLE: Re­call of witnesses when charge altered. Whenever a charge is altered or added to by the Court
+SECTION/ARTICLE: 231
+TITLE: Re­call of witnesses when charge altered.
 CHAPTER: 
 ============================================================
 

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 206
 TITLE: Section 206
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Fraudulent removal or concealment of property to prevent its seizure as

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 356
 TITLE: Section 356
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Assault or criminal force in attempt to commit theft of property carried by a

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 197
-TITLE: Section 197
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Issuing or signing false certificate:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Issuing or signing false certificate:

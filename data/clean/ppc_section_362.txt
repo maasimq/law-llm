@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 362
-TITLE: Section 362
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Abduction:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Abduction:

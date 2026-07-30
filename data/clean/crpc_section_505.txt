@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 505
-TITLE: Parties may examine witnesses.­10[(1) The parties to any proceeding under this Code in which a
+SECTION/ARTICLE: 505
+TITLE: Parties may examine witnesses.­10[(1) The parties to any proceeding under this Code in which a.
 CHAPTER: 
 ============================================================
 
@@ -10,7 +10,7 @@ directing the commission may think relevant to the issue and when the commission
 Magistrate or officer mentioned in section 503, such Magistrate or the officer to whom the duty executing
 such commission has been delegated shall! examine the witness upon such interrogations.]
 
- (2) Any such party may appear before such Magistrate or 11[officer] by pleader, or if not in custody, in
+(2) Any such party may appear before such Magistrate or 11[officer] by pleader, or if not in custody, in
 person, and may examine, cross­examine and re­examine (as the case may be) the said witness.
 
 1 Subs. by the Federal Laws (Revision and Declaration) Ordinance 1981 (27 of 1981), s.3 and Second Sch., for sub­section (2A), which had been amended by A.O., 1961, Art.2 and F.A.O., 1975, Art. 2

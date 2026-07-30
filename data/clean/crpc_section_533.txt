@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 533
-TITLE: Non­compliance with provisions of Section 164 or 364.­(1) If any Court, before which a
+SECTION/ARTICLE: 533
+TITLE: Non­compliance with provisions of Section 164 or 364.­(1) If any Court, before which a.
 CHAPTER: 
 ============================================================
 
@@ -12,4 +12,7 @@ such person duly made the statement recorded; and, notwithstanding anything con
 Act, 1872 (I of 1872), Section 91, such statement shall be admitted if the error has not injured the accused
 as to his defence on the merits.
 
- (2) The provisions of this section apply to Courts of Appeal, Reference and Revision.
+(2) The provisions of this section apply to Courts of Appeal, Reference and Revision.
+
+3534. [Ommission to give information under Section 447.] Omitted by the Criminal Law (Extinction of
+Discriminatory Privileges) Act 1949 (II of 1950), Schedule.

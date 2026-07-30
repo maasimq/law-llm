@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 85
 TITLE: Section 85
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Act of a person incapable of Judgment by reason of intoxication caused against

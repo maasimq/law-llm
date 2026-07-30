@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 250
-TITLE: False, frivolous or vexatious accusations.­3[(1) If in any case instituted upon complaint or upon
+SECTION/ARTICLE: 250
+TITLE: False, frivolous or vexatious accusations.­3[(1) If in any case instituted upon complaint or upon.
 CHAPTER: 
 ============================================================
 
@@ -14,25 +14,25 @@ cause why he should not pay compensation to such accused or to each or any of su
 are more than one, or, if such person is not present direct the issue of a summons to him to appear and show
 cause as aforesaid.
 
- (2) The Magistrate shall record and consider any cause which such complainant or information may
+(2) The Magistrate shall record and consider any cause which such complainant or information may
 show and if he is satisfied that the accusation was false and either frivolous or vexatious may, for reasons to
 be recorded, direct that compensation to such amount not exceeding 5[twenty­five thousand rupees] or, if
 the Magistrate is a Magistrate of the third class, not exceeding 6[two thousand and five hundred rupees] as
 he may determine, be paid by such complainant or informant to the accused or to each or any of them.
 
- [(2A) The compensation payable under sub­section (2) shall be recoverable as an arrear of
- 7
+[(2A) The compensation payable under sub­section (2) shall be recoverable as an arrear of
+7
 
 land revenue.]
 
- (2B) When any person is imprisoned under sub­section (2A), the provisions of sections 68 and 69 of the
+(2B) When any person is imprisoned under sub­section (2A), the provisions of sections 68 and 69 of the
 Pakistan Penal Code (XLV of 1860) shall, so far as may be, apply.
 
- (2C) No person who has been directed to pay compensation under this section shall, by reason of such
+(2C) No person who has been directed to pay compensation under this section shall, by reason of such
 order, be exempted from any civil or criminal liability in respect of the complaint made or information given
 by him:
 
- Provided that any amount paid to an accused person under this section shall be taken into account in
+Provided that any amount paid to an accused person under this section shall be taken into account in
 awarding compensation to such person in any subsequent civil suit relating to the same matter.]
 
 1 Ins. by the Code of Criminal Procedure (Amdt.) Ord. 1977 (36 of 1977) s.2. (w.e.f 30­10­77).
@@ -43,23 +43,23 @@ awarding compensation to such person in any subsequent civil suit relating to th
 6 Subs by Ord. 6 of 1980, s.2 for “fifty rupees”.
 7 Sub­section (2A) which was amended by Ordinance 12 of 1972, has been subs. ibid.
 
- Page 117 of 319
- (3) A complainant or informant who has been ordered under 1[sub­section (2)] by a Magistrate of the
+Page 117 of 319
+(3) A complainant or informant who has been ordered under 1[sub­section (2)] by a Magistrate of the
 second or third class to pay compensation 2[or has been so ordered by any other Magistrate to pay
 compensation exceeding fifty rupees] may appeal from the order, in so far as the order relates to the
 payment of the compensation, as if such complainant or informant had been convicted on a trial held by
 such Magistrate.
 
- (4) When an order for payment of compensation to an accused person is made in a case which is subject
+(4) When an order for payment of compensation to an accused person is made in a case which is subject
 to appeal under sub­section (3), the compensation shall not be paid to him before the period allowed for the
 presentation of the appeal has elapsed, or, if an appeal is presented, before the appeal has been decided
 3
- [and, where such order is made in a case which is not so subject to appeal, the compensation shall not be
+[and, where such order is made in a case which is not so subject to appeal, the compensation shall not be
 paid before the expiration of one month from the date of the order].
- 4
- * * * * *
+4
+*                                  *                                   *                                           *                           *
 
- 5[250A. Special summons in case of petty offences.­(1) Any Magistrate of the first class specially
+5[250A. Special summons in case of petty offences.­(1) Any Magistrate of the first class specially
 empowered in this behalf by the Provincial Government taking cognizance of any offence punishable only
 with fine shall, except for reasons to be recorded in writing, issue summons to the accused requiring him
 either to appear before him on a specified date in person or by an advocate or, if he desires to plead guilty to
@@ -68,19 +68,19 @@ by registered post or through a messenger, the said plea in writing and the amou
 summons or, if he desires to appear by an advocate and to plead guilty to the charge, to authorise, in writing,
 such advocate to plead guilty to the charge on his behalf and to pay the fine:
 
- Provided that the amount of the fine specified in such summons shall not be less than twenty­five per­
+Provided that the amount of the fine specified in such summons shall not be less than twenty­five per­
 cent nor more than fifty per cent of the maximum fine provided for such offence.
 
- (2) Sub­section (1) shall not apply to an offence punishable under the Motor Vehicles Ordinance, 1965
+(2) Sub­section (1) shall not apply to an offence punishable under the Motor Vehicles Ordinance, 1965
 (W.P. Ordinance XIX of 1965), or under any other law which provides for the accused person being
 convicted in his absence on a plea of guilty.]
 
- CHAPTER XXI.­[OF THE TRIAL OF WARRANT CASES BY MAGISTRATES.] Omitted by the Law
- 6
+CHAPTER XXI.­[OF THE TRIAL OF WARRANT CASES BY MAGISTRATES.] Omitted by the Law
+6
 
 Reforms Ordinance, 1972 (XII of 1972), s.2 and Sch.
 
- CHAPTER XXII
+CHAPTER XXII
 
- OF SUMMARY TRIALS
- 7
+OF SUMMARY TRIALS
+7

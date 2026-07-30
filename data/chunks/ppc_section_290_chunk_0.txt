@@ -1,10 +1,14 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 290
-TITLE: Section 290
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Punishment for public nuisance in cases not otherwise provided for:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for public nuisance in cases not otherwise provided for:
 Whoever
 commits a public nuisance in any case not otherwise punishable by this Code, shall be
-punished with fine which may extend to  117[six hundred rupees] 117.
+punished with fine which may extend to
+117
+[six hundred rupees]
+117
+.

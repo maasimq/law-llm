@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 164B
-TITLE: DNA test.__ (1) Where an offence under section 376, section 377 or section 377B of the Pakistan
+SECTION/ARTICLE: 164B
+TITLE: DNA test.__ (1) Where an offence under section 376, section 377 or section 377B of the Pakistan.
 CHAPTER: 
 ============================================================
 
@@ -11,7 +11,7 @@ victim with his or her consent or with the consent of his or her natural or lega
 during the medical examination conducted under section 164A within optimal time period of receiving
 information relating to commission of such offence.
 
- (2) The DNA sample collected under sub­section (1) shall at the earliest be sent for investigation to a
+(2) The DNA sample collected under sub­section (1) shall at the earliest be sent for investigation to a
 forensic laboratory where these shall be properly examined and preserved:
 
- Provided that confidentiality of such examination shall at all times be observed.].
+Provided that confidentiality of such examination shall at all times be observed.].

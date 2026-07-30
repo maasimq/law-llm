@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 555
-TITLE: Forms. Subject to the powers conferred by Section 8[554], and by 9[Articles 202 and 203 of the
+SECTION/ARTICLE: 555
+TITLE: Forms.
 CHAPTER: 
 ============================================================
 

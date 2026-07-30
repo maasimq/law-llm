@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 393
-TITLE: Not to be executed by instalments Exemptions.­ No sentence of whipping shall be
+SECTION/ARTICLE: 393
+TITLE: Not to be executed by instalments Exemptions.­ No sentence of whipping shall be.
 CHAPTER: 
 ============================================================
 
@@ -8,9 +8,9 @@ CHAPTER:
 executed by instalments: and none of the following persons shall be punishable with whipping,
 namely :__
 
- (a) females ;
+(a) females ;
 
- (b) males sentenced to death or to 1[imprisonment for life], 2* * * , or to imprisonment for
- more than five years;
+(b) males sentenced to death or to 1[imprisonment for life], 2* * * , or to imprisonment for
+more than five years;
 
- (c) males whom the Court considers to be more than forty­five years of age.
+(c) males whom the Court considers to be more than forty­five years of age.

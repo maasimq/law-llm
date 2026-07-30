@@ -1,9 +1,24 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 292B
 TITLE: Child pornography.
-CHAPTER: CHAPTER XXIII — OF ATTEMPTS TO COMMIT OFFENCES
+CHAPTER: INTRODUCTION
 ============================================================
 
 Child pornography.
-
 (1)
+Whoever takes, permits to be taken, with or without the consent of the child or with or without the consent of his parents
+or guardian, any photograph, film, video, picture or representation, portrait, or computer-generated image or picture, whether
+made or produced by electronic , mechanical , or other means , of obscene or sexually explicit conduct, where,-
+(a)
+the production of such visual depiction involves the use
+of a minor boy or girl engaging in obscene or sexually explicit conduct;
+(b)
+such visual depiction is a digital image, computer image, or computer-generated image that is, or is indistinguishable from,
+that of a minor engaging in obscene or sexually explicit conduct; or
+(c)
+such visual depiction has ben created, adapted, or modified to appear that an identifiable minor is engaging in obscene or
+sexually explicit conduct;
+is said to have committed an offence of child pornography.
+(2)
+The preparation, possession or distribution of any data store on a computer disk or any other modern gadget, shall also be
+an offence under this section.

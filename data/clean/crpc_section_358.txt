@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 358
-TITLE: Option to Magistrate in cases under section 355. In cases of the kind mentioned in section 355,
+SECTION/ARTICLE: 358
+TITLE: Option to Magistrate in cases under section 355.
 CHAPTER: 
 ============================================================
 

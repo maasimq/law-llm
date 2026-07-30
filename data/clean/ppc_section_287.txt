@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 287
-TITLE: Section 287
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Negligent conduct with respect to machinery:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Negligent conduct with respect to machinery:
@@ -12,4 +12,8 @@ or knowingly or negligently omits to take such order with any machinery in his p
 or under his care as is sufficient to guard against any probable danger to human life from
 such machinery,
 shall be punished with imprisonment of either description for a term which may extend to
-six months, or with fine which may extend to  114[three thousand rupees] 114, or with both.
+six months, or with fine which may extend to
+114
+[three thousand rupees]
+114
+, or with both.

@@ -1,13 +1,13 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 552
-TITLE: Powers to compel restoration of abducted females. Upon complaint made to a 7* * * 8[Sessions
+SECTION/ARTICLE: 552
+TITLE: Powers to compel restoration of abducted females.
 CHAPTER: 
 ============================================================
 
 552. Powers to compel restoration of abducted females. Upon complaint made to a 7* * * 8[Sessions
 Judge] on oath of the abduction or unlawful detention of a woman or of a female child under the age of
 9
- [sixteen] years, for any unlawful purpose, he may make an order for the immediate restoration of such
+[sixteen] years, for any unlawful purpose, he may make an order for the immediate restoration of such
 woman to her liberty, or of such female child to her husband, parent, guardian or other person having the
 lawful charge of such child, and may compel compliance with such order, using such force as may be
 necessary.
@@ -22,4 +22,6 @@ necessary.
 8 Subs. by ord. 37 of 2001, s.76 ( w.e.f. 14­08­2001).
 9 Subs. by the Indian Criminal Law Amendement act, 1924 (18 of 1924), s.5, for “fourteen”.
 
- Page 196 of 319
+Page 196 of 319
+553. [Compensation to persons groundlessly given in charge in presidency­town.] Rep. by the Federal
+Laws (Revision and Declaration) Act, 1951 (XXVI of 1951), S. 3 and Schedule II.

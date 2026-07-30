@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 223
-TITLE: Section 223
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Escape from confinement or custody negligently suffered by public servant:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Escape from confinement or custody negligently suffered by public servant:

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 63
-TITLE: Discharge of person apprehended. No person who has been arrested by a police­officer
+SECTION/ARTICLE: 63
+TITLE: Discharge of person apprehended.
 CHAPTER: 
 ============================================================
 

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 211
-TITLE: Section 211
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: False charge of offence made with intent to injure:
+CHAPTER: INTRODUCTION
 ============================================================
 
 False charge of offence made with intent to injure:

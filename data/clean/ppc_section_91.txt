@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 91
-TITLE: Section 91
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Exclusion of acts which are offences independently of harm caused:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Exclusion of acts which are offences independently of harm caused:
@@ -10,7 +10,6 @@ exceptions in Sections 87, 88 and 89 do not extend to acts which are offences
 independently of any harm which they may cause, or be intended to cause, or be known
 to be likely to cause, to the person giving the consent or on whose behalf the consent is
 given.
-
 Illustration
 Causing miscarriage (unless caused in good faith for the purpose of saving the life of the
 woman) to an offence independently of any harm which it may cause or be intended, to

@@ -1,12 +1,31 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 375
 TITLE: Section 375
-CHAPTER: CHAPTER XXIII — OF ATTEMPTS TO COMMIT OFFENCES
+CHAPTER: INTRODUCTION
 ============================================================
 
 Rape:-
 A man is said to commit rape who has sexual
 intercourse with a woman under circumstances falling under
 any of the five following descriptions,
-
 (i)
+against her will.
+(ii)
+without her consent
+(iii)
+with her consent, when the consent has been
+obtained by putting her in fear of death or of
+hurt,
+(iv)
+with her consent, when the man knows that he
+is not married to her and that the consent is given
+because she believes that the man is another person to
+whom she is or believes herself to be married;
+or
+(v)
+With or without her consent when she is under
+sixteen years of age.
+Explanation:
+Penetration is sufficient to
+constitute the sexual intercourse necessary to the offence
+of rape.

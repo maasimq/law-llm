@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 57
-TITLE: Refusal to give name and residence.­(1) When any person who in the presence of a
+SECTION/ARTICLE: 57
+TITLE: Refusal to give name and residence.­(1) When any person who in the presence of a.
 CHAPTER: 
 ============================================================
 
@@ -10,14 +10,14 @@ on demand of such officer, to give his name and residence or gives a name or res
 officer has reason to believe to be false, he may be arrested by such officer in order that his name
 or residence may be ascertained.
 
- (2) When the true name and residence of such person have been ascertained, he shall be
+(2) When the true name and residence of such person have been ascertained, he shall be
 released on his executing a bond, with or without sureties, to appear before a Magistrate 3[having
 jurisdiction,] if so required:
 
- Provided that, if such person is not resident in 4[Pakistan], the bond shall be secured by a surety
+Provided that, if such person is not resident in 4[Pakistan], the bond shall be secured by a surety
 or sureties resident in 4[Pakistan].
 
- (3) Should the true name and residence of such person not be ascertained within twenty­four
+(3) Should the true name and residence of such person not be ascertained within twenty­four
 hours from the time of arrest or should he fail to execute the bond, or, if so required to furnish
 sufficient sureties, he shall forthwith be forwarded to the nearest Magistrate having jurisdiction.
 
@@ -27,4 +27,4 @@ sufficient sureties, he shall forthwith be forwarded to the nearest Magistrate h
 4 Subs. by the Central Laws (Statue Reform) Ordinance, 1960 (21 of 1960), s.3 and 2nd Sch. (with effect from the 14th October, 1955), for “the Provinces and the Capital of the Federation”, which had
 been subs. by A.O., 1949, Arts. 3 (2) and 4, for “British India”.
 
- Page 38 of 319
+Page 38 of 319

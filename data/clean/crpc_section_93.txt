@@ -1,10 +1,11 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 93
+SECTION/ARTICLE: 93
 TITLE: Provisions of this Chapter generally applicable to summonses and warrants of arrest.
 CHAPTER: 
 ============================================================
 
 93. Provisions of this Chapter generally applicable to summonses and warrants of arrest.
+
 The provisions contained in this Chapter relating to a summons and warrant, and their issue,
 service and execution, shall, so far as may be, apply to every summons and every warrant of arrest
 issued under this Code.
@@ -12,7 +13,7 @@ issued under this Code.
 1 Subs. by A.O., 1937, for “Govt.”.
 2 The words “other than a juror or assessor” omitted by the Law Reform Ordinance, 1972 (12 of 1972) s.2 and Sch.
 
- Page 48 of 319
- 1[E. — Special Rules regarding processes issued for service or execution outside 2[Pakistan]
+Page 48 of 319
+1[E. — Special Rules regarding processes issued for service or execution outside 2[Pakistan]
 
 and processes received from outside 2[Pakistan] for service or execution within 2[Pakistan].

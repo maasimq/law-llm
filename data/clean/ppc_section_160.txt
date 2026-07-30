@@ -1,10 +1,14 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 160
-TITLE: Section 160
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Punishment for committing affray:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for committing affray:
 Whoever commits an affray, shall be punished
 with imprisonment of either description for a term which may extend to one month, or with
-fine which may extend to  49[three thousand rupees] 49, or with both.
+fine which may extend to
+49
+[three thousand rupees]
+49
+, or with both.

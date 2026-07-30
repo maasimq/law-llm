@@ -1,11 +1,17 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 97
-TITLE: Section 97
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Right of private defence of the body and of property:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Right of private defence of the body and of property:
 Every person has a right,
 subject to the restrictions contained in Section 99, to defend;
-
 First:
+His own body, and the body of any other person, against any offence affecting the
+human body;
+Secondly:
+The property, whether movable or immovable, of himself or of any other
+person, against any act which is an offence falling under the definition of theft, robbery,
+mischief or criminal trespass, or which is an attempt to commit theft, robbery, mischief or
+criminal trespass.

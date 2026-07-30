@@ -1,11 +1,14 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 184
-TITLE: Section 184
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Obstructing sale of property offered for sale by authority of public servant:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Obstructing sale of property offered for sale by authority of public servant:
 Whoever intentionally obstructs any sale of property offered for sale by the lawful authority
 of any public servant, as such, shall be punished with imprisonment of either description
-for a term which may extend to one month, or with fine which may extend to  77[one thousand five hundred rupees] 77
+for a term which may extend to one month, or with fine which may extend to
+77
+[one thousand five hundred rupees]
+77
 rupees, or with both.

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 412
-TITLE: No appeal in certain cases when accused pleads guilty. Notwithstanding anything hereinbefore
+SECTION/ARTICLE: 412
+TITLE: No appeal in certain cases when accused pleads guilty.
 CHAPTER: 
 ============================================================
 

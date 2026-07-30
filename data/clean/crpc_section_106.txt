@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 106
-TITLE: Security for keeping the peace on conviction.—(1) Whenever any person accused of 2[any
+SECTION/ARTICLE: 106
+TITLE: Security for keeping the peace on conviction.—(1) Whenever any person accused of 2[any.
 CHAPTER: 
 ============================================================
 
@@ -11,14 +11,14 @@ offence involving a breach of the peace, or of abetting the same, 3* * *, or any
 committing criminal intimidation, is convicted of such offence before a High Court, a Court of Session, or
 the Court of 4* * * 5[* * *] a Magistrate of the first class,
 
- and such Court is of opinion that it is necessary to require such person to execute a bond for keeping the
+and such Court is of opinion that it is necessary to require such person to execute a bond for keeping the
 peace,
 
- such Court may, at the time of passing sentence on such person, order him to execute a bond for a sum
+such Court may, at the time of passing sentence on such person, order him to execute a bond for a sum
 proportionate to his means, with or without sureties, for keeping the peace during such period, not exceeding
 three years, as it thinks fit to fix.
 
- (2) If the conviction is set aside on appeal or otherwise, the bond so executed shall become void.
+(2) If the conviction is set aside on appeal or otherwise, the bond so executed shall become void.
 
 1 Ss. 20 to 26 of the Sind Frontier Regulation, 1892 (3 of 1892), are to be read with and construed as part of this Chapter— see s. 27 of that Regulation and s. 3, supra.
 2 Subs. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s.15, for “rioting”.
@@ -26,8 +26,8 @@ three years, as it thinks fit to fix.
 4 The words “a Presidency Magistrate” omitted by A.O., 1949, Sch.
 5 Omitted by Ord. 37 of 2001, s. 29 (w.e.f. 14­8­2001).
 
- Page 57 of 319
- (3) An order under this section may also be made by an Appellate Court 1[or by a Court]
+Page 57 of 319
+(3) An order under this section may also be made by an Appellate Court 1[or by a Court]
 exercising its powers of revision.
 
- B.__Security for keeping the Peace in other Cases and security for Good Behaviour.
+B.__Security for keeping the Peace in other Cases and security for Good Behaviour.

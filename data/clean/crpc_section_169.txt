@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 169
-TITLE: Release of accused when evidence deficient. If, upon an investigation under this Chapter, it
+SECTION/ARTICLE: 169
+TITLE: Release of accused when evidence deficient.
 CHAPTER: 
 ============================================================
 

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 486
-TITLE: Appeals from convictions in contempt cases.­(1) Any person sentenced by any Court under
+SECTION/ARTICLE: 486
+TITLE: Appeals from convictions in contempt cases.­(1) Any person sentenced by any Court under.
 CHAPTER: 
 ============================================================
 
@@ -8,16 +8,16 @@ CHAPTER:
 section 480 or section 485 may, not withstanding anything hereinbefore contained, appeal to the Court to
 which decrees or orders made in such Court are ordinarily appealable.
 
- (2) The provisions of Chapter XXXI shall, so far as they are applicable, apply to appeals under
+(2) The provisions of Chapter XXXI shall, so far as they are applicable, apply to appeals under
 this section, and the Appellate Court may alter or reverse the finding, or reduce or reverse the sentence
 appealed against .
 
- (3) 3* * * * * *
+(3) 3*                              *                                   *                                  *                                 *                               *
 
- an appeal from such conviction by 4[a] Court of Small Causes shall lie to the Court of session for the
+an appeal from such conviction by 4[a] Court of Small Causes shall lie to the Court of session for the
 sessions division within which such Court is situate.
 
- (4) An appeal from such conviction by any officer as Registrar or Sub­Registrar appointed as aforesaid
+(4) An appeal from such conviction by any officer as Registrar or Sub­Registrar appointed as aforesaid
 may, when such officer is also Judge of a Civil Court, be made to the Court to which it would, under the
 preceding portion of this section, be made if such conviction were a decree by such officer in his capacity as
 such Judge, and in other cases may be made to the District Judge, 5* * *.
@@ -28,4 +28,4 @@ such Judge, and in other cases may be made to the District Judge, 5* * *.
 4 Subs. ibid., for “any other”.
 5 The words and commas “or, in the presidency­towns, to the High Court “ rep. by the Federal Laws (Revision and Declaration) Act, 1951 (26 of 1951), s. 3 and Sch. II.
 
- Page 170 of 319
+Page 170 of 319

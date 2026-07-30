@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 65
 TITLE: Section 65
-CHAPTER: CHAPTER III — OF PUNISHMENTS.
+CHAPTER: INTRODUCTION
 ============================================================
 
 Limit to imprisonment for non-payment of fine when imprisonment and fine

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 96
-TITLE: Section 96
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Things done in private defence:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Things done in private defence:

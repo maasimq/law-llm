@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 439
 TITLE: Section 439
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for intentionally running vessel aground or ashore with intent to

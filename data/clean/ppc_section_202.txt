@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 202
-TITLE: Section 202
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Intentional omission to give information of offence by person bound to inform:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Intentional omission to give information of offence by person bound to inform:

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 113
 TITLE: Section 113
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Liability of abettor for an effect caused by the act abetted different from that
@@ -12,7 +12,6 @@ consequence of the abetment, causes a different effect from that intended by the
 the abettor is liable for the effect caused, in the same manner and to the same extent as if
 he had abetted the act with the intention of causing that effect, provided he knew that the
 act abetted was likely to cause that effect.
-
 Illustration
 A instigates B to cause grievous hurt to Z B, In consequence of the instigation, causes
 grievous hurt to Z. Z dies in consequence. Here, if A knew that the grievous hurt abetted

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 99
-TITLE: Disposal of things found in search beyond jurisdiction. When, in the execution of a
+SECTION/ARTICLE: 99
+TITLE: Disposal of things found in search beyond jurisdiction.
 CHAPTER: 
 ============================================================
 
@@ -12,17 +12,17 @@ Court issuing the warrant, unless such place is nearer to the Magistrate having 
 than to such Court, in which case the list and things shall be immediately taken before such
 Magistrate; and, unless there be good cause to the contrary, such Magistrate shall make an order
 authorizing them to be taken to such Court.
- 2[99A. Power to declare certain publications forfeited and to issue search­warrants for
+2[99A. Power to declare certain publications forfeited and to issue search­warrants for
 
 the same.__(1) Where__
 
- (a) any newspaper, or book as defined in the 3[West Pakistan Press and Publications
- Ordinance, 1963(W.P.Ord. XXX of 1963), or any other law relating to press and
- publications for the time being in force,] or
+(a) any newspaper, or book as defined in the 3[West Pakistan Press and Publications
+Ordinance, 1963(W.P.Ord. XXX of 1963), or any other law relating to press and
+publications for the time being in force,] or
 
- (b) any document,
+(b) any document,
 
- wherever printed, appears to the 4[Provincial Government] to contain any 5[treasonable or]
+wherever printed, appears to the 4[Provincial Government] to contain any 5[treasonable or]
 seditious matter 6[or any matter which is prejudicial to national integration] 7[or any matter which
 promotes or is intended to promote feelings of enmity or hatred between different classes of 8[the
 citizens of Pakistan]]. 9[or which is deliberately and maliciously intended to outrage the religious
@@ -42,8 +42,8 @@ had been subs. by A. O., 1949, Arts. 3(2) and 4, for "Brithish India".
 9 Ins. by the Criminal Law Amendment Act, 1927 (25 of 1927), s. 3.
 10 Ins. by the Anti­Islamic Activities of the Qudiani Group, Lahori Group and Ahmadis (Prohibition and Punishment) Ordinance, 1984 (20 of 1984), s.4.
 
- Page 53 of 319
- any matter the publication of which is punishable under 1[section 123A or] section 124A 2[or
+Page 53 of 319
+any matter the publication of which is punishable under 1[section 123A or] section 124A 2[or
 section 153A] 3[or section 295A] 4[or section 298A or section 298B or section 298C] of the
 Pakistan Penal Code (XLV of 1860), the 5[Provincial Government] may, by notification in the
 6[official Gazette], stating the grounds of its opinion, declare every copy of the issue of the
@@ -53,5 +53,5 @@ to 7[Government] ,and thereupon any police­officer may seize the same wherever 
 sub­inspector to enter upon and search for the same in any premises where any copy of such issue
 or any such book or other document may be or may be reasonably suspected to be.
 
- (2) In sub­section (1) “document” includes also any painting, drawing or photograph, or other
+(2) In sub­section (1) “document” includes also any painting, drawing or photograph, or other
 visible representation.

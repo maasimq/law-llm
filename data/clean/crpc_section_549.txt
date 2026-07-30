@@ -1,12 +1,12 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 549
-TITLE: Delivery to military authorities of persons liable to be tried by Court­martial.­(1) The
+SECTION/ARTICLE: 549
+TITLE: Delivery to military authorities of persons liable to be tried by Court­martial.­(1) The.
 CHAPTER: 
 ============================================================
 
 549. Delivery to military authorities of persons liable to be tried by Court­martial.­(1) The
 5
- [Federal Government] may make rules6
+[Federal Government] may make rules6
 
 1 Ins. by the Law Reforms Ordinance, 1972 (12 of 1972), s. 2 and Sch.
 2 Section 546A ins. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s. 153.
@@ -15,8 +15,8 @@ CHAPTER:
 5 Subs. by F.A.O., 1975, Art 2 and Table for “Central Government (w.e.f. 28­7­1975), which was previously amended by A.O., 1937 for “G.G. in C”.
 6 For the Criminal Procedure (Military Offenders) Rules, 1958, see Gaz of P., 1958, Pt. I, pp. 463­464.
 
- Page 195 of 319
-consistent with this Code and the 1[Pakistan Army Act, 1952 (XXXIX of 1952), the Pakistan Air Force Act,
+Page 195 of 319
+consistent with this Code and the 1[Pakistan Army Act, 1952 (XXXIX of 1952), the Pakistan Air Force Act,
 1953 (VI of 1953) and the Pakistan Navy Ordinance, 1961, ] (XXXV of 1961) and] any similar law for the
 time being in force as to the cases in which persons subject to 2[military, 3[,naval] or air force law], shall be
 tried by a Court to which this Code applies, or by Court­Martial, and when any person is brought before a
@@ -27,6 +27,6 @@ officer of the regiment, corps, 3[ship] or detachment, to which he belongs, or t
 the nearest 5[military 3[naval] or air­force station, as the case may be], for the purposes of being tried by
 Court­martial.
 
- (2) Apprehension of such persons. Every Magistrate shall, on receiving a written application for that
+(2) Apprehension of such persons. Every Magistrate shall, on receiving a written application for that
 purpose by the commanding officer of any body of 6[soldiers, sailors or airmen] stationed or employed at
 any such place, use his utmost endeavours to apprehend and secure any person accused of such offence.

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 384
-TITLE: Direction of warrant for execution. Every warrant for the execution of a sentence
+SECTION/ARTICLE: 384
+TITLE: Direction of warrant for execution.
 CHAPTER: 
 ============================================================
 

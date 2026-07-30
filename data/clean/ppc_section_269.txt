@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 269
-TITLE: Section 269
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Negligent act likely to spread infection of disease dangerous to life:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Negligent act likely to spread infection of disease dangerous to life:

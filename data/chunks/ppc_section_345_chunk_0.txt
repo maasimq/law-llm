@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 345
-TITLE: Section 345
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Wrongful confinement of person for whose liberation writ has been issued:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Wrongful confinement of person for whose liberation writ has been issued:

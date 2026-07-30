@@ -1,71 +1,47 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 108
-TITLE: (3ac) Power to require security for good behaviour, Section 109.
+SECTION/ARTICLE: 108
+TITLE: Security for good behaviour from persons disseminating seditious matter.
 CHAPTER: 
 ============================================================
 
-108.
+108. Security for good behaviour from persons disseminating seditious matter. Whenever
+a 3* * * 4[Magistrate of the first class] 5* * * has information that there is within the limits of his
+jurisdiction any person who, within or without such limits, either orally or in writing 6[or in any
+other manner intentionally] disseminates or attempts to disseminate, or in anywise abets the
+dissemination of,—
 
- (3ac) Power to require security for good behaviour, Section 109.
-(3ad) Power to require security for good behaviour from habitual offenders, Section 110.
+(a) any seditious matter, that is to say, any matter the publication of which is punishable
+under 7[section 123A or] section 124A of the Pakistan Penal Code ( XLV of 1860), or
 
- (3ae) Power to discharge sureties, Section 126.
+(b) any matter the publication of which is punishable under section 153A of the Pakistan
+Penal Code(XLV of 1860), or
 
- (3f) Power to acquire security, for un­expired period of bond, Section 126 A.]
+(c) any matter concerning a Judge which amounts to criminal intimidation or defamation
+under the Pakistan Penal Code (XLV of 1860),
 
- (4) Power to require security to keep the peace, section 107.
+such Magistrate, 6[if in his opinion there is sufficient ground for proceeding] may (in manner
+hereinafter provided) require such person to show cause why he should not be ordered to execute a
+bond, with or without sureties, for his good behaviour for such period, not exceeding one year, as
+the Magistrate thinks fit to fix.
 
- (5) Power to require security for good behaviour, section 109.
+No proceedings shall be taken under this section against the editor, proprietor, printer or
+publisher of any publication registered under, 8[and edited, printed and published] in conformity
+with 9[the provisions of the West Pakistan Press and Publications Ordinance, 1963 (W.P. Ord. XXX
+of 1963), or any other law relating to press and publications for the time being in force] 6[with
+reference to any matters contained in such publication except by the order or under the authority of
+10* * * the 5[Provincial Government] or some officer empowered 11[by the Provincial Government]
+in this behalf.
 
- (6) Power to discharge sureties,section 5[126A].
- 6[(6a) Power to make orders as to local nuisances, section 133.]
+1 Subs. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s. 16, for “this section”.
+2 Subs. ibid., for “until the completion of the inquiry hereinafter prescribed”.
+3 The words “Chief Presidency or” omitted by A.O., 1949, Sch.
+4 Subs. by Ord. 37 of 2001, s. 31 (w.e.f 14­8­2001)
+5 Subs. by Ord. 12 of 1972, s. 2 and Sch.
+6 Ins. by Act 18 of 1923, s. 17.
+7 Ins. by the Code of Criminal Procedure (Second Amdt.) Act, 1950 (73 of 1950), s. 2.
+8 Subs. by Act 18 of 1923, s. 17, for “or printed or published”.
+9 Subs. by the Law Reforms Ordinance, 1972 (12 of 1972), s. 2 and Sch., as amended by the Law Reforms (Amdt.) Ordinance, 1975 (24 of 1975), s.2 and Sch.
+10 The words “the G.G. in C., or” rep. by A.O., 1937.
+11 Subs. ibid., for “by the G.G. in C.”.
 
- 4[(6ab) Power to make order to prohibit repetition or continuance of public nuisance, section 143.
-
-1 Subs. by the Law Reforms Ordinance, 1972 (12 of 1972), s. 2 and Sch., for “commit for trail”.
-2 Subs. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s. 160, for the Original item.
-3 Item (4) rep., ibid.
-4 Ins. & omitted by ord 37 of 2001, s.78(w.e.f 14­8­2001).
-5 Subs. ibid., for “126”
-6 Ins., ibid.
-
- Page 288 of 319
- (6ac) Power to make orders, etc., in possession cases, sections 145,146 and 147.]
-
- (7) Power to make orders, etc., in possession cases, sections 145,146 and 147.
- 1[(7a). Power to record statements and confessions during a police investigation, section 164.]
-
- 1[(7aa) Power to authorise detention of a person in the custody of the police during a
-police investigation section 167.]
- 1[(7b) Power to hold inquests, section 174.]
-
- (8) Power to commit for trial, section 206.
- 2
- [(8a) Power to hold inquests, section 174."
-
- (8ab) Power to take cognisance of offences, section 190.]
-
- (9) Power to stop proceedings when no complainant, section 249.
- 3* * * * *
-
- (11) Power to take evidence on commission, section 503.
-
- (12) Power to recover penalty on forfeited bond, section 514.
- 1[(12a) Power to require fresh security, section 514A.]
-
- 2[(12ab) Power to dispose property where no claimant, section 524.]
-
- (13) Power to make order as to first offenders, section 562.
- 1[(14) Power to order released convicts to notify residence, section 565.]
-
- 2[ iv. Ordinary powers..... omitted.]
-
- _____________
-
- 4[SCHEDULE IV
- (See Section 37 )
- ADDITIONAL POWERS WITH WHICH PROVINCIAL MAGISTRATES MAY BE
- INVESTED.
- PART I
-
- Powers with which a Magistrate of the first class may be invested by the Provincial Government.
+Page 59 of 319

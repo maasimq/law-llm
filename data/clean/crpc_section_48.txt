@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 48
-TITLE: Procedure where ingress not obtainable. If ingress to such place cannot be obtained under section
+SECTION/ARTICLE: 48
+TITLE: Procedure where ingress not obtainable.
 CHAPTER: 
 ============================================================
 
@@ -12,7 +12,7 @@ break open any outer or inner door or window of any house or place, whether that
 arrested or of any other person, if after notification of his authority and purpose, and demand of admittance
 duly made, he can not otherwise obtain admittance:
 
- Breaking open zenana. Provided that, if any such place is an apartment in the actual occupancy of a
+Breaking open zenana. Provided that, if any such place is an apartment in the actual occupancy of a
 woman (not being the person to be arrested) who, according to custom, does not appear in public such
 person or police­officer shall, before entering such apartment, give notice to such woman that she is at
 liberty to withdraw and shall afford her every reasonable facility for withdrawing, and may then break open

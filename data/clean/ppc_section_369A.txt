@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 369A
 TITLE: Trafficking of human beings.
-CHAPTER: CHAPTER XXIII — OF ATTEMPTS TO COMMIT OFFENCES
+CHAPTER: INTRODUCTION
 ============================================================
 
 Trafficking of human beings.
@@ -10,7 +10,6 @@ punished with imprisonment for a term which shall not be less than
 five years and may extend upto seven years, or with fine which
 shall not be less than five hundred thousand rupees and may extend
 upto seven hundred thousand rupees, or with both.
-
 Explanation.-The word "human trafficking" in this section, shall
 have the same meaning as is assigned to it in the Prevention and
 Control of Human Trafficking Ordinance. 2002(LIX of

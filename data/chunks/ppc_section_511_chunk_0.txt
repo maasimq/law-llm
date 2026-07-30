@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 511
 TITLE: Section 511
-CHAPTER: CHAPTER XXIII — OF ATTEMPTS TO COMMIT OFFENCES
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for attempting to commit offences punishable with imprisonment
@@ -13,7 +13,12 @@ where no express provision is made by this Code for the punishment of such attem
 punished with imprisonment of any description provided for the offence for a term which
 may extend to one-half of the longest term of imprisonment provided for that offence or
 with such fine daman as is provided for the offence, or with both.
-
 Illustrations
-
 (a)
+A makes an attempt to steal some jewels by breaking, open the box, and finds after so
+opening the box, that there is no jewels in it. He has done an act towards the commission
+of theft, and therefore is guilty under this section.
+(b)
+A makes an attempt to pick the pocket of Z by thrusting his hand into Z's pocket, A fails
+in the attempt in consequence of 2's having nothing in his pocket. A is guilty under this
+section.

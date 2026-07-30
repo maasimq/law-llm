@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 485
-TITLE: Imprisonment or committal of person refusing to answer or produce document. If any witness
+SECTION/ARTICLE: 485
+TITLE: Imprisonment or committal of person refusing to answer or produce document.
 CHAPTER: 
 ============================================================
 

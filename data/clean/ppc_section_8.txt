@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 8
 TITLE: Gender.
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Gender.

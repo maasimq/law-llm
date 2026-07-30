@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 371B
 TITLE: Section 371B
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Buying person for purposes of prostitution,
@@ -15,8 +15,8 @@ likely that such person will at any time be employed or
 used for any such purpose, shall be punished with
 imprisonment which may extend to twenty-five years, and
 shall also be liable to fine.
-
-Explanation: Any prostitute or any person
+Explanation:
+Any prostitute or any person
 keeping or managing a brothel, who buys, hires or otherwise
 obtains possession of a female shall, until the contrary is
 proved, be presumed to have obtained possession of such

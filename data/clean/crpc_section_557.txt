@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 557
-TITLE: Practising pleader not to sit as Magistrate in certain Courts. No pleader who
+SECTION/ARTICLE: 557
+TITLE: Practising pleader not to sit as Magistrate in certain Courts.
 CHAPTER: 
 ============================================================
 

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 524
-TITLE: Procedure where no claimant appears within six months._(1) If no person within such
+SECTION/ARTICLE: 524
+TITLE: Procedure where no claimant appears within six months._(1) If no person within such.
 CHAPTER: 
 ============================================================
 
@@ -8,8 +8,8 @@ CHAPTER:
 period establishes his claim to such property, and if the person in whose possession such property was
 found, is unable to show that it was legally acquired by him, such property shall be at the disposal of the
 1
- [Provincial Government] and may be sold under the orders of 2* * 3[Magistrate of the First Class]
+[Provincial Government] and may be sold under the orders of 2* * 3[Magistrate of the First Class]
 empowered by the 4[Provincial Government] in this behalf.
 
- (2) In the case of every order passed under this section, an appeal shall lie to the Court to which appeals
+(2) In the case of every order passed under this section, an appeal shall lie to the Court to which appeals
 against sentences of the Court passing such order would lie.

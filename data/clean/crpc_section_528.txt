@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 528
-TITLE: Sessions Judge may withdraw cases from Assistant Sessions Judge._1[(1) Any Sessions Judge
+SECTION/ARTICLE: 528
+TITLE: Sessions Judge may withdraw cases from Assistant Sessions Judge._1[(1) Any Sessions Judge.
 CHAPTER: 
 ============================================================
 
@@ -8,38 +8,38 @@ CHAPTER:
 may withdraw any case from, or recall any case which he has made over to, any Assistant Sessions Judge
 subordinate to him.]
 
- [(1A) At any time before the trial of the case or the hearing of the appeal has commenced before the
- 2
+[(1A) At any time before the trial of the case or the hearing of the appeal has commenced before the
+2
 
 Additional Sessions Judge, any Sessions Judge may recall any case or appeal Which he has made over to any
 Additional Sessions Judge.
 
- (1B) Where a Sessions Judge withdraws or recalls a case under sub­section (1) or recalls a case or
+(1B) Where a Sessions Judge withdraws or recalls a case under sub­section (1) or recalls a case or
 appeal under sub­section (1A), he may either try the case in his own Court or hear the appeal himself, or
 make it over in accordance with the provisions of this Code to another Court for trial or hearing, as the case
 may be.]
 
- [(1C) Any Sessions Judge may withdraw any case from, or recall any case which he has made over to,
- 3
+[(1C) Any Sessions Judge may withdraw any case from, or recall any case which he has made over to,
+3
 
 any Magistrate subordinate to him, and may refer it for inquiry or trial to any other such Magistrate
 competent to inquire into or try the same.
- 4* * *
- 5
- * * * * * * *
+4*                  *             *
+5
+*                        *                           *                               *                        *   *   *
 
- 6[(4) Any Magistrate may recall any case made over by him under section 192, Sub­section (2), to any
+6[(4) Any Magistrate may recall any case made over by him under section 192, Sub­section (2), to any
 other Magistrate and may inquire into or try such case himself.]
 
- [(5)] A Magistrate making an order under *[this] 8[preceding sub­section shall record in writing his
- 7
+[(5)] A Magistrate making an order under *[this] 8[preceding sub­section shall record in writing his
+7
 
 reasons for making the same.
- 9* * *
+9*                  *                 *
 
- 10
- * * * * * * *
- 11CHAPTER XLIVA.­[SUPPLEMENTARY PROVISIONS RELATING TO EUROPEAN AND PAKISTAN
+10
+*                        *                           *                               *                       *   *   *
+11CHAPTER XLIVA.­[SUPPLEMENTARY PROVISIONS RELATING TO EUROPEAN AND PAKISTAN
 BRITISH SUBJECTS AND OTHERS.]Omitted by the Criminal Law (Extinction of Discriminatory
 Privileges) Act, 1949 (II of 1950), Schedule.
 
@@ -56,6 +56,6 @@ Privileges) Act, 1949 (II of 1950), Schedule.
 10 Sub­section (6) omitted by A.O., 1949, Sch.
 11 Chapter XLIVA ( ss. 528 A to 528 D) was ins. by the Criminal Law Amendment Act, 1923 (12 of 1923), s.33.
 
- Page 188 of 319
- CHAPTER XLV
- OF IRREGULAR PROCEEDINGS
+Page 188 of 319
+CHAPTER XLV
+OF IRREGULAR PROCEEDINGS

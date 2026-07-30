@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 411
-TITLE: Section 411
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+TITLE: Dishonestly receiving stolen property:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Dishonestly receiving stolen property:

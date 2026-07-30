@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 265K
-TITLE: Power of Court to acquit accused at any stage. Nothing in this Chapter shall be
+SECTION/ARTICLE: 265K
+TITLE: Power of Court to acquit accused at any stage.
 CHAPTER: 
 ============================================================
 

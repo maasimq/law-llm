@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 338
-TITLE: Section 338
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Isqat-i-Hamal:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Isqat-i-Hamal:
@@ -9,6 +9,6 @@ Whoever causes woman with child whose organs have not been
 formed, to miscarry, if such miscarriage is not caused in good faith for the purpose of
 saving the life of the woman, or providing necessary treatment to her, is said to cause
 isqat-i-hamal.
-
-Explanation: A woman who causes herself to miscarry is within the meaning of this
+Explanation:
+A woman who causes herself to miscarry is within the meaning of this
 section.

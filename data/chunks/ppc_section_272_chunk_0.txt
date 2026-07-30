@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 272
-TITLE: Section 272
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Adulteration of food or drink intended for sale:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Adulteration of food or drink intended for sale:
@@ -9,4 +9,8 @@ Whoever adulterates any article of
 food or drink, so as to make such article noxious as food or drink, intending to sell such
 article as food or drink, or knowing it to be likely that the same will be sold as food or drink,
 snail be punished with imprisonment of either description for a term which may extend to
-six months, or with fine which may extend to  99[three thousand rupees] 99, or with both.
+six months, or with fine which may extend to
+99
+[three thousand rupees]
+99
+, or with both.

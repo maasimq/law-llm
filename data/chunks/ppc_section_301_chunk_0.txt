@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 301
-TITLE: Section 301
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Causing death of person other than the person whose death was intended:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Causing death of person other than the person whose death was intended:

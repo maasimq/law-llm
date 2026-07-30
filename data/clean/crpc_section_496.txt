@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 496
-TITLE: In what cases bail to be taken. When any person other than a person accused of a non­bailable
+SECTION/ARTICLE: 496
+TITLE: In what cases bail to be taken.
 CHAPTER: 
 ============================================================
 
@@ -11,7 +11,7 @@ the proceedings before such Court to give bail, such person shall be released on
 officer or Court, if he or it thinks fit, may, instead of taking bail from such person, discharge him on his
 executing a bond without sureties for his appearance as hereinafter provided :
 
- [Provided, further, that nothing in this section shall be deemed to affect the provisions of section 107,
- 1
+[Provided, further, that nothing in this section shall be deemed to affect the provisions of section 107,
+1
 
 sub­section (4), or section 117, sub­section (3).]

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 139
-TITLE: Section 139
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Persons subject to certain Acts:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Persons subject to certain Acts:

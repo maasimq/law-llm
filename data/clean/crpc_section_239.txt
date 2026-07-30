@@ -1,7 +1,10 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 239
-TITLE: What persons may be charged jointly
+SECTION/ARTICLE: 239
+TITLE: What persons may be charged jointly.
 CHAPTER: 
 ============================================================
 
-239. What persons may be charged jointly.
+239.    What persons may be charged jointly.
+240     Withdrawal of remaining charges on conviction on one of several charges.
+CHAPTER XX
+OF THE TRIAL OF SUMMONS­CASES BY MAGISTRATES

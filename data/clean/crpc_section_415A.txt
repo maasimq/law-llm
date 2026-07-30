@@ -1,7 +1,8 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 415A
-TITLE: Special right of appeal in certain cases
+SECTION/ARTICLE: 415A
+TITLE: Special right of appeal in certain cases.
 CHAPTER: 
 ============================================================
 
-415A. Special right of appeal in certain cases.
+415A.      Special right of appeal in certain cases.
+416.       [Repealed.]

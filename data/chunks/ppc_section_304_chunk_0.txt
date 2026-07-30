@@ -1,9 +1,18 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 304
-TITLE: Section 304
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Proof of qatl-i-amd liable to qisas, etc.:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Proof of qatl-i-amd liable to qisas, etc.:
-
 (1)
+Proof of qatl-i-amd shall be in any of the following forms, namely: -
+(a)
+the accused makes before a Court competent to try the offence a voluntary and true
+confession of the commission of the offence; or
+(b)
+by the evidence as provided in Article 17 of the Qanun-e-Shahadat, 1984 (P.O. No. 10
+of 1984).
+(2)
+The provisions of sub-section (1) shall, mutatis, mutandis, apply to a hurt liable to
+qisas.

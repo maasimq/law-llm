@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 429
-TITLE: Procedure where Judges of Court of Appeal are equally divided. When the Judges
+SECTION/ARTICLE: 429
+TITLE: Procedure where Judges of Court of Appeal are equally divided.
 CHAPTER: 
 ============================================================
 

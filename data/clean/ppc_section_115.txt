@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 115
 TITLE: Section 115
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Abetment of offence punishable with death or imprisonment for life if offence
@@ -11,3 +11,14 @@ imprisonment for life, shall, if that offence be not committed in consequence of
 abetment, and no express provision is made by this Code for the punishment of such
 abetment be punished with imprisonment of either description for a term which may
 extend to seven years, and shall also be liable to fine.
+If act causing harm be done in consequence:
+And if any act for which the abettor is
+liable in consequence of the abetment, and which cause hurt to any person, is done, the
+abettor shall be liable to imprisonment of either description for a term which may extend to
+fourteen years, and shall also be liable to fine.
+Illustration
+A instigates B to murder Z. The offence is not committed. If B had murdered Z, he would
+have been subject to the punishment of death or transportation for fife. Therefore A is
+labile to imprisonment for a term which may extend to seven years and also to a fine; and
+if any hurt be done to Z in consequence of the abetment, he will be liable to imprisonment
+for a term which may extend to fourteen years, and to fine.

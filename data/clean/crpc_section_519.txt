@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 519
-TITLE: Payment to innocent purchaser of money found on accused. When any person is convicted of
+SECTION/ARTICLE: 519
+TITLE: Payment to innocent purchaser of money found on accused.
 CHAPTER: 
 ============================================================
 

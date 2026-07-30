@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 150
-TITLE: Information of design to commit such offences. Every police­officer receiving information of a
+SECTION/ARTICLE: 150
+TITLE: Information of design to commit such offences.
 CHAPTER: 
 ============================================================
 

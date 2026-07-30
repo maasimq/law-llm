@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 430
-TITLE: Finality of orders on appeal. Judgments and orders passed by an Appellate Court upon
+SECTION/ARTICLE: 430
+TITLE: Finality of orders on appeal.
 CHAPTER: 
 ============================================================
 

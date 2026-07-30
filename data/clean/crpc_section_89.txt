@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 89
-TITLE: Restoration of attached property. If,within two years from the date of the attachment,
+SECTION/ARTICLE: 89
+TITLE: Restoration of attached property.
 CHAPTER: 
 ============================================================
 
@@ -15,4 +15,4 @@ the nett proceeds of the sale, or, if part only thereof has been sold, the nett 
 the residue of the property, shall, after satisfying thereout all costs incurred in consequence of the
 attachment, be delivered to him.
 
- D.—Other Rules regarding Processes
+D.—Other Rules regarding Processes

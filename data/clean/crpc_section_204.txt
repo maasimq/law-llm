@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 204
-TITLE: Issues of process.__(1) If in the opinion of a 2[Court] taking cognizance of an offence there is
+SECTION/ARTICLE: 204
+TITLE: Issues of process.__(1) If in the opinion of a 2[Court] taking cognizance of an offence there is.
 CHAPTER: 
 ============================================================
 
@@ -12,7 +12,7 @@ should issue in the first instance, 3[it] may issue a warrant, or, if 3[it] thin
 accused to be brought or to appear at a certain time before such 2[Court] or (if 3[it] has not jurisdiction
 4[itself]) some other 2[Court] having jurisdiction.
 
- (2) Nothing in this section shall be deemed to affect the provisions of section 90.
+(2) Nothing in this section shall be deemed to affect the provisions of section 90.
 
 1 Subs. by Ordinance 12 of 1972, s.2 and Sch., for “Magistrate”.
 2 Subs. by the Law Reforms Ordinance, 1972 (12 of 1972), s.2 and Sch., for “Magistrate”.
@@ -20,7 +20,7 @@ accused to be brought or to appear at a certain time before such 2[Court] or (if
 4 Subs. ibid., for “himself”.
 *Sic. should read "its".
 
- Page 104 of 319
- (3) When by any law for the time being in force any process fees or other fees are payable, no process
+Page 104 of 319
+(3) When by any law for the time being in force any process fees or other fees are payable, no process
 shall be issued until the fees are paid, and, if such fees are not paid within a reasonable time, the 1[Court]
 may dismiss the complaint.

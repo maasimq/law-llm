@@ -30,6 +30,10 @@ groq==0.25.0
 # --- Web UI ---
 streamlit==1.45.1
 
+# --- HTML parsing ---
+beautifulsoup4
+lxml
+
 # --- Environment & utilities ---
 python-dotenv==1.1.0
 requests==2.34.2

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 69
-TITLE: Section 69
-CHAPTER: CHAPTER III — OF PUNISHMENTS.
+TITLE: Termination of imprisonment on payment of proportional part of fine:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Termination of imprisonment on payment of proportional part of fine:
@@ -10,7 +10,6 @@ the expiration of the term of imprisonment fixed in default of payment, such a p
 of the fine be paid or levied that the term of imprisonment suffered in default of payment is
 not less than proportional to the part of the fine still unpaid, the imprisonment shall
 terminate.
-
 Illustration
 A is sentenced to fine of one hundred rupees and to four months, imprisonment in default
 of payment. Here, seventy-five rupees of the fine be paid or levied before the expiration of

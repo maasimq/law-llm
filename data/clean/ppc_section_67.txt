@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 67
-TITLE: Section 67
-CHAPTER: CHAPTER III — OF PUNISHMENTS.
+TITLE: Imprisonment for non-payment of fine when offence punishable with fine only:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Imprisonment for non-payment of fine when offence punishable with fine only:

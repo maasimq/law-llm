@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 52
-TITLE: Mode of searching women. Whenever it is necessary to cause a woman to be searched, the search
+SECTION/ARTICLE: 52
+TITLE: Mode of searching women.
 CHAPTER: 
 ============================================================
 

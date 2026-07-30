@@ -1,9 +1,16 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 323
-TITLE: Section 323
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Value of diyat:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Value of diyat:
-
 (1)
+The Court shall, subject to the Injunctions of Islam as laid down in
+the Holy Qur'an and Sunnah and keeping in view the financial position of the convict and
+the heirs of the victim, fix the value of diyat which shall not be less than the value of thirty
+thousand six hundred and thirty grams of silver.
+(2)
+For the purpose of sub-section (1), the Federal Government shall, by notification in the
+official Gazette, declare the value of Silver, on the first day of July each year or on such
+date as it may deem fit, which shall be the value payable during a financial year.

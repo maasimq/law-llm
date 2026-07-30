@@ -1,29 +1,29 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 110
-TITLE: Security for good behaviour from habitual offenders. Whenever a 1* *, 2[Magistrate of the first
+SECTION/ARTICLE: 110
+TITLE: Security for good behaviour from habitual offenders.
 CHAPTER: 
 ============================================================
 
 110. Security for good behaviour from habitual offenders. Whenever a 1* *, 2[Magistrate of the first
 class] receives information that any person within the local limits of his jurisdiction—
 
- (a) is by habit a robber, house­breaker, 4* thief, 5[or forger], or
+(a) is by habit a robber, house­breaker, 4* thief, 5[or forger], or
 
- (b) is by habit a receiver of stolen property knowing the same to have been stolen, or
+(b) is by habit a receiver of stolen property knowing the same to have been stolen, or
 
- (c) habitually protects or harbours thieves or aids, in the concealment or disposal of stolen property,
- or
+(c) habitually protects or harbours thieves or aids, in the concealment or disposal of stolen property,
+or
 
- 6[(d) habitually commits, or attempts to commit, or abets the commission of, the offence of
- kidnapping, abduction, extortion, cheating or mischief, or any offence punishable under Chapter
- XII of the Pakistan Penal Code (XLV of 1860), or under section 489A, section 489B, section
- 489C or section 489D of that Code, or]
+6[(d) habitually commits, or attempts to commit, or abets the commission of, the offence of
+kidnapping, abduction, extortion, cheating or mischief, or any offence punishable under Chapter
+XII of the Pakistan Penal Code (XLV of 1860), or under section 489A, section 489B, section
+489C or section 489D of that Code, or]
 
- (e) habitually commits, or attempts to commit, or abets the commissions of, offences involving a
- breach of the peace, or
+(e) habitually commits, or attempts to commit, or abets the commissions of, offences involving a
+breach of the peace, or
 
- (f) is so desperate and dangerous as to render his being at large without security hazardous to the
- community,
+(f) is so desperate and dangerous as to render his being at large without security hazardous to the
+community,
 
 1 The words “Presidency Magistrate” omitted by A.O., 1949, Sch.
 2 Subs. by Ord. 37 of 2001, s. 30 (w.e.f. 14­8­2001)
@@ -32,7 +32,19 @@ class] receives information that any person within the local limits of his juris
 5 Ins. ibid.
 6 Subs. ibid., for the original clause (d).
 
- Page 60 of 319
-such Magistrate may, in manner hereinafter provided, require such person to show cause why
+Page 60 of 319
+such Magistrate may, in manner hereinafter provided, require such person to show cause why
 he should not be ordered to execute a bond, with sureties, for his good behaviour for such
 period, not exceeding three years, as the Magistrate thinks fit to fix.
+
+111. [Proviso as to European vagrants.] Rep. by the Criminal Law Amendment Act, 1923
+(XII of'1923), s. 8.
+1,2112.
+Order to be made. When a Magistrate acting under section 107, section
+108, section 109 or section 110 deems it necessary to require any person to show cause under
+such section, he shall make an order in writing, setting forth the substance of the information
+received, the amount of the bond to be executed, the term for which it is to be in force, and
+the number, character and class of sureties (if any) required.
+1, 2113. Procedure in respect of person present in Court. If the person in respect of
+whom such order is made is present in Court, it shall be read over to him or, if he so desires,
+the substance thereof shall be explained to him.

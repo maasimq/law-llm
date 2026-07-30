@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 76
 TITLE: Section 76
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Act done by a person bound, or by mistake of fact believing himself bound, by
@@ -9,7 +9,10 @@ law:
 Nothing is an offence which Is done by a person who is, or who by reason of a
 mistake of fact and not reason of a mistake of law in good faith believes himself to be,
 bound by law to do it.
-
 Illustrations
-
 (a)
+A, a soldier, fires on a mob by the order of his superior officer, in conformity, with the
+commands of the law. A has committed no offence.
+(b)
+A an officer of a Court of Justice, being ordered by that Court to arrest Y and after due
+enquiry, believing Z to be Y arrests Z. A has committed no offence.

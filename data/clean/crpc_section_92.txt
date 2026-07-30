@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 92
-TITLE: Arrest by breach of bond for appearance. When any person who is bound by any bond
+SECTION/ARTICLE: 92
+TITLE: Arrest by breach of bond for appearance.
 CHAPTER: 
 ============================================================
 

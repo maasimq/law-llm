@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 43
-TITLE: Aid to person other than police­officer, executing warrant. When a warrant is directed to a
+SECTION/ARTICLE: 43
+TITLE: Aid to person other than police­officer, executing warrant.
 CHAPTER: 
 ============================================================
 
@@ -16,4 +16,4 @@ to whom the warrant is directed be near at hand and acting in the execution of t
 6 Subs., added and ins. by Ord. 12 of 1972, s. 2 and Sch.
 7 Subs. by Ord. 37 of 2001, s.20 (w.e.f. 14­8­2001).
 
- Page 31 of 319
+Page 31 of 319

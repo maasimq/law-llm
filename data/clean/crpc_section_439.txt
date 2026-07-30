@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 439
-TITLE: High Court’s powers of revision.­(1) In the case of any proceeding the record of which
+SECTION/ARTICLE: 439
+TITLE: High Court’s powers of revision.­(1) In the case of any proceeding the record of which.
 CHAPTER: 
 ============================================================
 
@@ -11,23 +11,23 @@ in its discretion, exercise any of the powers conferred on a Court of Appeal by 
 Judges composing the Court of Revision are equally divided in opinion, the case shall be disposed of
 in manner provided by section 429.
 
- (2) No order under this section shall be made to the prejudice of the accused unless he has had
+(2) No order under this section shall be made to the prejudice of the accused unless he has had
 an opportunity of being heard either personally or by pleader in his own defence.
 
- (3) Where the sentence dealt with under this section has been passed by a Magistrate 2[* * *]
+(3) Where the sentence dealt with under this section has been passed by a Magistrate 2[* * *]
 the Court shall not inflict a greater punishment for the offence which, in the opinion of such Court,
 the accused has committed than might have been inflicted for such offence by 5* * * a Magistrate
 of the first class.
- 6[(4) Nothing in this section shall be deemed to authorise a High Court—
+6[(4) Nothing in this section shall be deemed to authorise a High Court—
 
- (a) to convert a finding of acquittal into one of conviction; or
+(a) to convert a finding of acquittal into one of conviction; or
 
- (b) to entertain any proceedings in revision with respect to an order made by the Sessions
- Judge under section 439A.]
+(b) to entertain any proceedings in revision with respect to an order made by the Sessions
+Judge under section 439A.]
 
- (5) Where under this Code an appeal lies and no appeal is brought, no proceedings by way of
+(5) Where under this Code an appeal lies and no appeal is brought, no proceedings by way of
 revision shall be entertained at the instance of the party who could have appealed.
- 7[(6) Notwithstanding anything contained in this section, any convicted person to whom an
+7[(6) Notwithstanding anything contained in this section, any convicted person to whom an
 opportunity has been given under sub­section (2) of showing cause why his sentence should not be
 enhanced shall, in showing cause, be entitled also to show cause against his conviction.]
 
@@ -39,13 +39,13 @@ enhanced shall, in showing cause, be entitled also to show cause against his con
 6 Subs. by Ordinance 12 of 1972, s.2 and Sch. for the original sub­section (4).
 7 Sub­section (6) ins. by Act 18 of 1923, s.119.
 
- Page 162 of 319
- [439A. Sessions Judges powers of revision._(1) In the case of any proceeding before a Magistrate the
- 1
+Page 162 of 319
+[439A. Sessions Judges powers of revision._(1) In the case of any proceeding before a Magistrate the
+1
 
 record of which has been called for by the Sessions Judge or which otherwise comes to his knowledge, the
 Sessions Judge may exercise any of the powers conferred on the High Court by section 439.
 
- (2) An Additional Sessions Judge shall have and may exercise all the powers of a Sessions Judge
+(2) An Additional Sessions Judge shall have and may exercise all the powers of a Sessions Judge
 under this Chapter in respect of any case which may be transferred to him under any general or special
 order of the Sessions Judge.]

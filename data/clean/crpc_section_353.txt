@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 353
-TITLE: Evidence to be taken in presence of accused. Except as otherwise expressly provided, all evidence ta
+SECTION/ARTICLE: 353
+TITLE: Evidence to be taken in presence of accused.
 CHAPTER: 
 ============================================================
 

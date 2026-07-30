@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 247
-TITLE: Non­appearance of complainant. If the summons has been issued on complaint, and upon the day
+SECTION/ARTICLE: 247
+TITLE: Non­appearance of complainant.
 CHAPTER: 
 ============================================================
 
@@ -10,10 +10,10 @@ adjourned, the complainant does not appear, the Magistrate shall, not withstandi
 contained, acquit the accused, unless for some reason he thinks proper to adjourn the hearing of the case to
 some other day :
 
- Provided that, where the complainant is a public servant and his personal attendance is not required, the
+Provided that, where the complainant is a public servant and his personal attendance is not required, the
 Magistrate may dispense with his attendance, and proceed with the case[:]4
 
- [Provided further that nothing in this section shall apply where the offence of which the accused is
- 5
+[Provided further that nothing in this section shall apply where the offence of which the accused is
+5
 
 charged is either cognizable or non­compoundable.]

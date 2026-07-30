@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 244
-TITLE: Procedure when no such admission is made.__(1) 4[If the Magistrate does not convict the
+SECTION/ARTICLE: 244
+TITLE: Procedure when no such admission is made.__(1) 4[If the Magistrate does not convict the.
 CHAPTER: 
 ============================================================
 
@@ -9,23 +9,23 @@ accused under the preceding section or] if the accused does not make such admiss
 proceed to hear the complainant (if any), and take all such evidence as may be produced in support of the
 prosecution, and also to hear the accused and take all such evidence as he produces in his defence:
 
- [Provided that the Magistrate shall not be bound to hear any person as complainant tn any case in
- 4
+[Provided that the Magistrate shall not be bound to hear any person as complainant tn any case in
+4
 
 which the complaint has been made by a Court.]
- 5[(2)The Magistrate may, if he thinks fit, on the application of the complainant or accused, issue [a
+5[(2)The Magistrate may, if he thinks fit, on the application of the complainant or accused, issue [a
 summons to any witness directing him to attend or to produce any document or other thing.]
 
- (3) The Magistrate may, before summoning any witness on such application, require that his reasonable
+(3) The Magistrate may, before summoning any witness on such application, require that his reasonable
 expenses, incurred in attending for the purposes of the trial, be deposited in Court[:]6
 
- [Provided that it shall not be necessary for the accused to deposit any such expenses in Court in cases
- 7
+[Provided that it shall not be necessary for the accused to deposit any such expenses in Court in cases
+7
 
 where he is charged with an offence punishable with imprisonment exceeding six months.]
 
- [244A. Statement made under section 164. The statement of a witness duly recorded under section
- 8
+[244A. Statement made under section 164. The statement of a witness duly recorded under section
+8
 
 164, if it was made in the presence of the accused and if he had notice of it and was given an opportunity of
 cross­examining the witness, may, in the discretion of the Court, if such witness is produced and examined,
@@ -42,4 +42,4 @@ For enforcement of this amendement in the Provinces, see, para 2 of foot note 3 
 For enforcement of this amendement, in the Provinces, see para. 2 of footnote 3 on page 40, supra.
 8 Ins. ibid.
 
- Page 115 of 319
+Page 115 of 319

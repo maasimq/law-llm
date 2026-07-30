@@ -1,23 +1,23 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 382
-TITLE: Postponement of capital sentence on pregnant woman. If a woman sentenced to death
+SECTION/ARTICLE: 382
+TITLE: Postponement of capital sentence on pregnant woman.
 CHAPTER: 
 ============================================================
 
 382. Postponement of capital sentence on pregnant woman. If a woman sentenced to death
 is found to be pregnant, the High Court shall order the execution of the sentence to be postponed,
 and may, if it thinks fit, commute the sentence to 2[imprisonment for life].
- 3[382A. Postponement of execution of sentences of imprisonment under section 476 or
+3[382A. Postponement of execution of sentences of imprisonment under section 476 or
 for a period of less than one year. Notwithstanding anything contained in section 383 or 391,
 where the accused__
 
- (a) is awarded any sentence of imprisonment under section 476, or
+(a) is awarded any sentence of imprisonment under section 476, or
 
- (b) is sentenced in cases other than those provided for in section 381, to
- imprisonment whether with or without fine or whipping, for a period of less than one
- year,
+(b) is sentenced in cases other than those provided for in section 381, to
+imprisonment whether with or without fine or whipping, for a period of less than one
+year,
 
- the sentence shall not, if the accused furnishes bail to the satisfaction of the Court for his
+the sentence shall not, if the accused furnishes bail to the satisfaction of the Court for his
 appearance at such time and place as the Court may direct, be executed, until the expiry of the
 period prescribed for making an appeal against such sentence, or, if an appeal is made within that
 time, until the sentence of imprisonment is confirmed by the Appellate Court, but the sentence shall

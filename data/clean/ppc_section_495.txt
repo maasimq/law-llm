@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 495
 TITLE: Section 495
-CHAPTER: CHAPTER XX — OF OFFENCES RELATING TO MARRIAGE
+CHAPTER: INTRODUCTION
 ============================================================
 
 Same offence with concealment of former marriage from person with whom

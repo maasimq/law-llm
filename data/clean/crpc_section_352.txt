@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 352
-TITLE: Courts to be open. The place in which any Criminal Court is held for the purpose of inquiring into o
+SECTION/ARTICLE: 352
+TITLE: Courts to be open.
 CHAPTER: 
 ============================================================
 
@@ -8,21 +8,21 @@ CHAPTER:
 any offence shall be deemed an open Court, to which the public generally may have access, so far as the same can
 conveniently contain them:
 
- 3[(1)] Provided that the Presiding Judge or Magistrate may, if he thinks fit, order at any stage of any inquiry into,
+3[(1)] Provided that the Presiding Judge or Magistrate may, if he thinks fit, order at any stage of any inquiry into,
 or trial of, any particular case, that the public generally, or any particular person, shall not have access to, or be or
 remain in, the room or building used by the Court.
 
- 3["(2) Notwithstanding anything contained in sub­section (1), the trial of offences under sections 354A, 376,
+3["(2) Notwithstanding anything contained in sub­section (1), the trial of offences under sections 354A, 376,
 376A, 377 and 377B of the Pakistan Penal Code, 1860 (Act XLV of 1860) shall be conducted in camera:
 
- Provided that the Presiding Officer, if he thinks fit, or on an application made by either of the parties, allow any
+Provided that the Presiding Officer, if he thinks fit, or on an application made by either of the parties, allow any
 particular person to have access to, or be or remain in, the Court.
 
- (3) Where any proceeding are held under sub­section (2), the Government may adopt appropriate measures,
+(3) Where any proceeding are held under sub­section (2), the Government may adopt appropriate measures,
 including holding of the trial through video link or usage of screens, for protection of the victim and the witnesses.
 
- (4) Where any proceedings are held under sub­section (2), it shall not be lawful for any person to print or publish
+(4) Where any proceedings are held under sub­section (2), it shall not be lawful for any person to print or publish
 or broadcast any matter in relation to any such proceedings, except with permission of the Court.].
 
- CHAPTER XXV
- OF THE MODE OF TAKING AND RECORDING EVIDENCE IN INQUIRIES AND TRIALS
+CHAPTER XXV
+OF THE MODE OF TAKING AND RECORDING EVIDENCE IN INQUIRIES AND TRIALS

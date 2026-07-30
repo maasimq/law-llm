@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 63
-TITLE: Section 63
-CHAPTER: CHAPTER III — OF PUNISHMENTS.
+TITLE: Amount of fine:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Amount of fine:

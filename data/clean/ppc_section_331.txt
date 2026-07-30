@@ -1,9 +1,18 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 331
-TITLE: Section 331
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Payment of Diyat:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Payment of Diyat:
-
 (1)
+The diyat may be made payable in lumpsum or in instalments
+spread over a period of three years from the date of the final judgment.
+(2)
+Where a convict fails to pay diyat or any part thereof within the period specified in subsection
+(1), the convict may be kept in jail and dealt with in the same manner as if
+sentenced to simple imprisonment until the diyat is paid full or may be released on bail If
+he furnishes security equivalent to the amount of diyat to the satisfaction of the Court.
+(3)
+Where a convict dies before the payment of diyat or any part thereof, it shall be
+recovered from his estate.

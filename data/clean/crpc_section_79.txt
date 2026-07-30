@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 79
-TITLE: Warrant directed to police­officer. A warrant directed to any police­officer may also be executed
+SECTION/ARTICLE: 79
+TITLE: Warrant directed to police­officer.
 CHAPTER: 
 ============================================================
 

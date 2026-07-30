@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 210
-TITLE: Section 210
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Fraudulently obtaining decree for sum not due:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Fraudulently obtaining decree for sum not due:

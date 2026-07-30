@@ -1,10 +1,14 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 406
-TITLE: Section 406
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+TITLE: Punishment for criminal breach of trust:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for criminal breach of trust:
 Whoever, commits criminal breach of
 trust snail be punished with imprisonment of either description for a term which may
-extend to  205[seven] 205 years, or with fine, or with both.
+extend to
+205
+[seven]
+205
+years, or with fine, or with both.

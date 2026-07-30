@@ -1,18 +1,18 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 28
-TITLE: Offences under Penal Code. Subject to the other provisions of this Code any offence under the
+SECTION/ARTICLE: 28
+TITLE: Offences under Penal Code.
 CHAPTER: 
 ============================================================
 
 28. Offences under Penal Code. Subject to the other provisions of this Code any offence under the
 Pakistan Penal Code (XLV of 1860) may be tried__
 
- (a) by the High Court, or
- (b) by the Court of Session, or
- (c) by any other Court by which such offence is shown in the eighth column of the Second Schedule
- to be triable.2[:]
+(a) by the High Court, or
+(b) by the Court of Session, or
+(c) by any other Court by which such offence is shown in the eighth column of the Second Schedule
+to be triable.2[:]
 
- Illustration
+Illustration
 
- A is 3[tried by] the Sessions Court on a charge of culpable homicide. He may be convicted of voluntarily
+A is 3[tried by] the Sessions Court on a charge of culpable homicide. He may be convicted of voluntarily
 causing hurt, an offence triable by a Magistrate.

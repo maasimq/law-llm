@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 397
-TITLE: Sentence on offender already sentenced for another offence. When a person already undergoing
+SECTION/ARTICLE: 397
+TITLE: Sentence on offender already sentenced for another offence.
 CHAPTER: 
 ============================================================
 
@@ -9,11 +9,11 @@ a sentence of imprisonment, 1* * 4[imprisonment for life], is sentenced to impri
 for life], such imprisonment, 1* * 4[imprisonment for life] shall commence at the expiration of the
 imprisonment, 1* * 4[imprisonment for life], to which he has been previously sentenced, 5[unless the Court
 directs that the subsequent sentence shall run concurrently with such previous sentence] :
- 6
- * * * * * * *
+6
+*                          *                          *                            *                             *     *   *
 
- [Provided, further, that where a person who has been sentenced to imprisonment by an order under
- 7
+[Provided, further, that where a person who has been sentenced to imprisonment by an order under
+7
 
 section 123 in default of furnishing security is, whilst undergoing such sentence, sentenced to imprisonment
 for an offence committed prior to the making of such order, the latter sentence shall commence

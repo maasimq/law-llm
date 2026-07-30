@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 141
-TITLE: Procedure on failure to appoint jury or omission to return verdict. If the applicant, by neglect
+SECTION/ARTICLE: 141
+TITLE: Procedure on failure to appoint jury or omission to return verdict.
 CHAPTER: 
 ============================================================
 

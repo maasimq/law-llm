@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 450
 TITLE: Section 450
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+CHAPTER: INTRODUCTION
 ============================================================
 
 House-trespass In order to commit offence punishable with imprisonment for

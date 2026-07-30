@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 379
-TITLE: Section 379
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+TITLE: Punishment for theft:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for theft:

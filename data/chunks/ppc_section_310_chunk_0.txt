@@ -1,9 +1,49 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 310
-TITLE: Section 310
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Compounding of qisas (Sulh) in qatl-i-amd:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Compounding of qisas (Sulh) in qatl-i-amd:
-
 (1)
+In the case of qatl-i-amd, an adult
+sane wali may, at any time on accepting badl-i-sulh, compound his right of qisas:
+142
+[
+Provided
+that a female shall not be given in marriage or otherwise in badal-i-sulh
+143
+[:]
+143
+]
+142
+144
+[
+Provided
+further that where the principle of
+fasad-fil-arz
+is attracted, compounding of the right of
+qisas
+shall be subject to the provisions of section 311.
+]
+144
+(2)
+Where a wali is a minor or an insane, the wali of such minor or insane wali may
+compound the right of qisas on behalf of such minor or insane wali:
+Provided
+that the value of badf-i-sufh shall not be less than the value of diyat.
+(3)
+Where the Government is the wali, it may compound the right of qisas:
+Provided
+that fee value of badi-i-sulh shall not be less than the value of diyat.
+(4)
+Where the badl-i-sulh is not determined or is a property or a right the value of which
+cannot be determined in terms of money under Shari'ah, the right of qisas shall be
+deemed to have been compounded and the offender shall be liable to diyat.
+(5)
+Badl-i-sulh may be paid or given on demand or on a deferred date as may be agreed
+upon between the offender and the wali.
+Explanation:
+In this section, Badl-i-sulh means the mutually agreed compensation
+according to Shari'ah to be paid or given by the offender to a wali in cash or in kind or in
+the form of movable or immovable property.

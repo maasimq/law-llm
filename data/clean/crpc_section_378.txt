@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 378
-TITLE: Procedure in case of difference of opinion. When any such case is heard before a Bench of
+SECTION/ARTICLE: 378
+TITLE: Procedure in case of difference of opinion.
 CHAPTER: 
 ============================================================
 

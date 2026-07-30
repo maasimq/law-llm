@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 458
 TITLE: Section 458
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+CHAPTER: INTRODUCTION
 ============================================================
 
 Lurking house-trespass or house-breaking by night after preparation for hurt,

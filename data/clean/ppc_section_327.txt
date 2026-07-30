@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 327
-TITLE: Section 327
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Punishment:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment:

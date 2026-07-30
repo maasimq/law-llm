@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 40
-TITLE: Section 40
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+TITLE: "Offence":
+CHAPTER: INTRODUCTION
 ============================================================
 
 "Offence":

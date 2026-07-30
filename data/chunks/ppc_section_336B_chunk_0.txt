@@ -1,11 +1,10 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 336B
-TITLE: Section 336B
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Punishment for hurt by corrosive substance:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for hurt by corrosive substance:
-
 Whoever causes hurt by corrosive substance shall be punished with
 imprisonment for life or imprisonment of either description which
 shall not be less than fourteen years and a minimum fine of one

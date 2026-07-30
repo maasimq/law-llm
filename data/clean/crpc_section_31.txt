@@ -1,14 +1,14 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 31
-TITLE: Sentences which High Courts and Sessions Judges may pass.­(1) A High Court may pass any
+SECTION/ARTICLE: 31
+TITLE: Sentences which High Courts and Sessions Judges may pass.­(1) A High Court may pass any.
 CHAPTER: 
 ============================================================
 
 31. Sentences which High Courts and Sessions Judges may pass.­(1) A High Court may pass any
 sentences authorized by law.
 
- (2) A Sessions Judge or Additional Sessions Judge may pass any sentence authorized by law; but any
+(2) A Sessions Judge or Additional Sessions Judge may pass any sentence authorized by law; but any
 sentence of death passed by any such Judge shall be subject to confirmation by the High Court.
 
- (3) An Assistant Sessions Judge may pass any sentence authorised by law, except a sentence of death or
+(3) An Assistant Sessions Judge may pass any sentence authorised by law, except a sentence of death or
 of 4* * * imprisonment for a term exceeding seven years.

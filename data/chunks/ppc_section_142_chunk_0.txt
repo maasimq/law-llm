@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 142
-TITLE: Section 142
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Being member of unlawful assembly:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Being member of unlawful assembly:

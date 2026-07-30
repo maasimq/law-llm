@@ -1,30 +1,30 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 529
-TITLE: Irregularities which do not vitiate proceedings. If any Magistrate not empowered by law to do
+SECTION/ARTICLE: 529
+TITLE: Irregularities which do not vitiate proceedings.
 CHAPTER: 
 ============================================================
 
 529. Irregularities which do not vitiate proceedings. If any Magistrate not empowered by law to do
 any of the following things, namely :­
 
- (a) to issue a search warrant under Section 98;
+(a) to issue a search warrant under Section 98;
 
- (b) to order, under Section 155, the police to investigate an offence;
+(b) to order, under Section 155, the police to investigate an offence;
 
- (c) to hold an inquest under Section 176;
+(c) to hold an inquest under Section 176;
 
- (d) to issue process, under Section 186, for the apprehension of a person within the local limits of his
- jurisdiction who has committed an offence outside such limits;
+(d) to issue process, under Section 186, for the apprehension of a person within the local limits of his
+jurisdiction who has committed an offence outside such limits;
 
- (e) to take cognizance of an offence under Section 190. sub­section (1), clause (a) or clause (b) ;
+(e) to take cognizance of an offence under Section 190. sub­section (1), clause (a) or clause (b) ;
 
- (f) to transfer a case under Section 192;
+(f) to transfer a case under Section 192;
 
- (g) to tender a pardon under Section 337 or Section 338;
+(g) to tender a pardon under Section 337 or Section 338;
 
- (h) to sell property under Section 524 or Section 525; or
+(h) to sell property under Section 524 or Section 525; or
 
- (i) to withdraw a case and try it himself under Section 528;
+(i) to withdraw a case and try it himself under Section 528;
 
- erroneously in good faith does that thing, his proceedings shall not be set aside merely on the
- ground of his not being so empowered.
+erroneously in good faith does that thing, his proceedings shall not be set aside merely on the
+ground of his not being so empowered.

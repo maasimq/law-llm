@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 9
 TITLE: Number.
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Number.

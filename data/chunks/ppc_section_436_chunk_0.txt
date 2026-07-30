@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 436
-TITLE: Section 436
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+TITLE: Mischief by fire or explosive substance with intent to destroy house, etc.:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Mischief by fire or explosive substance with intent to destroy house, etc.:
@@ -9,5 +9,9 @@ Whoever commits mischief by fire or any explosive substance, intending to cause,
 knowing it to be likely that he with thereby cause, the destruction of any building which is
 ordinarily used as a place of worship or as a human dwelling or as a place for the custody
 of property shall be punished with imprisonment for life, or with imprisonment of either
-description for a term which  209[shall not be less than three years nor more than] 209 ten years,
+description for a term which
+209
+[shall not be less than three years nor more than]
+209
+ten years,
 and shall also be liable to fine.

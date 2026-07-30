@@ -1,48 +1,48 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 530
-TITLE: Irregularities which vitiate proceedings. If any Magistrate, not being empowered by law in this
+SECTION/ARTICLE: 530
+TITLE: Irregularities which vitiate proceedings.
 CHAPTER: 
 ============================================================
 
 530. Irregularities which vitiate proceedings. If any Magistrate, not being empowered by law in this
 behalf, does any of the following things, namely :­
 
- (a) attaches and sells property under Section 88;
+(a) attaches and sells property under Section 88;
 
- (b) issues a search­warrant for a letter, parcel or other thing in the Post Office, or a telegram in the
- Telegraph Department;
+(b) issues a search­warrant for a letter, parcel or other thing in the Post Office, or a telegram in the
+Telegraph Department;
 
- (c) demands security to keep the peace;
+(c) demands security to keep the peace;
 
- (d) demands security for good behaviour;
+(d) demands security for good behaviour;
 
- (e) discharges a person lawfully bound to be of good behaviour;
+(e) discharges a person lawfully bound to be of good behaviour;
 
- (f) cancels a bond to keep the peace;
+(f) cancels a bond to keep the peace;
 
- (g) makes an order under Section 133 as to a local nuisance;
+(g) makes an order under Section 133 as to a local nuisance;
 
- (h) prohibits, under Section 143, the repetition or continuance of a public nuisance;
+(h) prohibits, under Section 143, the repetition or continuance of a public nuisance;
 
- (i) issues an order under Section 144;
+(i) issues an order under Section 144;
 
- (j) makes an order under Chapter XII;
+(j) makes an order under Chapter XII;
 
- Page 189 of 319
- (k) takes cognizance, under Section 190, sub­section (1) clause (c), of an offence;
+Page 189 of 319
+(k) takes cognizance, under Section 190, sub­section (1) clause (c), of an offence;
 
- (l) passes a sentence, under Section 349, on proceedings recorded by another Magistrate;
+(l) passes a sentence, under Section 349, on proceedings recorded by another Magistrate;
 
- (m) calls, under Section 435, for proceedings;
- 1
- * * * * * * *
+(m) calls, under Section 435, for proceedings;
+1
+*                      *                           *                             *                    *   *   *
 
- (o) revises, under Section 515, an order passed under Section 514;
+(o) revises, under Section 515, an order passed under Section 514;
 
- (p) tries an offender;
+(p) tries an offender;
 
- (q) tries an offender summarily; or
+(q) tries an offender summarily; or
 
- (r) decides an appeal;
+(r) decides an appeal;
 
- . (his proceedings shall be void.)
+. (his proceedings shall be void.)

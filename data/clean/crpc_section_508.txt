@@ -1,13 +1,13 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 508
-TITLE: Adjournment of inquiry or trial. In every case in which a commission is issued under
+SECTION/ARTICLE: 508
+TITLE: Adjournment of inquiry or trial.
 CHAPTER: 
 ============================================================
 
 508. Adjournment of inquiry or trial. In every case in which a commission is issued under
 section 503 or section 506, the inquiry, trial or other proceeding may be adjourned for a specified
 time reasonably sufficient for the execution and return of the commission.
- 5[508A. Application of this Chapter to commissions issued in Burma. The provisions of
+5[508A. Application of this Chapter to commissions issued in Burma. The provisions of
 sub­section (3) of section 503,6* * * and so much of sections 505 and 507 as relate to the
 execution of a commission and its return by the Magistrate or officer to whom the commission is
 directed shall apply in respect of commissions issued 7[by any Court or Judge having authority in
@@ -27,6 +27,6 @@ apply to commissions issued under section 503 or section 506.]
 8 The words “other than Pakistan” omitted by the Law Reforms Ordinance, 1972 (12 of 1972), s.2 and Sch.
 9 Ins. by the civil and Criminal Procedure Codes (Amendement) Ordinance, 1962 (67 of 1962) s.2.
 
- Page 178 of 319
- CHAPTER XLI
- SPECIAL RULES OF EVIDENCE
+Page 178 of 319
+CHAPTER XLI
+SPECIAL RULES OF EVIDENCE

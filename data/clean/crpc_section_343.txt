@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 343
-TITLE: No influence to be used to induce disclosures. Except as provided in sections 337 and
+SECTION/ARTICLE: 343
+TITLE: No influence to be used to induce disclosures.
 CHAPTER: 
 ============================================================
 

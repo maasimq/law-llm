@@ -1,14 +1,13 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 117
-TITLE: Section 117
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Abetting commission of offence by the public or by more than ten persons:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Abetting commission of offence by the public or by more than ten persons:
 Whoever abets the commission of an offence by the public generally or by any number or
 class of persons exceeding ten, shall be punished with imprisonment of either description
 for a term which may extend to three years, or with fine, or with both.
-
 Illustration
 A affixes in a public place a placard instigating a sect consisting of more than ten
 members to meet at a certain time and place, for the purpose of attacking the members of

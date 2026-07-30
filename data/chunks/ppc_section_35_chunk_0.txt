@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 35
 TITLE: Section 35
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 When such an act is criminal by reason of its being done with a criminal

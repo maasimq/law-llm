@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 414
-TITLE: No appeal from certain summary convictions. Notwithstanding anything hereinbefore contained,
+SECTION/ARTICLE: 414
+TITLE: No appeal from certain summary convictions.
 CHAPTER: 
 ============================================================
 
@@ -9,7 +9,7 @@ there shall be no appeal by a convicted person in any case tried summarily in wh
 empowered to act under section 260 passes a sentence 10* * * of fine not exceeding 11[two thousand] rupees
 only 9* * * .
 
- 11[414A. No appeal from certain summary convictions under the law relating to price control.­
+11[414A. No appeal from certain summary convictions under the law relating to price control.­
 Notwithstanding anything contained in this Code or any other law for the time being in force, there shall be
 no appeal by a convicted person in any case tried summarily in which a Special Magistrate appointed under
 section 14A passes a sentence of fine not exceeding five thousand rupees under the Price Control and
@@ -28,4 +28,4 @@ Provincial law relating to price control.]
 10 The words “of imprisonment not exceeding three months only, or “ rep. ibid., s. 25.
 11 Subs. and ins. by Act III of 2006, S.21.
 
- Page 155 of 319
+Page 155 of 319

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 395
-TITLE: Procedure if punishment cannot be inflicted under section 394.­(1) In any case in
+SECTION/ARTICLE: 395
+TITLE: Procedure if punishment cannot be inflicted under section 394.­(1) In any case in.
 CHAPTER: 
 ============================================================
 
@@ -13,6 +13,6 @@ imprisonment for any term not exceeding twelve months, 3[or to a fine not exceed
 rupees], which may be in addition to any other punishment to which he may have been sentenced
 for the same offence.
 
- (2) Nothing in this section shall be deemed to authorize any Court to inflict imprisonment for a
+(2) Nothing in this section shall be deemed to authorize any Court to inflict imprisonment for a
 term 3[or a fine of an amount] exceeding that to which the accused is liable by law, or that which
 the said Court is competent to inflict.

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 437
 TITLE: Section 437
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+CHAPTER: INTRODUCTION
 ============================================================
 
 Mischief with intent to destroy or make unsafe a decked vessel or one of

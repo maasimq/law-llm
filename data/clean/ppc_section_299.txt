@@ -1,11 +1,55 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 299
-TITLE: Section 299
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Definitions:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Definitions:
 In this Chapter, unless there is anything repugnant in the subject or
 context:
-
 (a)
+"adult" means a person who has attained the age of eighteen years;
+(b)
+"arsh" means the compensation specified in this Chapter to be paid to the victim or his
+heirs under this Chapter;
+(c)
+"authorised medical officer" means a medical officer or a Medical board, howsoever
+designated, authorised by the Provincial Government;
+(d)
+"daman" means the compensation determined by the Court to be paid by the offender
+to the victim for causing hurt not liable to arsh;
+(e)
+"diyat" means the compensation specified in Section 323 payable to the heirs of the
+victim;
+131
+[(ee)
+"fasad-fil-arz"
+includes the past conduct of the offender or whether he has any previous conviction or the brutal or shocking mamer in which
+the offence has been committed which is outrageous to the public conscience or if the offcnder is considered a potential danger
+to the conrmunity or if the offence has been committed in the name or on the pretext of fhonour;]
+131
+(f)
+"Government" means the Provincial Government;
+(g)
+"ikrah-e-tam" means putting any person, his spouse or any of his blood relations within
+the prohibited degree of marriage in fear of instant death or instant, permanent impairing
+of any organ of the body or instant fear of being subjected to sodomy or ziha-bil-jabr;
+(h)
+"ikrah-e-naqis" means any form of duress which does not amount to ikrah-i-tam;
+(i)
+"minor" means a person who is not an adult;
+132
+[(ii)
+"offence committed in the name or on the pretext of honour" means an offence committed in the name or on the pretext of karo
+kari, siyah kari or similar other customs or practices;]
+132
+(j)
+"qatl" means causing death of a person;
+(k)
+"qisas" means punishment by causing similar hurt at the same part of the body of the
+convict as he has caused to the victim or by causing his death if he has committed qatl-iamd
+in exercise Of the right of the victim or a Wali;
+(l)
+"ta'zir" means purushment other than qisas, diyat, arsh , or daman; and
+(m)
+"wali" means a person entitled to claim qisas.

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 42
-TITLE: Section 42
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+TITLE: "Local Law":
+CHAPTER: INTRODUCTION
 ============================================================
 
 "Local Law":

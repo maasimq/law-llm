@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 15
-TITLE: Benches of Magistrates.­(1) The 2[Provincial Government] may direct any two or more
+SECTION/ARTICLE: 15
+TITLE: Benches of Magistrates.­(1) The 2[Provincial Government] may direct any two or more.
 CHAPTER: 
 ============================================================
 
@@ -10,7 +10,7 @@ with any of the powers conferred or conferrable by or under this Code on a Magis
 third class, and direct it to exercise such powers in such cases, or, such classes of cases only, and within such
 local limits, as the 2[Provincial Government] thinks fit.
 
- (2) Powers exercisable by Bench in absence of special direction. Except as otherwise provided by
+(2) Powers exercisable by Bench in absence of special direction. Except as otherwise provided by
 any order under this section, every such Bench shall have the powers conferred by this Code on a
 Magistrate of the highest class to which any one of its members, who is present taking part in the
 proceedings as a member of the Bench, belongs, and as far as practicable shall, for the purposes of this

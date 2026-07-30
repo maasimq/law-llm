@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 160
-TITLE: Police­officer's power to require attendance of witnesses. Any police­officer making an
+SECTION/ARTICLE: 160
+TITLE: Police­officer's power to require attendance of witnesses.
 CHAPTER: 
 ============================================================
 
@@ -16,4 +16,4 @@ required.
 4 Ins. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923). S. 32.
 5 Subs. by A.O., 1937, for “L.G”.
 
- Page 79 of 319
+Page 79 of 319

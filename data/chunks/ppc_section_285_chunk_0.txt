@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 285
-TITLE: Section 285
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Negligent conduct with respect to fire or combustible matter:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Negligent conduct with respect to fire or combustible matter:
@@ -12,4 +12,8 @@ or knowingly or negligently omits to take such order with any fire or any combus
 matter in his possession as is sufficient to guard against any probable danger to human
 life from such fire or combustible matter,
 shall be punished with imprisonment of either description for a term which may extend to
-six months, or with fine which may extend to  112[three thousand rupees] 112, or with both.
+six months, or with fine which may extend to
+112
+[three thousand rupees]
+112
+, or with both.

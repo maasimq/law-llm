@@ -1,8 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 475
 TITLE: Section 475
-CHAPTER: CHAPTER XVIII — OF OFFENCES RELATING TO DOCUMENTS AND TO TRADE OR
-            PROPERTY MARKS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Counterfeiting device or mark used for authenticating documents described in

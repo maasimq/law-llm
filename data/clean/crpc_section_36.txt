@@ -1,12 +1,16 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 36
-TITLE: Ordinary Powers of Magistrates. All 1[Magistrates] have the powers hereinafter
+SECTION/ARTICLE: 36
+TITLE: Ordinary Powers of Magistrates.
 CHAPTER: 
 ============================================================
 
 36. Ordinary Powers of Magistrates. All 1[Magistrates] have the powers hereinafter
 respectively conferred upon them and specified in the third schedule. Such powers are called their
 "ordinary powers”.
- 4[37. Additional powers conferrable on Magistrates.­ On the recommendations of the High
+4[37. Additional powers conferrable on Magistrates.­ On the recommendations of the High
 Court, the Provincial Government may, in addition to the ordinary powers, invest any Magistrate
 with any powers specified in the Fourth Schedule.]
+
+38. 4* * *
+
+D.—Conferment, Continuance and Cancellation of Powers

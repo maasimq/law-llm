@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 161
 TITLE: Section 161
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Public servant taking gratification other than legal remuneration in respect to
@@ -15,5 +15,45 @@ attempting to render any service or disservice to any person, with the Federal, 
 Provincial Government or Legislature or with any public servant, as such, shall be
 punished with imprisonment of either description for a term which may extend to three
 years or with fine or with both.
-
 Explanation:
+"Expecting to be a public servant":
+If a person not expecting to be in
+office obtains a gratification by deceiving others into a belief that he is about to be in
+office, and that he will then serve them, he may be guilty of cheating, but he is not guilty of
+the offence defined in this section.
+"Gratification":
+The word "gratification" is not restricted to pecuniary gratifications, or to
+gratifications estimable in money.
+"Legal remuneration":
+The words "legal remuneration" are not restricted to
+remuneration, which a public servant can lawfully demand, but include all remuneration
+which he is permitted by the authority by which he is employed, to accept.
+"A motive or reward for doing":
+A person who receives gratification as a motive for
+doing what he does not intend to do, or as a reward for doing what he has done, comes
+within these words.
+50
+[
+"Public servant":
+In this section and in Sections 162, 63, 164, 165, 166, 167, 168, 169
+and 409, 'public servant' includes an employee of any corporation or other body or
+organisation set up, controlled or administered by, or under the authority of, the Federal
+Government.]
+50
+Illustrations
+(a)
+A, a munsif, obtains from Z, a banker, a situation in Z's bank for A's
+brother, as a reward to A for deciding a case in favour of Z. A has committed the offence
+defined in this section.
+(b)
+A, holding the office of Consul at the Court of a Foreign Power accepts a lakh of
+rupees from the Minister of that Power. It does not appear, that A accepted this sum as a
+motive or reward for doing or forbearing to do any particular official act, or for rendering or
+attempting to render any particular service to that Power, with the Government of
+Pakistan. But it does appear that A accepted the sum as a motive or reward for generally
+showing favour in the exercise of his official functions to that Power. A has committed the
+offence defined in this section.
+(c)
+A, a public servant, induces Z erroneously to believe that A's influence with the
+Government has obtained a title for Z and thus induces Z to give A money as a reward for
+this service. A has committed the offence defined in this section.

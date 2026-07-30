@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 464
-TITLE: Procedure in case of accused being lunatic.­(1) When a Magistrate holding an inquiry or a trial
+SECTION/ARTICLE: 464
+TITLE: Procedure in case of accused being lunatic.­(1) When a Magistrate holding an inquiry or a trial.
 CHAPTER: 
 ============================================================
 
@@ -15,12 +15,12 @@ examination to writing.
 2 Chapter XXXIII (Section 443 to 449) was subs. for the original Chapter XXXIII (sections 443 to 463) by the Criminal Law Amendment Act, 1923 (12 of 1923), s.27.
 3 Subs. by A.O., 1937, for “L.G”.
 
- Page 163 of 319
- [(1A) Pending such examination and inquiry, the Magistrate may deal with the accused in accordance
- 1
+Page 163 of 319
+[(1A) Pending such examination and inquiry, the Magistrate may deal with the accused in accordance
+1
 
 with the provisions of section 466.]
 
- (2) If such Magistrate is of opinion that the accused is of unsound mind and consequently incapable of
+(2) If such Magistrate is of opinion that the accused is of unsound mind and consequently incapable of
 making his defence, he 1[shall record a finding to that effect and] shall postpone further proceedings in the
 case.

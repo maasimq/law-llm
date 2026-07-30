@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 382B
-TITLE: Period of detention to be considered while awarding sentence of
+SECTION/ARTICLE: 382B
+TITLE: Period of detention to be considered while awarding sentence of.
 CHAPTER: 
 ============================================================
 
@@ -14,8 +14,8 @@ detained in custody for such offence.
 3 Section 382­A, section 382­B and section 382­C ins. by the Law Reforms Ordinance, 1972 (12 of 1972),s.2 and Sch.
 4 Subs. by the Code of Criminal Procedure (Second Amdt.) Ordinance, 1979 (71 of 1979), s. 2. for “may”.
 
- Page 143 of 319
- 382­C. Scandalous or false and frivalous pleas to be considered in passing
+Page 143 of 319
+382­C. Scandalous or false and frivalous pleas to be considered in passing
 sentence. In passing a sentence on an accused for any offence, a Court may take into
 consideration any scandalous or false and frivolous plea taken in defence by him or on his
 behalf.]

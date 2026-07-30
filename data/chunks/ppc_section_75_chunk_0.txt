@@ -1,11 +1,19 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 75
 TITLE: Section 75
-CHAPTER: CHAPTER III — OF PUNISHMENTS.
+CHAPTER: INTRODUCTION
 ============================================================
 
 Enhanced punishment for certain offenders under Chapter XII or Chapter XVII
 after previous conviction:
 Whoever, having been convicted:-
-
 (a)
+by a Court in Pakistan of an offence punishable under Chapter XII or Chapter XVII of
+this Code with imprisonment of either description for a term of three years or upwards, or
+26
+[]
+26
+shall be guilty of any offence punishable under either of those Chapters with the
+imprisonment for the like term, shall be subject for every such subsequent offence to
+imprisonment for life, or to imprisonment of either description for a term which may extend
+to ten years.

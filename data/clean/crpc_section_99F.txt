@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 99F
-TITLE: Procedure in High Court. Every High Court shall, as soon as conveniently may be, frame rules to
+SECTION/ARTICLE: 99F
+TITLE: Procedure in High Court.
 CHAPTER: 
 ============================================================
 

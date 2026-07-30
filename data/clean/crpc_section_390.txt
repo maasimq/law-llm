@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 390
-TITLE: Execution of sentence of whipping only. When the accused is sentenced to whipping only, the
+SECTION/ARTICLE: 390
+TITLE: Execution of sentence of whipping only.
 CHAPTER: 
 ============================================================
 

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 140
-TITLE: Section 140
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Wearing garb or carrying token used by soldier, sailor or airman:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Wearing garb or carrying token used by soldier, sailor or airman:
@@ -10,4 +10,8 @@ being a soldier, sailor or airman in the Military, Navel or Air Service of Pakis
 garb or carries any token resembling any garb or token used by such a soldier, sailor or
 airman with the intention that it may be believed that he is such a soldier, sailor or airman
 shall be punished with imprisonment of either description for a term which may extend to
-three months, or with fine which may extend to  46[one thousand five hundred rupees] 46, or with both.
+three months, or with fine which may extend to
+46
+[one thousand five hundred rupees]
+46
+, or with both.

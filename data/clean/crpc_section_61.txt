@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 61
-TITLE: Persons arrested not to be detained more than twenty­four hours. No police­officer shall detain
+SECTION/ARTICLE: 61
+TITLE: Persons arrested not to be detained more than twenty­four hours.
 CHAPTER: 
 ============================================================
 

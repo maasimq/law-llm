@@ -1,8 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 489
-TITLE: Section 489
-CHAPTER: CHAPTER XVIII — OF OFFENCES RELATING TO DOCUMENTS AND TO TRADE OR
-            PROPERTY MARKS
+TITLE: Tampering with property mark with intent to cause injury:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Tampering with property mark with intent to cause injury:

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 235
 TITLE: Section 235
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Possession of instrument or material for the purpose of using the same for
@@ -11,3 +11,7 @@ purpose of using the same for counterfeiting coin, or knowing or having reason t
 that the same is intended to be used for that purpose, shall be punished with
 imprisonment of either description for a term which may extend to three years, and shall
 also be liable to fine;
+if Pakistan coin:
+and if the coin to be counterfeited is Pakistan coin, shall be
+punished with imprisonment of either description for a term which may extend to ten
+years, and shall also be liable to fine.

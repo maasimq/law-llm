@@ -1,10 +1,14 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 447
-TITLE: Section 447
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+TITLE: Punishment for criminal trespass:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for criminal trespass:
 Whoever commits criminal trespass shall be
 punished with imprisonment of either description for a term which may extend to three
-months, or with fine which may extend to  210[one thousand five hundred rupees] 210, or with both.
+months, or with fine which may extend to
+210
+[one thousand five hundred rupees]
+210
+, or with both.

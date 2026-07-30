@@ -1,30 +1,30 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 491
-TITLE: Power to issue directions of the nature of a habeas carpus.­(1) 7[Any High Court] may,
+SECTION/ARTICLE: 491
+TITLE: Power to issue directions of the nature of a habeas carpus.­(1) 7[Any High Court] may,.
 CHAPTER: 
 ============================================================
 
 491. Power to issue directions of the nature of a habeas carpus.­(1) 7[Any High Court] may,
 whenever it thinks fit, direct­
 
- (a) that a person within the limits of its 8[appellate criminal jurisdiction] be brought up before the
- Court to be dealt with according to law;
+(a) that a person within the limits of its 8[appellate criminal jurisdiction] be brought up before the
+Court to be dealt with according to law;
 
- (b) that a person illegally or improperly detained in public or private custody within such limits be
- set at liberty ;
+(b) that a person illegally or improperly detained in public or private custody within such limits be
+set at liberty ;
 
- (c) that a prisoner detained in any jail situate within such limits be brought before the Court to be
- there examined as a witness in any matter pending or to be inquired into in such Court;
+(c) that a prisoner detained in any jail situate within such limits be brought before the Court to be
+there examined as a witness in any matter pending or to be inquired into in such Court;
 
- (d) that a prisoner detained as aforesaid be brought before a Court­martial or any Commissioners 9*
- * * for trial or to be examined touching any matter pending before such Court­martial or
- Commissioners respectively ;
+(d) that a prisoner detained as aforesaid be brought before a Court­martial or any Commissioners 9*
+* * for trial or to be examined touching any matter pending before such Court­martial or
+Commissioners respectively ;
 
- (e) that a prisoner within such limits be removed from one custody to another for the purpose of
- trial; and
+(e) that a prisoner within such limits be removed from one custody to another for the purpose of
+trial; and
 
- (f) that the body of a defendant within such limits be brought in on the Sheriff's return of Cepi
- Corpus to a writ of attachment.
+(f) that the body of a defendant within such limits be brought in on the Sheriff's return of Cepi
+Corpus to a writ of attachment.
 
 1 Ins. by the Law Reforms Ordinance, 1972 (12 of 1972), s.2 and Sch.
 2 The figures “477” rep. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s. 130.
@@ -36,21 +36,36 @@ whenever it thinks fit, direct­
 8 Subs. ibid., for “ordinary original civil jurisdiction”.
 9 The words “acting under the authority of any commission from the G.G in C.” rep. by A.O., 1937.
 
- Page 171 of 319
- [(1A) The High Court may, be general or special order published in the official Gazette, direct that all or
- 1
+Page 171 of 319
+[(1A) The High Court may, be general or special order published in the official Gazette, direct that all or
+1
 
 any of its powers specifed in clauses (a) and (b) of sub­section (1) shall, subject to such conditions, if any, as
 may be specified in the order, be exercisable also by—
 
- (a) a Sessions Judge; or
+(a) a Sessions Judge; or
 
- (b) an Additional Sessions Judge, Within the territorial limits of a Session Division. ]
+(b) an Additional Sessions Judge, Within the territorial limits of a Session Division. ]
 
- (2) 2[The High Court] may, from time to time, frame rules to regulate the procedure in cases under this
+(2) 2[The High Court] may, from time to time, frame rules to regulate the procedure in cases under this
 section.
 
- [(3) Nothing in this section applies to persons detained under any law providing for preventive
- 3
+[(3) Nothing in this section applies to persons detained under any law providing for preventive
+3
 
 detention.]
+
+491A. [Powers of High Court outside the limits of appellate jurisdiction.] Omitted by the Criminal
+4
+
+Law (Extinction of Discriminatory Privileges) Act, 1949 (II of 1950), Schedule.
+
+___________
+
+PART IX
+SUPPLEMENTARY PROVISIONS
+
+__________
+
+CHAPTER XXXVIII
+OF THE PUBLIC PROSECUTOR

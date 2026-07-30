@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 229
-TITLE: When new trial may be directed, or trial suspended. If the new or altered or added charge is
+SECTION/ARTICLE: 229
+TITLE: When new trial may be directed, or trial suspended.
 CHAPTER: 
 ============================================================
 

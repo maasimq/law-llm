@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 544
-TITLE: Expenses of complainants and witnesses. Subject to any rules5 made by the 6[Provincial
+SECTION/ARTICLE: 544
+TITLE: Expenses of complainants and witnesses.
 CHAPTER: 
 ============================================================
 
@@ -17,9 +17,9 @@ other proceeding before such Court under this Code.
 6 Subs. by A.O., 1937, for “L.G.”.
 7 The words “with the previous sanction of the G.G; in C”. rep. by the Devolution Act, 1920 (38 of 1920), s. 2 and Sch. I.
 
- Page 193 of 319
- [544 A. Compensation to the heirs of the person killed, etc.­2[(1) Whenever a person is convicted of
- 1
+Page 193 of 319
+[544 A. Compensation to the heirs of the person killed, etc.­2[(1) Whenever a person is convicted of
+1
 
 an offence in the commission whereof the death of, or hurt, injury or mental anguish or psychological
 damage, to, any person is caused, or damage to or loss or destruction of any property is caused, the Court
@@ -29,16 +29,16 @@ injured, or to the person to whom mental anguish or psychological damage has bee
 of the property damaged, lost or destroyed, as the case may be, such compensation as the Court may
 determine having regard to the circumstances of the case.]
 
- (2) The compensation payable under sub­section (1) shall be recoverable as 3[an arrears of land revenue]
+(2) The compensation payable under sub­section (1) shall be recoverable as 3[an arrears of land revenue]
 and the Court may further order that, in default of payment 4[or of recovery as aforesaid] the person ordered
 to pay such compensation shall suffer imprisonment for a period not exceeding six months, or if it be a
 Court of the Magistrate of the third class, for a period not exceeding thirty days.
 
- (3) The compensation payable under sub­section (1) shall be in addition to any sentence which the
+(3) The compensation payable under sub­section (1) shall be in addition to any sentence which the
 Court may impose for the offence of which the person directed to pay compensation has been convicted.
 
- (4) The provisions of sub­sections (2B), (2C), (3) and (4) of Section 250 shall, as far as may be, apply to
+(4) The provisions of sub­sections (2B), (2C), (3) and (4) of Section 250 shall, as far as may be, apply to
 payment of compensation under this section.]
 
- (5) An order under this section may also be made by an Appellate Court or by a Court when exercising
+(5) An order under this section may also be made by an Appellate Court or by a Court when exercising
 its powers of revision.]

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 44
-TITLE: Public to give information of certain offences.­1[(1) Every person aware of the commission of, or
+SECTION/ARTICLE: 44
+TITLE: Public to give information of certain offences.­1[(1) Every person aware of the commission of, or.
 CHAPTER: 
 ============================================================
 
@@ -13,5 +13,5 @@ absence of reasonable excuse, the burden of proving which shall lie upon the per
 give information to the nearest Magistrate 7[Justice of the Peace] or police­officer of such commission or
 intention.]
 
- (2) For the purposes of this section the term “offence” includes any act committed at any place out of
+(2) For the purposes of this section the term “offence” includes any act committed at any place out of
 2[Pakistan] which would constitute an offence if committed in 2[Pakistan].

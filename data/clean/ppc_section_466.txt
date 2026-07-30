@@ -1,8 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 466
-TITLE: Section 466
-CHAPTER: CHAPTER XVIII — OF OFFENCES RELATING TO DOCUMENTS AND TO TRADE OR
-            PROPERTY MARKS
+TITLE: Forgery of record of Court or of public register, etc.:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Forgery of record of Court or of public register, etc.:

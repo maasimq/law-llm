@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 45
-TITLE: Section 45
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+TITLE: "Life":
+CHAPTER: INTRODUCTION
 ============================================================
 
 "Life":

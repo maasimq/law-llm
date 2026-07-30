@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 496C
 TITLE: Section 496C
-CHAPTER: CHAPTER XX — OF OFFENCES RELATING TO MARRIAGE
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for false accusation of
@@ -11,8 +11,8 @@ false charge of fornication against any person, shall be
 punished with imprisonment for a term which may extend to
 five years and shall also be liable to fine not exceeding
 ten thousand rupees.
-
-Provided that a Presiding Officer of a Court
+Provided
+that a Presiding Officer of a Court
 dismissing a complaint under section 203C of the Code of
 Criminal Procedure, 1898 and after providing the accused an
 opportunity to show cause if satisfied that an offence

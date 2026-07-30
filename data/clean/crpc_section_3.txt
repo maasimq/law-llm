@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 3
-TITLE: References to Code of Criminal Procedure and other repealed enactments.­(1) In every
+SECTION/ARTICLE: 3
+TITLE: References to Code of Criminal Procedure and other repealed enactments.­(1) In every.
 CHAPTER: 
 ============================================================
 
@@ -10,9 +10,9 @@ section of, the Code of Criminal Procedure, Act XXV of 1861 or Act X Of 1872, or
 any other enactment hereby repealed, such reference shall, so far as may be practicable, be taken to be
 made to this Code or to its corresponding chapter or section.
 
- (2) Expressions in former Acts. In every enactment passed before this Code comes into force the
+(2) Expressions in former Acts. In every enactment passed before this Code comes into force the
 expressions "Officer exercising (or 'having') the powers (or 'the full powers') of a Magistrate, “Subordinate
 Magistrate, first class", and "Subordinate Magistrate, second class," shall respectively be deemed to mean
 "Magistrate of the first class," "Magistrate of the second class" and "Magistrate of the third class" 1[* * *]
 2
- [* * *] and the expression “Joint Sessions Judge” shall mean "Additional Sessions Judge".
+[* * *] and the expression “Joint Sessions Judge” shall mean "Additional Sessions Judge".

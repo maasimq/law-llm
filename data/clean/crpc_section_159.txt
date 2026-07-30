@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 159
-TITLE: Power to hold investigation of preliminary inquiry. Such Magistrate, on receiving such report,
+SECTION/ARTICLE: 159
+TITLE: Power to hold investigation of preliminary inquiry.
 CHAPTER: 
 ============================================================
 

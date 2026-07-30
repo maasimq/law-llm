@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 265J
-TITLE: Statement under section 164 admissible. The statement of a witness duly recorded
+SECTION/ARTICLE: 265J
+TITLE: Statement under section 164 admissible.
 CHAPTER: 
 ============================================================
 

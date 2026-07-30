@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 170
-TITLE: Case to be sent to Magistrate when evidence is sufficient.__(1) If, upon an investigation under
+SECTION/ARTICLE: 170
+TITLE: Case to be sent to Magistrate when evidence is sufficient.__(1) If, upon an investigation under.
 CHAPTER: 
 ============================================================
 
@@ -12,17 +12,17 @@ trial or, if the offence is bailable and the accused is able to give security, s
 appearance before such Magistrate on a day fixed and for his attendance from day to day before such
 Magistrate until otherwise directed.
 
- (2) When the officer in charge of a police­station forwards an accused person to a Magistrate or takes
+(2) When the officer in charge of a police­station forwards an accused person to a Magistrate or takes
 security for his appearance before such Magistrate under this section, he shall send to such Magistrate any
 weapon or other article which it may be necessary to produce before him, and shall require the
 complainant (if any) and so many of the persons who appear to such officer to be acquainted with the
 circumstances of the case as he may think necessary, to execute a bond to appear before the Magistrate as
 thereby directed and prosecute or give evidence (as the case may be) in the matter of the charge against the
 accused.
- 3
- * * * * * * *
- 4
- * * * * * * *
+3
+*             *               *                   *                  *              *      *
+4
+*             *               *                   *                  *              *      *
 
- (5) The officer in whose presence the bond is executed shall deliver a copy thereof to one of the persons
+(5) The officer in whose presence the bond is executed shall deliver a copy thereof to one of the persons
 who executed it, and shall then send to the Magistrate the original with his report.

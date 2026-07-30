@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 60
 TITLE: Section 60
-CHAPTER: CHAPTER III — OF PUNISHMENTS.
+CHAPTER: INTRODUCTION
 ============================================================
 
 Sentence may be (in certain cases of imprisonment) wholly or partly rigorous or

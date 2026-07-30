@@ -1,11 +1,33 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 53
-TITLE: Section 53
-CHAPTER: CHAPTER III — OF PUNISHMENTS.
+TITLE: Punishments:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishments:
 The punishments to which offenders are liable under the
 provisions of this Code are:
-
 Firstly,
+Qisas;
+Secondly,
+Diyat;
+Thirdly,
+Arsh;
+Fourthly,
+Daman;
+Fifthly,
+Ta'zir;
+Sixthly,
+Death;
+Seventhly,
+Imprisonment for life;
+Eighthly,
+Imprisonment which is of two descriptions, namely:--
+(i)
+Rigorous, i.e., with hard labour;
+(ii)
+Simple;
+Ninthly,
+Forfeiture of property;
+Tenthly,
+Fine

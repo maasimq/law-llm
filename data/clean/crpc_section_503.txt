@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 503
-TITLE: When attendance of witness may be dispensed with._(1) Whenever, in the course of an inquiry, a
+SECTION/ARTICLE: 503
+TITLE: When attendance of witness may be dispensed with._(1) Whenever, in the course of an inquiry, a.
 CHAPTER: 
 ============================================================
 
@@ -11,34 +11,36 @@ witness cannot be procured without an amount of delay, expense or inconvenience 
 circumstances of the case, would be unreasonable, such 2* * * Court may dispense with such attendance
 and may issue a commission to any 2* * * Magistrate of the First Class, within the local limits of
 whose jurisdiction such witness resides, to take the evidence of such witness.
- 3
- * * * * *
+3
+*                         *                              *                                   *                                       *
 
 1 The words “a Presidency Magistrate” omitted by A.O., 1949, Sch.
 2 Omitted by ord. 37 of 2001, s. 68 (w.e.f.14­08­2001).
 3 Sub­section (2) omitted by the Federal Laws (Revision and Declration) Ordinance, 1981 (27 of 1981), s.3 and Second Sch., which has previously been amended by various enactments.
 
- Page 176 of 319
- [(2A) When the witness resides in an area in or in relation to which the President has extra­provincial
- 1
+Page 176 of 319
+[(2A) When the witness resides in an area in or in relation to which the President has extra­provincial
+1
 
 jurisdiction within the meaning of the Extra­Provincial Jurisdiction Order, 1949 (G.G.O. No­ 5 of 1949) the
 commission may be issued to such Court or officer in the area as may be recognised by the President by
 notification in the official Gazette has a Court or officer to which or to whom commissions may be issued
 under this sub­section and within the local limits of whose jurisdiction the witness resides.];
 
- (2B) When the witness resides in the United Kingdom or any other country of the Commonwealth 2* *
+(2B) When the witness resides in the United Kingdom or any other country of the Commonwealth 2* *
 *or in the Union of Burma, 3[or any other country in which reciprocal arrangement in this behalf exists,] the
 commission may be issued to such Court or Judge having authority in this behalf in that country as may be
 specified by the 4[Federal Government] by 5notification in the Official Gazette.]
 
- (3) The Magistrate or officer to whom the commission is issued, 6* * * 7* * *shall proceed to the place
+(3) The Magistrate or officer to whom the commission is issued, 6* * * 7* * *shall proceed to the place
 where the witness is or shall summon the witness before him, and shall take down his evidence in the same
 manner, and may for this purpose exercise the same powers, as in trials of 8[cases] under this code.
 
- [(4) Where the commission is issued to such officer as is mentioned in sub­section (2A), he may, in lieu
- 9
+[(4) Where the commission is issued to such officer as is mentioned in sub­section (2A), he may, in lieu
+9
 
 of proceeding in the manner provided in sub­section (3), delegate his powers and duties under the
 commission to any officer subordinate to him whose powers are not less than those of a Magistrate of the
 first class in Pakistan.].
+
+504. [Commission in case of witness being within Presidency­ town] Omitted byA,O.,1949, Schedule.

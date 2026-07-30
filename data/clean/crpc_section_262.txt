@@ -1,11 +1,11 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 262
-TITLE: Procedure 6[prescribed in Chapter XX] applicable.__6[(1) In trials under this Chapter, the
+SECTION/ARTICLE: 262
+TITLE: Procedure 6[prescribed in Chapter XX] applicable.__6[(1) In trials under this Chapter, the.
 CHAPTER: 
 ============================================================
 
 262. Procedure 6[prescribed in Chapter XX] applicable.__6[(1) In trials under this Chapter, the
 procedure prescribed in Chapter XX shall be followed, except as hereinafter mentioned].
 
- (2) Limit of imprisonment. No sentence of imprisonment for a term exceeding three months shall be
+(2) Limit of imprisonment. No sentence of imprisonment for a term exceeding three months shall be
 passed in the case of any conviction under this Chapter.

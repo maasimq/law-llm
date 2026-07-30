@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 64
-TITLE: Section 64
-CHAPTER: CHAPTER III — OF PUNISHMENTS.
+TITLE: Sentence of imprisonment for non-payment of fine:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Sentence of imprisonment for non-payment of fine:

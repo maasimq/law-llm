@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 208
-TITLE: Section 208
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Fraudulently suffering decree for sum not due:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Fraudulently suffering decree for sum not due:
@@ -12,7 +12,6 @@ property to which such person is not entitled, or fraudulently causes or suffers
 order to be executed against him after it has been satisfied, or for anything in respect of
 which it has been satisfied, shall be' punished with imprisonment of either description for a
 term which may extend to two years, or with fine, or with both.
-
 Illustration
 A institutes a suit against Z. Z, knowing that A is likely to obtain a decree against him
 fraudulently suffers a judgment to pass against him for a larger amount at the Suit of B,

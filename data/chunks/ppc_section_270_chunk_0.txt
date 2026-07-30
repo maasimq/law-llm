@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 270
-TITLE: Section 270
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Malignant act likely to spread infection of disease dangerous to life:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Malignant act likely to spread infection of disease dangerous to life:

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 70
 TITLE: Section 70
-CHAPTER: CHAPTER III — OF PUNISHMENTS.
+CHAPTER: INTRODUCTION
 ============================================================
 
 Fine leviable within six years, or during imprisonment; Death not to discharge

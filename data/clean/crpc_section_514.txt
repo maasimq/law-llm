@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 514
-TITLE: Procedure on forfeiture of bond._ (1) Whenever it is proved to the satisfaction of the Court by
+SECTION/ARTICLE: 514
+TITLE: Procedure on forfeiture of bond._ (1) Whenever it is proved to the satisfaction of the Court by.
 CHAPTER: 
 ============================================================
 
@@ -12,16 +12,16 @@ when the bond is for appearance before a Court, to the satisfaction of such Cour
 forfeited, the Court shall record the grounds of such proof, and may call upon any person bound by such
 bond to pay the penalty thereof, or to show cause why it should not be paid.
 
- (2) If sufficient cause is not shown and the penalty is not paid, the Court may proceed to recover the
+(2) If sufficient cause is not shown and the penalty is not paid, the Court may proceed to recover the
 same by issuing a warrant for the attachment and sale of the moveable property belonging to such person or
 his estate if he is dead.
 
- (3) Such warrant may be executed within the local limits of the jurisdiction of the Court which issued it;
+(3) Such warrant may be executed within the local limits of the jurisdiction of the Court which issued it;
 and it shall authorize the 5[attachment] and sale of any moveable property belonging to such person without
 such limits, when endorsed by the 6[District Officer (Revenue)] 7* * * within the local limits of whose
 jurisdiction such property is found.
 
- (4) If such penalty is not paid and cannot be recovered by such attachment and sale, the person so
+(4) If such penalty is not paid and cannot be recovered by such attachment and sale, the person so
 bound shall be liable, by order of the Court which issued the warrant, to imprisonment in the civil jail for a
 term which may extend to six months.
 
@@ -34,20 +34,20 @@ been subs. by A.O., 1949, Arts. 3 (2) and 4, for “British India”.
 6 Subs. by Ord. 37 of 2001, s.70 (w.e.f 14­08­2001).
 7 The words “or Chief Presidency magistrate” omitted by A.O., 1949. Sch.
 
- Page 180 of 319
- (5) The Court may, at its discretion, remit any portion of the penalty mentioned and enforce
+Page 180 of 319
+(5) The Court may, at its discretion, remit any portion of the penalty mentioned and enforce
 payment in part only.
 
- (6) Where a surety to a bond dies before the bond is forfeited, his estate shall be discharged
+(6) Where a surety to a bond dies before the bond is forfeited, his estate shall be discharged
 from all liability in respect of the bond 1* * *.
- 2[(7) When any person who has furnished security under section 106 or section 118 3* * * is
+2[(7) When any person who has furnished security under section 106 or section 118 3* * * is
 convicted of an offence the commission of which constitutes a breach of the conditions of his bond,
 or of a bond executed in lieu of his bond under section 514B, a certified copy of the judgment of
 the Court by which he was convicted of such offence may be used as evidence in proceedings
 under this section against his surety or sureties, and, if such certified copy is so used, the Court
 shall presume that such offence was committed by him unless the contrary is proved.]
- 4[514A.
- Procedure in case of insolvency or death of surety or when a bond is
+4[514A.
+Procedure in case of insolvency or death of surety or when a bond is
 forfeited. When any surety to a bond under this Code becomes insolvent or dies, or when any
 bond is forfeited under the provisions of section 514, the Court by whose order such bond was
 taken, or 5* * * Magistrate of the first class, may order the person from whom such security was

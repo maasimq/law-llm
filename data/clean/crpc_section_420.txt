@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 420
-TITLE: Procedure when appellant in jail. If the appellant is in jail, he may present his petition of appeal
+SECTION/ARTICLE: 420
+TITLE: Procedure when appellant in jail.
 CHAPTER: 
 ============================================================
 

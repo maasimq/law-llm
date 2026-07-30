@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 99E
-TITLE: Evidence to prove nature or tendency of newspapers. On the hearing of any such application
+SECTION/ARTICLE: 99E
+TITLE: Evidence to prove nature or tendency of newspapers.
 CHAPTER: 
 ============================================================
 

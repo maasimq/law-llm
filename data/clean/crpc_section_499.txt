@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 499
-TITLE: Bond of accused and sureties._ (1) Before any person is released on bail or released on his own
+SECTION/ARTICLE: 499
+TITLE: Bond of accused and sureties._ (1) Before any person is released on bail or released on his own.
 CHAPTER: 
 ============================================================
 
@@ -10,7 +10,7 @@ shall be executed by such person, and, when he is released on bail, by one or mo
 conditioned that such person shall attend at the time and place mentioned in the bond, and shall continue so
 to attend until otherwise directed by the police­officer or Court, as the case may be.
 
- (2) If the case so require, the bond shall also bind the person released on bail to appear when called
+(2) If the case so require, the bond shall also bind the person released on bail to appear when called
 upon at the High Court, Court of Session or other Court to answer the charge.
 
 1 Subs. by Act 18 of 1923, s. 135 for “such offence”.
@@ -18,4 +18,4 @@ upon at the High Court, Court of Session or other Court to answer the charge.
 3 Subs. by the Code of Criminal Procedure (Amendement) Act, 1923 (18 of 1923), s. 136, for the original sub­section (3).
 4 Section 498­A ins. by the Code of Criminal Procdure (Amdt.) Act, 1976 (13 of 1976), s.4 (w.e.f. 15­4­1976).
 
- Page 175 of 319
+Page 175 of 319

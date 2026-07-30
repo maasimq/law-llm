@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 87
-TITLE: Proclamation for person absconding.­(1) If any Court 5[is satisfied after taking evidence] that any
+SECTION/ARTICLE: 87
+TITLE: Proclamation for person absconding.­(1) If any Court 5[is satisfied after taking evidence] that any.
 CHAPTER: 
 ============================================================
 
@@ -10,7 +10,7 @@ warrant cannot be executed, such Court may publish a written proclamation requir
 specified place and at a specified time not less than thirty days from the date of publishing such
 proclamation.
 
- (2) The proclamation shall be published as follows:­
+(2) The proclamation shall be published as follows:­
 
 1 The words “or Commissioner” omitted by A.O., 1949, Sch.
 2 Subs. by the Law Reforms Ordinance, 1972 (12 of 1972), s. 2 and Sch., for full­stop.
@@ -18,15 +18,15 @@ proclamation.
 4 Ins. ibid.
 5 Subs. by the Law Reforms Ordinance, 1972 (12 of 1972), s. 2 and Sch., for “has reason to believe (whether after taking evidence or not)”.
 
- Page 45 of 319
- (a) it shall be publicly read in some conspicuous place of the town or village in which such person
- ordinarily resides ;
+Page 45 of 319
+(a) it shall be publicly read in some conspicuous place of the town or village in which such person
+ordinarily resides ;
 
- (b) it shall be affixed to some conspicuous part of the house or homestead in which such person
- ordinarily resides or to some conspicuous place of such town or village; and
+(b) it shall be affixed to some conspicuous part of the house or homestead in which such person
+ordinarily resides or to some conspicuous place of such town or village; and
 
- (c) a copy thereof shall be affixed to some conspicuous part of the Court­house.
+(c) a copy thereof shall be affixed to some conspicuous part of the Court­house.
 
- (3) A statement in writing by the Court issuing the proclamation to the effect that the proclamation was
+(3) A statement in writing by the Court issuing the proclamation to the effect that the proclamation was
 duly published on a specified day shall be conclusive evidence that the requirements of this section have
 been complied with ,and that the proclamation was published on such day.

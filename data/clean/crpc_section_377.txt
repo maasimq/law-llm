@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 377
-TITLE: Confirmation of new sentence to be signed by two Judges. In every case so submitted, the
+SECTION/ARTICLE: 377
+TITLE: Confirmation of new sentence to be signed by two Judges.
 CHAPTER: 
 ============================================================
 

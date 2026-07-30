@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 480
-TITLE: Procedure in certain cases of contempt.­(1) When any such offence as is described in section
+SECTION/ARTICLE: 480
+TITLE: Procedure in certain cases of contempt.­(1) When any such offence as is described in section.
 CHAPTER: 
 ============================================================
 
@@ -11,5 +11,5 @@ offender 1* * * to be detained in custody and at any time before the rising of t
 may, if it thinks fit, take cognizance of the offence and sentence the offender to fine not exceeding two
 hundred rupees, and, in default of payment, to simple imprisonment for a term which may extend to one
 month, unless such fine be sooner paid.
- 2
- * * * * *
+2
+*                                   *                                              *                                    *   *

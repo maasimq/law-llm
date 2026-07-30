@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 509
-TITLE: Deposition of medical witness._(1) The deposition of a Civil Surgeon or other medical witness,
+SECTION/ARTICLE: 509
+TITLE: Deposition of medical witness._(1) The deposition of a Civil Surgeon or other medical witness,.
 CHAPTER: 
 ============================================================
 
@@ -9,11 +9,11 @@ taken and attested by a Magistrate in the presence of the accused, or taken on c
 XL, may be given in evidence in any inquiry, trial or other proceeding under this Code, although the
 deponent is not called as a witness.
 
- (2) Power to summon medical witness. The Court may, if it thinks fit, summon and examine such
+(2) Power to summon medical witness. The Court may, if it thinks fit, summon and examine such
 deponent as to the subject matter of his deposition.
 
- [510. Report of Chemical Examiner, Serologist etc. Any document purporting to be a report, under
- 1
+[510. Report of Chemical Examiner, Serologist etc. Any document purporting to be a report, under
+1
 
 the hand of any Chemical Examiner or Assistant Chemical Examiner to Government or any Serologist,
 finger­print expert or firearm expert appointed by Government, 2[or of the Chief Chemist of the Pakistan
@@ -21,5 +21,5 @@ Security Printing Corporation, Limited.] upon any matter or thing duly submitted
 analysis and report in the course of any proceeding under this Code, may, without calling him as a witness,
 be used as evidence in any inquiry, trial or other proceeding under this Code :
 
- Provided that the Court may, 3[if it considers necessary in the interest of justice], summon and examine
+Provided that the Court may, 3[if it considers necessary in the interest of justice], summon and examine
 the person by whom such report has been made.].

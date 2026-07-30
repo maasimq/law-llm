@@ -1,11 +1,11 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 265E
-TITLE: Plea.__(1) The charge shall be read and explained to the accused, and he shall be asked
+SECTION/ARTICLE: 265E
+TITLE: Plea.__(1) The charge shall be read and explained to the accused, and he shall be asked.
 CHAPTER: 
 ============================================================
 
 265E. Plea.__(1) The charge shall be read and explained to the accused, and he shall be asked
 whether he is guilty or has any defence to make.
 
- (2) If the accused pleads guilty, the Court shall record the plea, and may in its discretion convict
+(2) If the accused pleads guilty, the Court shall record the plea, and may in its discretion convict
 him thereon.

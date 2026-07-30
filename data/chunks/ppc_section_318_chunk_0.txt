@@ -1,14 +1,17 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 318
-TITLE: Section 318
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Qatl-i-khata:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Qatl-i-khata:
 Whoever, without any intention to cause death of, or cause harm to, a
 person causes death of such person, either by mistake of act or by mistake of fact, is said
 to commit qatl-i-khata.
-
 Illustrations
-
 (a)
+A aims at a deer but misses the target and kills Z who is standing by, A is guilty of
+qatl-i-khata.
+(b)
+A shoots at an object to be a boar but it turns out to be a human being. A is guilty of
+qatl-i-khata.

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 95
-TITLE: Procedure as to letters and telegrams.­(1) If any document, parcel or thing in such custody is, in
+SECTION/ARTICLE: 95
+TITLE: Procedure as to letters and telegrams.­(1) If any document, parcel or thing in such custody is, in.
 CHAPTER: 
 ============================================================
 
@@ -16,10 +16,10 @@ as such Magistrate or Court directs.
 4 The words “Chief Presidency Magistrate” omitted by A.O., 1949, Sch.
 5 Omitted by Ord. 37 of 2001, s. 25 (w.e.f. 14­8­2001).
 
- Page 50 of 319
- (2) If any such document, parcel or thing is, in the opinion of any other Magistrate, 1* * *or District
+Page 50 of 319
+(2) If any such document, parcel or thing is, in the opinion of any other Magistrate, 1* * *or District
 Superintendent of Police, wanted for any such purpose, he may require the Postal or Telegraph Department,
 as the case may be, to cause search to be made for and to detain such document, parcel or thing pending the
 orders of any such 2* * * Court.
 
- B.—Search­warrants
+B.—Search­warrants

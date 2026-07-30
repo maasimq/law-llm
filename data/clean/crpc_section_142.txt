@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 142
-TITLE: Injunction pending inquiry.__(1) If a Magistrate making an order under section 133 considers that
+SECTION/ARTICLE: 142
+TITLE: Injunction pending inquiry.__(1) If a Magistrate making an order under section 133 considers that.
 CHAPTER: 
 ============================================================
 
@@ -10,9 +10,9 @@ may, whether a jury is to be, or has been, appointed or not, issue such an injun
 whom the order was made, as is required to obviate or prevent such danger or injury pending the
 determination of the matter.
 
- (2) In default of such person forthwith obeying such injunction, the Magistrate may himself use, or
+(2) In default of such person forthwith obeying such injunction, the Magistrate may himself use, or
 cause to be used, such means as he thinks fit to obviate such danger or to prevent such injury.
 
- (3) No suit shall lie in respect of anything done in good faith by a Magistrate under this section.
+(3) No suit shall lie in respect of anything done in good faith by a Magistrate under this section.
 
- Page 72 of 319
+Page 72 of 319

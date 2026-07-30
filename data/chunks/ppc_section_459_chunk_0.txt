@@ -1,11 +1,10 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 459
-TITLE: Section 459
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+TITLE: Hurt caused whilst committing lurking house trespass or house-breaking:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Hurt caused whilst committing lurking house trespass or house-breaking:
-
 Whoever, whilst committing lurking house-trespass or house-breaking, causes hurt to any
 person or attempts to commit Qatl of or hurt to, any person shall be punished with
 imprisonment for life, or imprisonment of either description for a term which may extend to

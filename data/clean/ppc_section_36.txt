@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 36
-TITLE: Section 36
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+TITLE: Effects caused partly by act and partly by omission:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Effects caused partly by act and partly by omission:
@@ -9,7 +9,6 @@ Whoever the causing of a
 certain effect, or an attempt to cause that effect, by an act or by an omission, is an
 offence, it is to be understood that the causing of that effect partly by an act and pertly by
 an omission is the same offence.
-
 Illustration
 A intentionally causes Z's death, partly by illegally omitting to give Z food and partly by
 beating Z. A has committed murder.

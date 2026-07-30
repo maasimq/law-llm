@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 99B
-TITLE: Application to High Court to set aside order of forfeiture.__9[(1)] Any person having
+SECTION/ARTICLE: 99B
+TITLE: Application to High Court to set aside order of forfeiture.__9[(1)] Any person having.
 CHAPTER: 
 ============================================================
 
@@ -11,14 +11,14 @@ months from the date of such order, apply to the High Court to set aside such or
 that the issue of the newspaper, or the book or other document, in respect of which the order was
 made, did not contain any 11[treasonable or] 12[seditious or other matter of such a nature as is
 referred to in sub­section (1) of section 99A].
- 13[(2) Nothing in sub­section (1) shall apply to a case where the order of forfeiture has been
+13[(2) Nothing in sub­section (1) shall apply to a case where the order of forfeiture has been
 made__
 
- (a) in respect of a newspaper, book or other document printed outside Pakistan ; or
+(a) in respect of a newspaper, book or other document printed outside Pakistan ; or
 
- (b) in respect of a newspaper, book or other document on the conviction, in respect of such
- newspaper, book or other document, of the author or editor thereof for any of the
- offences referred to in sub­section (1) of section 99A.]
+(b) in respect of a newspaper, book or other document on the conviction, in respect of such
+newspaper, book or other document, of the author or editor thereof for any of the
+offences referred to in sub­section (1) of section 99A.]
 
 1 Ins. by the Code of Criminal Procedure (Amdt.) Act, 1951 (19 of 1951), s. 2.
 2 Ins. by the Code of Criminal Procedure (Third Amdt.) Act, 1926 (36 of 1926), s. 2.
@@ -35,4 +35,6 @@ been subs. by A.O., 1949, Arts. 3 (2) and 4, for “British India”.
 12 Subs. by Act 36 of 1926, s. 3, for “seditious matter”.
 13 Subs­section (2) added by Ord. 12 of 1972, s. 2 and Sch.
 
- Page 54 of 319
+Page 54 of 319
+99C. [Hearing by Special Bench.] Omitted by the Law Reforms Ordinance, 1972(XII of 1972), s. 2 and
+Sch.

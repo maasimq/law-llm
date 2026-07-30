@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 130
-TITLE: Section 130
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Aiding escape of, rescuing or harbouring such prisoner:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Aiding escape of, rescuing or harbouring such prisoner:
@@ -12,7 +12,7 @@ prisoner who has escaped from lawful custody, or offers or attempts to offer any
 resistance to the recapture of such prisoner shall be punished with imprisonment for life,
 or with imprisonment of either description for a term which may extend to ten years, and
 shall also he liable to fine.
-
-Explanation: A State prisoner or prisoner of war, who is permitted to be at large on his
+Explanation:
+A State prisoner or prisoner of war, who is permitted to be at large on his
 parole within certain limits in Pakistan, is said to escape from lawful custody if he goes
 beyond the limits within which he is allowed to be at large.

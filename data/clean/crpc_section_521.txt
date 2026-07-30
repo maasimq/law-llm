@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 521
-TITLE: Destruction of libellous and other matter._(1) On a convict under the Pakistan Penal Code (XLV
+SECTION/ARTICLE: 521
+TITLE: Destruction of libellous and other matter._(1) On a convict under the Pakistan Penal Code (XLV.
 CHAPTER: 
 ============================================================
 
@@ -9,6 +9,6 @@ of 1860), section 292, section 293 section 501 or section 502, the Court may ord
 copies of that thing in respect of which the conviction was had, and which are in the custody of the Court or
 remain in the possession or power of the person convicted.
 
- (2) The Court may, in like manner, on a conviction under Pakistan Penal Code (XLV of 1860), Section
+(2) The Court may, in like manner, on a conviction under Pakistan Penal Code (XLV of 1860), Section
 272, Section 273, Section 274 or Section 275, order the food, drink, drug or medical preparation in respect
 of which the conviction was had to be destroyed.

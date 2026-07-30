@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 178
-TITLE: Power to order cases to be tried in different sessions divisions. Notwithstanding anything
+SECTION/ARTICLE: 178
+TITLE: Power to order cases to be tried in different sessions divisions.
 CHAPTER: 
 ============================================================
 
@@ -8,5 +8,5 @@ CHAPTER:
 contained in section 177, the 1[Provincial Government] may direct that any cases or class of cases 2[in any
 district sent for trial to a Court of Session may be tried in any sessions division]:
 
- 3[Provided that such direction is not repugnant to any direction previously issued by the High Court
+3[Provided that such direction is not repugnant to any direction previously issued by the High Court
 under section 526 of this Code or any other law for the time being in force.]

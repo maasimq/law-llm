@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 74
-TITLE: Proof of service in such cases and when serving 1[person] not present.­(1) When a summons
+SECTION/ARTICLE: 74
+TITLE: Proof of service in such cases and when serving 1[person] not present.­(1) When a summons.
 CHAPTER: 
 ============================================================
 
@@ -12,7 +12,7 @@ endorsed (in manner provided by section 69 and section 70) by the person to whom
 tendered or with whom it was left, shall be admissible in evidence, and the statements made therein shall be
 deemed to be correct unless and until the contrary is proved.
 
- (2) The affidavit mentioned in this section may be attached to the duplicate of the summons and
+(2) The affidavit mentioned in this section may be attached to the duplicate of the summons and
 returned to the Court.
 
- B.­Warrant of Arrest
+B.­Warrant of Arrest

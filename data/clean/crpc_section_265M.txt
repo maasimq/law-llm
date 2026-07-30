@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 265M
-TITLE: Time of holding sittings. For the exercise of its original criminal jurisdiction, every
+SECTION/ARTICLE: 265M
+TITLE: Time of holding sittings.
 CHAPTER: 
 ============================================================
 
@@ -8,4 +8,4 @@ CHAPTER:
 High Court shall hold sittings on such days and at such convenient intervals as the Chief Justice of
 such Court from time to time appoints.
 
- Page 124 of 319
+Page 124 of 319

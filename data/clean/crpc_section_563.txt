@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 563
-TITLE: Provision in case of offender failing to observe conditions of his recognizance.­(1) If the Court
+SECTION/ARTICLE: 563
+TITLE: Provision in case of offender failing to observe conditions of his recognizance.­(1) If the Court.
 CHAPTER: 
 ============================================================
 
@@ -11,7 +11,7 @@ which convicted the offender, or a Court which could have dealt with the offende
 offence, is satisfied that the offender has failed to observe any of the conditioned of his recognizance it, may
 issue a warrant for his apprehension.
 
- (2) An offender, when apprehended on any such warrant, shall be brought forthwith before the Court
+(2) An offender, when apprehended on any such warrant, shall be brought forthwith before the Court
 issuing the warrant, and such Court may either remand him in custody until the case is heard or admit him to
 bail with a sufficient surety conditioned on his appearing for sentences. Such Court may, after hearing the
 case, pass sentence

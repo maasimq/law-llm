@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 85
-TITLE: Procedure on arrest of person against to whom warrant issued. When a warrant of
+SECTION/ARTICLE: 85
+TITLE: Procedure on arrest of person against to whom warrant issued.
 CHAPTER: 
 ============================================================
 
@@ -15,4 +15,4 @@ the arrest was made, or unless security is taken under Section 76, be taken befo
 2 The word “or Commissioner” omitted ibid.
 3 The original sub­section (4) as amended by the City of Bombay Police Act, 1902 (Bom. 4 of 1902), s.2 (1) and Sch. A, omitted, ibid.
 
- Page 44 of 319
+Page 44 of 319

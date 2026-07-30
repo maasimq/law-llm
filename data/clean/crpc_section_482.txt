@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 482
-TITLE: Procedure where Court considers that case should not be dealt with under section 480.­(1) If
+SECTION/ARTICLE: 482
+TITLE: Procedure where Court considers that case should not be dealt with under section 480.­(1) If.
 CHAPTER: 
 ============================================================
 
@@ -14,5 +14,5 @@ a Magistrate having jurisdiction to try the same, and may require security to be
 such accused person before such Magistrate, or if sufficient security is not given, shall forward such person
 in custody to such Magistrate.
 
- (2) The Magistrate, to whom any case is forwarded under this section, shall proceed to hear the
+(2) The Magistrate, to whom any case is forwarded under this section, shall proceed to hear the
 complaint against the accused person in manner hereinbefore provided.

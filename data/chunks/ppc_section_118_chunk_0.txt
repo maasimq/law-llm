@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 118
 TITLE: Section 118
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Concealing design to commit offence punishable with death or
@@ -15,7 +15,6 @@ if offence be not committed, shall, if that offence be committed, be punished wi
 imprisonment of either description for a term which may extend to seven years, or, if
 the offence be not committed, with imprisonment of either description for a term which
 may extend to three years; and in either case shall also be liable to fine.
-
 Illustration
 A, knowing that dacoity is about to be committed at B, falsely inform the Magistrate that a
 dacoity is about to be committed at C, a place in an opposite direction, and thereby

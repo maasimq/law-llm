@@ -1,9 +1,35 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 186
-TITLE: Section 186
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Obstructing public servant in discharge of public functions:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Obstructing public servant in discharge of public functions:
-
-79[(1)] 79
+79
+[(1)]
+79
+Whoever voluntarily
+obstructs any public servant in the discharge of his public functions, shall be punished with
+imprisonment of either description for a term which may extend to
+80
+[one year]
+80
+, or with
+fine which may extend to
+81
+[
+82
+[fifty thousand]
+82
+rupees]
+81
+, or with both.
+83
+[(2)
+Whoever intentionally hampers, misleads, jeopardizes
+or defeats an investigation, inquiry or prosecution or issues a
+false or defective report in a case under any law for the time
+being in force shall be punished with imprisonment for a term
+which may extend to three years or with line or with
+both.]
+83

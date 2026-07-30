@@ -1,8 +1,10 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 34
-TITLE: Higher powers of certain 2* * * Magistrates. The court of a M agistrate, specially empowered under S
+SECTION/ARTICLE: 34
+TITLE: Higher powers of certain 2* * * Magistrates.
 CHAPTER: 
 ============================================================
 
 34. Higher powers of certain 2* * * Magistrates. The court of a M agistrate, specially empowered under Section 30, may pass any sentence authorized by law, except a sentence of death or of 3* * *
 imprisonment for a term exceeding seven years.
+
+34A. 4[Sentences which Courts and Magistrates may pass upon European British subjects] Omitted by the Criminal Law (Extinction of Discriminatory Privileges) Act, 1949(II of 1950), Sch.

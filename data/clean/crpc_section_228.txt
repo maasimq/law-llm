@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 228
-TITLE: When trial may proceed immediately after alteration. If the charge framed or
+SECTION/ARTICLE: 228
+TITLE: When trial may proceed immediately after alteration.
 CHAPTER: 
 ============================================================
 
@@ -17,4 +17,4 @@ charge had been the original charge.
 Ord. 12 of 1972, s.2 and Sch.
 4 The words "section 226 or" omitted, ibid.
 
- Page 108 of 319
+Page 108 of 319

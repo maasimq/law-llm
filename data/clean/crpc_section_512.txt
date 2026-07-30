@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 512
-TITLE: Record of evidence in absence of accused._(1) If it is proved that an accused person has
+SECTION/ARTICLE: 512
+TITLE: Record of evidence in absence of accused._(1) If it is proved that an accused person has.
 CHAPTER: 
 ============================================================
 
@@ -18,15 +18,15 @@ circumstances of the case, would be unreasonable.
 3 Subs by the Law Reforms (Amdt.) Act, 1976 (21 of 1976), s.2 and Sch, for “and shall, if so. requested by any party to such inquiry, trial or “proceeding,”, (w.e.f. 18­4­76).
 4 Subs. by the Law Reforms Ordinance, 1972 (12 of 1972), s.2 and Sch., for “commit for trail”.
 
- Page 179 of 319
- (2) Record of evidence when offender unknown. If it appears that an offence punishable with death or
+Page 179 of 319
+(2) Record of evidence when offender unknown. If it appears that an offence punishable with death or
 1
- [imprisonment for life] has been committed by some person or persons unknown, the High Court may direct
+[imprisonment for life] has been committed by some person or persons unknown, the High Court may direct
 that any Magistrate of the first class shall hold an inquiry and examine any witnesses who can give evidence
 concerning the offence. Any depositions so taken may be given in evidence against any person who is
 subsequently accused of the offence, if the deponent is dead or incapable of giving evidence or beyond the
 limits of 2[Pakistan].
 
- CHAPTER XLII
+CHAPTER XLII
 
- PROVISIONS AS TO BONDS
+PROVISIONS AS TO BONDS

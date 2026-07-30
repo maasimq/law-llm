@@ -1,10 +1,17 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 506
-TITLE: Section 506
-CHAPTER: CHAPTER XXII — OF CRIMINAL INTIMIDATION, INSULT AND ANNOYANCE
+TITLE: Punishment for criminal intimidation:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for criminal intimidation:
 Whoever commences the offence of criminal
 intimidation shall be punished with imprisonment of either description for a term which
 may extend to two years or with fine or with both.
+If threat be to cause death or grievous hurt, etc.:
+And if the threat be to cause death or
+grievous hurt, or to cause the destruction of any property by fire, or to cause an offence
+punishable with death or imprisonment for life, or with imprisonment for a term which may
+extend to seven years, or to impute unchastity to a woman, shall be punished with
+imprisonment of either description for a term which may extend to seven years, or with
+fine, or with both.

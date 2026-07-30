@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 265I
-TITLE: Procedure in case of previous conviction.­(1) In a case where, by reason of a previous
+SECTION/ARTICLE: 265I
+TITLE: Procedure in case of previous conviction.­(1) In a case where, by reason of a previous.
 CHAPTER: 
 ============================================================
 
@@ -9,7 +9,7 @@ conviction, the accused has been charged under section 221, sub­section (7), th
 finding the accused guilty of the offence charged and recording a conviction, shall record the plea
 of the accused in relation to such part of the charge.
 
- (2) If the accused admits that he has been previously convicted as alleged in the charge, the
+(2) If the accused admits that he has been previously convicted as alleged in the charge, the
 Court may pass a sentence upon him according to law, and if the accused does not admit that he
 has been previously convicted as alleged in the charge, the Court may take evidence in respect of
 the alleged previous conviction, and shall record a finding thereon, and then pass sentence upon him

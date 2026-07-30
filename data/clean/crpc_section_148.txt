@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 148
-TITLE: Local inquiry.__(1) Whenever a local inquiry is necessary for the purposes of this Chapter, 4[a
+SECTION/ARTICLE: 148
+TITLE: Local inquiry.__(1) Whenever a local inquiry is necessary for the purposes of this Chapter, 4[a.
 CHAPTER: 
 ============================================================
 
@@ -9,9 +9,9 @@ Session Judge] may depute any Magistrate subordinate to him to make the inquiry,
 such written instructions as may seem necessary for his guidance, and may declare by whom the whole or
 any part of the necessary expenses of the inquiry shall be paid.
 
- (2) The report of the person so deputed may be read as evidence in the case.
+(2) The report of the person so deputed may be read as evidence in the case.
 
- (3) Order as to costs. When any costs have been incurred by any party to a proceeding under this
+(3) Order as to costs. When any costs have been incurred by any party to a proceeding under this
 Chapter 5* * * the Magistrate passing a decision under section 145, section 146 or Section 147 may direct
 by whom such costs shall be paid, whether by such party or by any other party to the proceeding, and
 whether in whole or in part or proportion. 6[such costs may include any expenses incurred in respect of
@@ -24,6 +24,6 @@ witnesses, and of pleaders' fees, which the Court may consider reasonable.]
 5 The words “for witness, or pleader’s fees, or both”, rep. by the Code of Criminal Procedure (Amdt.) Act, 1923 (18 of 1923), s.31.
 6 Subs. ibid., for “All costs so directed to be paid may be recovered as if they were fines”.
 
- Page 76 of 319
- CHAPTER XIII
- PREVENTIVE ACTION OF THE POLICE
+Page 76 of 319
+CHAPTER XIII
+PREVENTIVE ACTION OF THE POLICE

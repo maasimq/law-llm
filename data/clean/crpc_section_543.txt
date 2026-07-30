@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 543
-TITLE: Interpreter to be bound to Interpret truthfully. When the services of an interpreter are required
+SECTION/ARTICLE: 543
+TITLE: Interpreter to be bound to Interpret truthfully.
 CHAPTER: 
 ============================================================
 

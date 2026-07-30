@@ -11,6 +11,8 @@ import csv
 import sys
 import html
 
+from bs4 import BeautifulSoup
+
 
 def strip_html_tags(text):
     """Remove all HTML tags and decode HTML entities.
@@ -70,60 +72,92 @@ def clean_whitespace(text):
 
 def extract_ppc_sections(raw_html):
     """
-    Extract individual sections from the Pakistan Penal Code HTML.
+    Extract individual sections from the Pakistan Penal Code HTML using BeautifulSoup.
     Returns a list of dicts: [{number, title, text, chapter}, ...]
     
-    Uses regex patterns to find:
-    - Chapter headers (CHAPTER I, II, etc.) with titles
-    - Section numbers and their content in <td> tags
+    Uses BeautifulSoup to properly handle nested HTML tables (e.g., PPC § 97
+    has sub-points 'First:', 'Secondly:' inside a nested <table> within the
+    section's <td> cell). The old regex approach truncated text at the first
+    inner </td> tag, losing content.
     """
+    soup = BeautifulSoup(raw_html, 'lxml')
     sections = []
-    current_chapter = "INTRODUCTION"  # Default chapter name
-    
-    # Regex to match chapter headers: <h4>CHAPTER I</h4><h4>Chapter Title</h4>
-    chapter_pattern = re.compile(
-        r'<h4[^>]*>\s*(CHAPTER\s+[IVXLCDM]+)\s*</h4>\s*<h4[^>]*>\s*(.*?)\s*</h4>',
-        re.IGNORECASE | re.DOTALL
-    )
-    # Regex to match section: <nobr><b>123.</b></nobr> ... <td>section content</td>
-    section_pattern = re.compile(
-        r'<nobr><b>(\d+[A-Z]?)\.</b></nobr>.*?<td[^>]*>(.*?)</td>',
-        re.DOTALL | re.IGNORECASE
-    )
-    # Find all chapter headers and store their positions in the HTML
-    chapter_matches = list(chapter_pattern.finditer(raw_html))
-    # Create list of (start_position, chapter_number, chapter_title)
-    chapter_positions = [(m.start(), m.group(1).strip(), m.group(2).strip())
-                         for m in chapter_matches]
-    
-    # Iterate through all sections in the HTML
-    for match in section_pattern.finditer(raw_html):
-        sec_num = match.group(1).strip()  # Section number (e.g., "123", "123A")
-        sec_content = match.group(2).strip()  # Raw HTML content
-        sec_pos = match.start()  # Position in HTML string
-        
-        # Determine which chapter this section belongs to
-        # by comparing section position with chapter positions
-        for i, (cpos, cnum, ctitle) in enumerate(chapter_positions):
-            if i + 1 < len(chapter_positions):
-                # Check if section is between this chapter and the next
-                if cpos <= sec_pos < chapter_positions[i + 1][0]:
-                    current_chapter = f"{cnum} — {ctitle}"
-                    break
+    current_chapter = "INTRODUCTION"
+
+    # Build chapter position map from <h4> headers
+    # Pattern: <h4>CHAPTER I</h4><h4>Chapter Title</h4>
+    chapter_map = []  # list of (element, "CHAPTER X — Title")
+    h4_tags = soup.find_all('h4')
+    for i, h4 in enumerate(h4_tags):
+        text = h4.get_text(strip=True)
+        if re.match(r'CHAPTER\s+[IVXLCDM]+', text, re.IGNORECASE):
+            chapter_num = text.strip()
+            # Next <h4> sibling is the chapter title
+            if i + 1 < len(h4_tags):
+                chapter_title = h4_tags[i + 1].get_text(strip=True)
             else:
-                # This is the last chapter, so any section after it belongs here
-                if cpos <= sec_pos:
-                    current_chapter = f"{cnum} — {ctitle}"
-        
-        # Clean the HTML content
-        clean_content = strip_html_tags(sec_content)
+                chapter_title = ""
+            chapter_map.append((h4, f"{chapter_num} — {chapter_title}"))
+
+    # Find all section markers: <nobr><b>123.</b></nobr>
+    section_markers = soup.find_all('nobr')
+
+    for marker in section_markers:
+        bold = marker.find('b')
+        if not bold:
+            continue
+        marker_text = bold.get_text(strip=True)
+        # Match pattern like "97." or "302A."
+        sec_match = re.match(r'^(\d+[A-Z]?)\.$', marker_text, re.IGNORECASE)
+        if not sec_match:
+            continue
+
+        sec_num = sec_match.group(1).strip()
+
+        # Navigate up to the parent <tr>, then find the content <td>
+        # Structure: <tr> <td><nobr><b>97.</b></nobr></td> <td>content...</td> </tr>
+        parent_td = marker.find_parent('td')
+        if not parent_td:
+            continue
+        parent_tr = parent_td.find_parent('tr')
+        if not parent_tr:
+            continue
+
+        # Get all <td> cells in this row; the content is in the second <td>
+        tds = parent_tr.find_all('td', recursive=False)
+        content_td = None
+        for td in tds:
+            # The content cell is the one that does NOT contain our section marker
+            if marker not in td.descendants and td != parent_td:
+                content_td = td
+                break
+
+        # If the marker and content are in the same <td> (some HTML layouts),
+        # use that cell directly
+        if content_td is None:
+            # Check if there's a second td
+            if len(tds) >= 2:
+                content_td = tds[1]
+            else:
+                content_td = parent_td
+
+        # Extract ALL text from the content cell, including nested tables
+        # BeautifulSoup's get_text() recursively extracts text from all children
+        clean_content = content_td.get_text(separator='\n', strip=True)
         clean_content = clean_whitespace(clean_content)
-        
-        # Extract title from first sentence (ends with period and newline)
-        title_match = re.match(r'^(.*?\.)\s*\n', clean_content)
+
+        # Determine chapter by comparing element positions
+        for ch_elem, ch_name in reversed(chapter_map):
+            # Check if the chapter heading appears before this section in the document
+            if ch_elem.sourceline is not None and marker.sourceline is not None:
+                if ch_elem.sourceline < marker.sourceline:
+                    current_chapter = ch_name
+                    break
+
+        # Extract title from first line (ends with colon or period)
+        title_match = re.match(r'^(.*?[.:])(?:\s|$)', clean_content)
         title = title_match.group(1).strip() if title_match else f"Section {sec_num}"
 
-        # Store the section with metadata
         sections.append({
             "number": sec_num,
             "title": title,

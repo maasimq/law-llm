@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 173
 TITLE: Section 173
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Preventing service of summons or other proceeding, or preventing publication
@@ -17,7 +17,15 @@ or intentionally prevents the lawful making of any proclamation, under the autho
 public servant legally competent, as such public servant, to direct such proclamation to be
 made,
 shall be punished with simple imprisonment for a term which may extend to one month, or
-with fine which may extend to  61[one thousand five hundred rupees] 61, or with both;
+with fine which may extend to
+61
+[one thousand five hundred rupees]
+61
+, or with both;
 or if the summons, notice, order or proclamation is to attend in person or by agent, or to
 produce a document in a Court of Justice, with simple imprisonment for a term which may
-extend to six months, or with fine which may extend to  62[three thousand rupees] 62, or with both.
+extend to six months, or with fine which may extend to
+62
+[three thousand rupees]
+62
+, or with both.

@@ -1,8 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 488
-TITLE: Section 488
-CHAPTER: CHAPTER XVIII — OF OFFENCES RELATING TO DOCUMENTS AND TO TRADE OR
-            PROPERTY MARKS
+TITLE: Punishment for making use of any such false mark:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for making use of any such false mark:

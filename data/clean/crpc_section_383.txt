@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 383
-TITLE: Execution of sentences of 1[imprisonment for life] or imprisonment in other
+SECTION/ARTICLE: 383
+TITLE: Execution of sentences of 1[imprisonment for life] or imprisonment in other.
 CHAPTER: 
 ============================================================
 

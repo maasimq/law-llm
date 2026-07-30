@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 241
 TITLE: Section 241
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Delivery of coin as genuine, which, when first possessed, the deliverer did not
@@ -12,9 +12,12 @@ counterfeit, but which he did not know to be counterfeit, as the time when he to
 his possession, shall be punished with imprisonment of either description for a term which
 may extend to two years, or with fine to an amount which may extend to ten times the
 value of the coin counterfeited, or with both.
-
 Illustration
-A, a coiner, delivers counterfeit  96[] 96 rupees to his accomplice B, for the purpose of uttering
+A, a coiner, delivers counterfeit
+96
+[]
+96
+rupees to his accomplice B, for the purpose of uttering
 them. B sells the rupees to C, another utterer, who buys them knowing them to be
 counterfeit, C pays away the rupees for goods to D. who receives them, not knowing them
 to be counterfeit. D after receiving the rupees, discovers that they are counterfeit and pays

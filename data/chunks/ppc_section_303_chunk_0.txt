@@ -1,10 +1,16 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 303
-TITLE: Section 303
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Qatl committed under ikrah-i-tam or ikrah-i-naqis:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Qatl committed under ikrah-i-tam or ikrah-i-naqis:
 Whoever commits qatl:
-
 (a)
+under Ikrah-i-tam shall be punished with imprisonment for a term which may extend to
+twenty-five years but shall not be less than ten years and the person causing 'ikrah-i-tam'
+shall be punished for the kind of Qatl committed as a consequence of ikrah-i-tam; or
+(b)
+under 'ikrah-i-naqis' shall be punished for the kind of Qatl committed by him and the
+person, causing 'ikrah-i-naqis, shall be punished with imprisonment for a term which may
+extend to ten years.

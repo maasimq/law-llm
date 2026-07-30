@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 114
-TITLE: Section 114
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Abettor present when offence is committed:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Abettor present when offence is committed:

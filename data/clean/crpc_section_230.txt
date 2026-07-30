@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 230
-TITLE: Stay of proceedings if prosecution of offence in altered charge require previous sanction. If
+SECTION/ARTICLE: 230
+TITLE: Stay of proceedings if prosecution of offence in altered charge require previous sanction.
 CHAPTER: 
 ============================================================
 

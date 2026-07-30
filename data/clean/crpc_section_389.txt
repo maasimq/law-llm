@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 389
-TITLE: Who may issue warrant. Every warrant for the execution of any sentence may be issued either by
+SECTION/ARTICLE: 389
+TITLE: Who may issue warrant.
 CHAPTER: 
 ============================================================
 

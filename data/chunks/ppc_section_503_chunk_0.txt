@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 503
-TITLE: Section 503
-CHAPTER: CHAPTER XXII — OF CRIMINAL INTIMIDATION, INSULT AND ANNOYANCE
+TITLE: Criminal Intimidation:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Criminal Intimidation:
@@ -11,15 +11,28 @@ interested, with intent to cause alarm to that person, or to cause that person t
 which he is not legally bound to do, or to omit to do any act which that person is legally
 entitled to do, as the means of avoiding the execution of such threat, commits criminal
 intimidation.
-
-Explanation: A threat to injure the reputation of any deceased person in whom the person
+Explanation:
+A threat to injure the reputation of any deceased person in whom the person
 threatened is interested, is within this section.
-
 Illustration
 A, for the purpose of inducing B to desist from prosecuting a civil suit, threatens to burn
 B's house. A is guilty of criminal intimidation.
-
 Ingredients:
 This section has the following essentials:---
-
 1.
+Threatening a person with any injury--
+(i)
+to this person, reputation, or property; or
+(ii)
+to the person or reputation of any one in whom that person is interested.
+2.
+Threat must be with intent---
+(a)
+to cause harm to that person, or
+(b)
+to cause that person to do any act which he is not legally bound to do as the means of avoiding the execution of such threat,
+or
+(c)
+to cause that person to omit to do any act which that person is legally entitled to do as the means of avoiding the execution
+of such threat.
+Words, "well, I will see you" do not constitute an offence under Section 506.

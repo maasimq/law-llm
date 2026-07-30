@@ -1,10 +1,10 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 227
-TITLE: Court may alter charge.­(1) Any Court may alter or add to any charge at any time
+SECTION/ARTICLE: 227
+TITLE: Court may alter charge.­(1) Any Court may alter or add to any charge at any time.
 CHAPTER: 
 ============================================================
 
 227. Court may alter charge.­(1) Any Court may alter or add to any charge at any time
 before judgment is pronounced. 3* * * .
 
- (2) Every such alteration or addition shall be read and explained to the accused.
+(2) Every such alteration or addition shall be read and explained to the accused.

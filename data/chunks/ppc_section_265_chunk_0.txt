@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 265
-TITLE: Section 265
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Fraudulent use of false weight or measure:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Fraudulent use of false weight or measure:

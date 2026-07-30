@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 346
-TITLE: Section 346
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Wrongful confinement in secret:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Wrongful confinement in secret:

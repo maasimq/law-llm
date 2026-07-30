@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 442
-TITLE: High Court's order to be certified to lower Court or Magistrate. When a case is revised under
+SECTION/ARTICLE: 442
+TITLE: High Court's order to be certified to lower Court or Magistrate.
 CHAPTER: 
 ============================================================
 
@@ -11,14 +11,14 @@ or Magistrate to which the decision or order is so certified shall thereupon mak
 conformable to the decision so certified ; and, if necessary, the record shall be amended in
 accordance therewith.
 
- PART VIII
- SPECIAL PROCEEDINGS
+PART VIII
+SPECIAL PROCEEDINGS
 
- CHAPTER XXXIII._ [SPECIAL PROVISIONS RELATING TO CASES IN WHICH EUROPEAN AND
- 2
+CHAPTER XXXIII._ [SPECIAL PROVISIONS RELATING TO CASES IN WHICH EUROPEAN AND
+2
 
 PAKISTAN BRITISH SUBJECTS ARE CONCERNED.] Omitted by the Criminal Law (Extinction of
 Discriminatory Privileges) Act, 1949 (II of 1950), Schedule.
 
- CHAPTER XXXIV
- LUNATICS
+CHAPTER XXXIV
+LUNATICS

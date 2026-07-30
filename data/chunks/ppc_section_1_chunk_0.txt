@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 1
 TITLE: Title and extent of operation of the Code.
-CHAPTER: CHAPTER I — INTRODUCTION
+CHAPTER: INTRODUCTION
 ============================================================
 
 Title and extent of operation of the Code.

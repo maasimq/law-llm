@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 91
-TITLE: Power to take bond for appearance. When any person for whose appearance or arrest the
+SECTION/ARTICLE: 91
+TITLE: Power to take bond for appearance.
 CHAPTER: 
 ============================================================
 

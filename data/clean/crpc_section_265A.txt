@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 265A
-TITLE: Trials before Court of Session to be conducted by Public Prosecutor. In every trial before a
+SECTION/ARTICLE: 265A
+TITLE: Trials before Court of Session to be conducted by Public Prosecutor.
 CHAPTER: 
 ============================================================
 

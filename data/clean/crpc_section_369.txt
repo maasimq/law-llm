@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 369
-TITLE: Court not to alter judgment. 7[Save as otherwise provided by this Code or by any other law for
+SECTION/ARTICLE: 369
+TITLE: Court not to alter judgment.
 CHAPTER: 
 ============================================================
 
@@ -20,4 +20,5 @@ For enforcement of this amendment in the Provinces, see, para 2 of footnote 3 on
 8 The words “established by Royal Charter” omitted by the Central Laws (Statute Reform ) Ordinance, 1960 (21 of 1960) s.3 and 2nd Sch. (with effect from the 14th October, 1955).
 9 The words and figures “as provided in sections 395 and 484 or” rep. by Act 18 of 1923, s.101.
 
- Page 140 of 319
+Page 140 of 319
+370. [Presidency Magistrate's judgment.] Omitted by A.O. 1949, Sch.

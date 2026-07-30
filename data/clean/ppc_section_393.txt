@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 393
-TITLE: Section 393
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+TITLE: Attempt to commit robbery:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Attempt to commit robbery:

@@ -1,10 +1,16 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 305
-TITLE: Section 305
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Wali:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Wali:
 In case of qatl, the wali shall be--
-
 (a)
+the heirs of the victim, according to his personal law
+136
+[but shall not include the accused or the convict in case of qatl-i-amd if committed in the name or on the pretext of honour]
+136
+; and
+(b)
+the Government, if there is no heir.

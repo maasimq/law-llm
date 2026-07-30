@@ -1,8 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 470
-TITLE: Section 470
-CHAPTER: CHAPTER XVIII — OF OFFENCES RELATING TO DOCUMENTS AND TO TRADE OR
-            PROPERTY MARKS
+TITLE: Forged document:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Forged document:

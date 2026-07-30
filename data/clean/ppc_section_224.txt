@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 224
-TITLE: Section 224
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Resistance or obstruction by a person to his lawful apprehension:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Resistance or obstruction by a person to his lawful apprehension:
@@ -11,7 +11,7 @@ himself for any offence with which he is charged or of which he has been convict
 escapes or attempts to escape from any custody in which he is lawfully detained for any
 such offence, shall be punished with imprisonment of either description for a term which
 may extend to two years, or with fine, or with both.
-
-Explanation: The punishment in this section is in addition to the punishment for which the
+Explanation:
+The punishment in this section is in addition to the punishment for which the
 person to be apprehended or detained in custody was liable for the offence with which he
 was charged, or of which he was convicted.

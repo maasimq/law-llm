@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 204
-TITLE: Section 204
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Destruction of document to prevent its production as evidence:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Destruction of document to prevent its production as evidence:

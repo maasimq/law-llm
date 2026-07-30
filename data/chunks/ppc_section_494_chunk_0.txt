@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 494
-TITLE: Section 494
-CHAPTER: CHAPTER XX — OF OFFENCES RELATING TO MARRIAGE
+TITLE: Marrying again during lifetime of husband or wife:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Marrying again during lifetime of husband or wife:
@@ -10,8 +10,8 @@ wife living, marries in any case in which, such marriage is void by reason of it
 place during the life of such husband or wife, shall be punished with imprisonment of
 either description for a term which may extend to seven years, and shall also be liable to
 fine.
-
-Exception: This Section does not extend to any person, whose marriage with such
+Exception
+: This Section does not extend to any person, whose marriage with such
 husband or wife has been declared void by a Court of competent jurisdiction,
 nor to any person who contracts a marriage during the life of a former husband or wife, if
 such husband or wife, at the time of the subsequent marriage, shall have been continually

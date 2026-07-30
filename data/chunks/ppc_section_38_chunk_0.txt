@@ -1,14 +1,13 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 38
-TITLE: Section 38
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+TITLE: Persons concerned in criminal act may be guilty of different offences:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Persons concerned in criminal act may be guilty of different offences:
 Where
 several persons are engaged or concerned in the commission of a criminal act, they may
 be guilty of different offences by means of that act.
-
 Illustration
 A attacks Z under such circumstances of grave provocation that his killing of Z would be
 only culpable homicide not amounting to murder. B having ill-will towards Z and intending

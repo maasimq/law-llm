@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 82
-TITLE: Where warrant may be executed. A warrant of arrest may be executed at any place in 3[Pakistan].
+SECTION/ARTICLE: 82
+TITLE: Where warrant may be executed.
 CHAPTER: 
 ============================================================
 
@@ -15,4 +15,4 @@ been subs. by A.O., 1949, Arts. 3 (2) and 4, for “British India”.
 4 Added by Act. VIII of 1993, s.3, (w.e.f. 20­11­93, SRO­1106(1)/93, dated 16­11­93).
 5 Subs. by Ord. 37 of 2001, s.23 (w.e.f. 14­8­2001).
 
- Page 43 of 319
+Page 43 of 319

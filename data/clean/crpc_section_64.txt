@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 64
-TITLE: Offence committed in Magistrate’s presence. When any offence is committed in the
+SECTION/ARTICLE: 64
+TITLE: Offence committed in Magistrate’s presence.
 CHAPTER: 
 ============================================================
 

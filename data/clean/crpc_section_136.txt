@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 136
-TITLE: Consequence of his failing to do so. If such person does not perform such act or appear and show
+SECTION/ARTICLE: 136
+TITLE: Consequence of his failing to do so.
 CHAPTER: 
 ============================================================
 

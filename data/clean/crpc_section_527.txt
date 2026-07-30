@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 527
-TITLE: Power of Provincial Government to transfer cases and appeals._(1) The 5[Provincial
+SECTION/ARTICLE: 527
+TITLE: Power of Provincial Government to transfer cases and appeals._(1) The 5[Provincial.
 CHAPTER: 
 ============================================================
 
@@ -11,12 +11,12 @@ Court, to any other Criminal Court of equal or superior jurisdiction subordinate
 whenever it appears to 8[it] that such transfer will promote the ends of justice, or tend to the general
 convenience of parties or witnesses :
 
- [Provided that no case or appeal shall be transferred to a High Court or other Court in another
- 9
+[Provided that no case or appeal shall be transferred to a High Court or other Court in another
+9
 
 Province without the consent of the Provincial Government of that Province.]
 
- (2) The Court to which such case or appeal is transferred shall deal with the same as if it had been
+(2) The Court to which such case or appeal is transferred shall deal with the same as if it had been
 originally instituted in, or presented to, such Court.
 
 1 Subs. ibid., for sub­sections (8) and (9) which were previously amended by Act 21 of 1932 s.2 and 18 of 1923, s.145 for the original sub­section.
@@ -29,4 +29,4 @@ originally instituted in, or presented to, such Court.
 8 Subs. by A.O., 1937, for “him”.
 9 Proviso ins., ibid.
 
- Page 187 of 319
+Page 187 of 319

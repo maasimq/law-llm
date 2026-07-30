@@ -1,11 +1,10 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 498A
-TITLE: Section 498A
-CHAPTER: CHAPTER XX — OF OFFENCES RELATING TO MARRIAGE
+TITLE: Prohibition of depriving woman from inheriting property:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Prohibition of depriving woman from inheriting property:
-
 Whoever by deceitful or illegal means deprives any woman from
 inheriting any movable or immovable property at the time of opening of
 succession shall be punished with imprisonment for either description

@@ -1,14 +1,13 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 28
 TITLE: "Counterfeit".
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 "Counterfeit".
 A person is said to "counterfeit" who causes one thing to resemble
 another thing, intending by means of that resemblance to practice deception, or knowing
 it to be likely that deception will thereby be practiced.
-
 Explanation 1: It is not essential to counterfeiting that the imitation should be exact.
 Explanation 2: When a person causes one thing to resemble another thing, and the
 resemblance is such that a person might be deceived thereby, it shall be presumed, until

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 128
-TITLE: Use of civil force to disperse. If, upon being so commanded, any such assembly does not disperse,
+SECTION/ARTICLE: 128
+TITLE: Use of civil force to disperse.
 CHAPTER: 
 ============================================================
 
@@ -11,6 +11,6 @@ force, and may require the assistance of any male person, not being an officer 5
 6[the Armed forces of Pakistan]] 7* * *, and acting as such, for the purpose of dispersing such assembly,
 and, if necessary, arresting and confining the persons who form part of it, in order to disperse such assembly
 or that they may be punished according to law [:]8
- 8[Provided that for dispersing any assembly, firing shall not be resorted to except under the specific
+8[Provided that for dispersing any assembly, firing shall not be resorted to except under the specific
 directions of an officer of the police not below the rank of an Assistant Superintendent or Deputy
 Superintendent of Police.]

@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 205
-TITLE: Section 205
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: False personation for purpose of act or proceeding in suit or prosecution:
+CHAPTER: INTRODUCTION
 ============================================================
 
 False personation for purpose of act or proceeding in suit or prosecution:

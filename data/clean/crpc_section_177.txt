@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 177
-TITLE: Ordinary place of inquiry and trial. Every offence shall ordinarily be inquired into and tried by a
+SECTION/ARTICLE: 177
+TITLE: Ordinary place of inquiry and trial.
 CHAPTER: 
 ============================================================
 

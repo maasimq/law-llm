@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 132
-TITLE: Section 132
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Abetment of mutiny, if mutiny is committed in consequence thereof:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Abetment of mutiny, if mutiny is committed in consequence thereof:

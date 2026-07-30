@@ -1,10 +1,11 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 3125
-TITLE: Power of District Magistrate to cancel any bond for keeping the peace or good
+SECTION/ARTICLE: 3125
+TITLE: Power of District Magistrate to cancel any bond for keeping the peace or good.
 CHAPTER: 
 ============================================================
 
 3125. Power of District Magistrate to cancel any bond for keeping the peace or good
+
 behaviour. The 4* * * 1[Sessions Judge] may at any time, for sufficient reasons to be recorded in
 writing, cancel any bond for keeping the peace or for good behaviour executed under this Chapter
 by order of any Court in his district not superior to his Court.

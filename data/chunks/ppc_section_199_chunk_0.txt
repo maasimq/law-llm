@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 199
-TITLE: Section 199
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: False statement made in declaration which is by law receivable as evidence:
+CHAPTER: INTRODUCTION
 ============================================================
 
 False statement made in declaration which is by law receivable as evidence:

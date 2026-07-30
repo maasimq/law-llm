@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 249
-TITLE: Power to stop proceedings when no complainant. In any case instituted otherwise than upon
+SECTION/ARTICLE: 249
+TITLE: Power to stop proceedings when no complainant.
 CHAPTER: 
 ============================================================
 
@@ -17,12 +17,12 @@ pronouncing any judgment either of acquittal or conviction, and may thereupon re
 6 The words “a Presidency Magistrate” omitted by A.O. 1949, Sch.
 7 Subs. by Ord. 12 of 1972, s. 2 and Sch., as a amended by Act 23 of 1997.
 
- Page 116 of 319
- [249A. Power of Magistrate to acquit accused at any stage. Nothing in this Chapter shall be deemed
- 1
+Page 116 of 319
+[249A. Power of Magistrate to acquit accused at any stage. Nothing in this Chapter shall be deemed
+1
 
 to prevent a Magistrate from acquitting an accused at any stage of the case if, after hearing the prosecutor
 and the accused and for reasons to be recorded, he considers that the charge is groundless or that there is no
 probability of the accused being convicted of any offence].
 
- Frivolous Accusations in 2[Cases tried by Magistrate]
+Frivolous Accusations in 2[Cases tried by Magistrate]

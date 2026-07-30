@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 520
-TITLE: Stay of Order under Section 517,518 or 519. Any Court of appeal, confirmation, reference or
+SECTION/ARTICLE: 520
+TITLE: Stay of Order under Section 517,518 or 519.
 CHAPTER: 
 ============================================================
 

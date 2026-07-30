@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 198
-TITLE: Section 198
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Using as true a certificate known to be false:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Using as true a certificate known to be false:

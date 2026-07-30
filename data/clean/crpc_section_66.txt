@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 66
-TITLE: Power, on escape, to pursue and retake. If a person in lawful custody escapes or is
+SECTION/ARTICLE: 66
+TITLE: Power, on escape, to pursue and retake.
 CHAPTER: 
 ============================================================
 

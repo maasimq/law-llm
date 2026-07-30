@@ -1,9 +1,35 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 505
-TITLE: Section 505
-CHAPTER: CHAPTER XXII — OF CRIMINAL INTIMIDATION, INSULT AND ANNOYANCE
+TITLE: Statements conducing to public mischief:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Statements conducing to public mischief:
-
 (1)
+Whoever makes, publishes, or
+circulates any statement, rumour or report-
+(a)
+with intent to cause or incite, or which is likely to cause or incite, any officer, soldier,
+sailor, or airman in the Army, Navy or Air Force of Pakistan to mutiny, offence or otherwise
+disregard or fail in his duty as such; or
+(b)
+with intent to cause, or which is likely to cause, fear or alarm to the public or to any
+section of the public whereby any person may be induced to commit an offence against
+the State or against the public tranquillity; or
+(c)
+with intent to incite, or which is likely to incite, any class or community of persons to
+commit any offence against any other class or community,
+shall be punished with imprisonment for a term which may extend to seven years and with
+fine.
+(2)
+Whoever makes, publishes or circulates any statement or report containing rumour or
+alarming news with intent to create or promote, or which is likely to create or promote, on
+grounds of religion, race, place of birth, residence, language, caste or community or any
+other ground whatsoever, feelings of enmity, hatred or ill-will between different religious,
+racial, language or regional groups or castes or communities, shall be punished with
+imprisonment for a term which may extend to seven years and with fine.
+Explanation:
+It does not amount to an offence within the meaning of this section, when the
+person making, publishing or circulating any such statement, rumour or report has
+reasonable grounds for believing that such statement, rumour or report is true and makes,
+publishes or circulates it in good faith and without any such intent as aforesaid.

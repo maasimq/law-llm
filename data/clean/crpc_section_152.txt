@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 152
-TITLE: Prevention of injury to public property. A police­officer may of his own authority interpose to
+SECTION/ARTICLE: 152
+TITLE: Prevention of injury to public property.
 CHAPTER: 
 ============================================================
 

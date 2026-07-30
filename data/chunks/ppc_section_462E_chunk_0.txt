@@ -1,11 +1,10 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 462E
-TITLE: Section 462E
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+TITLE: Tampering with gas meter by industrial or commerical consumer, etc:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Tampering with gas meter by industrial or commerical consumer, etc:
-
 Any person or individual being industrial or commerican consumer who
 does tampering or abets in tampering with any gas meter, regulator,
 meter index or gas connection or any other related sstem and

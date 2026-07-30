@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 325
-TITLE: Section 325
-CHAPTER: CHAPTER XXIII — OF ATTEMPTS TO COMMIT OFFENCES
+TITLE: Attempt to commit suicide:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Attempt to commit suicide:

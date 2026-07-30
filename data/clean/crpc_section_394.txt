@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 394
-TITLE: Whipping not to be inflicted if offender not in fit state of health.­(1) The punishment
+SECTION/ARTICLE: 394
+TITLE: Whipping not to be inflicted if offender not in fit state of health.­(1) The punishment.
 CHAPTER: 
 ============================================================
 
@@ -9,6 +9,6 @@ of whipping shall not be inflicted unless a medical officer, if present, certifi
 medical officer present, unless it appears to the Magistrate or officer present, that the offender is in
 a fit state of health to undergo such punishment.
 
- (2) Stay of execution. If, during the execution of a sentence of whipping, a medical officer
+(2) Stay of execution. If, during the execution of a sentence of whipping, a medical officer
 certifies, or it appears to the Magistrate or officer present, that the offender is not in a fit state of
 health to undergo the remainder of the sentence, the whipping shall be finally stopped.

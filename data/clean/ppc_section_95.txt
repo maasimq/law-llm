@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 95
-TITLE: Section 95
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Act causing slight harm:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Act causing slight harm:

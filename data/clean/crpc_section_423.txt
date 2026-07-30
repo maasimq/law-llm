@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 423
-TITLE: Powers of Appellate Court in disposing of appeal.­(1) The Appellate Court shall then send for
+SECTION/ARTICLE: 423
+TITLE: Powers of Appellate Court in disposing of appeal.­(1) The Appellate Court shall then send for.
 CHAPTER: 
 ============================================================
 
@@ -15,20 +15,20 @@ considers that there is no sufficient ground for interfering, dismiss the appeal
 3 Subs. by A.O., 1937, for “L.G.”
 4 Subs. by the Code of Criminal Procedure Amendement Act, 1943 (26 of 1943), s.5, for “section 417”.
 
- Page 157 of 319
- (a) in an appeal from an order of acquittal, reverse such order and direct that further inquiry be
- made, or that the accused be retried or 1[sent for trial to the Court of Session or the High Court]
- as the case may be, or find him guilty and pass sentence on him according to law ;
+Page 157 of 319
+(a) in an appeal from an order of acquittal, reverse such order and direct that further inquiry be
+made, or that the accused be retried or 1[sent for trial to the Court of Session or the High Court]
+as the case may be, or find him guilty and pass sentence on him according to law ;
 
- (b) in an appeal from a conviction, (1) reverse the finding and sentence, and acquit or discharge the
- accused, or order him to be retried by a Court of competent jurisdiction subordinate to such
- Appellate Court or 2[sent] for trial, or (2) alter the finding, maintaining the sentence, or, with or
- without altering the finding, reduce the sentence, or, (3) with or without such reduction and with
- or without altering the finding, alter the nature of the sentence, but, subject to the provisions of
- section 106, sub­section (3), not so as to enhance the same ;
+(b) in an appeal from a conviction, (1) reverse the finding and sentence, and acquit or discharge the
+accused, or order him to be retried by a Court of competent jurisdiction subordinate to such
+Appellate Court or 2[sent] for trial, or (2) alter the finding, maintaining the sentence, or, with or
+without altering the finding, reduce the sentence, or, (3) with or without such reduction and with
+or without altering the finding, alter the nature of the sentence, but, subject to the provisions of
+section 106, sub­section (3), not so as to enhance the same ;
 
- (c) in an appeal from any other order, alter or reverse such order ;
+(c) in an appeal from any other order, alter or reverse such order ;
 
- (d) make any amendment or any consequential or incidental order that may be just or proper.
- 3
- * * * * * * *
+(d) make any amendment or any consequential or incidental order that may be just or proper.
+3
+*                       *                           *                             *   *   *      *

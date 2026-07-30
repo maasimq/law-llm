@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 550
-TITLE: Powers of police to seize property suspected to be stolen. Any police­officer may seize any
+SECTION/ARTICLE: 550
+TITLE: Powers of police to seize property suspected to be stolen.
 CHAPTER: 
 ============================================================
 

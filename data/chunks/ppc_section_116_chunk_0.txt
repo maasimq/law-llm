@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 116
 TITLE: Section 116
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Abetment of offence punishable with imprisonment-if offence be not
@@ -12,3 +12,25 @@ this Code for the punishment of such abetment, be punished with imprisonment of 
 description provided for that offence for a term which may extend to one-fourth part of the.
 longest term provided for that offence; or with such fine as is provided for that offence; or
 with both.
+If abettor or person abetted be a public servant whose duty it is to prevent offence:
+And if the abettor or the person abetted is a public servant, whose duty it is, to prevent
+the commission of such offence, the abettor shall be punished with imprisonment of any
+description provided for that offence, for a term which may extend to one-half of the
+longest term provided for that offence, or with such fine as is provided for the offence, or
+with both.
+Illustrations
+(a)
+A offers a bribe to B, a public servant, as a reward for showing A some favour in the
+exercise of B's official functions. B refuses to accept the bribe. A is punishable under this
+section.
+(b)
+A instigates B to give false evidence. Here, if B does hot give false evidence A has
+nevertheless committed the offence defined in this section, and is punishable accordingly.
+(c)
+A, police officer, whose duty it is. To prevent robbery, abets the commission of robbery.
+Here, though the robbery be not committed, A is liable to one-half of the longest term of
+imprisonment proved for that offence, and also to fine.
+(d)
+B abets the commission of a robbery by H, a police officer, whose duty it is to prevent
+that offence. Here though the robbery be not committed, B is liable to one-half of the
+longest term of imprisonment provided for the offence of robbery, and also to fine.

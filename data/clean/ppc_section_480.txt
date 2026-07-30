@@ -1,8 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 480
-TITLE: Section 480
-CHAPTER: CHAPTER XVIII — OF OFFENCES RELATING TO DOCUMENTS AND TO TRADE OR
-            PROPERTY MARKS
+TITLE: Using a false trade mark:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Using a false trade mark:

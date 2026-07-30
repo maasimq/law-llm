@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 47
-TITLE: Search of place entered by person sought to be arrested. If any person acting under a warrant of
+SECTION/ARTICLE: 47
+TITLE: Search of place entered by person sought to be arrested.
 CHAPTER: 
 ============================================================
 

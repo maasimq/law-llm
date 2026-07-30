@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 183
-TITLE: Offence committed on a journey. An offence committed whilst the offender is in the course of
+SECTION/ARTICLE: 183
+TITLE: Offence committed on a journey.
 CHAPTER: 
 ============================================================
 
@@ -8,3 +8,20 @@ CHAPTER:
 performing a journey or voyage may be inquired into or tried by a Court through or into the local limits of
 whose jurisdiction the offender, or the person against whom, or the thing in respect of which, the offence
 was committed, passed in the course of that journey or voyage.
+
+184. [Offences against Railway, Telegraph, Post Office and Arms Acts.] Rep. by the Federal Laws
+(Rrevision and Declaration) Act, 1951 (XXVI of 1951), s. 3 and Second Schedule.
+
+[185. High Court to decide, in case of doubt, district where inquiry or trial shall take place.__(1)
+2
+
+Whenever a question arise as to which of two or more Courts subordinate to the same High Court ought to
+inquire into or try any offence, it shall be decided by that High Court.
+
+(2) Where two or more Courts not subordinate to the same High Court have taken cognizance of the
+same offence, the High Court within the local limits of whose appellate criminal jurisdiction the proceedings
+were first commenced may direct the trial of such offender to be held in any Court subordinate to it, and if it
+so decides all other proceedings against such person in respect of such offence shall be discontinued. If such
+High Court, upon the matter having been brought to its notice, does not so decide, any other High Court,
+within the local limits of whose appellate criminal jurisdiction such proceedings are pending may give a like
+direction, and upon its so doing all other such proceedings shall be discontinued.]

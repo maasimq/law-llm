@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 501
-TITLE: Section 501
-CHAPTER: CHAPTER XXI — OF DEFAMATION
+TITLE: Printing or engraving matter known to be defamatory:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Printing or engraving matter known to be defamatory:

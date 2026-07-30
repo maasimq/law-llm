@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 431
-TITLE: Abatement of appeals. Every appeal under 1[section 411­A, sub­section (2), or section
+SECTION/ARTICLE: 431
+TITLE: Abatement of appeals.
 CHAPTER: 
 ============================================================
 
@@ -12,10 +12,13 @@ CHAPTER:
 2 The semi­colon and words ” ; but such evidence shall not be taken in the presence of jurors or assessors” omitted by the Law Reforms Ordinance, 1972 (12 of 1972), s.2 and Sch.
 For enforcement of this amendment in the Provinces, see para 2 of foot­note 3 on p. 40. supra.
 
- Page 160 of 319
- CHAPTER XXXII
+Page 160 of 319
+CHAPTER XXXII
 
- OF REFERENCE AND REVISION
+OF REFERENCE AND REVISION
 
- 432 and 433. [Reference by Presidency Magistrate to High Court. Disposal of case according to
+432 and 433. [Reference by Presidency Magistrate to High Court. Disposal of case according to
 decision of High Court and direction as to costs.] Omitted by A.O.,1949, Schedule.
+
+434. [Power to reserve questions arising in original jurisdiction of High Court and procedure when
+question reserved.] Omitted by Criminal Procedure Amendment Act, 1943 (XXVI of 1943), s. 6.

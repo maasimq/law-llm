@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 351
-TITLE: Detention of offenders attending Court.­(1) Any person attending a Criminal Court, although not unde
+SECTION/ARTICLE: 351
+TITLE: Detention of offenders attending Court.­(1) Any person attending a Criminal Court, although not under.
 CHAPTER: 
 ============================================================
 
@@ -9,5 +9,5 @@ arrest or upon a summons, may be detained by such Court for the purpose of inqui
 which such Court can take cognizance and which, from the evidence, may appear to have been committed, and may be
 proceeded against as though he had been arrested or summoned.
 
- (2) When the detention takes place 2* * * after a trial has been begun the proceedings in respect of such person
+(2) When the detention takes place 2* * * after a trial has been begun the proceedings in respect of such person
 shall be commenced afresh, and the witnesses re­heard.

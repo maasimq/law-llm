@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 129
-TITLE: Use of military force. If any such assembly cannot be otherwise dispersed, and if it is necessary
+SECTION/ARTICLE: 129
+TITLE: Use of military force.
 CHAPTER: 
 ============================================================
 

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 130
-TITLE: Duty of Officer Commanding troops required by Magistrate to disperse assembly. 10[(1)
+SECTION/ARTICLE: 130
+TITLE: Duty of Officer Commanding troops required by Magistrate to disperse assembly.
 CHAPTER: 
 ============================================================
 
@@ -12,7 +12,7 @@ assembly with the help of the armed forces under his command and to arrest and c
 forming part of it as the Magistrate 8[or such Police officer] may direct, or as it may be necessary to arrest
 and confine in order to disperse the assembly or to have them punished according to law.]
 
- (2) Every such officer shall obey such requisition in such manner as he thinks fit, but in so doing he shall
+(2) Every such officer shall obey such requisition in such manner as he thinks fit, but in so doing he shall
 use as little force, and do as little injury to person and property, as may be consistent with dispersing the
 assembly and arresting and detaining such persons.
 
@@ -27,4 +27,4 @@ assembly and arresting and detaining such persons.
 9 Subs. by the Code of Criminal Procedure (Amdt.) Act, 1975 (49 of 1975), s.2, for “military force” (w.e.f 25­4­75).
 10 Subs. ibid, s.3, for “sub­section (1).”
 
- Page 67 of 319
+Page 67 of 319

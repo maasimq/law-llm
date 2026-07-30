@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 181
-TITLE: Being a thug or belonging to a gang of dacoits, escape from custody, etc.__ (1) The offence of
+SECTION/ARTICLE: 181
+TITLE: Being a thug or belonging to a gang of dacoits, escape from custody, etc.__ (1) The offence of.
 CHAPTER: 
 ============================================================
 
@@ -9,7 +9,7 @@ being a thug, of being a thug and committing murder, of dacoity, of dacoity with
 to a gang of dacoits, or of having escaped from custody, may be inquired into or tried by a Court within the
 local limits of whose jurisdiction the person charged is.
 
- (2) Criminal misappropriation and criminal breach of trust. The offence of criminal
+(2) Criminal misappropriation and criminal breach of trust. The offence of criminal
 misappropriation or of criminal breach of trust may be inquired into or tried by a Court within the local
 limits of whose jurisdiction any part of the property which is the subject of the offence was received or
 retained by the accused person, or the offence was committed.
@@ -17,14 +17,14 @@ retained by the accused person, or the offence was committed.
 1 Subs. by the Central Laws (Statute Reform) Ordinance, 1960 (21 of 1960), s.3 and 2nd Sch., for “Native State of Baroda” (with effect from the 14th October, 1955).
 2 Subs. ibid., for “Poona” (with effect from the 14th October, 1955).
 
- Page 91 of 319
- [(3) Theft. The offence of theft, or any offence which includes theft or the possession of stolen
- 1
+Page 91 of 319
+[(3) Theft. The offence of theft, or any offence which includes theft or the possession of stolen
+1
 
 property, may be inquired into or tried by a Court within the local limits of whose jurisdiction such offence
 was committed or the property stolen was possessed by the thief or by any person who received or retained
 the same knowing or having reason to believe it to be stolen.]
 
- (4) Kidnapping and abduction. The offence of kidnapping or abduction may be inquired into or tried
+(4) Kidnapping and abduction. The offence of kidnapping or abduction may be inquired into or tried
 by a Court within the local limits of whose jurisdiction the person kidnapped or abducted was kidnapped or
 abducted or was conveyed or concealed or detained.

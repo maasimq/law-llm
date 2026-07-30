@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 500
-TITLE: Section 500
-CHAPTER: CHAPTER XXI — OF DEFAMATION
+TITLE: Punishment for defamation:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Punishment for defamation:

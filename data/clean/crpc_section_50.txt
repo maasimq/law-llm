@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 50
-TITLE: No unnecessary restraint. The person arrested shall not be subjected to more restraint than is
+SECTION/ARTICLE: 50
+TITLE: No unnecessary restraint.
 CHAPTER: 
 ============================================================
 

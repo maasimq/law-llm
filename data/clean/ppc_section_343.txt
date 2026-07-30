@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 343
-TITLE: Section 343
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Wrongful confinement for three or more days:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Wrongful confinement for three or more days:

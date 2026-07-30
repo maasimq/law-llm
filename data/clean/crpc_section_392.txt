@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 392
-TITLE: Mode of inflicting punishment.­(1) In the case of a person of or over sixteen years of age
+SECTION/ARTICLE: 392
+TITLE: Mode of inflicting punishment.­(1) In the case of a person of or over sixteen years of age.
 CHAPTER: 
 ============================================================
 
@@ -10,7 +10,7 @@ such part of the person, as the 3[Provincial Government] directs; and, in the c
 years of age, it shall be inflicted in such mode, and on such part of the person, and with such instruments, as
 the 3[Provincial Government ] directs.
 
- (2) Limit of number of stripes. In no case shall such punishment exceed thirty stripes 4[and, in the case
+(2) Limit of number of stripes. In no case shall such punishment exceed thirty stripes 4[and, in the case
 of a person under sixteen years of age, it shall not exceed fifteen stripes].
 
 1 Ins. by the Criminal Law Amendment Act, 1923 (12 of 1923), s.21.
@@ -18,4 +18,4 @@ of a person under sixteen years of age, it shall not exceed fifteen stripes].
 3 Subs. by A.O., 1937, for “L.G”.
 4 Ins. by the Whipping Act, 1909 (4 of 1909), s. 7.
 
- Page 146 of 319
+Page 146 of 319

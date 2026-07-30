@@ -1,9 +1,25 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 376A
 TITLE: Disclosure of identity of victim of rape, etc.
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+CHAPTER: INTRODUCTION
 ============================================================
 
 Disclosure of identity of victim of rape, etc.
-
 (1)
+Whoever prints or publishes name or any matter which may make known identity of victim, against whom an offence under sections
+354A, 376, 376A, 377 ard 377N is alleged or found to have been committed, shall be punished with imprisonment of either description
+for a term which may extend to three years and shall also be liable to fine.
+(2)
+Nothing in subsection (1) extends to any printing or publication if it is-
+(a)
+by or under order in writing of officer-in-charge of the police station or police officer making investigation into such offence
+acting in good faith for the purposes of such investigation; or
+(b)
+by or under order of Court; or
+(c)
+by or with authorization in writing of the victim; or
+(d)
+by or with the authorization in writing of natural or legal guardian of the victim where the victim is dead or a minor or
+of unsound mind.
+Explanation.-Printing or publication of judgment of any High Court, the Federal Shariat Court or the Supreme Court in law
+journals does not amount to an offence within the meaning of this section.

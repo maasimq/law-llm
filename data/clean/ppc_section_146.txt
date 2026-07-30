@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 146
-TITLE: Section 146
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Rioting:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Rioting:

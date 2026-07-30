@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 41
-TITLE: Section 41
-CHAPTER: CHAPTER II — GENERAL EXPLANATIONS
+TITLE: "Special law":
+CHAPTER: INTRODUCTION
 ============================================================
 
 "Special law":

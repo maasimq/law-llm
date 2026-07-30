@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 399
-TITLE: Confinement of youthful offenders in reformatories.­(1) When any person under the age of
+SECTION/ARTICLE: 399
+TITLE: Confinement of youthful offenders in reformatories.­(1) When any person under the age of.
 CHAPTER: 
 ============================================================
 
@@ -12,7 +12,7 @@ discipline and of training in some branch of useful industry or which is kept by
 rules as the 1[Provincial Government] prescribes with regard to the discipline and training of persons
 confined therein.
 
- (2) All persons confined under this section shall be subject to the rules so prescribed.
+(2) All persons confined under this section shall be subject to the rules so prescribed.
 
- (3) This section shall not apply to any place in which the Reformatory Schools Act, 1897 (VIII of 1897),
+(3) This section shall not apply to any place in which the Reformatory Schools Act, 1897 (VIII of 1897),
 is for the time being in force.

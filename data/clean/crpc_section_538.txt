@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 538
-TITLE: Attachment not illegal, person making same not trespasser for defect or want of form in
+SECTION/ARTICLE: 538
+TITLE: Attachment not illegal, person making same not trespasser for defect or want of form in.
 CHAPTER: 
 ============================================================
 
@@ -9,8 +9,8 @@ proceedings. No 3[attachment] made under this Code shall be deemed unlawful, nor
 making the same be deemed a trespasser, on account of any defect or want of form in the summons,
 conviction, writ of 3[attachment] or other proceedings relating thereto.
 
- ____________
+____________
 
- CHAPTER XLVI
+CHAPTER XLVI
 
- MISCELLANEOUS
+MISCELLANEOUS

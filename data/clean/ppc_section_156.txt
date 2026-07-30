@@ -1,11 +1,10 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 156
-TITLE: Section 156
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Liability of agent of owner or occupier for whose benefit riot is committed:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Liability of agent of owner or occupier for whose benefit riot is committed:
-
 Whenever a riot is committed for the benefit or on behalf of any person who is the owner
 or occupier of any land respecting which such riot takes place, or who claims any interest
 in such land, or in the subject of any dispute which give rise to the riot, or who has

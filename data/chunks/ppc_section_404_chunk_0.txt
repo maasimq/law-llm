@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 404
 TITLE: Section 404
-CHAPTER: CHAPTER XVII — OF OFFENCES AGAINST PROPERTY
+CHAPTER: INTRODUCTION
 ============================================================
 
 Dishonest misappropriation of property possessed by deceased person at
@@ -13,7 +13,6 @@ legally entitled to such possession, shad be punished with imprisonment of eithe
 description for a term which may extend to three years and shall also be liable to fine; and
 if the offender at the time of such person's decease was employed by him as a clerk or
 servant, the imprisonment may extend to seven years.
-
 Illustration
 Z dies in possession of furniture and money. His servant A, before the money comes into
 the possession of any person entitled to such possession, dishonestly misappropriates it.

@@ -1,17 +1,27 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 76
-TITLE: 4[86A. Procedure for removal in custody to Tribal Area. Where a person arrested under section 85 is
+SECTION/ARTICLE: 76
+TITLE: Court may direct security to be taken.
 CHAPTER: 
 ============================================================
 
-76.
- 4[86A. Procedure for removal in custody to Tribal Area. Where a person arrested under section 85 is
-to be removed in custody to any place in the Tribal Areas, he shall be produced before a Magistrate within
-the local limits of whose jurisdiction the arrest was made, and such Magistrate in directing the removal shall
-hear the case in the same manner and have the same jurisdiction and powers, as nearly as may be, including
-the power to order the production of evidence, as if the person arrested were charged with an offence
-committed within the jurisdiction of such Magistrate; and such Magistrate shall direct the removal of the
-arrested person in custody if he is satisfied that the evidence produced before him raises a strong or probable
-presumption that the person arrested committed the offence mentioned in the warrant.]
+76. Court may direct security to be taken. Any Court issuing a warrant for the arrest of any person
+may in its discretion direct by endorsement on the warrant that, if such person execute a bond with
+sufficient sureties for his attendance before the court at a specified time and thereafter until otherwise
+directed by the Court, the officer to whom the warrant is directed shall take such security and shall release
+such person from custody.
 
- C.—Proclamation and Attachment
+(2) The endorsement shall state__
+
+(a) the number of sureties;
+
+(b) the amount in which they and the person for whose arrest the warrant is issued, are to be
+respectively bound; and
+
+(c) the time at which he is to attend before the Court.
+
+(3) Recognizance to be forwarded. Whenever security is taken under this section the officer to whom
+the warrant is directed shall forward the bond to the Court.
+
+1 Subs. by the Law Reforms Ordinance, 1972 (12 of 1972), s.2 and Sch., for “officer”.
+
+Page 42 of 319

@@ -1,8 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 471
-TITLE: Section 471
-CHAPTER: CHAPTER XVIII — OF OFFENCES RELATING TO DOCUMENTS AND TO TRADE OR
-            PROPERTY MARKS
+TITLE: Using as genuine a forged document:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Using as genuine a forged document:

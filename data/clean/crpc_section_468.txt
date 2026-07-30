@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 468
-TITLE: Procedure on accused appearing before Magistrate or Court.­(1) If, when the accused appears
+SECTION/ARTICLE: 468
+TITLE: Procedure on accused appearing before Magistrate or Court.­(1) If, when the accused appears.
 CHAPTER: 
 ============================================================
 
@@ -8,13 +8,13 @@ CHAPTER:
 or is again brought before the Magistrate or the Court, as the case may be, the Magistrate or Court considers
 him capable of making his defence, the inquiry or trial shall proceed.
 
- (2) If the Magistrate or Court considers the accused 1* to be still incapable of making his defence, the
+(2) If the Magistrate or Court considers the accused 1* to be still incapable of making his defence, the
 Magistrate or Court shall again act according to the provisions of section 464 or section 465, as the case
 may be, 2[and if the accused is found to be of unsound mind and incapable of making his defence, shall deal
 with such accused in accordance with the provisions of section 466].
 
- [469. When accused appears to have been insane. When the accused appears to be of sound mind at
- 3
+[469. When accused appears to have been insane. When the accused appears to be of sound mind at
+3
 
 the time of enquiry or trial, and the Magistrate or Court is satisfied from the evidence given before him or
 it that there is reason to believe that the accused committed an act which, if he had been of sound mind,

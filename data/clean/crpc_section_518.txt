@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 518
-TITLE: Order may take form of reference to District. In lieu of itself passing an order under section
+SECTION/ARTICLE: 518
+TITLE: Order may take form of reference to District.
 CHAPTER: 
 ============================================================
 

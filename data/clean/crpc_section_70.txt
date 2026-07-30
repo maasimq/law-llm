@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 70
-TITLE: Service when person summoned cannot be found. Where the person summoned cannot
+SECTION/ARTICLE: 70
+TITLE: Service when person summoned cannot be found.
 CHAPTER: 
 ============================================================
 

@@ -1,6 +1,6 @@
 ACT: Code of Criminal Procedure, 1898
-SECTION: 73
-TITLE: Service of summons outside local limits. When a Court desires that a summons issued by it shall be
+SECTION/ARTICLE: 73
+TITLE: Service of summons outside local limits.
 CHAPTER: 
 ============================================================
 

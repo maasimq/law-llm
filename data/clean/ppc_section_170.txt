@@ -1,7 +1,7 @@
 ACT: Pakistan Penal Code, 1860
 SECTION/ARTICLE: 170
-TITLE: Section 170
-CHAPTER: CHAPTER IV — GENERAL EXCEPTIONS
+TITLE: Personating a public servant:
+CHAPTER: INTRODUCTION
 ============================================================
 
 Personating a public servant:
