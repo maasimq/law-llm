@@ -10,6 +10,9 @@ import time
 import html
 from pathlib import Path
 import re
+import json
+import uuid
+import datetime
 
 import streamlit as st
 
@@ -93,6 +96,87 @@ def extract_citation_badge(chunk_text: str) -> tuple[str, str]:
     return "Statute", "Legal Reference Text"
 
 
+def get_history_dir() -> Path:
+    """Get the local directory for saving chat history."""
+    history_dir = PROJECT_ROOT / "chat_history"
+    history_dir.mkdir(exist_ok=True)
+    return history_dir
+
+def load_all_sessions() -> list[dict]:
+    """Load metadata for all saved chat sessions."""
+    history_dir = get_history_dir()
+    sessions = []
+    for filepath in history_dir.glob("*.json"):
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                sessions.append({
+                    "id": data.get("id"),
+                    "title": data.get("title", "Untitled Chat"),
+                    "created_at": data.get("created_at", ""),
+                    "filepath": filepath
+                })
+        except Exception:
+            pass
+    # Sort by created_at descending (newest first)
+    sessions.sort(key=lambda x: x["created_at"], reverse=True)
+    return sessions
+
+def load_session(session_id: str):
+    """Load a specific chat session into Streamlit state."""
+    history_dir = get_history_dir()
+    filepath = history_dir / f"{session_id}.json"
+    if filepath.exists():
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            st.session_state.session_id = session_id
+            st.session_state.messages = data.get("messages", [])
+            st.session_state.session_title = data.get("title", "Untitled Chat")
+            st.rerun()
+
+def save_session():
+    """Save the current chat session to a JSON file."""
+    if not st.session_state.messages:
+        return
+        
+    # Auto-generate title from first user message if missing
+    if not st.session_state.session_title:
+        first_user_msg = next((m["content"] for m in st.session_state.messages if m["role"] == "user"), "New Conversation")
+        st.session_state.session_title = first_user_msg[:40] + ("..." if len(first_user_msg) > 40 else "")
+        
+    history_dir = get_history_dir()
+    filepath = history_dir / f"{st.session_state.session_id}.json"
+    
+    data = {
+        "id": st.session_state.session_id,
+        "title": st.session_state.session_title,
+        "created_at": st.session_state.created_at,
+        "messages": st.session_state.messages
+    }
+    
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+def start_new_session():
+    """Initialize a brand new chat session."""
+    st.session_state.session_id = str(uuid.uuid4())
+    st.session_state.messages = []
+    st.session_state.session_title = ""
+    st.session_state.created_at = datetime.datetime.now().isoformat()
+    st.rerun()
+
+def delete_session(session_id: str):
+    """Delete a saved chat session."""
+    history_dir = get_history_dir()
+    filepath = history_dir / f"{session_id}.json"
+    if filepath.exists():
+        filepath.unlink()
+    if st.session_state.get("session_id") == session_id:
+        start_new_session()
+    else:
+        st.rerun()
+
+
 def render_sidebar():
     """Render the minimal, professional sidebar."""
     with st.sidebar:
@@ -110,6 +194,32 @@ def render_sidebar():
             unsafe_allow_html=True,
         )
 
+        # Multi-chat New Button
+        if st.button("➕ New Chat", use_container_width=True):
+            start_new_session()
+            
+        st.markdown('<hr style="margin: 1.5rem 0 1rem; border-color: rgba(255,255,255,0.06)">', unsafe_allow_html=True)
+
+        # Chat History List
+        st.markdown('<div class="sidebar-section">Recent Chats</div>', unsafe_allow_html=True)
+        sessions = load_all_sessions()
+        
+        if not sessions:
+            st.markdown('<div style="opacity: 0.5; font-size: 0.85rem; padding: 0.5rem 0;">No saved chats yet.</div>', unsafe_allow_html=True)
+        else:
+            for s in sessions:
+                col1, col2 = st.columns([0.85, 0.15])
+                with col1:
+                    is_active = (s["id"] == st.session_state.get("session_id"))
+                    btn_type = "primary" if is_active else "secondary"
+                    if st.button(f"💬 {s['title']}", key=f"load_{s['id']}", help=s['created_at'], use_container_width=True):
+                        load_session(s["id"])
+                with col2:
+                    if st.button("🗑️", key=f"del_{s['id']}", help="Delete chat"):
+                        delete_session(s["id"])
+
+        st.markdown('<hr style="margin: 1.5rem 0 1rem; border-color: rgba(255,255,255,0.06)">', unsafe_allow_html=True)
+
         # Sources
         st.markdown('<div class="sidebar-section">Legal Authorities</div>', unsafe_allow_html=True)
         sources = ["Pakistan Penal Code, 1860", "Constitution of Pakistan", "Code of Criminal Procedure, 1898"]
@@ -124,11 +234,6 @@ def render_sidebar():
             )
 
         st.markdown('<hr style="margin: 1.5rem 0 1rem; border-color: rgba(255,255,255,0.06)">', unsafe_allow_html=True)
-
-        # Clear
-        if st.button("Clear Conversation", key="clear_chat", use_container_width=True):
-            st.session_state.messages = []
-            st.rerun()
 
         # Quiet Disclaimer
         st.markdown(
@@ -149,7 +254,8 @@ def render_empty_state():
         <div class="hero-section">
             <div class="hero-section-mark-container">{SECTION_MARK_SVG}</div>
             <div class="hero-title">Pakistani Legal Assistant</div>
-            <p class="hero-subtitle">Search statutory law and constitutional provisions with exact section citations.</p>
+            <p class="hero-subtitle">Search statutory law and constitutional provisions with exact section citations.<br>
+            <span style="opacity: 0.8; font-family: 'Noto Nastaliq Urdu', serif;">(آپ قانون کے متعلق سوالات اردو میں بھی پوچھ سکتے ہیں)</span></p>
         </div>
         """,
         unsafe_allow_html=True,
@@ -247,7 +353,8 @@ def render_citations(sources: list[str]):
 def run_pipeline_with_loading(question: str):
     """Run RAG pipeline with clean spinner loading state."""
     with st.spinner("Checking the relevant Sections..."):
-        answer, retrieved_docs = run_rag_pipeline(question)
+        # Pass conversation history to pipeline
+        answer, retrieved_docs = run_rag_pipeline(question, conversation_history=st.session_state.messages)
     return answer, retrieved_docs
 
 
@@ -267,8 +374,14 @@ def render_footer():
 # ============================================================
 # STATE INITIALISATION
 # ============================================================
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "session_title" not in st.session_state:
+    st.session_state.session_title = ""
+if "created_at" not in st.session_state:
+    st.session_state.created_at = datetime.datetime.now().isoformat()
 if "pending_question" not in st.session_state:
     st.session_state.pending_question = None
 
@@ -283,7 +396,7 @@ render_empty_state()
 
 # Handle prefill & chat input
 prefill = st.session_state.pop("pending_question", None) if st.session_state.pending_question else None
-user_input = st.chat_input(placeholder="Ask about Bail, FIR, Theft, or Constitutional Rights...")
+user_input = st.chat_input(placeholder="Ask about Bail, FIR, Theft... / ضمانت، چوری یا قانون کے بارے میں پوچھیں")
 
 if prefill and not user_input:
     user_input = prefill
@@ -324,5 +437,7 @@ if user_input:
     st.session_state.messages.append(
         {"role": "assistant", "content": answer, "sources": source_chunks}
     )
+    # Save session after each turn
+    save_session()
 
 render_footer()
