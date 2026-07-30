@@ -84,13 +84,20 @@ def detect_language(text: str) -> str:
 
 
 def load_prompt_template() -> str:
-    """Load the prompt template used for the legal-answer generation step."""
+    """Load the Layman prompt template used for the legal-answer generation step."""
     template_path = PROJECT_ROOT / "scripts" / "prompt_template.txt"
     if template_path.exists():
         with open(template_path, "r", encoding="utf-8") as handle:
             return handle.read()
+    return ""
 
-    return """You are a Legal Assistant specializing in Pakistani Law.
+def load_advocate_prompt_template() -> str:
+    """Load the Advocate prompt template for drafting FIRs and case briefs."""
+    template_path = PROJECT_ROOT / "scripts" / "advocate_prompt_template.txt"
+    if template_path.exists():
+        with open(template_path, "r", encoding="utf-8") as handle:
+            return handle.read()
+    return ""
 INSTRUCTIONS:
 1. Answer using only the provided context.
 2. Cite the exact Act name and Section/Article number.
@@ -258,7 +265,7 @@ def rerank_with_cross_encoder(query: str, candidates: list[str], top_k: int = 3)
         return candidates[:top_k]
 
 
-def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_history: list[dict] | None = None) -> str:
+def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_history: list[dict] | None = None, mode: str = "layman") -> str:
     """Format the final prompt for the LLM using the loaded prompt template.
     
     Args:
@@ -266,6 +273,7 @@ def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_hi
         retrieved_docs: List of retrieved chunk texts.
         conversation_history: Optional list of recent messages [{"role": ..., "content": ...}]
                              to provide conversational context to the LLM.
+        mode: "layman" or "advocate" to switch formatting instructions.
     """
     # Truncate each document to ~3000 characters (approx 750 tokens)
     # With 3 chunks max, total context stays under ~2250 tokens + prompt,
@@ -285,7 +293,11 @@ def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_hi
             history_lines.append(f"{role}: {content}")
         history_block = "\n".join(history_lines)
     
-    template = load_prompt_template()
+    if mode.lower() == "advocate":
+        template = load_advocate_prompt_template()
+    else:
+        template = load_prompt_template()
+        
     return template.format(context=context_block, question=query_text, history=history_block)
 
 
@@ -526,7 +538,7 @@ def get_exact_chunk_by_statute(target_act: str, target_sec: str) -> str | None:
     return None
 
 
-def answer_question(question: str, filter_act: str | None = None, n_results: int = 3, conversation_history: list[dict] | None = None) -> tuple[str, list[str]]:
+def answer_question(question: str, filter_act: str | None = None, n_results: int = 3, conversation_history: list[dict] | None = None, mode: str = "layman") -> tuple[str, list[str]]:
     """Single question-to-answer function that combines retrieval and LLM generation."""
     target_act, target_sec = extract_requested_statute(question)
 
@@ -557,8 +569,8 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
 
     filter_act = target_act or filter_act or detect_act_from_query(question)
 
-    if is_out_of_scope_question(question, filter_act=filter_act):
-        return REFUSAL_SENTENCE, []
+    # Note: We no longer hardcode an out-of-scope refusal here.
+    # The LLM's dynamic formatting rules handle conversational/unrelated queries naturally.
 
     db_path = PROJECT_ROOT / "data" / "chroma_db"
     chroma_client = chromadb.PersistentClient(path=str(db_path))
@@ -595,14 +607,12 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     retrieved_docs = all_docs[:3]
 
     # Guardrail: Check if a specific Act was requested but no matching chunks were retrieved
-    if filter_act and not retrieved_docs:
-        guardrail_msg = (
-            f"I couldn't find an exact match for that query in the {filter_act}. "
-            "Please verify the section number and Act name (e.g. Section 497 CrPC for Bail vs. Section 497 PPC for Adultery)."
-        )
-        return guardrail_msg, []
+    if filter_act and not retrieved_docs and not detect_language(question) == "urdu":
+        # Keep this only if they explicitly demand a section from a specific act but it fails.
+        # Otherwise, let it pass to LLM.
+        pass
 
-    final_prompt = build_rag_prompt(question, retrieved_docs, conversation_history)
+    final_prompt = build_rag_prompt(question, retrieved_docs, conversation_history, mode)
     answer = generate_answer(final_prompt)
 
     # If the answer is a refusal / out-of-scope response, return empty sources so no irrelevant citation cards render
@@ -623,11 +633,12 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     return answer, retrieved_docs
 
 
-def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversation_history: list[dict] | None = None):
+def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversation_history: list[dict] | None = None, mode: str = "layman"):
     """Backward-compatible wrapper that keeps the existing test harness working."""
     print("\n=== RAG Pipeline Execution ===")
+    print(f"[{mode.upper()} MODE]")
     print("[1] Retrieving legal context...")
-    answer, retrieved_docs = answer_question(query_text, filter_act=filter_act, conversation_history=conversation_history)
+    answer, retrieved_docs = answer_question(query_text, filter_act=filter_act, conversation_history=conversation_history, mode=mode)
     print("[2] Prompt built and answer generated.")
     print("\n=== FINAL ANSWER ===")
     print(answer)

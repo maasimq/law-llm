@@ -15,7 +15,7 @@ CONVERSATION HISTORY (if any):
 {history}
 
 CRITICAL FORMATTING INSTRUCTION:
-You MUST structure your final output exactly like this:
+If the user's query is a legal question, you MUST structure your final output exactly like this:
 
 ### Summary
 [Provide a concise 1-2 sentence summary of the answer]
@@ -28,6 +28,9 @@ You MUST structure your final output exactly like this:
 
 ### Relevant Sections
 [List ONLY the exact Act names and Sections/Articles that directly answer the question, e.g., - Constitution of Pakistan, Article 10]
+
+DYNAMIC FORMATTING RULE (Out of scope/Conversational):
+If the user's query is purely conversational (e.g., "Hello", "Thanks", "Who are you?") OR completely unrelated to Pakistani Law (e.g., "Write a poem", "How to bake a cake"), DO NOT use the Summary/Legal Explanation/Plain English format. Instead, simply write a polite, plain text response explaining that you are a legal assistant for Pakistani law.
 
 CONTEXT:
 {context}

@@ -194,6 +194,22 @@ def render_sidebar():
             unsafe_allow_html=True,
         )
 
+        # Mode Selector
+        st.markdown('<div class="sidebar-section">Assistant Mode</div>', unsafe_allow_html=True)
+        
+        mode = st.radio(
+            "Mode", 
+            ["Layman", "Advocate"], 
+            index=0 if st.session_state.get("chat_mode", "Layman") == "Layman" else 1,
+            label_visibility="collapsed",
+            help="Layman: Simple explanations. Advocate: Formal drafting & analysis."
+        )
+        if mode != st.session_state.get("chat_mode"):
+            st.session_state.chat_mode = mode
+            st.rerun()
+
+        st.markdown('<hr style="margin: 1.5rem 0 1rem; border-color: rgba(255,255,255,0.06)">', unsafe_allow_html=True)
+
         # Multi-chat New Button
         if st.button("➕ New Chat", use_container_width=True):
             start_new_session()
@@ -353,8 +369,9 @@ def render_citations(sources: list[str]):
 def run_pipeline_with_loading(question: str):
     """Run RAG pipeline with clean spinner loading state."""
     with st.spinner("Checking the relevant Sections..."):
-        # Pass conversation history to pipeline
-        answer, retrieved_docs = run_rag_pipeline(question, conversation_history=st.session_state.messages)
+        # Pass conversation history and mode to pipeline
+        mode_val = st.session_state.get("chat_mode", "Layman").lower()
+        answer, retrieved_docs = run_rag_pipeline(question, conversation_history=st.session_state.messages, mode=mode_val)
     return answer, retrieved_docs
 
 
@@ -382,6 +399,8 @@ if "session_title" not in st.session_state:
     st.session_state.session_title = ""
 if "created_at" not in st.session_state:
     st.session_state.created_at = datetime.datetime.now().isoformat()
+if "chat_mode" not in st.session_state:
+    st.session_state.chat_mode = "Layman"
 if "pending_question" not in st.session_state:
     st.session_state.pending_question = None
 
@@ -396,7 +415,12 @@ render_empty_state()
 
 # Handle prefill & chat input
 prefill = st.session_state.pop("pending_question", None) if st.session_state.pending_question else None
-user_input = st.chat_input(placeholder="Ask about Bail, FIR, Theft... / ضمانت، چوری یا قانون کے بارے میں پوچھیں")
+
+mode_placeholder = "Ask about Bail, FIR, Theft... / ضمانت، چوری یا قانون کے بارے میں پوچھیں"
+if st.session_state.chat_mode == "Advocate":
+    mode_placeholder = "Draft an FIR, prepare a case brief, or ask a legal question..."
+
+user_input = st.chat_input(placeholder=mode_placeholder)
 
 if prefill and not user_input:
     user_input = prefill
