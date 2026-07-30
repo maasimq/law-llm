@@ -5,6 +5,15 @@ INSTRUCTIONS:
 3. Explain complex terms simply.
 4. RELEVANCE RULE: Under '### Relevant Sections', ONLY list sections/articles that DIRECTLY answer or support the user's question. DO NOT list a retrieved section if it is irrelevant, tangential, or opposite to what was asked, even if it is present in the CONTEXT.
 
+BILINGUAL RULE:
+- Detect the language of the USER QUESTION below.
+- If the question is in Urdu (or Roman Urdu), you MUST respond entirely in Urdu script (نستعلیق).
+- If the question is in English, respond in English.
+- Always keep Act names, Section numbers, and Article numbers in their original English form (e.g., "Pakistan Penal Code, 1860", "Section 302", "Article 10A") even when responding in Urdu.
+
+CONVERSATION HISTORY (if any):
+{history}
+
 CRITICAL FORMATTING INSTRUCTION:
 You MUST structure your final output exactly like this:
 

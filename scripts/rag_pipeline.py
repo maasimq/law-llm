@@ -58,7 +58,29 @@ LEGAL_ALIASES = {
     "mischief": [("Pakistan Penal Code, 1860", "425"), ("Pakistan Penal Code, 1860", "426")],
     "cheating": [("Pakistan Penal Code, 1860", "415"), ("Pakistan Penal Code, 1860", "420")],
     "hurt": [("Pakistan Penal Code, 1860", "332"), ("Pakistan Penal Code, 1860", "337")],
+    # --- Urdu Aliases (Bilingual Support) ---
+    "ایف آئی آر": [("Code of Criminal Procedure, 1898", "154")],
+    "ضمانت": [("Code of Criminal Procedure, 1898", "497"), ("Code of Criminal Procedure, 1898", "498")],
+    "چوری": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379")],
+    "قتل": [("Pakistan Penal Code, 1860", "299"), ("Pakistan Penal Code, 1860", "300"), ("Pakistan Penal Code, 1860", "302")],
+    "ڈکیتی": [("Pakistan Penal Code, 1860", "391"), ("Pakistan Penal Code, 1860", "395")],
+    "لوٹ مار": [("Pakistan Penal Code, 1860", "390"), ("Pakistan Penal Code, 1860", "392")],
+    "اغوا": [("Pakistan Penal Code, 1860", "359"), ("Pakistan Penal Code, 1860", "360")],
+    "جعلسازی": [("Pakistan Penal Code, 1860", "463"), ("Pakistan Penal Code, 1860", "464")],
+    "بنیادی حقوق": [("Constitution of Pakistan", "8")],
+    "منصفانہ مقدمہ": [("Constitution of Pakistan", "10A")],
+    "گرفتاری": [("Constitution of Pakistan", "10"), ("Code of Criminal Procedure, 1898", "54")],
+    "آزادی اظہار": [("Constitution of Pakistan", "19")],
+    "تعلیم کا حق": [("Constitution of Pakistan", "25A")],
+    "مساوات": [("Constitution of Pakistan", "25")],
+    "دھوکہ": [("Pakistan Penal Code, 1860", "415"), ("Pakistan Penal Code, 1860", "420")],
 }
+
+
+def detect_language(text: str) -> str:
+    """Detect if the query is in Urdu (Unicode range 0600-06FF) or English."""
+    urdu_chars = sum(1 for c in text if '\u0600' <= c <= '\u06FF')
+    return "urdu" if urdu_chars > len(text) * 0.3 else "english"
 
 
 def load_prompt_template() -> str:
@@ -73,6 +95,8 @@ INSTRUCTIONS:
 1. Answer using only the provided context.
 2. Cite the exact Act name and Section/Article number.
 3. Explain complex terms simply.
+CONVERSATION HISTORY (if any):
+{history}
 CONTEXT:
 {context}
 USER QUESTION:
@@ -234,15 +258,35 @@ def rerank_with_cross_encoder(query: str, candidates: list[str], top_k: int = 3)
         return candidates[:top_k]
 
 
-def build_rag_prompt(query_text: str, retrieved_docs: list[str]) -> str:
-    """Format the final prompt for the LLM using the loaded prompt template."""
+def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_history: list[dict] | None = None) -> str:
+    """Format the final prompt for the LLM using the loaded prompt template.
+    
+    Args:
+        query_text: The user's current question.
+        retrieved_docs: List of retrieved chunk texts.
+        conversation_history: Optional list of recent messages [{"role": ..., "content": ...}]
+                             to provide conversational context to the LLM.
+    """
     # Truncate each document to ~3000 characters (approx 750 tokens)
     # With 3 chunks max, total context stays under ~2250 tokens + prompt,
     # well within Groq free-tier 12,000 TPM limit.
     truncated_docs = [doc[:3000] for doc in retrieved_docs]
     context_block = "\n\n---\n\n".join(truncated_docs)
+    
+    # Build conversation history string (last 5 messages for context)
+    history_block = "None"
+    if conversation_history:
+        recent = conversation_history[-10:]  # Last 5 Q&A pairs (10 messages)
+        history_lines = []
+        for msg in recent:
+            role = "User" if msg["role"] == "user" else "Assistant"
+            # Truncate each historical message to keep prompt within limits
+            content = msg["content"][:500]
+            history_lines.append(f"{role}: {content}")
+        history_block = "\n".join(history_lines)
+    
     template = load_prompt_template()
-    return template.format(context=context_block, question=query_text)
+    return template.format(context=context_block, question=query_text, history=history_block)
 
 
 def generate_answer(prompt: str) -> str:
@@ -482,7 +526,7 @@ def get_exact_chunk_by_statute(target_act: str, target_sec: str) -> str | None:
     return None
 
 
-def answer_question(question: str, filter_act: str | None = None, n_results: int = 3) -> tuple[str, list[str]]:
+def answer_question(question: str, filter_act: str | None = None, n_results: int = 3, conversation_history: list[dict] | None = None) -> tuple[str, list[str]]:
     """Single question-to-answer function that combines retrieval and LLM generation."""
     target_act, target_sec = extract_requested_statute(question)
 
@@ -558,7 +602,7 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
         )
         return guardrail_msg, []
 
-    final_prompt = build_rag_prompt(question, retrieved_docs)
+    final_prompt = build_rag_prompt(question, retrieved_docs, conversation_history)
     answer = generate_answer(final_prompt)
 
     # If the answer is a refusal / out-of-scope response, return empty sources so no irrelevant citation cards render
@@ -579,11 +623,11 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     return answer, retrieved_docs
 
 
-def run_rag_pipeline(query_text: str, filter_act: str | None = None):
+def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversation_history: list[dict] | None = None):
     """Backward-compatible wrapper that keeps the existing test harness working."""
     print("\n=== RAG Pipeline Execution ===")
     print("[1] Retrieving legal context...")
-    answer, retrieved_docs = answer_question(query_text, filter_act=filter_act)
+    answer, retrieved_docs = answer_question(query_text, filter_act=filter_act, conversation_history=conversation_history)
     print("[2] Prompt built and answer generated.")
     print("\n=== FINAL ANSWER ===")
     print(answer)
