@@ -1,127 +1,197 @@
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat)
+
 # ⚖️ Law LLM — Pakistani Legal Assistant
 
-> **A state-of-the-art, plain-English legal query application powered by Retrieval-Augmented Generation (RAG), designed to bridge the gap between complex legal jargon and accessible knowledge for laymen and lawyers alike.**
-
-## 📖 Project Overview
-
-Navigating statutory law can be daunting. **Law LLM** solves this by searching a highly-curated, verified library of Pakistani legal documents and generating clear, accurate, and easy-to-understand answers using advanced language models. 
-
-Built with strict AI guardrails, the application **only** answers based on retrieved source text, always cites the exact Section or Article, and refuses to hallucinate when information is out of scope.
-
-### 🏛️ Legal Sources Covered
-
-| Legal Source | Coverage Scope |
-|---|---|
-| **Pakistan Penal Code, 1860 (PPC)** | Offences against human body, property, and public order |
-| **Code of Criminal Procedure, 1898 (CrPC)** | Arrest, bail, FIR registration, and investigation |
-| **Constitution of Pakistan, 1973** | Fundamental Rights (Articles 8 to 28) |
-
-*All content is sourced exclusively from official government portals: [pakistancode.gov.pk](https://pakistancode.gov.pk) and [na.gov.pk](https://na.gov.pk).*
+> A RAG-powered legal assistant that searches Pakistani statutory law and answers questions in plain English — or Urdu — with exact section citations.
 
 ---
 
-## ✨ Key Features & Architecture
-
-We built a robust, multi-stage retrieval pipeline to ensure maximum accuracy and resolve complex cross-Act ambiguities (e.g., distinguishing between *PPC § 497* for Adultery and *CrPC § 497* for Bail).
-
-1. **Intelligent Exact-Match Routing:** Instantly routes common, single-word queries (e.g., "FIR", "theft") directly to their authoritative sections.
-
-2. **Hybrid Retrieval:** Combines the semantic understanding of dense vector embeddings (`bge-small`) with the exact keyword precision of sparse retrieval (`BM25`) using min-max normalized score fusion.
-
-3. **Cross-Encoder Re-Ranking:** Passes the top hybrid candidates through a powerful cross-encoder (`ms-marco-MiniLM-L-6-v2`) for pinpoint sorting, ensuring the most relevant legal chunk is always fed to the LLM.
-
-4. **Dynamic Latency Optimization:** Automatically bypasses the heavy cross-encoder step when a query has a dominant, clear-cut match, saving massive compute time without sacrificing accuracy.
-
-5. **Interactive UI:** A beautiful, responsive chat interface built in Streamlit featuring expandable citation panels to view the raw statutory source text.
+![Landing screen](docs/screenshot-landing.png)
+![Cited answer example](docs/screenshot-answer.png)
 
 ---
 
-## 🛠️ Technology Stack
+## What It Does
 
-| Component | Technology Used |
+Ask a question. Get a cited, grounded answer from the actual text of Pakistani law.
+
+```
+"What happens if someone steals my phone?"
+→ PPC § 378 (Theft), § 379 (Punishment for Theft)
+
+"ضمانت کیسے ملتی ہے؟"
+→ CrPC § 497, § 498 — full answer in Urdu script
+
+"Draft an FIR for cheating"
+→ Formal FIR draft with placeholders, cited under PPC § 420
+```
+
+Every answer is grounded in retrieved statutory text — no hallucination, no invented sections. The hybrid retrieval + cross-encoder re-ranking pipeline achieves **100% pass rate (31/31)** on the labeled evaluation set, up from a 74.2% baseline before the pipeline was introduced.
+
+---
+
+## Legal Sources
+
+| Act | Coverage |
 |---|---|
-| **Language** | Python 3.11 |
-| **LLM Engine** | Groq API — Llama 3.3 70B Versatile |
-| **Embeddings** | `BAAI/bge-small-en-v1.5` (384-dimensional dense vectors) |
+| **Pakistan Penal Code, 1860** | Offences — body, property, public order |
+| **Code of Criminal Procedure, 1898** | Arrest, bail, FIR, investigation |
+| **Constitution of Pakistan, 1973** | Fundamental Rights — Articles 8 to 28 |
+
+*Sourced exclusively from [pakistancode.gov.pk](https://pakistancode.gov.pk) and [na.gov.pk](https://na.gov.pk).*
+
+---
+
+## Key Features
+
+### 🗣️ / ⚖️ Two Modes
+
+| | Layman | Advocate |
+|---|---|---|
+| **Audience** | General public | Legal practitioners |
+| **Output** | Plain-English explanations | Section-by-section legal analysis |
+| **Documents** | ❌ Blocked with redirect | ✅ FIR drafts, legal notices, case briefs |
+| **Mode lock** | Locks on first message | Locks on first message |
+
+---
+
+### 🔍 Multi-Stage Retrieval Pipeline
+
+```
+Query
+  │
+  ├─ 1. Alias Routing      "theft" → PPC § 378/379 (direct lookup, no search)
+  ├─ 2. Exact Section      "Section 302 PPC" → fetched by filename/CSV index
+  ├─ 3. Hybrid Search      Dense (BGE embeddings) + Sparse (BM25) → score fusion
+  └─ 4. Cross-Encoder      ms-marco-MiniLM re-ranks top candidates → top 3 chunks
+```
+
+Resolves cross-Act ambiguities automatically — e.g. *PPC § 497* (Adultery) vs *CrPC § 497* (Bail) are never confused.
+
+---
+
+### 🌐 Urdu & Roman Urdu Support
+
+- Queries in Urdu or Roman Urdu are translated to English before retrieval (via `llama-3.1-8b-instant`)
+- Responses are generated back in native Urdu script (نستعلیق) with correct legal headings
+- Islamic legal terms rendered in native script, including Qisas and Diyat terminology used in the Pakistan Penal Code (قتلِ عمد، قصاص، دیت، تعزیر)
+
+---
+
+### 💬 Chat Interface
+
+- Persistent multi-session history with auto-generated 3–4 word titles
+- Stage-by-stage loading indicators: *Translating query... → Analyzing laws... → Drafting answer...*
+- Expandable citation cards showing the raw statutory source text
+- Dark mode with gold accent design system
+
+---
+
+## Known Limitations
+
+- **Scope:** Coverage is limited to the PPC, CrPC, and the Constitution's Fundamental Rights chapter (Articles 8–28). Other areas of law — tax, family, civil procedure, contract — are out of scope and will return a refusal.
+- **Drafted documents:** FIRs and case briefs generated in Advocate mode are structured templates with placeholders. They are not filed-ready legal documents and must be reviewed by a licensed advocate before use.
+- **Urdu retrieval:** Urdu and Roman Urdu queries are translated to English before retrieval. Translation quality can affect retrieval accuracy — unusual phrasing or dialect may reduce precision.
+
+---
+
+## Technology Stack
+
+| Component | Technology |
+|---|---|
+| **LLM** | Groq — `llama-3.3-70b-versatile` |
+| **Translation & Titles** | Groq — `llama-3.1-8b-instant` |
+| **Embeddings** | `BAAI/bge-small-en-v1.5` (384-dim) |
 | **Re-Ranker** | `cross-encoder/ms-marco-MiniLM-L-6-v2` |
-| **Vector Database** | ChromaDB (local, persistent storage) |
-| **Keyword Index** | BM25 (Sparse retrieval) |
-| **Frontend** | Streamlit |
+| **Vector DB** | ChromaDB (local, persistent) |
+| **Keyword Index** | BM25 (Rank-BM25) |
+| **Frontend** | Streamlit + Custom CSS |
+| **Language** | Python 3.11 |
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
-### 1. Clone the Repository
+**1. Clone**
 ```bash
 git clone https://github.com/maasimq/law-llm.git
 cd law-llm
 ```
 
-### 2. Set Up the Environment
-*Note: Use 64-bit Python 3.11.*
+**2. Install**
 ```bash
 python -m venv .venv
-
-# Windows
-.\.venv\Scripts\activate
-# macOS/Linux
-source .venv/bin/activate
-
+.\.venv\Scripts\activate      # Windows
+source .venv/bin/activate     # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### 3. Configure API Keys
-Create a `.env` file in the root directory and add your free [Groq API key](https://console.groq.com/):
+**3. Add API key** — create `.env`:
 ```env
 GROQ_API_KEY=your_key_here
 ```
 
-### 4. Run the Application
-Launch the interactive Streamlit chat interface:
+**4. Run**
 ```bash
 streamlit run app/app.py
 ```
 
-### 5. Run the Automated Evaluation Harness
-To test the pipeline's retrieval accuracy across aliased and non-aliased legal queries:
+**5. Evaluate retrieval** *(optional)*
 ```bash
 python scripts/retrieval_eval.py
 ```
+Current pipeline scores **100% (31/31)** on the labeled evaluation set.
 
 ---
 
-## 🏗️ Repository Structure
+## Repository Structure
 
-```text
+```
 law-llm/
 ├── app/
-│   └── app.py                       # Main Streamlit chat interface
+│   ├── app.py                        # Streamlit chat interface
+│   └── styles.css                    # Custom CSS design system
 ├── data/
-│   ├── raw/                         # Original PDF/TXT legal documents
-│   ├── clean/                       # Cleaned text (split by Section/Article)
-│   ├── chunks/                      # ~500-word logical chunks
-│   └── chroma_db/                   # Persistent vector database
+│   ├── raw/                          # Source PDFs / TXT
+│   ├── clean/                        # Cleaned, section-split text
+│   ├── chunks/                       # Indexed ~500-word chunks
+│   └── chroma_db/                    # Persistent vector store
+├── docs/
+│   ├── screenshot-landing.png        # Landing page screenshot
+│   └── screenshot-answer.png        # Cited answer screenshot
 ├── scripts/
-│   ├── rag_pipeline.py              # Core Hybrid + Re-ranking RAG engine
-│   ├── retrieval_eval.py            # Evaluation harness for retrieval metrics
-│   ├── setup_chromadb.py            # Vector DB initialization
-│   ├── bm25_index.py                # Sparse keyword indexing
-│   └── ...                          # Data cleaning & utility scripts
-├── .env                             # (Ignored) Environment variables
-├── requirements.txt                 # Python dependencies
-└── README.md
+│   ├── rag_pipeline.py               # Core RAG engine
+│   ├── prompt_template.txt           # Layman mode prompt
+│   ├── advocate_prompt_template.txt  # Advocate mode prompt
+│   ├── bm25_index.py                 # BM25 keyword index
+│   ├── setup_chromadb.py             # Vector DB setup
+│   └── retrieval_eval.py             # Evaluation harness
+├── .env                              # API keys (git-ignored)
+├── LICENSE
+└── requirements.txt
 ```
 
 ---
 
-## 👥 Team & Acknowledgments
+## Team
 
-This project was developed as an academic and research initiative under FAST-NUCES Lahore.
+Developed as an academic research project at **FAST-NUCES Lahore**.
 
-- **Supervisor:** Dr. Aasim Qureshi
-- **Team Lead:** Muhammad Abdul Raheem Khan
-- **Developers:** Ahmad Rasheed, Muhammad Aliyan Mumtaz
+| Role | Name |
+|---|---|
+| Supervisor | Dr. Aasim Qureshi |
+| Team Lead | Muhammad Abdul Raheem Khan |
+| Developer | Ahmad Rasheed |
+| Developer | Muhammad Aliyan Mumtaz |
 
 ---
-*Disclaimer: Law LLM provides informational statutory references only. It does not constitute formal legal advice.*
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+*Law LLM provides statutory reference information only. It does not constitute formal legal advice.*
