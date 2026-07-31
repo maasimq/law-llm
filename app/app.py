@@ -23,8 +23,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 # Force clear cache so Streamlit picks up new functions in rag_pipeline
-if "rag_pipeline" in sys.modules:
-    del sys.modules["rag_pipeline"]
+sys.modules.pop("rag_pipeline", None)
 
 from rag_pipeline import run_rag_pipeline, generate_chat_title
 
@@ -45,6 +44,13 @@ css_path = Path(__file__).parent / "styles.css"
 if css_path.exists():
     with open(css_path, "r", encoding="utf-8") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# Preconnect to Google Fonts to eliminate FOUT (flash of unstyled text)
+st.markdown(
+    '<link rel="preconnect" href="https://fonts.googleapis.com">'
+    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+    unsafe_allow_html=True,
+)
 
 # ============================================================
 # HELPER FUNCTIONS & ASSETS
@@ -237,7 +243,7 @@ def render_sidebar():
                     if len(display_title) > 28:
                         display_title = display_title[:26] + "..."
                     
-                    if st.button(display_title, key=f"load_{s['id']}", help=s['title'], use_container_width=True, type=btn_type):
+                    if st.button(display_title, key=f"load_{s['id']}", use_container_width=True, type=btn_type):
                         load_session(s["id"])
                 with col2:
                     if st.button(":material/delete:", key=f"del_{s['id']}", help="Delete chat"):
@@ -334,6 +340,33 @@ def render_markdown_rtl(text: str):
         st.markdown(text)
 
 
+def filter_cited_chunks(answer: str, source_chunks: list[str]) -> list[str]:
+    """Return only chunks whose section number appears in the LLM's Cited Statutory Sources block."""
+    # Isolate only the cited sources block to avoid false matches from the explanation text
+    cited_block = answer
+    for marker in ("### Cited Statutory Sources", "### \u0645\u062a\u0639\u0644\u0642\u06c1 \u0633\u06cc\u06a9\u0634\u0646\u0632"):
+        if marker in answer:
+            cited_block = answer.split(marker, 1)[1]
+            break
+
+    cited_nums = {n.upper() for n in re.findall(
+        r'(?:section|article|art\.?|\u00a7)\s*(\d+[a-zA-Z]?)',
+        cited_block, re.IGNORECASE
+    )}
+    if not cited_nums:
+        return source_chunks
+
+    filtered = []
+    for chunk in source_chunks:
+        sec_match = re.search(
+            r'(?:SECTION(?:/ARTICLE)?|ARTICLE):\s*(\d+[a-zA-Z]?)',
+            chunk, re.IGNORECASE
+        )
+        if sec_match and sec_match.group(1).upper() in cited_nums:
+            filtered.append(chunk)
+    return filtered
+
+
 def render_citations(sources: list[str]):
     """Render signature citation badges with collapsed statutory text expanders."""
     if not sources:
@@ -380,12 +413,25 @@ def render_citations(sources: list[str]):
             st.markdown(f'<div class="statutory-source-box">{escaped_text}</div>', unsafe_allow_html=True)
 
 
+def _loading(placeholder, msg: str):
+    placeholder.markdown(f'<div class="rag-loading">{msg}</div>', unsafe_allow_html=True)
+
+
 def run_pipeline_with_loading(question: str):
-    """Run RAG pipeline with clean spinner loading state."""
-    with st.spinner(""):
-        # Pass conversation history and mode to pipeline
-        mode_val = st.session_state.get("chat_mode", "Layman").lower()
-        answer, retrieved_docs = run_rag_pipeline(question, conversation_history=st.session_state.messages, mode=mode_val)
+    """Run RAG pipeline with sequential stage-based loading messages."""
+    from rag_pipeline import answer_question
+
+    placeholder = st.empty()
+    mode_val = st.session_state.get("chat_mode", "Layman").lower()
+
+    _loading(placeholder, "Translating query...")
+    answer, retrieved_docs = answer_question(
+        question,
+        conversation_history=st.session_state.messages,
+        mode=mode_val,
+        on_stage=lambda msg: _loading(placeholder, msg),
+    )
+    placeholder.empty()
     return answer, retrieved_docs
 
 
@@ -423,10 +469,11 @@ prefill = st.session_state.pop("pending_question", None) if st.session_state.pen
 # Strip emojis for the actual internal state
 current_mode = st.session_state.get("chat_mode", "Layman")
 
-if not st.session_state.messages:
-    # No messages yet: show mode selector
-    default_pill = "🗣️ Layman" if current_mode == "Layman" else "⚖️ Advocate"
+# Check if user has submitted a message in this run or previous runs
+has_submitted = bool(st.session_state.get("main_chat_input")) or bool(st.session_state.pending_question)
 
+if not st.session_state.messages and not has_submitted:
+    default_pill = "🗣️ Layman" if current_mode == "Layman" else "⚖️ Advocate"
     selected_pill = st.pills(
         "Mode",
         options=["🗣️ Layman", "⚖️ Advocate"],
@@ -434,21 +481,19 @@ if not st.session_state.messages:
         default=default_pill,
         label_visibility="collapsed"
     )
-
     if selected_pill:
         new_mode = "Layman" if "Layman" in selected_pill else "Advocate"
         if new_mode != current_mode:
             st.session_state.chat_mode = new_mode
             st.rerun()
-
     st.markdown(
-        '<div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: -1.2rem; margin-bottom: 1.5rem;">'
+        '<div style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 0.8rem; margin-bottom: 2.5rem;">'
         'Advocate mode adds FIR and case brief drafting.'
         '</div>',
         unsafe_allow_html=True
     )
 else:
-    # Chat has started: lock mode and show a nice badge
+    # Chat has started or prompt was submitted: lock mode and show mode badge immediately
     mode_emoji = "🗣️" if current_mode == "Layman" else "⚖️"
     st.markdown(
         f'<div style="text-align: center; margin-bottom: 1.5rem;">'
@@ -462,7 +507,7 @@ mode_placeholder = "Ask about Bail, FIR, Theft... / ضمانت، چوری یا �
 if st.session_state.chat_mode == "Advocate":
     mode_placeholder = "Draft an FIR, prepare a case brief, or ask a legal question..."
 
-user_input = st.chat_input(placeholder=mode_placeholder)
+user_input = st.chat_input(placeholder=mode_placeholder, key="main_chat_input")
 
 if prefill and not user_input:
     user_input = prefill
@@ -487,37 +532,37 @@ if user_input:
     with st.chat_message("user", avatar="👤"):
         render_markdown_rtl(user_input)
 
-    with st.chat_message("assistant", avatar="⚖️"):
-        try:
-            answer, source_chunks = run_pipeline_with_loading(user_input)
-        except Exception as e:
-            # Log error server-side only
-            print(f"[SERVER ERROR] RAG Pipeline Error: {e}", file=sys.stderr)
-            err_str = str(e).lower()
-            if "413" in err_str or "rate_limit" in err_str or "tokens" in err_str:
-                answer = "This query is a bit long — try shortening it or asking about a specific section or topic."
-            else:
-                answer = "I couldn't find relevant statutory provisions in the PPC, CrPC, or Constitution for that query — try rephrasing, or ask about Bail, FIR, Theft, or Fundamental Rights."
-            source_chunks = []
+    try:
+        answer, source_chunks = run_pipeline_with_loading(user_input)
+    except Exception as e:
+        print(f"[SERVER ERROR] RAG Pipeline Error: {e}", file=sys.stderr)
+        err_str = str(e).lower()
+        if "413" in err_str or "rate_limit" in err_str or "tokens" in err_str:
+            answer = "This query is a bit long — try shortening it or asking about a specific section or topic."
+        else:
+            answer = "I couldn't find relevant statutory provisions in the PPC, CrPC, or Constitution for that query — try rephrasing, or ask about Bail, FIR, Theft, or Fundamental Rights."
+        source_chunks = []
 
+    with st.chat_message("assistant", avatar="⚖️"):
         render_markdown_rtl(answer)
-        
-        # Hide citations for refusals and conversational responses
+
         is_refusal = (
             "restricted to Advocate mode" in answer or
             "legal assistant for Pakistani law" in answer or
             "legal advocate for Pakistani law" in answer or
-            "outside the scope" in answer
+            "outside the scope" in answer or
+            not source_chunks
         )
-        
+
         if is_refusal:
             source_chunks = []
-            
+
         if source_chunks:
+            source_chunks = filter_cited_chunks(answer, source_chunks)
             render_citations(source_chunks)
-                
+
     st.session_state.messages.append(
-        {"role": "assistant", "content": answer, "sources": source_chunks}
+        {"role": "assistant", "content": answer, "sources": source_chunks if not is_refusal else []}
     )
-    # Save session after each turn
     save_session()
+    st.rerun()
