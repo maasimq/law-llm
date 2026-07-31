@@ -32,6 +32,10 @@ LEGAL_ALIASES = {
     "first information report": [("Code of Criminal Procedure, 1898", "154")],
     "bail": [("Code of Criminal Procedure, 1898", "497"), ("Code of Criminal Procedure, 1898", "498")],
     "theft": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379"), ("Pakistan Penal Code, 1860", "380")],
+    "steal": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379")],
+    "steals": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379")],
+    "stolen": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379")],
+    "stole": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379")],
     "murder": [("Pakistan Penal Code, 1860", "299"), ("Pakistan Penal Code, 1860", "300"), ("Pakistan Penal Code, 1860", "302")],
     "robbery": [("Pakistan Penal Code, 1860", "390"), ("Pakistan Penal Code, 1860", "392")],
     "dacoity": [("Pakistan Penal Code, 1860", "391"), ("Pakistan Penal Code, 1860", "395")],
@@ -75,6 +79,22 @@ LEGAL_ALIASES = {
     "مساوات": [("Constitution of Pakistan", "25")],
     "دھوکہ": [("Pakistan Penal Code, 1860", "415"), ("Pakistan Penal Code, 1860", "420")],
 }
+
+
+CONVERSATIONAL_PATTERNS = re.compile(
+    r'^\s*(hi+|hello+|hey+|thanks?|thank you|ok|okay|bye|good\s*(morning|evening|afternoon|night)?|'  
+    r'who are you|what are you|how are you|what can you do|help me|test|testing|'  
+    r'سلام|ہیلو|شکریہ|ٹھیک ہے|آپ کون ہیں)\s*[!?.]*\s*$',
+    re.IGNORECASE
+)
+
+
+def is_conversational(query: str) -> bool:
+    """Return True if the query is purely conversational with no legal substance."""
+    stripped = query.strip()
+    if len(stripped.split()) <= 3 and CONVERSATIONAL_PATTERNS.match(stripped):
+        return True
+    return False
 
 
 def detect_language(text: str) -> str:
@@ -263,21 +283,20 @@ def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_hi
                              to provide conversational context to the LLM.
         mode: "layman" or "advocate" to switch formatting instructions.
     """
-    # Truncate each document to ~3000 characters (approx 750 tokens)
-    # With 3 chunks max, total context stays under ~2250 tokens + prompt,
-    # well within Groq free-tier 12,000 TPM limit.
-    truncated_docs = [doc[:3000] for doc in retrieved_docs]
+    # Truncate each document to ~1500 characters (approx 375 tokens)
+    # 3 chunks × 1500 = 4500 chars context + ~800 prompt + ~500 history = ~5800 chars total
+    # safely under Groq free-tier 6000 TPM per-request limit
+    truncated_docs = [doc[:1500] for doc in retrieved_docs]
     context_block = "\n\n---\n\n".join(truncated_docs)
-    
-    # Build conversation history string (last 5 messages for context)
+
+    # Build conversation history string (last 3 messages only to save tokens)
     history_block = "None"
     if conversation_history:
-        recent = conversation_history[-10:]  # Last 5 Q&A pairs (10 messages)
+        recent = conversation_history[-6:]  # Last 3 Q&A pairs
         history_lines = []
         for msg in recent:
             role = "User" if msg["role"] == "user" else "Assistant"
-            # Truncate each historical message to keep prompt within limits
-            content = msg["content"][:500]
+            content = msg["content"][:200]  # tighter truncation per message
             history_lines.append(f"{role}: {content}")
         history_block = "\n".join(history_lines)
     
@@ -544,8 +563,20 @@ def translate_query_to_english(query: str) -> str:
         return query
 
 
-def answer_question(question: str, filter_act: str | None = None, n_results: int = 3, conversation_history: list[dict] | None = None, mode: str = "layman") -> tuple[str, list[str]]:
+def answer_question(question: str, filter_act: str | None = None, n_results: int = 3, conversation_history: list[dict] | None = None, mode: str = "layman", on_stage=None) -> tuple[str, list[str]]:
     """Single question-to-answer function that combines retrieval and LLM generation."""
+    def _stage(msg):
+        if on_stage:
+            on_stage(msg)
+
+    # Short-circuit: skip retrieval entirely for conversational messages
+    if is_conversational(question):
+        _stage("Drafting answer...")
+        final_prompt = build_rag_prompt(question, [], conversation_history, mode)
+        answer = generate_answer(final_prompt)
+        return answer, []
+
+    _stage("Translating query...")
     search_query = translate_query_to_english(question)
     
     target_act, target_sec = extract_requested_statute(search_query)
@@ -586,6 +617,7 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 
     # Step 3: Hybrid retrieval — merge dense + BM25 with weighted score fusion
+    _stage("Analyzing laws...")
     hybrid_scored = hybrid_retrieve(
         search_query, collection, embed_model,
         filter_act=filter_act,
@@ -605,22 +637,27 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     else:
         reranked_docs = rerank_with_cross_encoder(search_query, hybrid_docs, top_k=n_results)
 
-    # Build final list: priority chunks first, then reranked hybrid results, deduplicated
-    all_docs = list(priority_chunks)
+    # Build final list: explicit section first (guaranteed slot), then alias chunks,
+    # then reranked hybrid results, deduplicated
+    all_docs = list(exact_chunks)  # exact section match always gets priority slot
+    for c in alias_chunks:
+        if c not in all_docs:
+            all_docs.append(c)
     for doc in reranked_docs:
         if doc not in all_docs:
             all_docs.append(doc)
 
-    # Cap at 3 chunks total to stay under Groq free-tier TPM limits
+    # Cap at 3 chunks — exact_chunks guaranteed, remaining slots filled by alias+hybrid
     retrieved_docs = all_docs[:3]
 
     # Guardrail: Check if a specific Act was requested but no matching chunks were retrieved
-    if filter_act and not retrieved_docs and not detect_language(question) == "urdu":
+    if filter_act and not retrieved_docs:
         # Keep this only if they explicitly demand a section from a specific act but it fails.
         # Otherwise, let it pass to LLM.
         pass
 
     final_prompt = build_rag_prompt(question, retrieved_docs, conversation_history, mode)
+    _stage("Drafting answer...")
     answer = generate_answer(final_prompt)
 
     # If the answer is a refusal / out-of-scope response, return empty sources so no irrelevant citation cards render
@@ -655,21 +692,40 @@ def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversatio
 
 
 def generate_chat_title(user_message: str) -> str:
-    """Generate a brief 3-5 word title for the chat based on the first user message."""
+    """Generate a strict 3-4 word legal topic title from the first user message."""
+    msg_clean = user_message.strip().lower()
+    greetings = {"hi", "hello", "hey", "greetings", "thanks", "thank you", "assalam", "assalam alaikum", "aoa", "good morning", "good evening"}
+    
+    # Check if message is a simple greeting or extremely short non-legal word
+    if msg_clean in greetings or (len(msg_clean) <= 5 and not any(kw in msg_clean for kw in ["fir", "ppc", "crpc", "law", "bail"])):
+        return "General Inquiry"
+
     try:
         response = client_groq.chat.completions.create(
-            model="llama-3.1-8b-instant",  # Fast model for title generation
+            model="llama-3.1-8b-instant",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant. Generate a brief 2-5 word title for the chat session based on the user's first message. Do not include quotes or any other text, just the title."},
-                {"role": "user", "content": user_message}
+                {"role": "system", "content": (
+                    "You generate ultra-short chat titles for Pakistani legal assistant queries. "
+                    "Rules: exactly 3-4 words, title case, no punctuation, no quotes, no filler words like 'Chat' or 'Conversation' or 'Query'. "
+                    "Focus strictly on Pakistani statutory law. "
+                    "Always use PPC for Pakistan Penal Code, CrPC for Code of Criminal Procedure, or Constitution. NEVER use IPC or Indian Penal Code. "
+                    "Examples: 'Bail Under CrPC', 'Murder Punishment PPC', 'FIR Registration Process', 'Property Theft Claim'. "
+                    "Output ONLY the title, nothing else."
+                )},
+                {"role": "user", "content": user_message[:200]}
             ],
-            temperature=0.3,
-            max_tokens=15
+            temperature=0.1,
+            max_tokens=12
         )
-        return response.choices[0].message.content.strip(' "')
+        title = response.choices[0].message.content.strip(' "\n')
+        # Replace accidental IPC references
+        title = re.sub(r'\bIPC\b', 'PPC', title, flags=re.IGNORECASE)
+        words = title.split()
+        return " ".join(words[:4]) if words else user_message[:30]
     except Exception as e:
         print(f"[TITLE GENERATION ERROR] {e}", file=sys.stderr)
-        return user_message[:40] + ("..." if len(user_message) > 40 else "")
+        words = user_message.split()
+        return " ".join(words[:4])
 
 
 def run_logging_pipeline(questions: list[str], log_file: str | None = None, filter_act: str | None = None):
