@@ -216,7 +216,15 @@ def render_sidebar():
         sessions = load_all_sessions()
         
         if not sessions:
-            st.markdown('<div style="opacity: 0.5; font-size: 0.85rem; padding: 0.5rem 0;">No saved chats yet.</div>', unsafe_allow_html=True)
+            empty_state_html = """
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 0; opacity: 0.5;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 8px;">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span style="font-size: 0.85rem; font-weight: 500;">No chat history</span>
+            </div>
+            """
+            st.markdown(empty_state_html, unsafe_allow_html=True)
         else:
             for s in sessions:
                 col1, col2 = st.columns([0.85, 0.15])
@@ -372,7 +380,7 @@ def render_citations(sources: list[str]):
 
 def run_pipeline_with_loading(question: str):
     """Run RAG pipeline with clean spinner loading state."""
-    with st.spinner("Checking the relevant Sections..."):
+    with st.spinner(""):
         # Pass conversation history and mode to pipeline
         mode_val = st.session_state.get("chat_mode", "Layman").lower()
         answer, retrieved_docs = run_rag_pipeline(question, conversation_history=st.session_state.messages, mode=mode_val)
@@ -483,7 +491,8 @@ if user_input:
         is_refusal = (
             "restricted to Advocate mode" in answer or
             "legal assistant for Pakistani law" in answer or
-            "legal advocate for Pakistani law" in answer
+            "legal advocate for Pakistani law" in answer or
+            "outside the scope" in answer
         )
         
         if is_refusal:

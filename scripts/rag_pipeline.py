@@ -530,7 +530,7 @@ def translate_query_to_english(query: str) -> str:
     """Translates Urdu/Roman Urdu queries to English for better retrieval."""
     try:
         response = client_groq.chat.completions.create(
-            model="llama3-8b-8192",  # Ultra-fast model
+            model="llama-3.1-8b-instant",  # Ultra-fast model
             messages=[
                 {"role": "system", "content": "You are a translation assistant. If the text is in Urdu or Roman Urdu, translate it to English. If it is already in English, return it exactly as is. ONLY output the English translation, no quotation marks or explanations."},
                 {"role": "user", "content": query}
@@ -658,7 +658,7 @@ def generate_chat_title(user_message: str) -> str:
     """Generate a brief 3-5 word title for the chat based on the first user message."""
     try:
         response = client_groq.chat.completions.create(
-            model="llama3-8b-8192",  # Fast model for title generation
+            model="llama-3.1-8b-instant",  # Fast model for title generation
             messages=[
                 {"role": "system", "content": "You are a helpful assistant. Generate a brief 2-5 word title for the chat session based on the user's first message. Do not include quotes or any other text, just the title."},
                 {"role": "user", "content": user_message}

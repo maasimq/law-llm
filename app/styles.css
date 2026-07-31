@@ -552,6 +552,35 @@ div[data-testid="stElementContainer"]:has(div[data-testid="stPills"]) {
 }
 
 /* ============================================================
+   LOADING SPINNER OVERRIDES
+   ============================================================ */
+[data-testid="stSpinner"] > div {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+[data-testid="stSpinner"] p {
+    color: var(--text-muted) !important;
+    font-size: 0.9rem !important;
+}
+
+[data-testid="stSpinner"] p::after {
+    content: "Translating query...";
+    animation: cycleLoadingText 6s infinite;
+}
+
+@keyframes cycleLoadingText {
+    0%   { content: "Translating query..."; }
+    25%  { content: "Searching laws..."; }
+    50%  { content: "Reading sections..."; }
+    75%  { content: "Drafting answer..."; }
+    100% { content: "Translating query..."; }
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .app-footer {
