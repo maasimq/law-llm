@@ -136,6 +136,7 @@ def load_session(session_id: str):
             st.session_state.session_id = session_id
             st.session_state.messages = data.get("messages", [])
             st.session_state.session_title = data.get("title", "Untitled Chat")
+            st.session_state.chat_mode = data.get("chat_mode", "Layman")
             st.rerun()
 
 def save_session():
@@ -158,7 +159,8 @@ def save_session():
         "id": st.session_state.session_id,
         "title": st.session_state.session_title,
         "created_at": st.session_state.created_at,
-        "messages": st.session_state.messages
+        "messages": st.session_state.messages,
+        "chat_mode": st.session_state.chat_mode
     }
     
     with open(filepath, "w", encoding="utf-8") as f:
@@ -420,28 +422,41 @@ prefill = st.session_state.pop("pending_question", None) if st.session_state.pen
 
 # Strip emojis for the actual internal state
 current_mode = st.session_state.get("chat_mode", "Layman")
-default_pill = "🗣️ Layman" if current_mode == "Layman" else "⚖️ Advocate"
 
-selected_pill = st.pills(
-    "Mode",
-    options=["🗣️ Layman", "⚖️ Advocate"],
-    selection_mode="single",
-    default=default_pill,
-    label_visibility="collapsed"
-)
+if not st.session_state.messages:
+    # No messages yet: show mode selector
+    default_pill = "🗣️ Layman" if current_mode == "Layman" else "⚖️ Advocate"
 
-if selected_pill:
-    new_mode = "Layman" if "Layman" in selected_pill else "Advocate"
-    if new_mode != current_mode:
-        st.session_state.chat_mode = new_mode
-        st.rerun()
+    selected_pill = st.pills(
+        "Mode",
+        options=["🗣️ Layman", "⚖️ Advocate"],
+        selection_mode="single",
+        default=default_pill,
+        label_visibility="collapsed"
+    )
 
-st.markdown(
-    '<div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: -1.2rem; margin-bottom: 1.5rem;">'
-    'Advocate mode adds FIR and case brief drafting.'
-    '</div>',
-    unsafe_allow_html=True
-)
+    if selected_pill:
+        new_mode = "Layman" if "Layman" in selected_pill else "Advocate"
+        if new_mode != current_mode:
+            st.session_state.chat_mode = new_mode
+            st.rerun()
+
+    st.markdown(
+        '<div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: -1.2rem; margin-bottom: 1.5rem;">'
+        'Advocate mode adds FIR and case brief drafting.'
+        '</div>',
+        unsafe_allow_html=True
+    )
+else:
+    # Chat has started: lock mode and show a nice badge
+    mode_emoji = "🗣️" if current_mode == "Layman" else "⚖️"
+    st.markdown(
+        f'<div style="text-align: center; margin-bottom: 1.5rem;">'
+        f'<span style="background: rgba(255,255,255,0.05); color: var(--text-secondary); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1);">'
+        f'{mode_emoji} {current_mode} Mode'
+        f'</span></div>',
+        unsafe_allow_html=True
+    )
 
 mode_placeholder = "Ask about Bail, FIR, Theft... / ضمانت، چوری یا قانون کے بارے میں پوچھیں"
 if st.session_state.chat_mode == "Advocate":
