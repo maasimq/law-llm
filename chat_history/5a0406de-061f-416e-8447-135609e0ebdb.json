@@ -1,0 +1,18 @@
+{
+  "id": "5a0406de-061f-416e-8447-135609e0ebdb",
+  "title": "General Inquiry",
+  "created_at": "2026-07-31T20:54:27.766936",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi",
+      "sources": []
+    },
+    {
+      "role": "assistant",
+      "content": "I'm a Legal Assistant specializing in Pakistani Law. How can I assist you today? If you have any questions or need information on a specific legal topic, feel free to ask, and I'll do my best to provide a helpful response.",
+      "sources": []
+    }
+  ],
+  "chat_mode": "Layman"
+}
