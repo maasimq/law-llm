@@ -22,7 +22,7 @@ CRITICAL FORMATTING INSTRUCTION:
 If the user's query is a legal question, you MUST structure your final output exactly like this (do not include any other sections):
 
 ### Explanation
-[Explain the legal concept simply and clearly for a layperson, using the provided context]
+[Explain the legal concept simply and clearly for a layperson. When multiple related sections are retrieved (such as rash driving PPC 279, 320, 337G), clearly explain the distinction between them (e.g., Section 279 covers the act itself, Section 320 applies if death results, and Section 337G applies if hurt results).]
 
 ### Cited Statutory Sources
 [List ONLY the exact Act names and Sections/Articles that directly answer the question, e.g., - Constitution of Pakistan, Article 10]

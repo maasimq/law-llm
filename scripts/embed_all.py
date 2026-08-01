@@ -18,6 +18,10 @@ def run():
     print(f"Found {len(txt_files)} chunks. Starting embedding generation...")
     
     for txt_file in tqdm(txt_files, desc="Embedding"):
+        out_file = EMBEDDINGS_DIR / (txt_file.stem + ".npy")
+        if out_file.exists():
+            continue
+            
         with open(txt_file, "r", encoding="utf-8") as f:
             text = f.read().strip()
             
@@ -28,8 +32,6 @@ def run():
         embed_text = text.split("\nIllustrations")[0].split("\n\nIllustrations")[0] if "Illustrations" in text else text
         
         embedding = model.encode(embed_text, normalize_embeddings=True)
-        
-        out_file = EMBEDDINGS_DIR / (txt_file.stem + ".npy")
         np.save(out_file, embedding)
         
     print("All embeddings generated successfully!")

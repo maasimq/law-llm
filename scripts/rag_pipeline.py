@@ -62,6 +62,10 @@ LEGAL_ALIASES = {
     "mischief": [("Pakistan Penal Code, 1860", "425"), ("Pakistan Penal Code, 1860", "426")],
     "cheating": [("Pakistan Penal Code, 1860", "415"), ("Pakistan Penal Code, 1860", "420")],
     "hurt": [("Pakistan Penal Code, 1860", "332"), ("Pakistan Penal Code, 1860", "337")],
+    "rash driving": [("Pakistan Penal Code, 1860", "279"), ("Pakistan Penal Code, 1860", "320"), ("Pakistan Penal Code, 1860", "337G")],
+    "negligent driving": [("Pakistan Penal Code, 1860", "279"), ("Pakistan Penal Code, 1860", "320"), ("Pakistan Penal Code, 1860", "337G")],
+    "criminal conspiracy": [("Pakistan Penal Code, 1860", "120A"), ("Pakistan Penal Code, 1860", "120B")],
+    "conspiracy": [("Pakistan Penal Code, 1860", "120A"), ("Pakistan Penal Code, 1860", "120B")],
     # --- Urdu Aliases (Bilingual Support) ---
     "ایف آئی آر": [("Code of Criminal Procedure, 1898", "154")],
     "ضمانت": [("Code of Criminal Procedure, 1898", "497"), ("Code of Criminal Procedure, 1898", "498")],
