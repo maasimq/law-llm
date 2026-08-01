@@ -32,6 +32,8 @@ def main():
 
     print("\n" + "="*60)
     print("KNOWLEDGE BASE COMPLETENESS AUDIT REPORT")
+    print("SCOPE NOTE: Verified against a curated core inventory of major offences & procedures.")
+    print("A full section-by-section reconciliation against the complete statutory text was not performed.")
     print("="*60)
 
     # 1. Constitution Audit (Articles 8 to 28 + 9A/10A/19A/25A)

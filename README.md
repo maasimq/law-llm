@@ -42,6 +42,8 @@ Every answer is grounded in retrieved statutory text — no hallucination, no in
 
 *Sourced exclusively from [pakistancode.gov.pk](https://pakistancode.gov.pk) and [na.gov.pk](https://na.gov.pk).*
 
+> **Scope & Completeness Note**: Knowledge base completeness is verified against a curated core inventory of major offences, criminal procedures, and Fundamental Rights. A full section-by-section reconciliation against the complete statutory text was not performed.
+
 ---
 
 ## Key Features
