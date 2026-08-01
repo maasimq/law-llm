@@ -341,30 +341,61 @@ def render_markdown_rtl(text: str):
 
 
 def filter_cited_chunks(answer: str, source_chunks: list[str]) -> list[str]:
-    """Return only chunks whose section number appears in the LLM's Cited Statutory Sources block."""
-    # Isolate only the cited sources block to avoid false matches from the explanation text
+    """Return only chunks whose (Act, Section) pair appears in the LLM's Cited Statutory Sources block."""
+    if "### Cited Statutory Sources" not in answer and "### \u0645\u062a\u0639\u0644\u0642\u06c1 \u0633\u06cc\u06a9\u0634\u0646\u0632" not in answer:
+        return []
+
     cited_block = answer
     for marker in ("### Cited Statutory Sources", "### \u0645\u062a\u0639\u0644\u0642\u06c1 \u0633\u06cc\u06a9\u0634\u0646\u0632"):
         if marker in answer:
             cited_block = answer.split(marker, 1)[1]
             break
 
-    cited_nums = {n.upper() for n in re.findall(
-        r'(?:section|article|art\.?|\u00a7)\s*(\d+[a-zA-Z]?)',
-        cited_block, re.IGNORECASE
-    )}
-    if not cited_nums:
-        return source_chunks
+    years = {"1860", "1898", "1973", "1979", "1984", "2016", "2018", "2021", "2022", "2023"}
+    cited_pairs = set()
+    bare_sections = set()
+
+    for line in cited_block.split("\n"):
+        line_clean = line.strip()
+        if not line_clean:
+            continue
+        line_lower = line_clean.lower()
+        
+        act_key = None
+        if "ppc" in line_lower or "penal code" in line_lower:
+            act_key = "ppc"
+        elif "crpc" in line_lower or "criminal procedure" in line_lower:
+            act_key = "crpc"
+        elif "constitution" in line_lower or "article" in line_lower:
+            act_key = "constitution"
+            
+        nums = [n.upper() for n in re.findall(r'\b\d+[a-zA-Z]?\b', line_clean) if n not in years]
+        for num in nums:
+            if act_key:
+                cited_pairs.add((act_key, num))
+            else:
+                bare_sections.add(num)
+
+    if not cited_pairs and not bare_sections:
+        return []
 
     filtered = []
     for chunk in source_chunks:
-        sec_match = re.search(
-            r'(?:SECTION(?:/ARTICLE)?|ARTICLE):\s*(\d+[a-zA-Z]?)',
-            chunk, re.IGNORECASE
-        )
-        if sec_match and sec_match.group(1).upper() in cited_nums:
+        act_match = re.search(r'ACT:\s*(.+)', chunk, re.IGNORECASE)
+        sec_match = re.search(r'(?:SECTION(?:/ARTICLE)?|ARTICLE):\s*(\d+[a-zA-Z]?)', chunk, re.IGNORECASE)
+        if not sec_match:
+            continue
+        sec_num = sec_match.group(1).upper()
+        
+        chunk_act_str = (act_match.group(1) if act_match else "").lower()
+        chunk_act_key = "ppc" if "penal code" in chunk_act_str or "ppc" in chunk_act_str else ("crpc" if "procedure" in chunk_act_str or "crpc" in chunk_act_str else ("constitution" if "constitution" in chunk_act_str else None))
+
+        if chunk_act_key and (chunk_act_key, sec_num) in cited_pairs:
             filtered.append(chunk)
-    return filtered
+        elif not cited_pairs and sec_num in bare_sections:
+            filtered.append(chunk)
+            
+    return filtered[:3]
 
 
 def render_citations(sources: list[str]):
@@ -534,11 +565,14 @@ if user_input:
 
     try:
         answer, source_chunks = run_pipeline_with_loading(user_input)
+        source_chunks = filter_cited_chunks(answer, source_chunks)
     except Exception as e:
         print(f"[SERVER ERROR] RAG Pipeline Error: {e}", file=sys.stderr)
         err_str = str(e).lower()
-        if "413" in err_str or "rate_limit" in err_str or "tokens" in err_str:
-            answer = "This query is a bit long — try shortening it or asking about a specific section or topic."
+        if "429" in err_str or "rate_limit" in err_str or "tokens" in err_str:
+            answer = "⚠️ **Server Busy**\n\nThe assistant is receiving requests too quickly right now — please wait a few seconds and try again."
+        elif "413" in err_str:
+            answer = "⚠️ **Query Too Long**\n\nThis query is a bit long — try shortening it or asking about a specific section or topic."
         else:
             answer = "I couldn't find relevant statutory provisions in the PPC, CrPC, or Constitution for that query — try rephrasing, or ask about Bail, FIR, Theft, or Fundamental Rights."
         source_chunks = []

@@ -32,10 +32,10 @@ LEGAL_ALIASES = {
     "first information report": [("Code of Criminal Procedure, 1898", "154")],
     "bail": [("Code of Criminal Procedure, 1898", "497"), ("Code of Criminal Procedure, 1898", "498")],
     "theft": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379"), ("Pakistan Penal Code, 1860", "380")],
-    "steal": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379")],
-    "steals": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379")],
-    "stolen": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379")],
-    "stole": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379")],
+    "steal": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379"), ("Pakistan Penal Code, 1860", "380")],
+    "steals": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379"), ("Pakistan Penal Code, 1860", "380")],
+    "stolen": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379"), ("Pakistan Penal Code, 1860", "380")],
+    "stole": [("Pakistan Penal Code, 1860", "378"), ("Pakistan Penal Code, 1860", "379"), ("Pakistan Penal Code, 1860", "380")],
     "murder": [("Pakistan Penal Code, 1860", "299"), ("Pakistan Penal Code, 1860", "300"), ("Pakistan Penal Code, 1860", "302")],
     "robbery": [("Pakistan Penal Code, 1860", "390"), ("Pakistan Penal Code, 1860", "392")],
     "dacoity": [("Pakistan Penal Code, 1860", "391"), ("Pakistan Penal Code, 1860", "395")],
@@ -308,96 +308,43 @@ def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_hi
     return template.format(context=context_block, question=query_text, history=history_block)
 
 
+import time
+
 def generate_answer(prompt: str) -> str:
-    """Send the final prompt to the Groq model and return the answer."""
-    completion = client_groq.chat.completions.create(
-        messages=[{"role": "user", "content": prompt}],
-        model=LLM_MODEL,
-        temperature=0.1,
-        max_tokens=1024,
-    )
-    return completion.choices[0].message.content
+    """Send the final prompt to the Groq model and return the answer, with auto-retry and model fallback."""
+    models_to_try = [LLM_MODEL, "llama-3.1-8b-instant"]
+    last_exception = None
+    for model in models_to_try:
+        for attempt in range(2):
+            try:
+                completion = client_groq.chat.completions.create(
+                    messages=[{"role": "user", "content": prompt}],
+                    model=model,
+                    temperature=0.1,
+                    max_tokens=1024,
+                )
+                return completion.choices[0].message.content
+            except Exception as e:
+                last_exception = e
+                err_str = str(e).lower()
+                if "429" in err_str or "rate_limit" in err_str or "tokens" in err_str:
+                    time.sleep(1.5 * (attempt + 1))
+                else:
+                    break
+    if last_exception:
+        raise last_exception
+    raise RuntimeError("Rate limit exceeded")
 
 
-def is_out_of_scope_question(question: str, filter_act: str | None = None) -> bool:
-    """Return True when a constitution-specific pipeline is asked a non-constitutional question."""
-    if filter_act != "Constitution of Pakistan":
-        return False
-
-    normalized = " ".join((question or "").lower().split())
-
-    constitutional_terms = [
-        "article",
-        "constitution",
-        "fundamental rights",
-        "fundamental right",
-        "right to",
-        "rights",
-        "liberty",
-        "arrest",
-        "detention",
-        "slavery",
-        "forced labour",
-        "forced labor",
-        "fair trial",
-        "property",
-        "education",
-        "religion",
-        "speech",
-        "expression",
-        "association",
-        "union",
-        "assembly",
-        "movement",
-        "privacy",
-        "dignity",
-        "equality",
-        "public places",
-        "discrimination",
-        "compulsory deprivation",
-        "religious purposes",
-        "citizen",
-        "double jeopardy",
-        "self-incrimination",
-        "tried twice",
-    ]
-
-    out_of_scope_terms = [
-        "tax rate",
-        "tax",
-        "rental income",
-        "trademark",
-        "register",
-        "registration",
-        "criminal penalty",
-        "criminal penalties",
-        "theft",
-        "ppc",
-        "companies act",
-        "passport",
-        "advertising",
-        "marriage",
-        "partnership",
-        "voter registration",
-        "gasoline",
-        "company",
-        "corporate",
-        "business",
-        "licence",
-        "license",
-        "bail",
-        "fir",
-        "contract",
-        "statute",
-        "law governs",
-        "income",
-        "revenue",
-    ]
-
-    if any(term in normalized for term in constitutional_terms):
-        return False
-
-    return any(term in normalized for term in out_of_scope_terms)
+def detect_language(query: str) -> str:
+    """Detect if query is in Urdu/Roman Urdu or English."""
+    if bool(re.search(r'[\u0600-\u06FF]', query)):
+        return "urdu"
+    roman_urdu_words = {"saza", "kia", "kya", "hai", "ha", "ki", "ka", "ko", "par", "me", "mein", "hun", "ho", "batao", "bataen", "hyn", "hain", "chori", "ziada"}
+    q_words = set(re.findall(r'\b[a-z]+\b', query.lower()))
+    if len(q_words.intersection(roman_urdu_words)) >= 2:
+        return "urdu"
+    return "english"
 
 
 import csv
@@ -419,14 +366,14 @@ def resolve_alias_chunks(query_text: str) -> list[str]:
     q_lower = query_text.lower().strip()
     chunks = []
 
-    # Check exact match first, then substring match for multi-word aliases
+    # Check exact match first, then word-boundary regex match for alias keys
     matched_refs = []
     if q_lower in LEGAL_ALIASES:
         matched_refs = LEGAL_ALIASES[q_lower]
     else:
-        # Check if any alias key appears as a standalone term in the query
+        # Check if any alias key appears as a standalone word in the query
         for alias_key, refs in LEGAL_ALIASES.items():
-            if len(alias_key) > 2 and alias_key in q_lower:
+            if len(alias_key) > 2 and re.search(r'\b' + re.escape(alias_key) + r'\b', q_lower):
                 matched_refs.extend(refs)
 
     # Deduplicate
@@ -576,8 +523,12 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
         answer = generate_answer(final_prompt)
         return answer, []
 
-    _stage("Translating query...")
-    search_query = translate_query_to_english(question)
+    lang = detect_language(question)
+    if lang == "urdu":
+        _stage("Translating query...")
+        search_query = translate_query_to_english(question)
+    else:
+        search_query = question
     
     target_act, target_sec = extract_requested_statute(search_query)
 
@@ -599,12 +550,6 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
                 chunk = get_exact_chunk_by_statute(act, target_sec)
                 if chunk and chunk not in exact_chunks:
                     exact_chunks.append(chunk)
-
-    # Merge alias + exact match (alias first, then exact, deduplicated)
-    priority_chunks = []
-    for c in alias_chunks + exact_chunks:
-        if c not in priority_chunks:
-            priority_chunks.append(c)
 
     filter_act = target_act or filter_act or detect_act_from_query(search_query)
 
@@ -694,10 +639,13 @@ def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversatio
 def generate_chat_title(user_message: str) -> str:
     """Generate a strict 3-4 word legal topic title from the first user message."""
     msg_clean = user_message.strip().lower()
-    greetings = {"hi", "hello", "hey", "greetings", "thanks", "thank you", "assalam", "assalam alaikum", "aoa", "good morning", "good evening"}
+    msg_no_punct = re.sub(r'[^\w\s]', '', msg_clean)
+    greeting_prefixes = ("hi", "hello", "hey", "greetings", "thanks", "thank you", "assalam", "aoa", "good morning", "good evening", "how are you", "how is it going", "hows it going", "how it going")
     
-    # Check if message is a simple greeting or extremely short non-legal word
-    if msg_clean in greetings or (len(msg_clean) <= 5 and not any(kw in msg_clean for kw in ["fir", "ppc", "crpc", "law", "bail"])):
+    has_legal_kw = any(kw in msg_clean for kw in ["fir", "ppc", "crpc", "law", "bail", "theft", "murder", "section", "article", "court", "crime", "punishment", "police", "case", "rights"])
+    
+    # Check if message is a simple greeting or non-legal conversational phrase
+    if not has_legal_kw and (msg_no_punct in greeting_prefixes or any(msg_no_punct.startswith(p) for p in greeting_prefixes) or len(msg_clean) <= 15):
         return "General Inquiry"
 
     try:
@@ -706,10 +654,9 @@ def generate_chat_title(user_message: str) -> str:
             messages=[
                 {"role": "system", "content": (
                     "You generate ultra-short chat titles for Pakistani legal assistant queries. "
-                    "Rules: exactly 3-4 words, title case, no punctuation, no quotes, no filler words like 'Chat' or 'Conversation' or 'Query'. "
-                    "Focus strictly on Pakistani statutory law. "
-                    "Always use PPC for Pakistan Penal Code, CrPC for Code of Criminal Procedure, or Constitution. NEVER use IPC or Indian Penal Code. "
-                    "Examples: 'Bail Under CrPC', 'Murder Punishment PPC', 'FIR Registration Process', 'Property Theft Claim'. "
+                    "If the user message is a greeting or non-legal question (e.g. 'Hi', 'How are you', 'Thanks'), output EXACTLY 'General Inquiry'. "
+                    "Otherwise, generate an ultra-short title: exactly 3-4 words, title case, no punctuation, no quotes, no filler words like 'Chat' or 'Conversation'. "
+                    "Focus strictly on Pakistani statutory law. Always use PPC for Pakistan Penal Code, CrPC for Code of Criminal Procedure, or Constitution. "
                     "Output ONLY the title, nothing else."
                 )},
                 {"role": "user", "content": user_message[:200]}

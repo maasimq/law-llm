@@ -24,8 +24,10 @@ def run():
         if not text:
             continue
             
-        # Passages are encoded WITHOUT the query prefix!
-        embedding = model.encode(text, normalize_embeddings=True)
+        # Truncate at Illustrations header for embedding generation to prevent dilution
+        embed_text = text.split("\nIllustrations")[0].split("\n\nIllustrations")[0] if "Illustrations" in text else text
+        
+        embedding = model.encode(embed_text, normalize_embeddings=True)
         
         out_file = EMBEDDINGS_DIR / (txt_file.stem + ".npy")
         np.save(out_file, embedding)
