@@ -98,8 +98,8 @@ def extract_citation_badge(chunk_text: str) -> tuple[str, str]:
         match = re.search(r'section\s*:\s*(\d+[a-z]?)', chunk_text, re.IGNORECASE) or re.search(r'section\s+(\d+[a-z]?)', chunk_text, re.IGNORECASE)
         badge = f"PPC § {match.group(1).upper()}" if match else "PPC"
         return badge, "Pakistan Penal Code, 1860"
-    elif "constitution" in text_lower or re.search(r'^(\d+[A-Za-z]?)\.\s', chunk_text):
-        match = re.search(r'^(\d+[A-Za-z]?)\.\s', chunk_text) or re.search(r'article\s+(\d+[a-z]?)', chunk_text, re.IGNORECASE)
+    elif "constitution" in text_lower or re.search(r'^\s*(\d+[a-zA-Z]?)\b', chunk_text):
+        match = re.search(r'article\s*:\s*(\d+[a-z]?)', chunk_text, re.IGNORECASE) or re.search(r'article\s+(\d+[a-z]?)', chunk_text, re.IGNORECASE) or re.search(r'^\s*(\d+[a-zA-Z]?)\b', chunk_text)
         badge = f"Art. {match.group(1).upper()}" if match else "Constitution"
         return badge, "Constitution of Pakistan"
 
@@ -383,12 +383,26 @@ def filter_cited_chunks(answer: str, source_chunks: list[str]) -> list[str]:
     for chunk in source_chunks:
         act_match = re.search(r'ACT:\s*(.+)', chunk, re.IGNORECASE)
         sec_match = re.search(r'(?:SECTION(?:/ARTICLE)?|ARTICLE):\s*(\d+[a-zA-Z]?)', chunk, re.IGNORECASE)
-        if not sec_match:
-            continue
-        sec_num = sec_match.group(1).upper()
         
+        sec_num = None
+        if sec_match:
+            sec_num = sec_match.group(1).upper()
+        else:
+            first_match = re.search(r'^\s*(\d+[a-zA-Z]?)\b', chunk)
+            if first_match:
+                sec_num = first_match.group(1).upper()
+
+        if not sec_num:
+            continue
+
         chunk_act_str = (act_match.group(1) if act_match else "").lower()
-        chunk_act_key = "ppc" if "penal code" in chunk_act_str or "ppc" in chunk_act_str else ("crpc" if "procedure" in chunk_act_str or "crpc" in chunk_act_str else ("constitution" if "constitution" in chunk_act_str else None))
+        if not chunk_act_str:
+            if "constitution" in chunk.lower() or "safeguards" in chunk.lower() or "article" in chunk.lower() or re.search(r'^\s*\d+[a-zA-Z]?\b', chunk):
+                chunk_act_key = "constitution"
+            else:
+                chunk_act_key = None
+        else:
+            chunk_act_key = "ppc" if "penal code" in chunk_act_str or "ppc" in chunk_act_str else ("crpc" if "procedure" in chunk_act_str or "crpc" in chunk_act_str else ("constitution" if "constitution" in chunk_act_str else None))
 
         if chunk_act_key and (chunk_act_key, sec_num) in cited_pairs:
             filtered.append(chunk)

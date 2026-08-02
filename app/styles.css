@@ -299,10 +299,10 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
     background: var(--bg-surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: 1rem 1.3rem;
-    font-size: 0.95rem;
+    padding: 1.1rem 1.4rem;
+    font-size: 1.08rem !important;
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.65 !important;
     box-shadow: var(--shadow-sm);
     display: inline-block;
 }
@@ -313,10 +313,10 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
     border: 1px solid var(--border);
     border-left: 3px solid var(--accent-gold);
     border-radius: var(--radius-md);
-    padding: 1.5rem;
-    font-size: 0.96rem;
+    padding: 1.6rem 1.8rem;
+    font-size: 1.08rem !important;
     color: var(--text-primary);
-    line-height: 1.7;
+    line-height: 1.75 !important;
     box-shadow: var(--shadow-md);
     width: 100%;
 }
@@ -324,17 +324,21 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
 /* Assistant Typography inside Markdown */
 [data-testid="stChatMessage"]:nth-child(even) [data-testid="stMarkdownContainer"] h3 {
     font-family: 'Lora', Georgia, serif !important;
-    font-size: 1.15rem !important;
+    font-size: 1.45rem !important;
+    font-weight: 700 !important;
     color: var(--accent-gold) !important;
-    margin-top: 1.4rem !important;
-    margin-bottom: 0.5rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.7rem !important;
     border-bottom: 1px solid var(--border) !important;
-    padding-bottom: 0.3rem !important;
+    padding-bottom: 0.4rem !important;
 }
 [data-testid="stChatMessage"]:nth-child(even) [data-testid="stMarkdownContainer"] h3:first-child {
     margin-top: 0 !important;
 }
-[data-testid="stChatMessage"]:nth-child(even) [data-testid="stMarkdownContainer"] p {
+[data-testid="stChatMessage"]:nth-child(even) [data-testid="stMarkdownContainer"] p,
+[data-testid="stChatMessage"]:nth-child(even) [data-testid="stMarkdownContainer"] li {
+    font-size: 1.08rem !important;
+    line-height: 1.75 !important;
     margin-bottom: 0.9rem;
 }
 [data-testid="stChatMessage"]:nth-child(even) [data-testid="stMarkdownContainer"] ul,
