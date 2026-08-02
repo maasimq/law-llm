@@ -365,17 +365,72 @@ def detect_act_from_query(query: str) -> str | None:
     return None
 
 
+def extract_all_requested_statutes(query_text: str) -> list[tuple[str | None, str]]:
+    """
+    Extract all explicit section/article references from a query, e.g.:
+    'PPC Section 379 and PPC Section 420 under CrPC Section 497' ->
+    [('Pakistan Penal Code, 1860', '379'), ('Pakistan Penal Code, 1860', '420'), ('Code of Criminal Procedure, 1898', '497')].
+    """
+    q_lower = query_text.lower()
+    found = []
+
+    # 1. Matches like "ppc section 379", "crpc section 497", "constitution article 10"
+    for m in re.finditer(r'\b(ppc|crpc|constitution)\s+(?:section|article)?\s*(\d+[a-z]?)\b', q_lower):
+        act_key = m.group(1)
+        sec = m.group(2).upper()
+        act = "Code of Criminal Procedure, 1898" if act_key == "crpc" else ("Pakistan Penal Code, 1860" if act_key == "ppc" else "Constitution of Pakistan")
+        found.append((act, sec))
+
+    # 2. Matches like "section 379 ppc", "section 420", "article 10A"
+    for m in re.finditer(r'\b(?:section|article)\s*(\d+[a-z]?)(?:\s*(ppc|crpc|constitution))?\b', q_lower):
+        sec = m.group(1).upper()
+        act_key = m.group(2)
+        if act_key:
+            act = "Code of Criminal Procedure, 1898" if act_key == "crpc" else ("Pakistan Penal Code, 1860" if act_key == "ppc" else "Constitution of Pakistan")
+        else:
+            sub = q_lower[max(0, m.start()-20):min(len(q_lower), m.end()+20)]
+            if "ppc" in sub or "penal" in sub:
+                act = "Pakistan Penal Code, 1860"
+            elif "crpc" in sub or "procedure" in sub:
+                act = "Code of Criminal Procedure, 1898"
+            elif "constitution" in sub or "article" in m.group(0):
+                act = "Constitution of Pakistan"
+            else:
+                act = None
+        if sec:
+            found.append((act, sec))
+
+    # Deduplicate while preserving order
+    seen = set()
+    unique = []
+    for ref in found:
+        if ref not in seen:
+            seen.add(ref)
+            unique.append(ref)
+
+    return unique
+
+
 def resolve_alias_chunks(query_text: str) -> list[str]:
-    """Check query against LEGAL_ALIASES and fetch exact chunks for any matches."""
+    """Check query against LEGAL_ALIASES and explicit section references, fetching exact chunks."""
     q_lower = query_text.lower().strip()
     chunks = []
 
-    # Check exact match first, then word-boundary regex match for alias keys
     matched_refs = []
+    # 1. Explicit statutory section references parsed from query
+    explicit_refs = extract_all_requested_statutes(query_text)
+    for act_name, sec_num in explicit_refs:
+        if act_name:
+            matched_refs.append((act_name, sec_num))
+        else:
+            # Bare section without act: get for all acts
+            for a in ["Code of Criminal Procedure, 1898", "Pakistan Penal Code, 1860", "Constitution of Pakistan"]:
+                matched_refs.append((a, sec_num))
+
+    # 2. Check exact match first, then word-boundary regex match for alias keys
     if q_lower in LEGAL_ALIASES:
-        matched_refs = LEGAL_ALIASES[q_lower]
+        matched_refs.extend(LEGAL_ALIASES[q_lower])
     else:
-        # Check if any alias key appears as a standalone word in the query
         for alias_key, refs in LEGAL_ALIASES.items():
             if len(alias_key) > 2 and re.search(r'\b' + re.escape(alias_key) + r'\b', q_lower):
                 matched_refs.extend(refs)
@@ -397,36 +452,11 @@ def resolve_alias_chunks(query_text: str) -> list[str]:
 
 
 def extract_requested_statute(query_text: str) -> tuple[str | None, str | None]:
-    """
-    Detect explicit section/article queries e.g.
-    'Article 10A', 'Article 10', 'Section 497', 'Section 302 PPC', '497 CrPC'.
-    Returns (act_name, section_article_number).
-    act_name is None when the query has a bare section number with no Act qualifier.
-    """
-    q_lower = query_text.lower()
-    act = detect_act_from_query(query_text)
-    
-    # Check for Article XX or Article XXA
-    art_match = re.search(r'article\s*(\d+[a-z]?)', q_lower)
-    if art_match:
-        sec = art_match.group(1).upper()
-        return "Constitution of Pakistan", sec
-
-    # Check for Section XXX or Section XXXA
-    sec_match = re.search(r'section\s*(\d+[a-z]?)', q_lower)
-    if sec_match:
-        sec = sec_match.group(1).upper()
-        return act, sec  # act may be None for bare "Section 154"
-
-    # Check for number + Act e.g. "497 crpc" or "302 ppc"
-    num_act_match = re.search(r'(\d+[a-z]?)\s*(crpc|ppc)', q_lower)
-    if num_act_match:
-        sec = num_act_match.group(1).upper()
-        act_key = num_act_match.group(2)
-        target_act = "Code of Criminal Procedure, 1898" if act_key == "crpc" else "Pakistan Penal Code, 1860"
-        return target_act, sec
-
-    return act, None
+    """Return the primary explicit section/article from a query."""
+    explicit_refs = extract_all_requested_statutes(query_text)
+    if explicit_refs:
+        return explicit_refs[0]
+    return detect_act_from_query(query_text), None
 
 
 def get_all_acts_for_section(section_num: str) -> list[str]:
