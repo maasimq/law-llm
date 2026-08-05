@@ -2,7 +2,7 @@
 ![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat)
 
-# ⚖️ Law LLM — Pakistani Legal Assistant
+# <img src="app/favicon.png" width="32" height="32" valign="middle"> Law LLM — Pakistani Legal Assistant
 
 > A RAG-powered legal assistant that searches Pakistani statutory law and answers questions in plain English — or Urdu — with exact section citations.
 

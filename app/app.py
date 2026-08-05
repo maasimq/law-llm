@@ -30,9 +30,12 @@ from rag_pipeline import run_rag_pipeline, generate_chat_title
 # ---------------------------------------------------------------------------
 # Page configuration
 # ---------------------------------------------------------------------------
+favicon_path = Path(__file__).parent / "favicon.png"
+favicon = str(favicon_path) if favicon_path.exists() else "⚖️"
+
 st.set_page_config(
     page_title="Law LLM — Pakistani Legal Assistant",
-    page_icon="⚖️",
+    page_icon=favicon,
     layout="wide",
     initial_sidebar_state="expanded",
 )
