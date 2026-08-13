@@ -1,0 +1,18 @@
+{
+  "id": "344b4c35-dc75-4cc1-a9c6-b063d9278ee4",
+  "title": "Application for Registration of",
+  "created_at": "2026-08-02T18:12:58.202939",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Draft a formal First Information Report (FIR) application under CrPC Section 154 for stolen mobile phone and cash under PPC Section 378.",
+      "sources": []
+    },
+    {
+      "role": "assistant",
+      "content": "To,\nThe Station House Officer (SHO),\n_______________,\n_______________\n\nSubject: Application for Registration of FIR regarding Theft under Section 378 of the Pakistan Penal Code, 1860\n\nRespected Sir/Madam,\n\nI, _______________________, son/daughter of _______________________, holding CNIC No. _______________________, resident of _______________________, do hereby submit this application for registration of an FIR.\n\nOn _______________________, at approximately _______________________, I was present at _______________________, when my mobile phone and cash were stolen from my possession. The incident occurred at _______________________, and I believe that the theft was committed by _______________________. The stolen items include a mobile phone and an amount of cash, totaling _______________________.\n\nI request that you register an FIR under Section 378 of the Pakistan Penal Code, 1860, and initiate an investigation into this matter. I am willing to cooperate fully with the investigation and provide any additional information that may be required.\n\nI hereby request that you take immediate action to recover my stolen property and bring the perpetrator to justice.\n\nPrayer: It is respectfully prayed that an FIR may be registered under Section 378 of the Pakistan Penal Code, 1860, and the culprit may be apprehended and punished in accordance with the law.\n\nSign/Thumb Impression: ___________\nDate: ___________\n\n**DISCLAIMER: This is a draft starting point only. It must be reviewed and verified by a licensed advocate before filing or use in any legal proceeding.**",
+      "sources": []
+    }
+  ],
+  "chat_mode": "Advocate"
+}

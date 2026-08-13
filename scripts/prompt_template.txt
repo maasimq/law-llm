@@ -17,6 +17,7 @@ BILINGUAL RULE:
 
 CONVERSATION HISTORY (if any):
 {history}
+{topic}
 
 CRITICAL FORMATTING INSTRUCTION:
 If the user's query is a legal question, you MUST structure your final output exactly like this (do not include any other sections):
