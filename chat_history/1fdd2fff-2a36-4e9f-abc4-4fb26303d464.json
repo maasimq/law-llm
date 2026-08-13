@@ -1,0 +1,22 @@
+{
+  "id": "1fdd2fff-2a36-4e9f-abc4-4fb26303d464",
+  "title": "Reporting Murder Under CrPC",
+  "created_at": "2026-08-13T20:46:31.561294",
+  "messages": [
+    {
+      "role": "user",
+      "content": "If I see a person commiting murder. What should i do?",
+      "sources": []
+    },
+    {
+      "role": "assistant",
+      "content": "### Explanation\nIf you witness a person committing murder, it is essential to understand the legal concept of Qatl-e-amd, which refers to the intentional act of causing death. According to the Pakistan Penal Code, 1860, Qatl-e-amd is defined in Section 300, which states that whoever, with the intention of causing death or bodily injury, does an act that is likely to cause death, commits Qatl-e-amd. The punishment for Qatl-e-amd is outlined in Section 302, which includes death as Qisas, death or imprisonment for life as Ta'zir, or imprisonment for up to 25 years. As a witness, it is crucial to report the incident to the authorities and provide any relevant information to aid in the investigation.\n\n### Cited Statutory Sources\n- Pakistan Penal Code, 1860, Section 300\n- Pakistan Penal Code, 1860, Section 302",
+      "sources": [
+        "ACT: Pakistan Penal Code, 1860\nSECTION/ARTICLE: 300\nTITLE: Qatl-e-Amd:\nCHAPTER: INTRODUCTION\n============================================================\n\nQatl-e-Amd:\nWhoever, with the intention of causing death or with the intention of\ncausing bodily injury to a person, by doing an act which in the ordinary course of nature is\nlikely to cause death, or with-the knowledge that his act is so imminently dangerous that it\nmust in all probability cause death, causes the death of such person, is said to commit\nqatl-e-amd.\n",
+        "ACT: Pakistan Penal Code, 1860\nSECTION/ARTICLE: 302\nTITLE: Punishment of qatl-i-amd:\nCHAPTER: INTRODUCTION\n============================================================\n\nPunishment of qatl-i-amd:\nWhoever commits qatl-e-amd shall, subject to the\nprovisions of this Chapter be:\n(a)\npunished with death as qisas;\n(b)\npunished with death or imprisonment for life as ta'zir having regard to the facts and\ncircumstances of the case, if the proof in either of the forms specified in Section 304 is not\navailable; or\n(c)\npunished with imprisonment of either description for a term which may extend to\ntwenty-five years, where according to the injunctions of Islam the punishment of qisas is\nnot applicable\n133\n[:]\n133\n134\n[\nProvided\nthat nothing in clause (c) shall apply where the principle of\nfasad-fil-arz\nis attracted and in such cases only clause (a) or clause (b) shall apply.\n]\n134\n"
+      ]
+    }
+  ],
+  "chat_mode": "Layman",
+  "chat_topic": "Murder case"
+}

@@ -714,17 +714,40 @@ def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversatio
     return answer, retrieved_docs
 
 
-def generate_chat_title(user_message: str) -> str:
-    """Generate a strict 3-4 word legal topic title from the first user message."""
-    msg_clean = user_message.strip().lower()
-    msg_no_punct = re.sub(r'[^\w\s]', '', msg_clean)
+def generate_chat_title(user_message: str = "", chat_topic: str | None = None, *args, **kwargs) -> str:
+    """Generate a strict 2-3 word legal topic title based on topic and first user prompt."""
+    if not chat_topic and len(args) > 0:
+        chat_topic = args[0]
+    if not chat_topic:
+        chat_topic = kwargs.get("topic") or kwargs.get("chat_topic")
+
+    msg_clean = user_message.strip() if user_message else ""
+    topic_clean = str(chat_topic).strip() if chat_topic else ""
+
+    # Parse fallback combined string if passed as single arg "Topic: Prompt"
+    if ":" in msg_clean and not topic_clean:
+        parts = msg_clean.split(":", 1)
+        topic_clean = parts[0].strip()
+        msg_clean = parts[1].strip()
+
+    if not msg_clean and topic_clean:
+        words = topic_clean.split()
+        return " ".join(words[:3]).title()
+
+    msg_no_punct = re.sub(r'[^\w\s]', '', msg_clean.lower())
     greeting_prefixes = ("hi", "hello", "hey", "greetings", "thanks", "thank you", "assalam", "aoa", "good morning", "good evening", "how are you", "how is it going", "hows it going", "how it going")
     
-    has_legal_kw = any(kw in msg_clean for kw in ["fir", "ppc", "crpc", "law", "bail", "theft", "murder", "section", "article", "court", "crime", "punishment", "police", "case", "rights"])
+    has_legal_kw = any(kw in msg_clean.lower() for kw in ["fir", "ppc", "crpc", "law", "bail", "theft", "murder", "section", "article", "court", "crime", "punishment", "police", "case", "rights"])
     
     # Check if message is a simple greeting or non-legal conversational phrase
-    if not has_legal_kw and (msg_no_punct in greeting_prefixes or any(msg_no_punct.startswith(p) for p in greeting_prefixes) or len(msg_clean) <= 15):
+    if not has_legal_kw and not topic_clean and (msg_no_punct in greeting_prefixes or any(msg_no_punct.startswith(p) for p in greeting_prefixes) or len(msg_clean) <= 15):
         return "General Inquiry"
+
+    prompt_content = ""
+    if topic_clean:
+        prompt_content += f"Topic: {topic_clean}\n"
+    if msg_clean:
+        prompt_content += f"User Question: {msg_clean[:200]}"
 
     try:
         response = client_groq.chat.completions.create(
@@ -732,25 +755,26 @@ def generate_chat_title(user_message: str) -> str:
             messages=[
                 {"role": "system", "content": (
                     "You generate ultra-short chat titles for Pakistani legal assistant queries. "
-                    "If the user message is a greeting or non-legal question (e.g. 'Hi', 'How are you', 'Thanks'), output EXACTLY 'General Inquiry'. "
-                    "Otherwise, generate an ultra-short title: exactly 3-4 words, title case, no punctuation, no quotes, no filler words like 'Chat' or 'Conversation'. "
+                    "Generate an ultra-short title based on the Topic and User Question provided. "
+                    "CRITICAL: The title MUST be EXACTLY 2 to 3 words maximum. Never exceed 3 words. "
+                    "Use Title Case, no punctuation, no quotes, no filler words like 'Chat' or 'Conversation' or 'Overview'. "
                     "Focus strictly on Pakistani statutory law. Always use PPC for Pakistan Penal Code, CrPC for Code of Criminal Procedure, or Constitution. "
-                    "Output ONLY the title, nothing else."
+                    "Output ONLY the 2-3 word title, nothing else."
                 )},
-                {"role": "user", "content": user_message[:200]}
+                {"role": "user", "content": prompt_content}
             ],
             temperature=0.1,
-            max_tokens=12
+            max_tokens=10
         )
-        title = response.choices[0].message.content.strip(' "\n')
-        # Replace accidental IPC references
+        title = response.choices[0].message.content.strip(' "\n.')
         title = re.sub(r'\bIPC\b', 'PPC', title, flags=re.IGNORECASE)
         words = title.split()
-        return " ".join(words[:4]) if words else user_message[:30]
+        return " ".join(words[:3]) if words else (topic_clean or msg_clean[:20])
     except Exception as e:
         print(f"[TITLE GENERATION ERROR] {e}", file=sys.stderr)
-        words = user_message.split()
-        return " ".join(words[:4])
+        source = f"{topic_clean} {msg_clean}".strip()
+        words = source.split()
+        return " ".join(words[:3])
 
 
 def run_logging_pipeline(questions: list[str], log_file: str | None = None, filter_act: str | None = None):

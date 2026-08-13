@@ -145,6 +145,8 @@ def load_session(session_id: str):
             st.session_state.chat_mode = data.get("chat_mode", "Layman")
             st.session_state.chat_topic = data.get("chat_topic", "")
             st.session_state.topic_set = bool(st.session_state.chat_topic)
+            st.session_state.show_topic_input = False
+            st.session_state.pop("topic_error", None)
             st.rerun()
 
 def save_session():
@@ -152,13 +154,18 @@ def save_session():
     if not st.session_state.messages:
         return
         
-    # Auto-generate title from first user message if missing
-    if not st.session_state.session_title:
-        first_user_msg = next((m["content"] for m in st.session_state.messages if m["role"] == "user"), "New Conversation")
-        if first_user_msg == "New Conversation":
-            st.session_state.session_title = first_user_msg
+    # Auto-generate 2-3 word title from first user message and topic
+    if not st.session_state.session_title or st.session_state.session_title == "New Conversation":
+        first_user_msg = next((m["content"] for m in st.session_state.messages if m["role"] == "user"), "")
+        topic = st.session_state.get("chat_topic", "")
+        if first_user_msg or topic:
+            try:
+                st.session_state.session_title = generate_chat_title(first_user_msg, topic)
+            except TypeError:
+                combined = f"{topic}: {first_user_msg}" if (topic and first_user_msg) else (topic or first_user_msg)
+                st.session_state.session_title = generate_chat_title(combined)
         else:
-            st.session_state.session_title = generate_chat_title(first_user_msg)
+            st.session_state.session_title = "New Conversation"
         
     history_dir = get_history_dir()
     filepath = history_dir / f"{st.session_state.session_id}.json"
@@ -183,6 +190,8 @@ def start_new_session():
     st.session_state.created_at = datetime.datetime.now().isoformat()
     st.session_state.chat_topic = ""
     st.session_state.topic_set = False
+    st.session_state.show_topic_input = False
+    st.session_state.pop("topic_error", None)
     st.rerun()
 
 def delete_session(session_id: str):
@@ -219,20 +228,6 @@ def render_sidebar():
         # Multi-chat New Button
         if st.button("➕ New Chat", use_container_width=True):
             start_new_session()
-
-        # Active Topic Display in Sidebar
-        active_topic = st.session_state.get("chat_topic", "")
-        if active_topic:
-            st.markdown(
-                f'<div style="margin-top:0.8rem; padding:8px 12px; background:rgba(212,175,55,0.08); '
-                f'border:1px solid rgba(212,175,55,0.25); border-radius:8px; font-size:0.82rem;">'
-                f'<span style="color:#D4AF37;">📌 Topic:</span> '
-                f'<span style="color:var(--text-secondary);">{html.escape(active_topic)}</span></div>',
-                unsafe_allow_html=True
-            )
-            if st.button("✕ Clear Topic", use_container_width=True, key="sidebar_clear_topic"):
-                st.session_state.chat_topic = ""
-                st.rerun()
 
         st.markdown('<hr style="margin: 1.5rem 0 1rem; border-color: rgba(255,255,255,0.06)">', unsafe_allow_html=True)
 
@@ -296,7 +291,7 @@ def render_sidebar():
 
 
 def render_empty_state():
-    """Render the quiet, professional legal hero screen with integrated topic selector."""
+    """Render the quiet, professional legal hero screen with mode toggle and flat topic entry."""
     # Show full hero only when no messages exist
     if not st.session_state.messages:
         st.markdown(
@@ -304,39 +299,109 @@ def render_empty_state():
             <div class="hero-section">
                 <div class="hero-section-mark-container">{SECTION_MARK_SVG}</div>
                 <div class="hero-title">Pakistani Legal Assistant</div>
-                <p class="hero-subtitle">Search statutory law and constitutional provisions with exact section citations.</p>
-                <p class="hero-subtitle urdu-subtitle" style="margin-top: 1rem; opacity: 0.8; font-family: 'Noto Nastaliq Urdu', serif;">(آپ قانون کے متعلق سوالات اردو میں بھی پوچھ سکتے ہیں)</p>
+                <p class="hero-subtitle">Search statutory law and constitutional provisions.</p>
+                <p class="hero-subtitle urdu-subtitle" style="margin-top: 0.3rem; margin-bottom: 0.6rem; opacity: 0.8; font-family: 'Noto Nastaliq Urdu', serif;">(آپ قانون کے متعلق سوالات اردو میں بھی پوچھ سکتے ہیں)</p>
             </div>
             """,
             unsafe_allow_html=True,
         )
 
-        # Integrated topic selector — non-blocking, part of hero flow
+        # Mode Segmented Toggle & Topic Selection — shown ONLY during onboarding before topic is set
         if not st.session_state.get("topic_set"):
-            _, col, _ = st.columns([1, 2, 1])
+            current_mode = st.session_state.get("chat_mode", "Layman")
+            default_pill = "🗣️ Layman" if current_mode == "Layman" else "⚖️ Advocate"
+            st.markdown('<div style="display: flex; justify-content: center; margin-top: 0.2rem; margin-bottom: 0.1rem;">', unsafe_allow_html=True)
+            selected_pill = st.pills(
+                "Mode",
+                options=["🗣️ Layman", "⚖️ Advocate"],
+                selection_mode="single",
+                default=default_pill,
+                label_visibility="collapsed"
+            )
+            st.markdown('</div>', unsafe_allow_html=True)
+            if selected_pill:
+                new_mode = "Layman" if "Layman" in selected_pill else "Advocate"
+                if new_mode != current_mode:
+                    st.session_state.chat_mode = new_mode
+                    st.rerun()
+            st.markdown(
+                '<div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem; margin-bottom: 1.5rem;">'
+                'Advocate mode enables FIR & document drafting.'
+                '</div>',
+                unsafe_allow_html=True
+            )
+
+            # Integrated topic entry — flat on page background
+            _, col, _ = st.columns([1, 2.2, 1])
             with col:
                 st.markdown(
-                    '<p style="text-align:center; color:var(--text-muted); font-size:0.85rem; margin-bottom:0.3rem;">'
-                    'Set a topic to keep the conversation focused (optional)</p>',
+                    """
+                    <div class="topic-section-header">
+                        <h3 class="topic-heading">What's this chat about?</h3>
+                    </div>
+                    """,
                     unsafe_allow_html=True
                 )
-                topic_input = st.text_input(
-                    "Chat topic",
-                    placeholder="e.g. Bail, FIR procedure, Theft under PPC...",
-                    label_visibility="collapsed",
-                    key="topic_input_field"
-                )
-                tc1, tc2 = st.columns([1, 1])
-                with tc1:
-                    if st.button("Set Topic", use_container_width=True, type="primary"):
-                        st.session_state.chat_topic = topic_input.strip()
-                        st.session_state.topic_set = True
-                        st.rerun()
-                with tc2:
-                    if st.button("Skip", use_container_width=True):
-                        st.session_state.chat_topic = ""
-                        st.session_state.topic_set = True
-                        st.rerun()
+
+                if not st.session_state.get("show_topic_input"):
+                    st.markdown(
+                        '<p class="topic-hint">Focus conversation on a topic (optional)</p>',
+                        unsafe_allow_html=True
+                    )
+                    st.markdown('<div class="topic-btn-container">', unsafe_allow_html=True)
+                    tc1, tc2 = st.columns([1, 1])
+                    with tc1:
+                        if st.button("Set Topic", use_container_width=True, type="primary"):
+                            st.session_state.show_topic_input = True
+                            st.session_state.pop("topic_error", None)
+                            st.rerun()
+                    with tc2:
+                        if st.button("Skip", use_container_width=True, type="secondary"):
+                            st.session_state.chat_topic = ""
+                            st.session_state.topic_set = True
+                            st.session_state.show_topic_input = False
+                            st.session_state.pop("topic_error", None)
+                            st.rerun()
+                    st.markdown('</div>', unsafe_allow_html=True)
+                else:
+                    st.markdown(
+                        '<p class="topic-hint">Enter topic (at least 1 word):</p>',
+                        unsafe_allow_html=True
+                    )
+                    topic_input = st.text_input(
+                        "Chat topic",
+                        placeholder="e.g. Bail, FIR procedure, Theft under PPC...",
+                        label_visibility="collapsed",
+                        key="topic_input_field"
+                    )
+
+                    if st.session_state.get("topic_error"):
+                        st.markdown(
+                            f'<p class="topic-error-msg">{html.escape(st.session_state.topic_error)}</p>',
+                            unsafe_allow_html=True
+                        )
+
+                    st.markdown('<div class="topic-btn-container">', unsafe_allow_html=True)
+                    tc1, tc2 = st.columns([1, 1])
+                    with tc1:
+                        if st.button("Confirm Topic", use_container_width=True, type="primary"):
+                            val = topic_input.strip()
+                            if not val:
+                                st.session_state.topic_error = "Please enter a topic (at least 1 word)."
+                                st.rerun()
+                            else:
+                                st.session_state.pop("topic_error", None)
+                                st.session_state.chat_topic = val
+                                st.session_state.topic_set = True
+                                st.session_state.show_topic_input = False
+                                save_session()
+                                st.rerun()
+                    with tc2:
+                        if st.button("Cancel", use_container_width=True, type="secondary"):
+                            st.session_state.show_topic_input = False
+                            st.session_state.pop("topic_error", None)
+                            st.rerun()
+                    st.markdown('</div>', unsafe_allow_html=True)
 
 
 def clean_statutory_text(raw_text: str) -> str:
@@ -548,6 +613,8 @@ if "chat_topic" not in st.session_state:
     st.session_state.chat_topic = ""
 if "topic_set" not in st.session_state:
     st.session_state.topic_set = False
+if "show_topic_input" not in st.session_state:
+    st.session_state.show_topic_input = False
 
 # ============================================================
 # MAIN APP
@@ -558,17 +625,6 @@ render_sidebar()
 # HERO / TOPIC SELECTOR (integrated, non-blocking)
 render_empty_state()
 
-# Show prominent topic badge when a topic is active
-if st.session_state.get("chat_topic"):
-    st.markdown(
-        f'<div style="text-align:center; margin:0.5rem 0 1rem;">'
-        f'<span style="display:inline-block; background:rgba(212,175,55,0.10); color:#D4AF37; '
-        f'padding:6px 18px; border-radius:20px; font-size:0.9rem; font-weight:500; '
-        f'border:1px solid rgba(212,175,55,0.35); letter-spacing:0.02em;">'
-        f'📌 Topic: {html.escape(st.session_state.chat_topic)}</span></div>',
-        unsafe_allow_html=True
-    )
-
 # Handle prefill & chat input
 prefill = st.session_state.pop("pending_question", None) if st.session_state.pending_question else None
 
@@ -578,34 +634,24 @@ current_mode = st.session_state.get("chat_mode", "Layman")
 # Check if user has submitted a message in this run or previous runs
 has_submitted = bool(st.session_state.get("main_chat_input")) or bool(st.session_state.pending_question)
 
-if not st.session_state.messages and not has_submitted:
-    default_pill = "🗣️ Layman" if current_mode == "Layman" else "⚖️ Advocate"
-    selected_pill = st.pills(
-        "Mode",
-        options=["🗣️ Layman", "⚖️ Advocate"],
-        selection_mode="single",
-        default=default_pill,
-        label_visibility="collapsed"
-    )
-    if selected_pill:
-        new_mode = "Layman" if "Layman" in selected_pill else "Advocate"
-        if new_mode != current_mode:
-            st.session_state.chat_mode = new_mode
-            st.rerun()
-    st.markdown(
-        '<div style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 0.8rem; margin-bottom: 2.5rem;">'
-        'Advocate mode adds FIR and case brief drafting.'
-        '</div>',
-        unsafe_allow_html=True
-    )
-else:
-    # Chat has started or prompt was submitted: lock mode and show mode badge immediately
+# Render Top Header Bar when chat is active or topic is set (Claude.ai / ChatGPT style)
+if st.session_state.messages or has_submitted or st.session_state.get("chat_topic"):
+    topic_val = st.session_state.get("chat_topic", "")
+    title_val = st.session_state.get("session_title", "")
+    display_title = topic_val if topic_val else (title_val if title_val and title_val != "New Conversation" else "")
+    
+    topic_html = ""
+    if display_title:
+        topic_html = f'<span class="chat-topic-header-pill">📌 Topic: {html.escape(display_title)}</span>'
+        
     mode_emoji = "🗣️" if current_mode == "Layman" else "⚖️"
+    mode_html = f'<span class="chat-mode-header-pill">{mode_emoji} {current_mode} Mode</span>'
+    
     st.markdown(
-        f'<div style="text-align: center; margin-bottom: 1.5rem;">'
-        f'<span style="background: rgba(255,255,255,0.05); color: var(--text-secondary); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1);">'
-        f'{mode_emoji} {current_mode} Mode'
-        f'</span></div>',
+        f'<div class="chat-top-header">'
+        f'<div class="chat-top-header-left">{topic_html}</div>'
+        f'<div class="chat-top-header-right">{mode_html}</div>'
+        f'</div>',
         unsafe_allow_html=True
     )
 
