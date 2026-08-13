@@ -22,9 +22,6 @@ import streamlit as st
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
-# Force clear cache so Streamlit picks up new functions in rag_pipeline
-sys.modules.pop("rag_pipeline", None)
-
 from rag_pipeline import run_rag_pipeline, generate_chat_title
 
 # ---------------------------------------------------------------------------
@@ -146,6 +143,8 @@ def load_session(session_id: str):
             st.session_state.messages = data.get("messages", [])
             st.session_state.session_title = data.get("title", "Untitled Chat")
             st.session_state.chat_mode = data.get("chat_mode", "Layman")
+            st.session_state.chat_topic = data.get("chat_topic", "")
+            st.session_state.topic_set = bool(st.session_state.chat_topic)
             st.rerun()
 
 def save_session():
@@ -169,7 +168,8 @@ def save_session():
         "title": st.session_state.session_title,
         "created_at": st.session_state.created_at,
         "messages": st.session_state.messages,
-        "chat_mode": st.session_state.chat_mode
+        "chat_mode": st.session_state.chat_mode,
+        "chat_topic": st.session_state.get("chat_topic", "")
     }
     
     with open(filepath, "w", encoding="utf-8") as f:
@@ -181,6 +181,8 @@ def start_new_session():
     st.session_state.messages = []
     st.session_state.session_title = ""
     st.session_state.created_at = datetime.datetime.now().isoformat()
+    st.session_state.chat_topic = ""
+    st.session_state.topic_set = False
     st.rerun()
 
 def delete_session(session_id: str):
@@ -212,14 +214,26 @@ def render_sidebar():
             unsafe_allow_html=True,
         )
 
-        # Removed mode selector from sidebar
-
         st.markdown('<hr style="margin: 1.5rem 0 1rem; border-color: rgba(255,255,255,0.06)">', unsafe_allow_html=True)
 
         # Multi-chat New Button
         if st.button("➕ New Chat", use_container_width=True):
             start_new_session()
-            
+
+        # Active Topic Display in Sidebar
+        active_topic = st.session_state.get("chat_topic", "")
+        if active_topic:
+            st.markdown(
+                f'<div style="margin-top:0.8rem; padding:8px 12px; background:rgba(212,175,55,0.08); '
+                f'border:1px solid rgba(212,175,55,0.25); border-radius:8px; font-size:0.82rem;">'
+                f'<span style="color:#D4AF37;">📌 Topic:</span> '
+                f'<span style="color:var(--text-secondary);">{html.escape(active_topic)}</span></div>',
+                unsafe_allow_html=True
+            )
+            if st.button("✕ Clear Topic", use_container_width=True, key="sidebar_clear_topic"):
+                st.session_state.chat_topic = ""
+                st.rerun()
+
         st.markdown('<hr style="margin: 1.5rem 0 1rem; border-color: rgba(255,255,255,0.06)">', unsafe_allow_html=True)
 
         # Chat History List
@@ -282,20 +296,47 @@ def render_sidebar():
 
 
 def render_empty_state():
-    """Render the quiet, professional legal hero screen."""
-    st.markdown(
-        f"""
-        <div class="hero-section">
-            <div class="hero-section-mark-container">{SECTION_MARK_SVG}</div>
-            <div class="hero-title">Pakistani Legal Assistant</div>
-            <p class="hero-subtitle">Search statutory law and constitutional provisions with exact section citations.</p>
-            <p class="hero-subtitle urdu-subtitle" style="margin-top: 1rem; opacity: 0.8; font-family: 'Noto Nastaliq Urdu', serif;">(آپ قانون کے متعلق سوالات اردو میں بھی پوچھ سکتے ہیں)</p>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-    
-    # Popular topics removed as per user request
+    """Render the quiet, professional legal hero screen with integrated topic selector."""
+    # Show full hero only when no messages exist
+    if not st.session_state.messages:
+        st.markdown(
+            f"""
+            <div class="hero-section">
+                <div class="hero-section-mark-container">{SECTION_MARK_SVG}</div>
+                <div class="hero-title">Pakistani Legal Assistant</div>
+                <p class="hero-subtitle">Search statutory law and constitutional provisions with exact section citations.</p>
+                <p class="hero-subtitle urdu-subtitle" style="margin-top: 1rem; opacity: 0.8; font-family: 'Noto Nastaliq Urdu', serif;">(آپ قانون کے متعلق سوالات اردو میں بھی پوچھ سکتے ہیں)</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        # Integrated topic selector — non-blocking, part of hero flow
+        if not st.session_state.get("topic_set"):
+            _, col, _ = st.columns([1, 2, 1])
+            with col:
+                st.markdown(
+                    '<p style="text-align:center; color:var(--text-muted); font-size:0.85rem; margin-bottom:0.3rem;">'
+                    'Set a topic to keep the conversation focused (optional)</p>',
+                    unsafe_allow_html=True
+                )
+                topic_input = st.text_input(
+                    "Chat topic",
+                    placeholder="e.g. Bail, FIR procedure, Theft under PPC...",
+                    label_visibility="collapsed",
+                    key="topic_input_field"
+                )
+                tc1, tc2 = st.columns([1, 1])
+                with tc1:
+                    if st.button("Set Topic", use_container_width=True, type="primary"):
+                        st.session_state.chat_topic = topic_input.strip()
+                        st.session_state.topic_set = True
+                        st.rerun()
+                with tc2:
+                    if st.button("Skip", use_container_width=True):
+                        st.session_state.chat_topic = ""
+                        st.session_state.topic_set = True
+                        st.rerun()
 
 
 def clean_statutory_text(raw_text: str) -> str:
@@ -471,16 +512,18 @@ def run_pipeline_with_loading(question: str):
 
     placeholder = st.empty()
     mode_val = st.session_state.get("chat_mode", "Layman").lower()
+    chat_topic = st.session_state.get("chat_topic", "") or None
 
     _loading(placeholder, "Translating query...")
-    answer, retrieved_docs = answer_question(
+    answer, retrieved_docs, urdu_verified = answer_question(
         question,
         conversation_history=st.session_state.messages,
         mode=mode_val,
         on_stage=lambda msg: _loading(placeholder, msg),
+        chat_topic=chat_topic,
     )
     placeholder.empty()
-    return answer, retrieved_docs
+    return answer, retrieved_docs, urdu_verified
 
 
 # Footer removed as per user request
@@ -501,6 +544,10 @@ if "chat_mode" not in st.session_state:
     st.session_state.chat_mode = "Layman"
 if "pending_question" not in st.session_state:
     st.session_state.pending_question = None
+if "chat_topic" not in st.session_state:
+    st.session_state.chat_topic = ""
+if "topic_set" not in st.session_state:
+    st.session_state.topic_set = False
 
 # ============================================================
 # MAIN APP
@@ -508,8 +555,19 @@ if "pending_question" not in st.session_state:
 
 render_sidebar()
 
-# PERSISTENT HEADER: Render logo, title, subtitle, and popular topics unconditionally
+# HERO / TOPIC SELECTOR (integrated, non-blocking)
 render_empty_state()
+
+# Show prominent topic badge when a topic is active
+if st.session_state.get("chat_topic"):
+    st.markdown(
+        f'<div style="text-align:center; margin:0.5rem 0 1rem;">'
+        f'<span style="display:inline-block; background:rgba(212,175,55,0.10); color:#D4AF37; '
+        f'padding:6px 18px; border-radius:20px; font-size:0.9rem; font-weight:500; '
+        f'border:1px solid rgba(212,175,55,0.35); letter-spacing:0.02em;">'
+        f'📌 Topic: {html.escape(st.session_state.chat_topic)}</span></div>',
+        unsafe_allow_html=True
+    )
 
 # Handle prefill & chat input
 prefill = st.session_state.pop("pending_question", None) if st.session_state.pending_question else None
@@ -581,7 +639,7 @@ if user_input:
         render_markdown_rtl(user_input)
 
     try:
-        answer, source_chunks = run_pipeline_with_loading(user_input)
+        answer, source_chunks, urdu_verified = run_pipeline_with_loading(user_input)
         source_chunks = filter_cited_chunks(answer, source_chunks)
     except Exception as e:
         print(f"[SERVER ERROR] RAG Pipeline Error: {e}", file=sys.stderr)
@@ -593,9 +651,23 @@ if user_input:
         else:
             answer = "I couldn't find relevant statutory provisions in the PPC, CrPC, or Constitution for that query — try rephrasing, or ask about Bail, FIR, Theft, or Fundamental Rights."
         source_chunks = []
+        urdu_verified = True
 
     with st.chat_message("assistant", avatar="⚖️"):
         render_markdown_rtl(answer)
+
+        if not urdu_verified:
+            st.markdown(
+                '<div style="margin-top:0.8rem; padding:10px 14px; background:rgba(255,165,0,0.08); '
+                'border:1px solid rgba(255,165,0,0.30); border-left:3px solid #FFA500; '
+                'border-radius:6px; font-size:0.85rem; line-height:1.6;">'
+                '<span style="color:#FFA500; font-weight:600;">⚠️ Verification Notice</span><br>'
+                '<span style="color:#FFA500;">اردو جواب کی تصدیق نہیں ہو سکی — براہ کرم کسی مستند ذریعے سے تصدیق کریں۔</span><br>'
+                '<span style="color:rgba(255,165,0,0.7); font-size:0.78rem;">'
+                'This Urdu response could not be fully verified. Please cross-check with an authoritative source.</span>'
+                '</div>',
+                unsafe_allow_html=True
+            )
 
         is_refusal = (
             "restricted to Advocate mode" in answer or
