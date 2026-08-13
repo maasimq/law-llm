@@ -277,39 +277,31 @@ def rerank_with_cross_encoder(query: str, candidates: list[str], top_k: int = 3)
         return candidates[:top_k]
 
 
-def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_history: list[dict] | None = None, mode: str = "layman") -> str:
-    """Format the final prompt for the LLM using the loaded prompt template.
-    
-    Args:
-        query_text: The user's current question.
-        retrieved_docs: List of retrieved chunk texts.
-        conversation_history: Optional list of recent messages [{"role": ..., "content": ...}]
-                             to provide conversational context to the LLM.
-        mode: "layman" or "advocate" to switch formatting instructions.
-    """
-    # Truncate each document to ~1500 characters (approx 375 tokens)
-    # 3 chunks × 1500 = 4500 chars context + ~800 prompt + ~500 history = ~5800 chars total
-    # safely under Groq free-tier 6000 TPM per-request limit
+def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_history: list[dict] | None = None, mode: str = "layman", chat_topic: str | None = None) -> str:
+    """Format the final prompt for the LLM using the loaded prompt template."""
     truncated_docs = [doc[:1500] for doc in retrieved_docs]
     context_block = "\n\n---\n\n".join(truncated_docs)
 
-    # Build conversation history string (last 3 messages only to save tokens)
     history_block = "None"
     if conversation_history:
-        recent = conversation_history[-6:]  # Last 3 Q&A pairs
+        recent = conversation_history[-6:]
         history_lines = []
         for msg in recent:
             role = "User" if msg["role"] == "user" else "Assistant"
-            content = msg["content"][:200]  # tighter truncation per message
+            content = msg["content"][:200]
             history_lines.append(f"{role}: {content}")
         history_block = "\n".join(history_lines)
-    
+
+    topic_block = ""
+    if chat_topic and chat_topic.strip():
+        topic_block = f"\nCHAT TOPIC CONSTRAINT: This conversation is focused on '{chat_topic.strip()}'. If the user's question is unrelated to this topic, politely redirect them back to it.\n"
+
     if mode.lower() == "advocate":
         template = load_advocate_prompt_template()
     else:
         template = load_prompt_template()
-        
-    return template.format(context=context_block, question=query_text, history=history_block)
+
+    return template.format(context=context_block, question=query_text, history=history_block, topic=topic_block)
 
 
 import time
@@ -544,8 +536,45 @@ def translate_query_to_english(query: str) -> str:
         return query
 
 
-def answer_question(question: str, filter_act: str | None = None, n_results: int = 3, conversation_history: list[dict] | None = None, mode: str = "layman", on_stage=None) -> tuple[str, list[str]]:
-    """Single question-to-answer function that combines retrieval and LLM generation."""
+def verify_urdu_answer(answer: str, question: str) -> bool:
+    """Call Groq to verify that an Urdu answer is contextually accurate and not hallucinated.
+    Also checks for script contamination (Devanagari/Hindi mixed in).
+    Returns True if answer passes verification, False if it fails."""
+    # Pre-check: Detect Devanagari (Hindi) script contamination
+    devanagari_chars = sum(1 for c in answer if '\u0900' <= c <= '\u097F')
+    if devanagari_chars > 3:
+        print(f"[URDU VERIFY] Devanagari contamination detected ({devanagari_chars} chars)", file=sys.stderr)
+        return False
+
+    try:
+        response = client_groq.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            messages=[
+                {"role": "system", "content": (
+                    "You are a Pakistani legal fact-checker. You will be given a question and an Urdu answer about Pakistani law. "
+                    "Check TWO things: "
+                    "1. Whether the answer is contextually relevant and does not contain obvious factual errors about Pakistani law (PPC, CrPC, Constitution). "
+                    "2. Whether the answer is written in proper Urdu Nastaliq script (NOT Hindi/Devanagari, NOT Cyrillic, NOT any other script). "
+                    "Reply with ONLY 'PASS' if both checks pass, or 'FAIL' if either check fails. "
+                    "No explanation, just PASS or FAIL."
+                )},
+                {"role": "user", "content": f"Question: {question[:300]}\n\nUrdu Answer: {answer[:800]}"}
+            ],
+            temperature=0.0,
+            max_tokens=5
+        )
+        verdict = response.choices[0].message.content.strip().upper()
+        return "FAIL" not in verdict
+    except Exception as e:
+        print(f"[URDU VERIFY ERROR] {e}", file=sys.stderr)
+        return True  # On error, default to showing the answer
+
+
+def answer_question(question: str, filter_act: str | None = None, n_results: int = 3, conversation_history: list[dict] | None = None, mode: str = "layman", on_stage=None, chat_topic: str | None = None) -> tuple[str, list[str], bool]:
+    """Single question-to-answer function that combines retrieval and LLM generation.
+    Returns (answer, retrieved_docs, urdu_verified) where urdu_verified is True if
+    the Urdu answer passed verification (or the answer is in English).
+    """
     def _stage(msg):
         if on_stage:
             on_stage(msg)
@@ -553,9 +582,9 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     # Short-circuit: skip retrieval entirely for conversational messages
     if is_conversational(question):
         _stage("Drafting answer...")
-        final_prompt = build_rag_prompt(question, [], conversation_history, mode)
+        final_prompt = build_rag_prompt(question, [], conversation_history, mode, chat_topic)
         answer = generate_answer(final_prompt)
-        return answer, []
+        return answer, [], True
 
     lang = detect_language(question)
     if lang == "urdu":
@@ -635,11 +664,11 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
         # Otherwise, let it pass to LLM.
         pass
 
-    final_prompt = build_rag_prompt(question, retrieved_docs, conversation_history, mode)
+    final_prompt = build_rag_prompt(question, retrieved_docs, conversation_history, mode, chat_topic)
     _stage("Drafting answer...")
     answer = generate_answer(final_prompt)
 
-    # If the answer is a refusal / out-of-scope response, return empty sources so no irrelevant citation cards render
+    # If the answer is a refusal / out-of-scope response, return empty sources
     answer_lower = answer.lower()
     refusal_keywords = [
         "do not have sufficient information",
@@ -652,9 +681,15 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
         "not provided in the given context",
     ]
     if REFUSAL_SENTENCE in answer or any(kw in answer_lower for kw in refusal_keywords):
-        return answer, []
+        return answer, [], True
 
-    return answer, retrieved_docs
+    # Urdu answer verification
+    urdu_verified = True
+    if lang == "urdu" and bool(re.search(r'[\u0600-\u06FF]', answer)):
+        _stage("Verifying Urdu context...")
+        urdu_verified = verify_urdu_answer(answer, question)
+
+    return answer, retrieved_docs, urdu_verified
 
 
 def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversation_history: list[dict] | None = None, mode: str = "layman"):
@@ -662,7 +697,7 @@ def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversatio
     print("\n=== RAG Pipeline Execution ===")
     print(f"[{mode.upper()} MODE]")
     print("[1] Retrieving legal context...")
-    answer, retrieved_docs = answer_question(query_text, filter_act=filter_act, conversation_history=conversation_history, mode=mode)
+    answer, retrieved_docs, _ = answer_question(query_text, filter_act=filter_act, conversation_history=conversation_history, mode=mode)
     print("[2] Prompt built and answer generated.")
     print("\n=== FINAL ANSWER ===")
     print(answer)
