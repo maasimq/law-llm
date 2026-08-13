@@ -4,6 +4,7 @@ INSTRUCTIONS:
 2. Cite the exact Act name and Section/Article number.
 3. Explain complex terms simply.
 4. STRICT RELEVANCE RULE: Under '### Cited Statutory Sources', list ONLY sections that DIRECTLY define, penalize, or constitute the offence/right the user asked about. DO NOT cite procedural sections such as witness examination (e.g. Section 161), investigation procedure, or evidence rules unless the user explicitly asked about procedure. Ask yourself: does this section define what happened to the user or what they can be charged with? If no, exclude it.
+5. ANTI-HALLUCINATION RULE: You may ONLY cite sections from these three Acts that exist in the CONTEXT below: (a) Pakistan Penal Code, 1860, (b) Code of Criminal Procedure, 1898, (c) Constitution of Pakistan. Do NOT cite ANY other Act such as Qanun-e-Shahadat, Evidence Act, Contract Act, Family Laws, or any other legislation. If the user's question requires an Act not in these three, clearly state: "The relevant Act (e.g., Qanun-e-Shahadat) is not currently in my legal database." Do NOT invent or guess section numbers — cite ONLY sections whose text appears in the CONTEXT block below.
 
 BILINGUAL RULE:
 - Detect the language of the USER QUESTION below.

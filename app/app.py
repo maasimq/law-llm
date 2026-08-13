@@ -639,8 +639,8 @@ if user_input:
         render_markdown_rtl(user_input)
 
     try:
-        answer, source_chunks, urdu_verified = run_pipeline_with_loading(user_input)
-        source_chunks = filter_cited_chunks(answer, source_chunks)
+        answer, raw_source_chunks, urdu_verified = run_pipeline_with_loading(user_input)
+        source_chunks = filter_cited_chunks(answer, raw_source_chunks)
     except Exception as e:
         print(f"[SERVER ERROR] RAG Pipeline Error: {e}", file=sys.stderr)
         err_str = str(e).lower()
@@ -651,6 +651,7 @@ if user_input:
         else:
             answer = "I couldn't find relevant statutory provisions in the PPC, CrPC, or Constitution for that query — try rephrasing, or ask about Bail, FIR, Theft, or Fundamental Rights."
         source_chunks = []
+        raw_source_chunks = []
         urdu_verified = True
 
     with st.chat_message("assistant", avatar="⚖️"):
@@ -674,14 +675,13 @@ if user_input:
             "legal assistant for Pakistani law" in answer or
             "legal advocate for Pakistani law" in answer or
             "outside the scope" in answer or
-            not source_chunks
+            "not currently in my legal database" in answer
         )
 
         if is_refusal:
             source_chunks = []
 
-        if source_chunks:
-            source_chunks = filter_cited_chunks(answer, source_chunks)
+        if source_chunks and not is_refusal:
             render_citations(source_chunks)
 
     st.session_state.messages.append(
