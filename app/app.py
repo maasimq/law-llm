@@ -306,32 +306,32 @@ def render_empty_state():
             unsafe_allow_html=True,
         )
 
-        # Mode Segmented Toggle & Topic Selection — shown ONLY during onboarding before topic is set
-        if not st.session_state.get("topic_set"):
-            current_mode = st.session_state.get("chat_mode", "Layman")
-            default_pill = "🗣️ Layman" if current_mode == "Layman" else "⚖️ Advocate"
-            st.markdown('<div style="display: flex; justify-content: center; margin-top: 0.2rem; margin-bottom: 0.1rem;">', unsafe_allow_html=True)
-            selected_pill = st.pills(
-                "Mode",
-                options=["🗣️ Layman", "⚖️ Advocate"],
-                selection_mode="single",
-                default=default_pill,
-                label_visibility="collapsed"
-            )
-            st.markdown('</div>', unsafe_allow_html=True)
-            if selected_pill:
-                new_mode = "Layman" if "Layman" in selected_pill else "Advocate"
-                if new_mode != current_mode:
-                    st.session_state.chat_mode = new_mode
-                    st.rerun()
-            st.markdown(
-                '<div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem; margin-bottom: 1.5rem;">'
-                'Advocate mode enables FIR & document drafting.'
-                '</div>',
-                unsafe_allow_html=True
-            )
+        # Mode Segmented Toggle (Layman / Advocate) — ALWAYS visible on hero screen before first message
+        current_mode = st.session_state.get("chat_mode", "Layman")
+        default_pill = "🗣️ Layman" if current_mode == "Layman" else "⚖️ Advocate"
+        st.markdown('<div style="display: flex; justify-content: center; margin-top: 0.2rem; margin-bottom: 0.1rem;">', unsafe_allow_html=True)
+        selected_pill = st.pills(
+            "Mode",
+            options=["🗣️ Layman", "⚖️ Advocate"],
+            selection_mode="single",
+            default=default_pill,
+            label_visibility="collapsed"
+        )
+        st.markdown('</div>', unsafe_allow_html=True)
+        if selected_pill:
+            new_mode = "Layman" if "Layman" in selected_pill else "Advocate"
+            if new_mode != current_mode:
+                st.session_state.chat_mode = new_mode
+                st.rerun()
+        st.markdown(
+            '<div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem; margin-bottom: 1.2rem;">'
+            'Advocate mode enables FIR & document drafting.'
+            '</div>',
+            unsafe_allow_html=True
+        )
 
-            # Integrated topic entry — flat on page background
+        # Integrated topic entry — flat on page background (shown until topic is set/skipped)
+        if not st.session_state.get("topic_set"):
             _, col, _ = st.columns([1, 2.2, 1])
             with col:
                 st.markdown(
@@ -634,23 +634,30 @@ current_mode = st.session_state.get("chat_mode", "Layman")
 # Check if user has submitted a message in this run or previous runs
 has_submitted = bool(st.session_state.get("main_chat_input")) or bool(st.session_state.pending_question)
 
-# Render Top Header Bar when chat is active or topic is set (Claude.ai / ChatGPT style)
+# Render locked mode badge centered on top, and active topic badge aligned to the left below it
 if st.session_state.messages or has_submitted or st.session_state.get("chat_topic"):
-    topic_val = st.session_state.get("chat_topic", "")
-    title_val = st.session_state.get("session_title", "")
-    display_title = topic_val if topic_val else (title_val if title_val and title_val != "New Conversation" else "")
-    
-    topic_html = ""
-    if display_title:
-        topic_html = f'<span class="chat-topic-header-pill">📌 Topic: {html.escape(display_title)}</span>'
-        
     mode_emoji = "🗣️" if current_mode == "Layman" else "⚖️"
-    mode_html = f'<span class="chat-mode-header-pill">{mode_emoji} {current_mode} Mode</span>'
+    mode_badge_html = (
+        f'<div style="text-align: center; margin-bottom: 8px;">'
+        f'<span style="display:inline-block; background: rgba(255,255,255,0.05); color: var(--text-secondary); '
+        f'padding: 4px 14px; border-radius: 20px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1);">'
+        f'{mode_emoji} {current_mode} Mode</span></div>'
+    )
     
+    topic_badge_html = ""
+    if st.session_state.get("chat_topic"):
+        topic_badge_html = (
+            f'<div style="text-align: left; margin-bottom: 6px;">'
+            f'<span style="display:inline-block; background:rgba(212,175,55,0.10); color:#D4AF37; '
+            f'padding:5px 16px; border-radius:20px; font-size:0.85rem; font-weight:500; '
+            f'border:1px solid rgba(212,175,55,0.35); letter-spacing:0.02em;">'
+            f'📌 Topic: {html.escape(st.session_state.chat_topic)}</span></div>'
+        )
+
     st.markdown(
-        f'<div class="chat-top-header">'
-        f'<div class="chat-top-header-left">{topic_html}</div>'
-        f'<div class="chat-top-header-right">{mode_html}</div>'
+        f'<div style="margin-top: 0.5rem; margin-bottom: 1rem;">'
+        f'{mode_badge_html}'
+        f'{topic_badge_html}'
         f'</div>',
         unsafe_allow_html=True
     )
