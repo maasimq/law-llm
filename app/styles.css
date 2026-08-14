@@ -185,15 +185,18 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
 }
 
 /* Chat Title Button (Left) */
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"] [data-testid="column"]:first-child button,
+[data-testid="stSidebar"] [data-testid="stHorizontalBlock"] [data-testid="column"]:first-child button *,
 [data-testid="stSidebar"] [data-testid="stHorizontalBlock"] [data-testid="column"]:first-child button p {
     text-align: left !important;
     font-size: 0.85rem !important;
     font-weight: 500 !important;
     color: var(--text-primary) !important;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 0;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin: 0 !important;
+    word-break: keep-all !important;
 }
 
 /* Delete Button Container (Right) */
@@ -227,7 +230,7 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
 }
 
 /* ============================================================
-   TOP HEADER BAR (CLAUDE.AI STYLE SMART CHAT HEADER)
+   TOP HEADER BAR (CLAUDE.AI / CHATGPT STYLE)
    ============================================================ */
 .chat-top-header {
     display: flex;
@@ -240,22 +243,32 @@ h1, h2, h3, h4, h5, h6, .serif-heading {
 }
 
 .chat-top-header-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.chat-topic-header-pill {
     display: inline-flex;
     align-items: center;
-    background: rgba(212, 175, 55, 0.10);
-    color: var(--accent-gold);
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-size: 0.86rem;
+    gap: 6px;
+    color: var(--text-primary);
+    font-size: 1.05rem;
     font-weight: 500;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    letter-spacing: 0.01em;
+    cursor: pointer;
+}
+
+.chat-top-title-text {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1.02rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 550px;
+}
+
+.chat-top-title-caret {
+    fill: var(--text-secondary);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
 }
 
 .chat-top-header-right {

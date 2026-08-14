@@ -76,7 +76,7 @@ Resolves cross-Act ambiguities automatically — e.g. *PPC § 497* (Adultery) vs
 
 ### 🌐 Urdu & Roman Urdu Support
 
-- Queries in Urdu or Roman Urdu are translated to English before retrieval (via `llama-3.1-8b-instant`)
+- Queries in Urdu or Roman Urdu are translated to English before retrieval (via `llama-3.3-70b-versatile`)
 - Responses are generated back in native Urdu script (نستعلیق) with correct legal headings
 - Islamic legal terms rendered in native script, including Qisas and Diyat terminology used in the Pakistan Penal Code (قتلِ عمد، قصاص، دیت، تعزیر)
 
@@ -84,7 +84,7 @@ Resolves cross-Act ambiguities automatically — e.g. *PPC § 497* (Adultery) vs
 
 ### 💬 Chat Interface
 
-- Persistent multi-session history with auto-generated 3–4 word titles
+- Persistent multi-session history with auto-generated 2–3 word titles
 - Stage-by-stage loading indicators: *Translating query... → Analyzing laws... → Drafting answer...*
 - Expandable citation cards showing the raw statutory source text
 - Dark mode with gold accent design system
@@ -104,7 +104,7 @@ Resolves cross-Act ambiguities automatically — e.g. *PPC § 497* (Adultery) vs
 | Component | Technology |
 |---|---|
 | **LLM** | Groq — `llama-3.3-70b-versatile` |
-| **Translation & Titles** | Groq — `llama-3.1-8b-instant` |
+| **Translation & Titles** | Groq — `llama-3.3-70b-versatile` / `openai/gpt-oss-20b` |
 | **Embeddings** | `BAAI/bge-small-en-v1.5` (384-dim) |
 | **Re-Ranker** | `cross-encoder/ms-marco-MiniLM-L-6-v2` |
 | **Vector DB** | ChromaDB (local, persistent) |
