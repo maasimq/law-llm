@@ -21,7 +21,8 @@ LOG_DIR = PROJECT_ROOT / "logs"
 
 load_dotenv()
 client_groq = Groq(api_key=os.getenv("GROQ_API_KEY"))
-LLM_MODEL = "llama-3.3-70b-versatile"
+LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.3-70b-versatile")
+LLM_FAST_MODEL = os.getenv("LLM_FAST_MODEL", "llama-3.3-70b-versatile")
 REFUSAL_SENTENCE = "I do not have sufficient information in the provided legal text to answer this question."
 
 # ============================================================
@@ -317,7 +318,7 @@ import time
 
 def generate_answer(prompt: str) -> str:
     """Send the final prompt to the Groq model and return the answer, with auto-retry and model fallback."""
-    models_to_try = [LLM_MODEL, "llama-3.1-8b-instant"]
+    models_to_try = [LLM_MODEL, LLM_FAST_MODEL, "openai/gpt-oss-20b"]
     last_exception = None
     for model in models_to_try:
         for attempt in range(2):
@@ -531,7 +532,7 @@ def translate_query_to_english(query: str) -> str:
     """Translates Urdu/Roman Urdu queries to English for better retrieval."""
     try:
         response = client_groq.chat.completions.create(
-            model="llama-3.1-8b-instant",  # Ultra-fast model
+            model=LLM_FAST_MODEL,
             messages=[
                 {"role": "system", "content": "You are a translation assistant. If the text is in Urdu or Roman Urdu, translate it to English. If it is already in English, return it exactly as is. ONLY output the English translation, no quotation marks or explanations."},
                 {"role": "user", "content": query}
@@ -545,38 +546,63 @@ def translate_query_to_english(query: str) -> str:
         return query
 
 
-def verify_urdu_answer(answer: str, question: str) -> bool:
-    """Call Groq to verify that an Urdu answer is contextually accurate and not hallucinated.
-    Also checks for script contamination (Devanagari/Hindi mixed in).
-    Returns True if answer passes verification, False if it fails."""
-    # Pre-check: Detect Devanagari (Hindi) script contamination
+def verify_and_correct_urdu_answer(answer: str, question: str, retrieved_docs: list[str] | None = None) -> tuple[str, bool]:
+    """Call Groq API to verify, fact-check, and correct the Urdu legal response before showing to the user.
+    Ensures:
+    1. Legal accuracy against Pakistani statutory law (PPC, CrPC, Constitution).
+    2. Proper formal Urdu Nastaliq vocabulary (eliminates Hindi/Devanagari idioms and unnatural grammar).
+    3. Retains structured headings, bullet points, and citations.
+    Returns (corrected_answer, is_verified).
+    """
+    if not answer or not bool(re.search(r'[\u0600-\u06FF]', answer)):
+        return answer, True
+
     devanagari_chars = sum(1 for c in answer if '\u0900' <= c <= '\u097F')
-    if devanagari_chars > 3:
-        print(f"[URDU VERIFY] Devanagari contamination detected ({devanagari_chars} chars)", file=sys.stderr)
-        return False
+    
+    context_summary = ""
+    if retrieved_docs:
+        context_summary = "\n\n".join(retrieved_docs[:2])
+
+    system_prompt = (
+        "You are an expert Pakistani Legal Fact-Checker and Urdu Legal Editor. "
+        "Review and correct the drafted Urdu response for a Pakistani legal assistant before it is shown to the user. "
+        "\nYOUR TASKS:\n"
+        "1. FACT-CHECK: Ensure all cited statutory sections (PPC, CrPC, Constitution) and legal explanations are accurate and match Pakistani law. "
+        "2. LANGUAGE CORRECTION: Ensure formal, grammatically correct Pakistani Urdu in Nastaliq vocabulary. "
+        "   Eliminate any Hindi words, Devanagari characters, awkward machine translations, or grammatical errors. "
+        "3. FORMAT: Maintain clear markdown formatting, bullet points, and section citation headers. "
+        "4. OUTPUT: Output ONLY the verified and corrected Urdu text. Do NOT add any preamble, conversational remarks, or explanation."
+    )
+
+    user_content = f"User Question: {question}\n\nDraft Urdu Answer:\n{answer}"
+    if context_summary:
+        user_content = f"Statutory Reference Context:\n{context_summary[:1200]}\n\n" + user_content
 
     try:
         response = client_groq.chat.completions.create(
-            model="llama-3.1-8b-instant",
+            model=LLM_FAST_MODEL,
             messages=[
-                {"role": "system", "content": (
-                    "You are a Pakistani legal fact-checker. You will be given a question and an Urdu answer about Pakistani law. "
-                    "Check TWO things: "
-                    "1. Whether the answer is contextually relevant and does not contain obvious factual errors about Pakistani law (PPC, CrPC, Constitution). "
-                    "2. Whether the answer is written in proper Urdu Nastaliq script (NOT Hindi/Devanagari, NOT Cyrillic, NOT any other script). "
-                    "Reply with ONLY 'PASS' if both checks pass, or 'FAIL' if either check fails. "
-                    "No explanation, just PASS or FAIL."
-                )},
-                {"role": "user", "content": f"Question: {question[:300]}\n\nUrdu Answer: {answer[:800]}"}
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_content}
             ],
-            temperature=0.0,
-            max_tokens=5
+            temperature=0.1,
+            max_tokens=1500
         )
-        verdict = response.choices[0].message.content.strip().upper()
-        return "FAIL" not in verdict
+        corrected = response.choices[0].message.content.strip()
+        if corrected and len(corrected) > 40:
+            corr_devanagari = sum(1 for c in corrected if '\u0900' <= c <= '\u097F')
+            if corr_devanagari <= 2:
+                return corrected, True
+        return answer, (devanagari_chars <= 3)
     except Exception as e:
-        print(f"[URDU VERIFY ERROR] {e}", file=sys.stderr)
-        return True  # On error, default to showing the answer
+        print(f"[URDU VERIFY & CORRECT ERROR] {e}", file=sys.stderr)
+        return answer, True
+
+
+def verify_urdu_answer(answer: str, question: str) -> bool:
+    """Backward-compatible boolean check."""
+    _, is_valid = verify_and_correct_urdu_answer(answer, question)
+    return is_valid
 
 
 def answer_question(question: str, filter_act: str | None = None, n_results: int = 3, conversation_history: list[dict] | None = None, mode: str = "layman", on_stage=None, chat_topic: str | None = None) -> tuple[str, list[str], bool]:
@@ -692,21 +718,23 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     if REFUSAL_SENTENCE in answer or any(kw in answer_lower for kw in refusal_keywords):
         return answer, [], True
 
-    # Urdu answer verification
+    # Urdu answer verification & correction via API
     urdu_verified = True
-    if lang == "urdu" and bool(re.search(r'[\u0600-\u06FF]', answer)):
-        _stage("Verifying Urdu context...")
-        urdu_verified = verify_urdu_answer(answer, question)
+    if lang == "urdu" or bool(re.search(r'[\u0600-\u06FF]', answer)):
+        _stage("Verifying & refining Urdu context...")
+        answer, urdu_verified = verify_and_correct_urdu_answer(answer, question, retrieved_docs)
 
     return answer, retrieved_docs, urdu_verified
 
 
-def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversation_history: list[dict] | None = None, mode: str = "layman"):
+def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversation_history: list[dict] | None = None, mode: str = "layman", chat_topic: str | None = None, *args, **kwargs):
     """Backward-compatible wrapper that keeps the existing test harness working."""
+    if not chat_topic:
+        chat_topic = kwargs.get("topic") or kwargs.get("chat_topic")
     print("\n=== RAG Pipeline Execution ===")
     print(f"[{mode.upper()} MODE]")
     print("[1] Retrieving legal context...")
-    answer, retrieved_docs, _ = answer_question(query_text, filter_act=filter_act, conversation_history=conversation_history, mode=mode)
+    answer, retrieved_docs, _ = answer_question(query_text, filter_act=filter_act, conversation_history=conversation_history, mode=mode, chat_topic=chat_topic)
     print("[2] Prompt built and answer generated.")
     print("\n=== FINAL ANSWER ===")
     print(answer)
@@ -751,7 +779,7 @@ def generate_chat_title(user_message: str = "", chat_topic: str | None = None, *
 
     try:
         response = client_groq.chat.completions.create(
-            model="llama-3.1-8b-instant",
+            model=LLM_FAST_MODEL,
             messages=[
                 {"role": "system", "content": (
                     "You generate ultra-short chat titles for Pakistani legal assistant queries. "
