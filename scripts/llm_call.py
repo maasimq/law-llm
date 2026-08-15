@@ -7,7 +7,7 @@ load_dotenv()
 
 # Initialize the Groq client
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-MODEL_NAME = "llama-3.3-70b-versatile"
+MODEL_NAME = os.getenv("LLM_MODEL", "openai/gpt-oss-120b")
 
 def ask_groq(question: str) -> str:
     """

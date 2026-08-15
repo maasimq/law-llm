@@ -567,6 +567,56 @@ def render_citations(sources: list[str]):
             st.markdown(f'<div class="statutory-source-box">{escaped_text}</div>', unsafe_allow_html=True)
 
 
+def render_case_precedents(cases: list[dict]):
+    """Render signature judicial precedent cards with case ratio and expandable full details."""
+    if not cases:
+        return
+
+    st.markdown('<div class="citations-header" style="margin-top: 1.2rem;">⚖️ RELEVANT JUDICIAL PRECEDENTS (عدالتی نظائر)</div>', unsafe_allow_html=True)
+    for c in cases:
+        citation = c.get("citation", "Case Law")
+        title = c.get("case_title", "Supreme Court / High Court Ruling")
+        court = c.get("court", "Court of Pakistan")
+        year = c.get("year", "")
+        ratio = c.get("ratio_decidendi", "")
+        urdu_ratio = c.get("urdu_ratio", "")
+        facts = c.get("facts_summary", "")
+        ruling = c.get("disposition", "")
+        statutes = c.get("statutes_cited", "")
+
+        st.markdown(
+            f"""
+            <div class="precedent-badge-wrapper">
+                <div class="precedent-title">
+                    <span class="precedent-pill-badge">📜 {html.escape(citation)}</span>
+                    <span class="precedent-case-name">{html.escape(title)}</span>
+                </div>
+                <div class="precedent-ratio">
+                    <strong>Legal Principle (Ratio Decidendi):</strong> {html.escape(ratio)}
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        with st.expander(f"View Case Summary & Judgment Details ({citation}) →"):
+            statutes_html = f"<div><strong>Statutes Applied:</strong> {html.escape(statutes)}</div>" if statutes else ""
+            ruling_html = f"<div><strong>Court Ruling:</strong> <span style='color: #c9a96e; font-weight: 600;'>{html.escape(ruling)}</span></div>" if ruling else ""
+            urdu_html = f"<div dir='rtl' style='text-align: right; font-family: \"Noto Nastaliq Urdu\", serif; line-height: 1.8; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px dashed rgba(201,169,110,0.25);'><strong>اردو خلاصہ:</strong> {html.escape(urdu_ratio)}</div>" if urdu_ratio else ""
+            
+            st.markdown(
+                f"""
+                <div class="statutory-source-box">
+                    <div><strong>Court & Year:</strong> {html.escape(court)} ({year})</div>
+                    {statutes_html}
+                    {ruling_html}
+                    <div style="margin-top: 0.4rem;"><strong>Facts of the Case:</strong> {html.escape(facts)}</div>
+                    {urdu_html}
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+
 def _loading(placeholder, msg: str):
     placeholder.markdown(f'<div class="rag-loading">{msg}</div>', unsafe_allow_html=True)
 
@@ -580,7 +630,7 @@ def run_pipeline_with_loading(question: str):
     chat_topic = st.session_state.get("chat_topic", "") or None
 
     _loading(placeholder, "Translating query...")
-    answer, retrieved_docs, urdu_verified = answer_question(
+    res = answer_question(
         question,
         conversation_history=st.session_state.messages,
         mode=mode_val,
@@ -588,7 +638,14 @@ def run_pipeline_with_loading(question: str):
         chat_topic=chat_topic,
     )
     placeholder.empty()
-    return answer, retrieved_docs, urdu_verified
+    
+    if len(res) == 4:
+        answer, retrieved_docs, urdu_verified, case_precedents = res
+    else:
+        answer, retrieved_docs, urdu_verified = res[0], res[1], res[2]
+        case_precedents = []
+        
+    return answer, retrieved_docs, urdu_verified, case_precedents
 
 
 # Footer removed as per user request
@@ -681,19 +738,24 @@ if st.session_state.messages:
     for msg in st.session_state.messages:
         with st.chat_message(msg["role"], avatar="👤" if msg["role"] == "user" else "⚖️"):
             render_markdown_rtl(msg["content"])
-            if msg["role"] == "assistant" and msg.get("sources"):
-                render_citations(msg["sources"])
+            if msg["role"] == "assistant":
+                if msg.get("sources"):
+                    render_citations(msg["sources"])
+                if msg.get("cases"):
+                    render_case_precedents(msg["cases"])
 
 # Active user query processing
 if user_input:
-    st.session_state.messages.append({"role": "user", "content": user_input, "sources": []})
+    st.session_state.messages.append({"role": "user", "content": user_input, "sources": [], "cases": []})
 
     with st.chat_message("user", avatar="👤"):
         render_markdown_rtl(user_input)
 
     try:
-        answer, raw_source_chunks, urdu_verified = run_pipeline_with_loading(user_input)
+        from rag_pipeline import filter_cited_cases
+        answer, raw_source_chunks, urdu_verified, raw_cases = run_pipeline_with_loading(user_input)
         source_chunks = filter_cited_chunks(answer, raw_source_chunks)
+        cited_cases = filter_cited_cases(answer, raw_cases)
     except Exception as e:
         print(f"[SERVER ERROR] RAG Pipeline Error: {e}", file=sys.stderr)
         err_str = str(e).lower()
@@ -705,6 +767,7 @@ if user_input:
             answer = "I couldn't find relevant statutory provisions in the PPC, CrPC, or Constitution for that query — try rephrasing, or ask about Bail, FIR, Theft, or Fundamental Rights."
         source_chunks = []
         raw_source_chunks = []
+        cited_cases = []
         urdu_verified = True
 
     with st.chat_message("assistant", avatar="⚖️"):
@@ -733,12 +796,21 @@ if user_input:
 
         if is_refusal:
             source_chunks = []
+            cited_cases = []
 
         if source_chunks and not is_refusal:
             render_citations(source_chunks)
+            
+        if cited_cases and not is_refusal:
+            render_case_precedents(cited_cases)
 
     st.session_state.messages.append(
-        {"role": "assistant", "content": answer, "sources": source_chunks if not is_refusal else []}
+        {
+            "role": "assistant",
+            "content": answer,
+            "sources": source_chunks if not is_refusal else [],
+            "cases": cited_cases if not is_refusal else []
+        }
     )
     save_session()
     st.rerun()

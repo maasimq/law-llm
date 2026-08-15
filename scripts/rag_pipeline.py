@@ -21,8 +21,8 @@ LOG_DIR = PROJECT_ROOT / "logs"
 
 load_dotenv()
 client_groq = Groq(api_key=os.getenv("GROQ_API_KEY"))
-LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.3-70b-versatile")
-LLM_FAST_MODEL = os.getenv("LLM_FAST_MODEL", "llama-3.3-70b-versatile")
+LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-120b")
+LLM_FAST_MODEL = os.getenv("LLM_FAST_MODEL", "openai/gpt-oss-20b")
 REFUSAL_SENTENCE = "I do not have sufficient information in the provided legal text to answer this question."
 
 # ============================================================
@@ -287,10 +287,92 @@ def rerank_with_cross_encoder(query: str, candidates: list[str], top_k: int = 3)
         return candidates[:top_k]
 
 
-def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_history: list[dict] | None = None, mode: str = "layman", chat_topic: str | None = None) -> str:
+CASE_LAW_CITATION_REGEX = re.compile(r'\b(19\d\d|20\d\d)\s+(SCMR|PLD|PCrLJ|CLC|MLD|YLR)\s+(\d+)\b', re.IGNORECASE)
+
+
+def retrieve_case_precedents(query_text: str, n_results: int = 2) -> list[dict]:
+    """Retrieve relevant Pakistani judicial precedents from ChromaDB 'caselaw_collection'."""
+    db_path = PROJECT_ROOT / "data" / "chroma_db"
+    try:
+        chroma_client = chromadb.PersistentClient(path=str(db_path))
+        collection = chroma_client.get_collection(name="caselaw_collection")
+    except Exception:
+        return []
+
+    exact_matches = []
+    citation_match = CASE_LAW_CITATION_REGEX.search(query_text)
+    if citation_match:
+        year, journal, page = citation_match.groups()
+        target_citation = f"{year} {journal.upper()} {page}"
+        try:
+            results = collection.get(where={"citation": target_citation})
+            if results and results.get("metadatas"):
+                for meta in results["metadatas"]:
+                    exact_matches.append(meta)
+        except Exception:
+            pass
+
+    semantic_matches = []
+    try:
+        embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
+        query_emb = embed_model.encode([query_text], normalize_embeddings=True).tolist()
+        results = collection.query(
+            query_embeddings=query_emb,
+            n_results=max(n_results * 2, 4)
+        )
+        if results and results.get("metadatas") and results["metadatas"][0]:
+            for meta in results["metadatas"][0]:
+                if meta not in exact_matches and meta not in semantic_matches:
+                    semantic_matches.append(meta)
+    except Exception as e:
+        print(f"[CASELAW QUERY ERROR] {e}", file=sys.stderr)
+
+    all_cases = exact_matches + semantic_matches
+    return all_cases[:n_results]
+
+
+def filter_cited_cases(answer: str, retrieved_cases: list[dict]) -> list[dict]:
+    """Return cases that were actually relevant or cited in the LLM response."""
+    if not retrieved_cases:
+        return []
+    
+    ans_lower = answer.lower()
+    cited = []
+    for c in retrieved_cases:
+        cit = c.get("citation", "").lower()
+        title_words = c.get("case_title", "").lower().split(" v. ")
+        petitioner = title_words[0].strip() if title_words else ""
+        
+        if (cit and cit in ans_lower) or (petitioner and len(petitioner) > 4 and petitioner in ans_lower) or ("scmr" in ans_lower or "pld" in ans_lower or "pcrlj" in ans_lower or "precedent" in ans_lower or "نظیر" in ans_lower or "عدالتی" in ans_lower):
+            cited.append(c)
+            
+    if not cited and retrieved_cases:
+        keywords = ["bail", "murder", "fir", "cheque", "delay", "warrant", "497", "302", "154", "489-f", "ضمانت", "قتل", "ایف آئی آر"]
+        if any(kw in ans_lower for kw in keywords):
+            cited = retrieved_cases[:1]
+        
+    return cited
+
+
+def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_history: list[dict] | None = None, mode: str = "layman", chat_topic: str | None = None, case_precedents: list[dict] | None = None) -> str:
     """Format the final prompt for the LLM using the loaded prompt template."""
     truncated_docs = [doc[:1500] for doc in retrieved_docs]
     context_block = "\n\n---\n\n".join(truncated_docs)
+
+    if case_precedents:
+        case_lines = []
+        for c in case_precedents:
+            case_lines.append(
+                f"[JUDICIAL PRECEDENT / CASE LAW]\n"
+                f"Citation: {c.get('citation')}\n"
+                f"Case Title: {c.get('case_title')} ({c.get('court')}, {c.get('year')})\n"
+                f"Applicable Statutes: {c.get('statutes_cited')}\n"
+                f"Legal Principle (Ratio Decidendi): {c.get('ratio_decidendi')}\n"
+                f"Urdu Principle: {c.get('urdu_ratio', '')}\n"
+                f"Facts Summary: {c.get('facts_summary')}\n"
+                f"Court Ruling: {c.get('disposition')}"
+            )
+        context_block = context_block + "\n\n=== RELEVANT JUDICIAL PRECEDENTS (CASE LAW) ===\n\n" + "\n\n---\n\n".join(case_lines)
 
     history_block = "None"
     if conversation_history:
@@ -318,7 +400,7 @@ import time
 
 def generate_answer(prompt: str) -> str:
     """Send the final prompt to the Groq model and return the answer, with auto-retry and model fallback."""
-    models_to_try = [LLM_MODEL, LLM_FAST_MODEL, "openai/gpt-oss-20b"]
+    models_to_try = [LLM_MODEL, "openai/gpt-oss-120b", "openai/gpt-oss-20b", "qwen/qwen3.6-27b"]
     last_exception = None
     for model in models_to_try:
         for attempt in range(2):
@@ -605,10 +687,9 @@ def verify_urdu_answer(answer: str, question: str) -> bool:
     return is_valid
 
 
-def answer_question(question: str, filter_act: str | None = None, n_results: int = 3, conversation_history: list[dict] | None = None, mode: str = "layman", on_stage=None, chat_topic: str | None = None) -> tuple[str, list[str], bool]:
-    """Single question-to-answer function that combines retrieval and LLM generation.
-    Returns (answer, retrieved_docs, urdu_verified) where urdu_verified is True if
-    the Urdu answer passed verification (or the answer is in English).
+def answer_question(question: str, filter_act: str | None = None, n_results: int = 3, conversation_history: list[dict] | None = None, mode: str = "layman", on_stage=None, chat_topic: str | None = None) -> tuple[str, list[str], bool, list[dict]]:
+    """Single question-to-answer function that combines statutory retrieval, case law retrieval, and LLM generation.
+    Returns (answer, retrieved_docs, urdu_verified, case_precedents).
     """
     def _stage(msg):
         if on_stage:
@@ -619,7 +700,7 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
         _stage("Drafting answer...")
         final_prompt = build_rag_prompt(question, [], conversation_history, mode, chat_topic)
         answer = generate_answer(final_prompt)
-        return answer, [], True
+        return answer, [], True, []
 
     lang = detect_language(question)
     if lang == "urdu":
@@ -651,16 +732,13 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
 
     filter_act = target_act or filter_act or detect_act_from_query(search_query)
 
-    # Note: We no longer hardcode an out-of-scope refusal here.
-    # The LLM's dynamic formatting rules handle conversational/unrelated queries naturally.
-
     db_path = PROJECT_ROOT / "data" / "chroma_db"
     chroma_client = chromadb.PersistentClient(path=str(db_path))
     collection = chroma_client.get_collection(name="law_collection")
     embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 
     # Step 3: Hybrid retrieval — merge dense + BM25 with weighted score fusion
-    _stage("Analyzing laws...")
+    _stage("Analyzing laws & judicial precedents...")
     hybrid_scored = hybrid_retrieve(
         search_query, collection, embed_model,
         filter_act=filter_act,
@@ -673,8 +751,6 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     hybrid_docs = [doc for doc, score in hybrid_scored]
 
     # Step 4: Cross-encoder re-ranking (with latency shortcut)
-    # If the top hybrid candidate has a dominant score margin (> 0.15) over the second,
-    # skip the expensive cross-encoder step.
     if len(hybrid_scored) > 1 and (hybrid_scored[0][1] - hybrid_scored[1][1]) > 0.15:
         reranked_docs = hybrid_docs[:n_results]
     else:
@@ -682,7 +758,7 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
 
     # Build final list: explicit section first (guaranteed slot), then alias chunks,
     # then reranked hybrid results, deduplicated
-    all_docs = list(exact_chunks)  # exact section match always gets priority slot
+    all_docs = list(exact_chunks)
     for c in alias_chunks:
         if c not in all_docs:
             all_docs.append(c)
@@ -690,17 +766,13 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
         if doc not in all_docs:
             all_docs.append(doc)
 
-    # Cap at 3 chunks — exact_chunks guaranteed, remaining slots filled by alias+hybrid
     retrieved_docs = all_docs[:3]
 
-    # Guardrail: Check if a specific Act was requested but no matching chunks were retrieved
-    if filter_act and not retrieved_docs:
-        # Keep this only if they explicitly demand a section from a specific act but it fails.
-        # Otherwise, let it pass to LLM.
-        pass
+    # Step 5: Case Law / Judicial Precedents Retrieval
+    case_precedents = retrieve_case_precedents(search_query, n_results=2)
 
-    final_prompt = build_rag_prompt(question, retrieved_docs, conversation_history, mode, chat_topic)
-    _stage("Drafting answer...")
+    final_prompt = build_rag_prompt(question, retrieved_docs, conversation_history, mode, chat_topic, case_precedents=case_precedents)
+    _stage("Drafting legal response...")
     answer = generate_answer(final_prompt)
 
     # If the answer is a refusal / out-of-scope response, return empty sources
@@ -716,7 +788,7 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
         "not provided in the given context",
     ]
     if REFUSAL_SENTENCE in answer or any(kw in answer_lower for kw in refusal_keywords):
-        return answer, [], True
+        return answer, [], True, []
 
     # Urdu answer verification & correction via API
     urdu_verified = True
@@ -724,7 +796,7 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
         _stage("Verifying & refining Urdu context...")
         answer, urdu_verified = verify_and_correct_urdu_answer(answer, question, retrieved_docs)
 
-    return answer, retrieved_docs, urdu_verified
+    return answer, retrieved_docs, urdu_verified, case_precedents
 
 
 def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversation_history: list[dict] | None = None, mode: str = "layman", chat_topic: str | None = None, *args, **kwargs):
@@ -733,8 +805,9 @@ def run_rag_pipeline(query_text: str, filter_act: str | None = None, conversatio
         chat_topic = kwargs.get("topic") or kwargs.get("chat_topic")
     print("\n=== RAG Pipeline Execution ===")
     print(f"[{mode.upper()} MODE]")
-    print("[1] Retrieving legal context...")
-    answer, retrieved_docs, _ = answer_question(query_text, filter_act=filter_act, conversation_history=conversation_history, mode=mode, chat_topic=chat_topic)
+    print("[1] Retrieving legal context & case precedents...")
+    res = answer_question(query_text, filter_act=filter_act, conversation_history=conversation_history, mode=mode, chat_topic=chat_topic)
+    answer, retrieved_docs = res[0], res[1]
     print("[2] Prompt built and answer generated.")
     print("\n=== FINAL ANSWER ===")
     print(answer)

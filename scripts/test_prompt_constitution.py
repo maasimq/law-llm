@@ -23,7 +23,7 @@ EMBEDDINGS_DIR = PROJECT_ROOT / "data"  / "embeddings"
 TEMPLATE_FILE  = PROJECT_ROOT / "scripts" / "prompt_template.txt"
 LOG_FILE       = PROJECT_ROOT / "logs"  / "checkpoint7_prompt_demo.txt"
 
-MODEL_NAME = "llama-3.3-70b-versatile"
+MODEL_NAME = os.getenv("LLM_MODEL", "openai/gpt-oss-120b")
 
 # Sample questions with their proxy embeddings (in-scope and out-of-scope tests)
 SAMPLE_QA = [

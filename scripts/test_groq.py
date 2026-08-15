@@ -40,7 +40,7 @@ def main():
                     "content": "What is Section 302 of the Pakistan Penal Code about? Answer in one sentence."
                 }
             ],
-            model="llama-3.3-70b-versatile",
+            model=os.getenv("LLM_MODEL", "openai/gpt-oss-120b"),
             temperature=0.3,
             max_tokens=100,
         )

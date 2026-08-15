@@ -41,7 +41,7 @@ def test_raw_llm_generation():
         return 1
 
     client = Groq(api_key=api_key)
-    model_name = "llama-3.3-70b-versatile"
+    model_name = os.getenv("LLM_MODEL", "openai/gpt-oss-120b")
 
     print("=" * 60)
     print("BASELINE LLM GENERATION TEST (NO RETRIEVAL)")

@@ -27,7 +27,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 load_dotenv()
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-LLM_MODEL = "llama-3.3-70b-versatile"
+LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-120b")
 
 # 5 PPC-focused validation questions
 VALIDATION_QUESTIONS = [
