@@ -1,0 +1,15 @@
+# ============================================================
+# GitHub Linguist Language Overrides
+# Tells GitHub to ignore raw statutory data, vector database
+# and logs so repository displays primary language as Python.
+# ============================================================
+
+data/** linguist-vendored
+data/** linguist-documentation
+data/raw/**/*.html linguist-detectable=false
+data/raw/**/*.html linguist-documentation=true
+data/clean/**/*.txt linguist-detectable=false
+data/caselaw_data.json linguist-detectable=false
+chat_history/** linguist-vendored
+chat_history/** linguist-documentation
+logs/** linguist-vendored
