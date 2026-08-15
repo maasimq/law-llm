@@ -602,6 +602,51 @@ div[data-testid="stTextInput"] input::placeholder {
     overflow-wrap: break-word !important;
 }
 
+/* ============================================================
+   JUDICIAL PRECEDENTS — SIGNATURE CASE LAW CARDS
+   ============================================================ */
+.precedent-badge-wrapper {
+    background: rgba(140, 90, 40, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-left: 3px solid #d4af37;
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 0.6rem;
+    transition: var(--transition);
+}
+.precedent-badge-wrapper:hover {
+    border-color: #f3cf7a;
+    background: rgba(140, 90, 40, 0.20);
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.15);
+}
+.precedent-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.35rem;
+    flex-wrap: wrap;
+}
+.precedent-pill-badge {
+    background: rgba(212, 175, 55, 0.25);
+    color: #f3cf7a;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+}
+.precedent-case-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+.precedent-ratio {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
 .statutory-source-box {
     background: #07090E !important;
     border: 1px solid var(--border) !important;

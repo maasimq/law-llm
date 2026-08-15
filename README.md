@@ -74,9 +74,17 @@ Resolves cross-Act ambiguities automatically — e.g. *PPC § 497* (Adultery) vs
 
 ---
 
+### 📜 Judicial Precedents & Case Law (عدالتی نظائر)
+
+- Dual-retriever pipeline indexing landmark Supreme Court and High Court judgments (`SCMR`, `PLD`, `PCrLJ`)
+- Automatic extraction and presentation of *Ratio Decidendi* (core legal principle) alongside statutory sections
+- Interactive case law precedent cards with full case summary, applicable statutes, and bilingual Urdu ratio summaries
+
+---
+
 ### 🌐 Urdu & Roman Urdu Support
 
-- Queries in Urdu or Roman Urdu are translated to English before retrieval (via `llama-3.3-70b-versatile`)
+- Queries in Urdu or Roman Urdu are translated to English before retrieval (via `openai/gpt-oss-20b`)
 - Responses are generated back in native Urdu script (نستعلیق) with correct legal headings
 - Islamic legal terms rendered in native script, including Qisas and Diyat terminology used in the Pakistan Penal Code (قتلِ عمد، قصاص، دیت، تعزیر)
 
@@ -87,13 +95,14 @@ Resolves cross-Act ambiguities automatically — e.g. *PPC § 497* (Adultery) vs
 - Persistent multi-session history with auto-generated 2–3 word titles
 - Stage-by-stage loading indicators: *Translating query... → Analyzing laws... → Drafting answer...*
 - Expandable citation cards showing the raw statutory source text
+- Signature judicial precedent cards for court-ready advocate case briefs
 - Dark mode with gold accent design system
 
 ---
 
 ## Known Limitations
 
-- **Scope:** Coverage is limited to the PPC, CrPC, and the Constitution's Fundamental Rights chapter (Articles 8–28). Other areas of law — tax, family, civil procedure, contract — are out of scope and will return a refusal.
+- **Scope:** Coverage is limited to the PPC, CrPC, Constitution Fundamental Rights (Arts. 8–28), and curated Supreme Court/High Court reported judgments. Other specialized branches (tax, corporate, family) will return an out-of-scope notice.
 - **Drafted documents:** FIRs and case briefs generated in Advocate mode are structured templates with placeholders. They are not filed-ready legal documents and must be reviewed by a licensed advocate before use.
 - **Urdu retrieval:** Urdu and Roman Urdu queries are translated to English before retrieval. Translation quality can affect retrieval accuracy — unusual phrasing or dialect may reduce precision.
 
@@ -103,11 +112,11 @@ Resolves cross-Act ambiguities automatically — e.g. *PPC § 497* (Adultery) vs
 
 | Component | Technology |
 |---|---|
-| **LLM** | Groq — `llama-3.3-70b-versatile` |
-| **Translation & Titles** | Groq — `llama-3.3-70b-versatile` / `openai/gpt-oss-20b` |
+| **LLM (Primary)** | Groq — `openai/gpt-oss-120b` |
+| **Translation, Verification & Titles** | Groq — `openai/gpt-oss-20b` (Fallback: `qwen/qwen3.6-27b`) |
 | **Embeddings** | `BAAI/bge-small-en-v1.5` (384-dim) |
 | **Re-Ranker** | `cross-encoder/ms-marco-MiniLM-L-6-v2` |
-| **Vector DB** | ChromaDB (local, persistent) |
+| **Vector DB** | ChromaDB (`law_collection` + `caselaw_collection`) |
 | **Keyword Index** | BM25 (Rank-BM25) |
 | **Frontend** | Streamlit + Custom CSS |
 | **Language** | Python 3.11 |
