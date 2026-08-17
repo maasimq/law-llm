@@ -76,7 +76,8 @@ Resolves cross-Act ambiguities automatically — e.g. *PPC § 497* (Adultery) vs
 
 ### 📜 Judicial Precedents & Case Law (عدالتی نظائر)
 
-- Dual-retriever pipeline indexing landmark Supreme Court and High Court judgments (`SCMR`, `PLD`, `PCrLJ`)
+- Dual-retriever pipeline indexing **100 landmark Supreme Court and High Court judgments** (`SCMR`, `PLD`, `PCrLJ`, `CLC`)
+- Comprehensive coverage across Bail (§ 497/498 CrPC), Murder (§ 302 PPC), FIR Law (§ 154 CrPC), Religious Offences (§ 295-C PPC), Cheque Dishonor (§ 489-F PPC), and Fundamental Rights (Arts. 9, 10A, 14, 199)
 - Automatic extraction and presentation of *Ratio Decidendi* (core legal principle) alongside statutory sections
 - Interactive case law precedent cards with full case summary, applicable statutes, and bilingual Urdu ratio summaries
 
