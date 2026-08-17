@@ -1,16 +1,155 @@
 [
   {
+    "id": "case_pld_2019_sc_64",
+    "citation": "PLD 2019 SC 64",
+    "case_title": "Mst. Asia Bibi v. The State (3-Member Bench)",
+    "court": "Supreme Court of Pakistan",
+    "year": 2019,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 295-C",
+      "Code of Criminal Procedure, 1898 - Section 156-A",
+      "Constitution of Pakistan - Article 10A"
+    ],
+    "legal_topics": [
+      "Toheen-e-Risalat",
+      "Section 295-C PPC",
+      "Standard of Proof",
+      "False Accusation",
+      "Mandatory SP Investigation"
+    ],
+    "ratio_decidendi": "In offences under Section 295-C PPC carrying capital punishment, the prosecution must establish the charge beyond any shadow of reasonable doubt with unimpeachable, pristine evidence. Unexplained delay in lodging the FIR, contradictory ocular statements, and failure to comply with mandatory investigation by an officer not below the rank of Superintendent of Police (SP) under Section 156-A CrPC entitles the accused to complete acquittal. The golden rule of Islamic jurisprudence dictates that an error in acquittal is far better than an error in conviction.",
+    "facts_summary": "Appellant was convicted under Section 295-C PPC based on alleged oral altercation in a field. FIR was lodged after an unexplained delay of 5 days following village panchayat deliberations. Supreme Court held evidence was full of material contradictions and acquitted the appellant.",
+    "disposition": "Conviction Set Aside - Complete Acquittal",
+    "urdu_ratio": "سیکشن 295-C تعزیرات پاکستان کے تحت توہینِ رسالت کے الزام میں استغاثہ پر لازم ہے کہ وہ بغیر کسی ادنیٰ شبہ کے ناقابلِ تردید ثبوت پیش کرے۔ ایف آئی آر میں غیر واضح تاخیر اور گواہوں کے بیانات میں تضاد کی صورت میں ملزم شک کے فائدے پر مکمل بریت کا حقدار ہے۔"
+  },
+  {
+    "id": "case_pld_2016_sc_17",
+    "citation": "PLD 2016 SC 17",
+    "case_title": "Malik Muhammad Mumtaz Qadri v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2016,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Anti-Terrorism Act, 1997 - Section 7",
+      "Constitution of Pakistan - Article 9"
+    ],
+    "legal_topics": [
+      "Vigilantism",
+      "Murder",
+      "Toheen-e-Risalat Allegation",
+      "Rule of Law",
+      "Section 302 PPC"
+    ],
+    "ratio_decidendi": "No individual has the right or authority under the Constitution, law, or Islamic jurisprudence to take the law into their own hands and execute a person upon a self-assessed allegation of blasphemy (Toheen-e-Risalat). Any extrajudicial killing under the garb of religious provocation constitutes Qatl-i-Amd punishable under Section 302 PPC and terrorism under Section 7 of the Anti-Terrorism Act, 1997.",
+    "facts_summary": "Police guard assassinated a provincial Governor claiming moral/religious provocation. The Supreme Court upheld capital conviction under Section 302 PPC and ATA 1997, affirming supremacy of rule of law.",
+    "disposition": "Death Sentence Upheld",
+    "urdu_ratio": "کسی شخص کو قانون ہاتھ میں لے کر توہینِ مذہب کے الزام پر خود ساختہ سزا دینے یا قتل کرنے کا کوئی اختیار حاصل نہیں۔ ایسا اقدام تعزیرات پاکستان کی دفعہ 302 اور انسداد دہشت گردی ایکٹ کے تحت سنگین جرم ہے۔"
+  },
+  {
+    "id": "case_pld_2002_sc_1048",
+    "citation": "PLD 2002 SC 1048",
+    "case_title": "Muhammad Mahboob alias Booba v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2002,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 295-C",
+      "Qanun-e-Shahadat Order, 1984 - Article 17"
+    ],
+    "legal_topics": [
+      "Mens Rea",
+      "Section 295-C PPC",
+      "Standard of Evidence",
+      "Tazkiya-tul-Shahood"
+    ],
+    "ratio_decidendi": "To sustain a conviction under Section 295-C PPC, intentional and deliberate use of derogatory remarks (Mens Rea) must be proved to the highest standard of certainty. Vague, generalized allegations without verbatim reproduction of alleged words during investigation and trial cannot form the basis of conviction in a capital offence.",
+    "facts_summary": "Accused was charged under Section 295-C PPC based on generalized witness claims without specific context or proof of deliberate intention.",
+    "disposition": "Acquittal Allowed",
+    "urdu_ratio": "دفعہ 295-C کے تحت جرم ثابت کرنے کے لیے ملزم کی دانستہ اور بدنیتی پر مبنی نیت (Mens Rea) اور توہین آمیز الفاظ کا ہو بہو اور ٹھوس ثبوت ہونا لازمی ہے۔"
+  },
+  {
+    "id": "case_scmr_2022_1350",
+    "citation": "2022 SCMR 1350",
+    "case_title": "Salamat Mansha Masih v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2022,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 156-A",
+      "Pakistan Penal Code, 1860 - Section 295-C",
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Section 156-A CrPC",
+      "Mandatory SP Investigation",
+      "Bail",
+      "Blasphemy Allegation"
+    ],
+    "ratio_decidendi": "Compliance with Section 156-A CrPC (mandating that no officer below the rank of Superintendent of Police shall investigate a case under Section 295-C PPC) is statutory and imperative. Investigation conducted by a Sub-Inspector or ASI in violation of Section 156-A CrPC renders the prosecution case doubtful and entitles the accused to bail under Section 497(2) CrPC.",
+    "facts_summary": "Petitioner was arrested under Section 295-C PPC and the entire investigation was conducted by an ASI. Supreme Court granted post-arrest bail due to statutory violation of Section 156-A CrPC.",
+    "disposition": "Post-arrest Bail Granted",
+    "urdu_ratio": "سیکشن 156-A ضابطہ فوجداری کے تحت توہینِ رسالت (295-C) کے مقدمات کی تفتیش ایس پی (SP) رینک سے کم افسر نہیں کر سکتا۔ اس قانون کی خلاف ورزی تفتیش کو مشکوک بناتی ہے اور ضمانت کا جواز فراہم کرتی ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_1555",
+    "citation": "2021 SCMR 1555",
+    "case_title": "Raja Zaheer-ud-Din v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 295-A",
+      "Pakistan Penal Code, 1860 - Section 295-B",
+      "Code of Criminal Procedure, 1898 - Section 196"
+    ],
+    "legal_topics": [
+      "Section 295-A PPC",
+      "Sanction of Government",
+      "Section 196 CrPC",
+      "Outraging Religious Feelings"
+    ],
+    "ratio_decidendi": "Under Section 196 CrPC, no court can take cognizance of an offence under Section 295-A PPC (deliberate and malicious acts intended to outrage religious feelings) without the prior complaint or sanction of the Federal or Provincial Government. Prosecution initiated without statutory sanction under Section 196 CrPC is void ab initio.",
+    "facts_summary": "FIR was registered directly under Section 295-A PPC without obtaining government sanction. Supreme Court quashed cognizance taken without compliance with Section 196 CrPC.",
+    "disposition": "Proceedings Declared Without Jurisdiction",
+    "urdu_ratio": "دفعہ 295-A تعزیرات پاکستان کے تحت مقدمہ چلانے کے لیے سیکشن 196 ضابطہ فوجداری کے تحت وفاقی یا صوبائی حکومت کی باقاعدہ منظوری (Sanction) ناگزیر ہے۔"
+  },
+  {
+    "id": "case_scmr_2017_1270",
+    "citation": "2017 SCMR 1270",
+    "case_title": "Ayub Masih v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2017,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 295-C",
+      "Constitution of Pakistan - Article 14"
+    ],
+    "legal_topics": [
+      "Property Dispute",
+      "False Blasphemy Charge",
+      "Cross Examination"
+    ],
+    "ratio_decidendi": "Where evidence discloses that a complaint under Section 295-C PPC was motivated by an ongoing land or property dispute between the complainant and the accused, and independent witnesses from the locality are not produced, the charge cannot be deemed proven beyond reasonable doubt.",
+    "facts_summary": "Blasphemy charge arose during heated land evacuation conflict. Supreme Court found complainant had financial motive to falsely implicate the accused.",
+    "disposition": "Acquittal Upheld",
+    "urdu_ratio": "اگر توہینِ مذہب کا الزام جائیداد کے تنازع یا ذاتی دشمنی کے پس منظر میں لگایا گیا ہو اور غیر جانبدار گواہ موجود نہ ہوں، تو ملزم کو شک کا فائدہ دیتے ہوئے بری کیا جائے گا۔"
+  },
+  {
     "id": "case_scmr_2022_1420",
     "citation": "2022 SCMR 1420",
     "case_title": "Muhammad Akram v. The State",
     "court": "Supreme Court of Pakistan",
     "year": 2022,
-    "statutes_cited": ["Code of Criminal Procedure, 1898 - Section 497", "Pakistan Penal Code, 1860 - Section 302"],
-    "legal_topics": ["Bail", "Murder", "Delayed FIR", "Benefit of Doubt"],
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497",
+      "Pakistan Penal Code, 1860 - Section 302"
+    ],
+    "legal_topics": [
+      "Bail",
+      "Murder",
+      "Delayed FIR",
+      "Benefit of Doubt"
+    ],
     "ratio_decidendi": "An unexplained delay of over 24 hours in lodging the First Information Report (FIR) in a capital offence (Section 302 PPC) raises genuine suspicion of deliberation, consultation, and false implication. Such unexplained delay entitles the accused to the concession of post-arrest bail under Section 497(2) CrPC as a case of further inquiry.",
-    "facts_summary": "The petitioner was implicated in a homicide case under Section 302/34 PPC. The occurrence took place in daylight, yet the FIR was registered after a delay of 36 hours without any explanation by the complainant or investigating officer.",
+    "facts_summary": "Homicide case under Section 302/34 PPC. Occurrence took place in daylight, yet FIR registered after 36 hours without explanation.",
     "disposition": "Post-arrest Bail Allowed",
-    "urdu_ratio": "قتل کے مقدمے (سیکشن 302) میں ایف آئی آر کے اندراج میں بغیر کسی معقول وجہ کے 24 گھنٹے سے زیادہ تاخیر مشاورت اور جھوٹے نامزد کیے جانے کا شبہ پیدا کرتی ہے، جس کی بنا پر ملزم سیکشن 497(2) ضابطہ فوجداری کے تحت ضمانت بعد از گرفتاری کا حقدار بن جاتا ہے۔"
+    "urdu_ratio": "قتل کے مقدمے میں ایف آئی آر کے اندراج میں بغیر کسی معقول وجہ کے 24 گھنٹے سے زیادہ تاخیر ملزم کو سیکشن 497(2) ضابطہ فوجداری کے تحت ضمانت کا حقدار بناتی ہے۔"
   },
   {
     "id": "case_pld_2020_sc_556",
@@ -18,12 +157,19 @@
     "case_title": "Tariq Bashir v. The State",
     "court": "Supreme Court of Pakistan",
     "year": 2020,
-    "statutes_cited": ["Code of Criminal Procedure, 1898 - Section 497", "Code of Criminal Procedure, 1898 - Section 498"],
-    "legal_topics": ["Bail Principles", "Further Inquiry", "Non-Bailable Offences"],
-    "ratio_decidendi": "Grant of bail in non-bailable offences not falling within the prohibitory clause of Section 497(1) CrPC is a matter of right and refusal is an exception. Even in offences falling within the prohibitory clause, if there are reasonable grounds for believing that the accused has not committed a non-bailable offence, but that there are sufficient grounds for further inquiry into his guilt under Section 497(2) CrPC, bail cannot be withheld as punishment.",
-    "facts_summary": "Landmark ruling reiterating the cardinal principles governing grant and refusal of post-arrest bail, emphasizing that pre-trial detention cannot be converted into advance punishment.",
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497",
+      "Code of Criminal Procedure, 1898 - Section 498"
+    ],
+    "legal_topics": [
+      "Bail Principles",
+      "Further Inquiry",
+      "Non-Bailable Offences"
+    ],
+    "ratio_decidendi": "Grant of bail in non-bailable offences not falling within the prohibitory clause of Section 497(1) CrPC is a matter of right and refusal is an exception. Pre-trial incarceration cannot be converted into advance punishment.",
+    "facts_summary": "Landmark ruling establishing cardinal principles of bail in non-prohibitory clause offences under Pakistani law.",
     "disposition": "Bail Granted",
-    "urdu_ratio": "سیکشن 497(1) ضابطہ فوجداری کی امتناعی شق سے باہر جرائم میں ضمانت اصول ہے اور انکار استثناء۔ مقدمے کے اس مرحلے پر ملزم کو جیل میں رکھ کر قبل از وقت سزا نہیں دی جا سکتی۔"
+    "urdu_ratio": "سیکشن 497(1) ضابطہ فوجداری کی امتناعی شق سے باہر جرائم میں ضمانت اصول ہے اور انکار استثناء۔ ملزم کو قبل از وقت سزا کے طور پر قید نہیں رکھا جا سکتا۔"
   },
   {
     "id": "case_scmr_2021_130",
@@ -31,12 +177,18 @@
     "case_title": "Shahzada Qaiser Arfat v. The State",
     "court": "Supreme Court of Pakistan",
     "year": 2021,
-    "statutes_cited": ["Code of Criminal Procedure, 1898 - Section 498"],
-    "legal_topics": ["Pre-arrest Bail", "Mala Fide", "Police Harassment"],
-    "ratio_decidendi": "For the grant of pre-arrest bail under Section 498 CrPC, the applicant must establish ulterior motives, malice, or mala fides on the part of the complainant or the police to humiliate, harass, or cause unjustified incarceration. Where false implication is apparent on the face of the record, pre-arrest bail must be confirmed.",
-    "facts_summary": "Petitioner sought confirmation of pre-arrest bail in a case involving property dispute where the complainant falsely registered a criminal FIR to exert pressure.",
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 498"
+    ],
+    "legal_topics": [
+      "Pre-arrest Bail",
+      "Mala Fide",
+      "Police Harassment"
+    ],
+    "ratio_decidendi": "For grant of pre-arrest bail under Section 498 CrPC, the applicant must establish ulterior motives, malice, or mala fides on the part of complainant or police to cause unjustified incarceration and humiliation.",
+    "facts_summary": "Petitioner sought confirmation of pre-arrest bail in a property dispute where criminal FIR was registered to exert pressure.",
     "disposition": "Pre-arrest Bail Confirmed",
-    "urdu_ratio": "قبل از گرفتاری ضمانت (سیکشن 498 ضابطہ فوجداری) کی منظوری کے لیے مدعی یا پولیس کی بدنیتی (Mala Fide) اور بے گناہ شخص کو رسوا کرنے کی کوشش کا ثابت ہونا لازمی ہے۔"
+    "urdu_ratio": "قبل از گرفتاری ضمانت (سیکشن 498) کے لیے مدعی یا پولیس کی بدنیتی (Mala Fide) اور تذلیل کا ارادہ ثابت ہونا لازمی ہے۔"
   },
   {
     "id": "case_scmr_2023_450",
@@ -44,25 +196,261 @@
     "case_title": "Zubair v. The State",
     "court": "Supreme Court of Pakistan",
     "year": 2023,
-    "statutes_cited": ["Code of Criminal Procedure, 1898 - Section 497"],
-    "legal_topics": ["Statutory Delay", "Bail", "Right to Speedy Trial"],
-    "ratio_decidendi": "Under the third proviso to Section 497(1) CrPC, an accused who has been in continuous custody for a period exceeding two years in offences punishable with death, and whose trial has not concluded, is entitled to statutory bail as of right, provided the delay in trial is not occasioned by any act or omission of the accused.",
-    "facts_summary": "The accused remained behind bars for over 26 months without conclusion of trial in a murder case. The delay was attributed entirely to prosecution witnesses and police non-appearance.",
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Statutory Delay",
+      "Bail",
+      "Right to Speedy Trial"
+    ],
+    "ratio_decidendi": "Under the third proviso to Section 497(1) CrPC, continuous custody exceeding two years in capital offences without conclusion of trial entitles the accused to statutory bail as of right, provided delay is not occasioned by the accused.",
+    "facts_summary": "Accused remained behind bars for over 26 months without conclusion of trial due to prosecution witness non-appearance.",
     "disposition": "Statutory Bail Granted",
-    "urdu_ratio": "سیکشن 497(1) ضابطہ فوجداری کے تحت اگر ملزم مسلسل 2 سال سے زائد جیل میں ہو اور ٹرائل میں تاخیر ملزم کی وجہ سے نہ ہوئی ہو، تو وہ قانونی بنیاد پر (Statutory Ground) ضمانت کا حقدار ہے۔"
+    "urdu_ratio": "سیکشن 497(1) کے تحت اگر ملزم مسلسل 2 سال سے زائد جیل میں ہو اور تاخیر اس کی وجہ سے نہ ہو، تو وہ قانونی حق پر ضمانت کا حقدار ہے۔"
   },
   {
-    "id": "case_pld_2018_sc_595",
-    "citation": "PLD 2018 SC 595",
-    "case_title": "Sughran Bibi v. The State (Larger Bench)",
+    "id": "case_scmr_2022_215",
+    "citation": "2022 SCMR 215",
+    "case_title": "Nazir Ahmad v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2022,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Cancellation of Bail",
+      "Section 497(5) CrPC",
+      "Misuse of Concession"
+    ],
+    "ratio_decidendi": "Strong, cogent, and overwhelming evidence is required for cancellation of bail under Section 497(5) CrPC. Once granted by a competent court, bail cannot be recalled lightly unless the order is arbitrary or the accused misuses liberty by tampering with evidence.",
+    "facts_summary": "Complainant sought cancellation of bail. Supreme Court dismissed application due to lack of witness intimidation evidence.",
+    "disposition": "Cancellation of Bail Refused",
+    "urdu_ratio": "سیکشن 497(5) کے تحت ضمانت خارج کرنے کے لیے ٹھوس شواہد ضروری ہیں۔ ایک بار ملنے والی ضمانت معمولی باتوں پر منسوخ نہیں کی جا سکتی۔"
+  },
+  {
+    "id": "case_scmr_2020_380",
+    "citation": "2020 SCMR 380",
+    "case_title": "Mst. Shazia Bibi v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2020,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Woman Accused",
+      "Bail",
+      "First Proviso to Section 497(1)"
+    ],
+    "ratio_decidendi": "Under the first proviso to Section 497(1) CrPC, women accused, minors under 16 years, and sick or infirm persons are entitled to special statutory concession of bail even in capital offences, absent exceptional heinous brutality.",
+    "facts_summary": "Female petitioner charged with abetment under Section 302/109 PPC behind bars with infant child granted post-arrest bail.",
+    "disposition": "Bail Granted under First Proviso",
+    "urdu_ratio": "سیکشن 497(1) کی پہلی شق کے تحت خواتین، 16 سال سے کم بچوں اور بیمار افراد کو قتل جیسے سنگین مقدمات میں بھی ضمانت کی خصوصی رعایت حاصل ہے۔"
+  },
+  {
+    "id": "case_pld_2021_sc_888",
+    "citation": "PLD 2021 SC 888",
+    "case_title": "Muhammad Shakeel v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497",
+      "Pakistan Penal Code, 1860 - Section 324"
+    ],
+    "legal_topics": [
+      "Attempted Murder",
+      "Section 324 PPC",
+      "Non-Prohibitory Clause",
+      "Bail"
+    ],
+    "ratio_decidendi": "In offences under Section 324 PPC (attempted murder) where injuries caused do not fall under Section 337-D (Jaifah) or Section 337-F(v), the maximum imprisonment does not fall within the prohibitory clause of Section 497(1) CrPC, making bail normal rule.",
+    "facts_summary": "Petitioner charged under 324 PPC for causing simple firearm injury on non-vital part granted post-arrest bail.",
+    "disposition": "Bail Allowed",
+    "urdu_ratio": "اقدامِ قتل (دفعہ 324) میں اگر چوٹ غیر مہلک حصے پر ہو تو سزا امتناعی شق میں نہیں آتی اور ضمانت منظور کرنا عمومی اصول ہے۔"
+  },
+  {
+    "id": "case_scmr_2019_1129",
+    "citation": "2019 SCMR 1129",
+    "case_title": "Mirza Shaukat Baig v. Shahid Jamil",
+    "court": "Supreme Court of Pakistan",
+    "year": 2019,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 498"
+    ],
+    "legal_topics": [
+      "Pre-arrest Bail",
+      "Non-bailable Offence",
+      "Extraordinary Relief"
+    ],
+    "ratio_decidendi": "Pre-arrest bail under Section 498 CrPC is an extraordinary relief intended solely to protect innocent citizens from arrest based on malicious prosecution or tainted police motives. It cannot be used to bypass regular criminal investigation.",
+    "facts_summary": "Petitioner failed to produce any proof of personal grudge or police malice. Supreme Court recalled ad-interim pre-arrest bail.",
+    "disposition": "Pre-arrest Bail Refused",
+    "urdu_ratio": "قبل از گرفتاری ضمانت ایک غیر معمولی رعایت ہے جو صرف جھوٹے مقدمات اور پولیس کی بدنیتی سے بچاؤ کے لیے دی جاتی ہے۔"
+  },
+  {
+    "id": "case_pcrlj_2023_105",
+    "citation": "2023 PCrLJ 105",
+    "case_title": "Bashir Ahmed v. The State",
+    "court": "Lahore High Court",
+    "year": 2023,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497",
+      "Pakistan Penal Code, 1860 - Section 302"
+    ],
+    "legal_topics": [
+      "Cross-Version",
+      "Free Fight",
+      "Further Inquiry",
+      "Bail"
+    ],
+    "ratio_decidendi": "In cases of cross-version / counter-FIR where both parties sustain injuries in a sudden free fight and it cannot be determined at bail stage as to who was the aggressor, the case squarely falls within Section 497(2) CrPC as one of further inquiry, entitling accused on both sides to bail.",
+    "facts_summary": "Cross-FIR registered by both factions for same clash where persons from both sides were wounded.",
+    "disposition": "Bail Granted to Both Sides",
+    "urdu_ratio": "مخالف فریقین کے کراس مقدمات (Cross-Version) میں جب یہ طے نہ ہو سکے کہ پہل کس نے کی، تو معاملہ مزید انکوائری کا بنتا ہے اور ضمانت دی جائے گی۔"
+  },
+  {
+    "id": "case_scmr_2018_1920",
+    "citation": "2018 SCMR 1920",
+    "case_title": "Riaz Ahmad v. The State",
     "court": "Supreme Court of Pakistan",
     "year": 2018,
-    "statutes_cited": ["Code of Criminal Procedure, 1898 - Section 154", "Code of Criminal Procedure, 1898 - Section 156", "Code of Criminal Procedure, 1898 - Section 161"],
-    "legal_topics": ["Second FIR Barred", "Investigation", "Cross Version"],
-    "ratio_decidendi": "There can be only one First Information Report (FIR) in respect of one occurrence. Registration of a second or subsequent FIR regarding the same incident is illegal and without jurisdiction. Any counter-version or subsequent statement must be recorded by the investigating officer under Section 161 CrPC during the same investigation.",
-    "facts_summary": "7-member larger bench of the Supreme Court authoritative judgment resolving the law on multiple FIRs in a single criminal incident.",
-    "disposition": "Second FIR Declared Illegal",
-    "urdu_ratio": "ایک ہی وقوعے کی دوسری ایف آئی آر درج نہیں کی جا سکتی۔ مخالف فریق کا بیان یا نیا مؤقف اسی تفتیش کے دوران سیکشن 161 ضابطہ فوجداری کے تحت ریکارڈ کیا جائے گا۔"
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497",
+      "Control of Narcotic Substances Act, 1997 - Section 9"
+    ],
+    "legal_topics": [
+      "Bail",
+      "CNSA 1997",
+      "Chain of Custody",
+      "Safe Transmission"
+    ],
+    "ratio_decidendi": "In narcotic cases, if the prosecution fails to establish unbroken chain of custody and safe transmission of recovered substance to the chemical examiner without delay, case falls within purview of further inquiry under Section 497(2) CrPC.",
+    "facts_summary": "Contraband kept in police custody for 14 days without explanation before dispatch to forensic science agency.",
+    "disposition": "Post-arrest Bail Allowed",
+    "urdu_ratio": "منشیات کے مقدمات میں اگر لیبارٹری کو نمونے بھیجنے کا محفوظ ریکارڈ (Chain of Custody) موجود نہ ہو تو ضمانت منظور کی جائے گی۔"
+  },
+  {
+    "id": "case_pcrlj_2022_412",
+    "citation": "2022 PCrLJ 412",
+    "case_title": "Tahir Mehmood v. The State",
+    "court": "Islamabad High Court",
+    "year": 2022,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497",
+      "Pakistan Penal Code, 1860 - Section 489-F"
+    ],
+    "legal_topics": [
+      "Dishonored Cheque",
+      "Section 489-F PPC",
+      "Bail",
+      "Commercial Transaction"
+    ],
+    "ratio_decidendi": "Offence under Section 489-F PPC carrying maximum punishment of three years does not fall within prohibitory clause of Section 497(1) CrPC. Withholding bail in cheque dishonor cases as a recovery tool is illegal.",
+    "facts_summary": "Trial court refused bail to force settlement of business dues. High Court granted bail declaring detention cannot be debt collection measure.",
+    "disposition": "Bail Granted",
+    "urdu_ratio": "چیک ڈس آنر (489-F) کا جرم امتناعی شق میں نہیں آتا۔ رقم کی وصولی کے لیے ملزم کی ضمانت روکنا غیر قانونی ہے۔"
+  },
+  {
+    "id": "case_scmr_2017_144",
+    "citation": "2017 SCMR 144",
+    "case_title": "Muhammad Sadiq v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2017,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497",
+      "Pakistan Penal Code, 1860 - Section 302"
+    ],
+    "legal_topics": [
+      "Vicarious Liability",
+      "Section 34 PPC",
+      "Lalkara / Exhortation",
+      "Bail"
+    ],
+    "ratio_decidendi": "Mere attribution of ineffective firing or simple lalkara (verbal exhortation) without any active overt act in a Section 302/34 PPC case entitles accused to concession of bail under further inquiry.",
+    "facts_summary": "Petitioner was attributed only verbal instigation while principal co-accused fired fatal shot. Supreme Court granted bail.",
+    "disposition": "Bail Allowed",
+    "urdu_ratio": "قتل کے مقدمے میں صرف للکارا مارنے یا ہوائی فائرنگ کرنے کے الزام پر ملزم کو ضمانت بعد از گرفتاری دی جا سکتی ہے۔"
+  },
+  {
+    "id": "case_scmr_2016_1218",
+    "citation": "2016 SCMR 1218",
+    "case_title": "Haji Muhammad Nazir v. State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2016,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497",
+      "Pakistan Penal Code, 1860 - Section 409",
+      "Pakistan Penal Code, 1860 - Section 420"
+    ],
+    "legal_topics": [
+      "Documentary Evidence",
+      "White Collar Crime",
+      "Bail",
+      "Challan Submitted"
+    ],
+    "ratio_decidendi": "In white-collar and fraud cases based entirely on documentary evidence, once the investigation is complete and challan is submitted under Section 173 CrPC, custody of accused serves no useful purpose.",
+    "facts_summary": "Bank officer accused of fraudulent transactions granted bail after completion of investigation.",
+    "disposition": "Bail Granted",
+    "urdu_ratio": "دستاویزی ثبوت اور فراڈ کے مقدمات میں تفتیش مکمل اور چالان جمع ہونے کے بعد ملزم کو جیل میں رکھنے کا کوئی جواز نہیں۔"
+  },
+  {
+    "id": "case_pcrlj_2021_789",
+    "citation": "2021 PCrLJ 789",
+    "case_title": "Gulzar Ahmad v. The State",
+    "court": "High Court of Sindh",
+    "year": 2021,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497",
+      "Pakistan Penal Code, 1860 - Section 392"
+    ],
+    "legal_topics": [
+      "Identification Parade",
+      "Robbery",
+      "Section 392 PPC",
+      "Bail"
+    ],
+    "ratio_decidendi": "Where un-named accused in a robbery FIR is not put to an identification parade under Article 22 of Qanun-e-Shahadat Order within reasonable time, subsequent recovery of robbed property without independent witnesses becomes doubtful, justifying bail.",
+    "facts_summary": "Robbery FIR against unknown persons; identification parade conducted after 22 days delay. Bail granted.",
+    "disposition": "Bail Granted",
+    "urdu_ratio": "ڈکیتی کے نامعلوم ملزم کی شناخت پریڈ میں غیر معقول تاخیر ملزم کو ضمانت کا حقدار بناتی ہے۔"
+  },
+  {
+    "id": "case_scmr_2015_1394",
+    "citation": "2015 SCMR 1394",
+    "case_title": "Nasarullah v. State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2015,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Juvenile Justice",
+      "Minor Accused",
+      "Bail"
+    ],
+    "ratio_decidendi": "Under the Juvenile Justice System Act and Section 497(1) CrPC, a juvenile under 18 years of age is entitled to be released on bail unless there appear reasonable grounds for believing that the release is likely to bring him into association with criminals.",
+    "facts_summary": "15-year-old accused charged in a violent clash granted bail on statutory grounds of juvenility.",
+    "disposition": "Bail Allowed",
+    "urdu_ratio": "18 سال سے کم عمر نابالغ ملزم کو جووینائل جسٹس سسٹم اور ضابطہ فوجداری کے تحت ضمانت پر رہا کیا جانا لازمی ہے۔"
+  },
+  {
+    "id": "case_pld_2014_sc_241",
+    "citation": "PLD 2014 SC 241",
+    "case_title": "Muhammad Tanveer v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2014,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Bail",
+      "Tentative Assessment",
+      "Merits of Case"
+    ],
+    "ratio_decidendi": "At the bail stage, court is only required to make a tentative assessment of the material available on record. Deep appreciation of evidence or recording findings on merits is prohibited as it prejudices trial.",
+    "facts_summary": "Supreme Court cautioned lower courts against premature findings on guilt or innocence during bail hearings.",
+    "disposition": "Guidelines Reaffirmed",
+    "urdu_ratio": "ضمانت کے مرحلے پر عدالت صرف سرسری جائزہ (Tentative Assessment) لے سکتی ہے، گواہیوں کا گہرا تجزیہ کرنا منع ہے۔"
   },
   {
     "id": "case_scmr_2021_1150",
@@ -70,12 +458,19 @@
     "case_title": "Muhammad Zaman v. The State",
     "court": "Supreme Court of Pakistan",
     "year": 2021,
-    "statutes_cited": ["Pakistan Penal Code, 1860 - Section 302", "Pakistan Penal Code, 1860 - Section 300"],
-    "legal_topics": ["Murder", "Medical vs Ocular Conflict", "Benefit of Doubt"],
-    "ratio_decidendi": "Where there is an irreconcilable conflict between the ocular testimony (eye-witness statements) and medical evidence regarding the distance of firing, nature of injuries, or time of death in a Section 302 PPC case, the benefit of doubt must inevitably be extended to the accused, resulting in acquittal.",
-    "facts_summary": "Eye-witnesses claimed accused shot deceased from point-blank range, whereas post-mortem and forensic report showed absence of blackening/charring and long-range bullet trajectory.",
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Pakistan Penal Code, 1860 - Section 300"
+    ],
+    "legal_topics": [
+      "Murder",
+      "Medical vs Ocular Conflict",
+      "Benefit of Doubt"
+    ],
+    "ratio_decidendi": "Where there is an irreconcilable conflict between ocular testimony (eye-witness statements) and medical evidence regarding distance of firing, nature of injuries, or time of death in Section 302 PPC cases, benefit of doubt must inevitably be extended to accused, resulting in acquittal.",
+    "facts_summary": "Eye-witnesses claimed accused shot deceased from point-blank range, whereas post-mortem showed absence of charring/blackening.",
     "disposition": "Acquittal Allowed",
-    "urdu_ratio": "قتل کے مقدمے (سیکشن 302) میں چشم دید گواہوں کے بیانات اور میڈیکل رپورٹ کے درمیان واضح تضاد کی صورت میں شک کا فائدہ لازمی طور پر ملزم کو دیا جائے گا۔"
+    "urdu_ratio": "قتل کے مقدمے میں چشم دید گواہوں کے بیانات اور میڈیکل رپورٹ میں تضاد کی صورت میں شک کا فائدہ لازمی طور پر ملزم کو ملے گا۔"
   },
   {
     "id": "case_pld_2019_sc_527",
@@ -83,12 +478,20 @@
     "case_title": "Khizar Hayat v. The State",
     "court": "Supreme Court of Pakistan",
     "year": 2019,
-    "statutes_cited": ["Pakistan Penal Code, 1860 - Section 302", "Pakistan Penal Code, 1860 - Section 304", "Pakistan Penal Code, 1860 - Section 299"],
-    "legal_topics": ["Qatl-i-Amd", "Qisas vs Tazir", "Standard of Proof"],
-    "ratio_decidendi": "To award death penalty as Qisas under Section 302(a) PPC, the strict standard of proof under Article 17 of Qanun-e-Shahadat Order, 1984 (Tazkiya-tul-Shahood) must be satisfied. Where proof required for Qisas is lacking, punishment can only be awarded under Section 302(b) PPC as Tazir.",
-    "facts_summary": "Detailed Supreme Court judgment distinguishing the evidentiary thresholds required for imposing death as Qisas versus Tazir under Pakistani criminal jurisprudence.",
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Pakistan Penal Code, 1860 - Section 304",
+      "Pakistan Penal Code, 1860 - Section 299"
+    ],
+    "legal_topics": [
+      "Qatl-i-Amd",
+      "Qisas vs Tazir",
+      "Standard of Proof"
+    ],
+    "ratio_decidendi": "To award death penalty as Qisas under Section 302(a) PPC, strict standard of proof under Article 17 of Qanun-e-Shahadat Order, 1984 (Tazkiya-tul-Shahood) must be satisfied. Where proof required for Qisas is lacking, punishment can only be awarded under Section 302(b) PPC as Tazir.",
+    "facts_summary": "Supreme Court distinguished evidentiary thresholds required for imposing death as Qisas versus Tazir under Pakistani law.",
     "disposition": "Sentence Modified to Tazir",
-    "urdu_ratio": "سیکشن 302(a) کے تحت قصاص کی سزا کے لیے تزکیۃ الشہود کا سخت اسلامی معیار پورا ہونا ضروری ہے، ورنہ سزا سیکشن 302(b) کے تحت بطور تعزیر دی جائے گی۔"
+    "urdu_ratio": "سیکشن 302(a) کے تحت قصاص کی سزا کے لیے تزکیۃ الشہود کا سخت معیار درکار ہے، ورنہ سزا 302(b) کے تحت تعزیر کے طور پر دی جائے گی۔"
   },
   {
     "id": "case_scmr_2020_204",
@@ -96,38 +499,290 @@
     "case_title": "Farman Ali v. The State",
     "court": "Supreme Court of Pakistan",
     "year": 2020,
-    "statutes_cited": ["Pakistan Penal Code, 1860 - Section 302", "Qanun-e-Shahadat Order, 1984 - Article 27"],
-    "legal_topics": ["Weapon Recovery", "Circumstantial Evidence", "Murder Trial"],
-    "ratio_decidendi": "Recovery of the crime weapon at the instance of the accused is merely a corroborative piece of evidence and cannot be treated as substantive evidence to sustain a conviction under Section 302 PPC when the primary ocular evidence has been discarded.",
-    "facts_summary": "Prosecution relied solely on the recovery of a pistol after eye-witnesses were found untrustworthy. Supreme Court held recovery alone cannot establish murder charge.",
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Qanun-e-Shahadat Order, 1984 - Article 27"
+    ],
+    "legal_topics": [
+      "Weapon Recovery",
+      "Circumstantial Evidence",
+      "Murder Trial"
+    ],
+    "ratio_decidendi": "Recovery of the crime weapon at the instance of the accused under Article 27 QSO is merely a corroborative piece of evidence and cannot be treated as substantive evidence to sustain conviction under Section 302 PPC when primary ocular evidence is discarded.",
+    "facts_summary": "Prosecution relied solely on pistol recovery after eyewitnesses were found untrustworthy. Supreme Court set aside conviction.",
     "disposition": "Conviction Set Aside",
-    "urdu_ratio": "آلۂ قتل کی برآمدگی محض تائیدی ثبوت ہے، اگر بنیادی چشم دید گواہ غیر معتبر قرار پائیں تو صرف برآمدگی کی بنیاد پر قتل کی سزا نہیں دی جا سکتی۔"
+    "urdu_ratio": "آلۂ قتل کی برآمدگی محض تائیدی ثبوت ہے، اگر بنیادی چشم دید گواہ غیر معتبر قرار پائیں تو صرف برآمدگی پر سزا نہیں ہو سکتی۔"
   },
   {
-    "id": "case_pld_2022_sc_345",
-    "citation": "PLD 2022 SC 345",
-    "case_title": "Justice Qazi Faez Isa v. President of Pakistan",
+    "id": "case_scmr_2018_153",
+    "citation": "2018 SCMR 153",
+    "case_title": "Nadeem alias Deemi v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2018,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 96",
+      "Pakistan Penal Code, 1860 - Section 100",
+      "Pakistan Penal Code, 1860 - Section 300",
+      "Pakistan Penal Code, 1860 - Section 302"
+    ],
+    "legal_topics": [
+      "Private Defence",
+      "Murder",
+      "Exceeding Right of Defence"
+    ],
+    "ratio_decidendi": "Under Sections 96 to 106 PPC, when an accused acts in exercise of right of private defence against reasonable apprehension of death or grievous hurt, causing death does not constitute murder. Exceeding defence right without premeditation falls under Section 302(c) PPC rather than capital punishment under 302(b).",
+    "facts_summary": "Accused attacked with sharp weapons retaliated with licensed firearm. Supreme Court reduced sentence to Section 302(c) PPC.",
+    "disposition": "Sentence Reduced to Section 302(c) PPC",
+    "urdu_ratio": "دفاعِ خود اختیاری (Private Defence) کے تحت جان کے خطرے پر جوابی کارروائی قتلِ عمد نہیں، اور حد سے تجاوز پر سزا دفعہ 302(c) میں آئے گی۔"
+  },
+  {
+    "id": "case_pld_2017_sc_733",
+    "citation": "PLD 2017 SC 733",
+    "case_title": "Muhammad Arshad v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2017,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 193",
+      "Pakistan Penal Code, 1860 - Section 194",
+      "Pakistan Penal Code, 1860 - Section 302"
+    ],
+    "legal_topics": [
+      "Perjury",
+      "False Evidence",
+      "Integrity of Witness"
+    ],
+    "ratio_decidendi": "Witnesses who deliberately depose falsely or concoct false evidence in criminal trials must be prosecuted for perjury under Section 193/194 PPC. The rule of sifting chaff from grain does not permit deliberate perjury to pollute justice.",
+    "facts_summary": "Eyewitness in double murder trial proven to have perjured regarding presence at scene. Supreme Court directed perjury proceedings.",
+    "disposition": "Witness Prosecuted for Perjury",
+    "urdu_ratio": "عدالت میں جھوٹی گواہی دینے والے گواہوں کے خلاف سیکشن 193 اور 194 کے تحت جھوٹی گواہی (Perjury) کا مقدمہ چلانا لازمی ہے۔"
+  },
+  {
+    "id": "case_scmr_2022_89",
+    "citation": "2022 SCMR 89",
+    "case_title": "Ghulam Murtaza v. The State",
     "court": "Supreme Court of Pakistan",
     "year": 2022,
-    "statutes_cited": ["Constitution of the Islamic Republic of Pakistan, 1973 - Article 10A", "Constitution of the Islamic Republic of Pakistan, 1973 - Article 9", "Constitution of the Islamic Republic of Pakistan, 1973 - Article 14"],
-    "legal_topics": ["Fair Trial", "Due Process", "Dignity of Man"],
-    "ratio_decidendi": "Article 10A of the Constitution guarantees the fundamental right to a fair trial and due process in the determination of civil rights and obligations or in any criminal charge. Any state action, investigation, or executive order violating transparency, natural justice, or surveillance without judicial warrant violates Articles 9, 10A, and 14.",
-    "facts_summary": "Landmark constitutional judgment by full court upholding inviolability of judicial independence and strict observance of due process under Article 10A.",
-    "disposition": "Petition Allowed",
-    "urdu_ratio": "آئین کا آرٹیکل 10A ہر شہری کو شفاف ٹرائل اور فیئر ٹرائل کا بنیادی حق دیتا ہے۔ قانونی تقاضوں اور عدالتی حکم کے بغیر کی جانے والی کارروائی غیر آئینی ہے۔"
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302"
+    ],
+    "legal_topics": [
+      "Motive",
+      "Double-Edged Weapon",
+      "Murder Trial"
+    ],
+    "ratio_decidendi": "Motive in a murder case is a double-edged weapon. While it may provide reason for the accused to commit crime, it equally provides reason for complainant to falsely implicate accused. Failure to prove alleged motive cuts against prosecution.",
+    "facts_summary": "Prosecution set up specific motive but failed to lead evidence to substantiate it. Supreme Court acquitted accused.",
+    "disposition": "Acquittal Allowed",
+    "urdu_ratio": "قتل کے مقدمے میں محرک (Motive) دو دھاری تلوار ہے۔ اگر استغاثہ محرک ثابت کرنے میں ناکام رہے تو یہ ملزم کے حق میں جاتا ہے۔"
   },
   {
-    "id": "case_scmr_2021_873",
-    "citation": "2021 SCMR 873",
-    "case_title": "Ghulam Hussain v. Station House Officer (SHO)",
+    "id": "case_scmr_2023_12",
+    "citation": "2023 SCMR 12",
+    "case_title": "Mst. Rukhsana Bibi v. State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2023,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Qanun-e-Shahadat Order, 1984 - Article 46"
+    ],
+    "legal_topics": [
+      "Dying Declaration",
+      "Article 46 QSO",
+      "Medical Fitness",
+      "Murder"
+    ],
+    "ratio_decidendi": "A dying declaration recorded under Article 46 QSO is admissible without oath or cross-examination, but conviction can only be based upon it if it is proved that deceased was in a fit mental state to depose and it is corroborated by medical evidence.",
+    "facts_summary": "Dying declaration recorded without doctor's certificate of mental fitness rejected by Supreme Court.",
+    "disposition": "Conviction Set Aside",
+    "urdu_ratio": "مرتے وقت کا بیان (Dying Declaration) تب ہی معتبر مانا جائے گا جب ڈاکٹر کی تصدیق ہو کہ زخمی بیان دینے کے ہوش و حواس میں تھا۔"
+  },
+  {
+    "id": "case_scmr_2020_1642",
+    "citation": "2020 SCMR 1642",
+    "case_title": "Muhammad Ashraf v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2020,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Qanun-e-Shahadat Order, 1984 - Article 17"
+    ],
+    "legal_topics": [
+      "Solitary Eye-Witness",
+      "Capital Sentence",
+      "High Standard of Proof"
+    ],
+    "ratio_decidendi": "Conviction in a capital murder case can be sustained on the solitary testimony of a single eyewitness only if such witness is wholly reliable and of unimpeachable character. If the witness has an interest in the dispute, uncorroborated single testimony cannot sustain death penalty.",
+    "facts_summary": "Solitary interested eyewitness contradicted on material points. Supreme Court set aside death sentence.",
+    "disposition": "Acquittal Granted",
+    "urdu_ratio": "قتل کے مقدمے میں صرف ایک گواہ کی گواہی پر سزائے موت تب ہی دی جا سکتی ہے جب وہ گواہ مکمل طور پر غیر جانبدار اور بے داغ ہو۔"
+  },
+  {
+    "id": "case_pld_2021_sc_600",
+    "citation": "PLD 2021 SC 600",
+    "case_title": "Safdar Ali v. The State",
     "court": "Supreme Court of Pakistan",
     "year": 2021,
-    "statutes_cited": ["Constitution of the Islamic Republic of Pakistan, 1973 - Article 199", "Code of Criminal Procedure, 1898 - Section 22A", "Code of Criminal Procedure, 1898 - Section 22B"],
-    "legal_topics": ["Writ Jurisdiction", "Police Harassment", "Ex-Officio Justice of Peace"],
-    "ratio_decidendi": "The High Court under Article 199 of the Constitution has constitutional authority to protect citizens against unlawful police harassment, illegal confinement, and abuse of official power by law enforcement agencies. However, for registration of an FIR, the citizen should first approach the Ex-Officio Justice of Peace under Section 22-A / 22-B CrPC.",
-    "facts_summary": "Supreme Court laid down comprehensive guidelines for High Courts in entertaining Article 199 petitions against police authorities.",
-    "disposition": "Guidelines Issued",
-    "urdu_ratio": "آئین کے آرٹیکل 199 کے تحت ہائی کورٹ پولیس کی غیر قانونی ہراسانی اور اختیارات کے ناجائز استعمال کے خلاف شہریوں کو تحفظ دینے کی مجاز ہے۔"
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Pakistan Penal Code, 1860 - Section 338-E"
+    ],
+    "legal_topics": [
+      "Compromise in Murder",
+      "Sulh",
+      "Diyat",
+      "Section 345 CrPC"
+    ],
+    "ratio_decidendi": "Under Section 345 CrPC and Section 338-E PPC, an offence of Qatl-i-Amd punishable under Section 302(a) or (b) PPC can be compounded by the legal heirs of the deceased (Walies) through compromise (Sulh). Once valid compromise is accepted by court, accused is entitled to acquittal unless Tazir under Section 311 PPC applies.",
+    "facts_summary": "All legal heirs of deceased executed valid compromise deed. Supreme Court acquitted appellant following verification of legal heirs.",
+    "disposition": "Acquittal on Compromise",
+    "urdu_ratio": "قتل کے مقدمے میں مقتول کے قانونی ورثاء (Walies) راضی نامہ کر سکتے ہیں، جس کی عدالت سے توثیق کے بعد ملزم بری ہو جاتا ہے۔"
+  },
+  {
+    "id": "case_scmr_2019_652",
+    "citation": "2019 SCMR 652",
+    "case_title": "Shahid Mehmood v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2019,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Pakistan Penal Code, 1860 - Section 34"
+    ],
+    "legal_topics": [
+      "Common Intention",
+      "Section 34 PPC",
+      "Vicarious Liability"
+    ],
+    "ratio_decidendi": "Common intention under Section 34 PPC implies pre-arranged plan and acting in concert pursuant to such plan. Mere presence at scene of crime without sharing common intention or performing an overt act does not attract vicarious liability for capital murder.",
+    "facts_summary": "Co-accused accompanied principal offender to market without knowledge that principal carried a concealed pistol. Acquitted of murder charge.",
+    "disposition": "Acquittal of Co-accused",
+    "urdu_ratio": "دفعہ 34 (مشترکہ نیت) کے لیے پیشگی منصوبہ بندی ضروری ہے۔ موقع پر محض موجود ہونے سے قتل کی مشترکہ ذمہ داری عائد نہیں ہوتی۔"
+  },
+  {
+    "id": "case_pld_2018_sc_595",
+    "citation": "PLD 2018 SC 595",
+    "case_title": "Sughran Bibi v. The State (Larger Bench)",
+    "court": "Supreme Court of Pakistan",
+    "year": 2018,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 154",
+      "Code of Criminal Procedure, 1898 - Section 156",
+      "Code of Criminal Procedure, 1898 - Section 161"
+    ],
+    "legal_topics": [
+      "Second FIR Barred",
+      "Investigation",
+      "Cross Version"
+    ],
+    "ratio_decidendi": "There can be only one First Information Report (FIR) in respect of one occurrence. Registration of a second or subsequent FIR regarding same incident is illegal and without jurisdiction. Any counter-version or subsequent statement must be recorded under Section 161 CrPC during same investigation.",
+    "facts_summary": "7-member larger bench of Supreme Court authoritative ruling resolving law on multiple FIRs in single criminal occurrence.",
+    "disposition": "Second FIR Declared Illegal",
+    "urdu_ratio": "ایک ہی وقوعے کی دوسری ایف آئی آر درج نہیں کی جا سکتی۔ مخالف فریق کا نیا مؤقف سیکشن 161 ضابطہ فوجداری کے تحت درج کیا جائے گا۔"
+  },
+  {
+    "id": "case_pld_2016_sc_581",
+    "citation": "PLD 2016 SC 581",
+    "case_title": "Khizer Hayat v. Inspector General of Police (IGP) Punjab",
+    "court": "Supreme Court of Pakistan",
+    "year": 2016,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 22A",
+      "Code of Criminal Procedure, 1898 - Section 22B",
+      "Code of Criminal Procedure, 1898 - Section 154"
+    ],
+    "legal_topics": [
+      "Justice of Peace",
+      "Section 22-A CrPC",
+      "Ex-Officio Powers",
+      "FIR Registration"
+    ],
+    "ratio_decidendi": "The Ex-Officio Justice of Peace under Section 22-A / 22-B CrPC performs administrative/quasi-judicial functions to ensure police register FIR upon disclosure of cognizable offence. However, Justice of Peace cannot direct police how to investigate or supervise investigation.",
+    "facts_summary": "Supreme Court laid down definitive jurisdictional boundaries for Sessions Judges acting as Ex-Officio Justice of Peace under Section 22-A CrPC.",
+    "disposition": "Comprehensive Guidelines Issued",
+    "urdu_ratio": "سیکشن 22-A کے تحت جسٹس آف پیس قابلِ دست اندازی جرم پر پولیس کو ایف آئی آر درج کرنے کا حکم دے سکتا ہے مگر تفتیش میں مداخلت نہیں کر سکتا۔"
+  },
+  {
+    "id": "case_scmr_2021_730",
+    "citation": "2021 SCMR 730",
+    "case_title": "Abdul Khaliq v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 161",
+      "Code of Criminal Procedure, 1898 - Section 162"
+    ],
+    "legal_topics": [
+      "Section 161 CrPC Statements",
+      "Police Zimni",
+      "Delayed Recording"
+    ],
+    "ratio_decidendi": "Statements of witnesses recorded under Section 161 CrPC with unexplained delay of several days after incident lose evidentiary value. Delayed recording of 161 statements implies fabrication and consultation.",
+    "facts_summary": "Police recorded eyewitness statements 12 days after crime without justification. Supreme Court discarded testimony.",
+    "disposition": "Conviction Set Aside",
+    "urdu_ratio": "سیکشن 161 کے تحت گواہوں کے بیانات قلمبند کرنے میں غیر معقول تاخیر گواہی کی قانونی حیثیت ختم کر دیتی ہے۔"
+  },
+  {
+    "id": "case_pld_2020_sc_330",
+    "citation": "PLD 2020 SC 330",
+    "case_title": "Waqar Ahmad v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2020,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 164",
+      "Qanun-e-Shahadat Order, 1984 - Article 37"
+    ],
+    "legal_topics": [
+      "Confession",
+      "Section 164 CrPC",
+      "Retracted Confession",
+      "Judicial Magistrate"
+    ],
+    "ratio_decidendi": "A judicial confession recorded under Section 164 CrPC is valid only if all statutory safeguards (giving time to reflect, removal of handcuffs, warning that accused is not bound to confess) are strictly observed by Magistrate. Retracted confession without independent corroboration cannot sustain capital sentence.",
+    "facts_summary": "Magistrate recorded 164 confession without removing police escort from courtroom. Confession held inadmissible.",
+    "disposition": "Confession Discarded",
+    "urdu_ratio": "سیکشن 164 کے تحت اعترافِ جرم تب ہی جائز ہے جب مجسٹریٹ تمام قانونی تقاضے (ہتھکڑی کھولنا، سوچنے کا وقت دینا) پورے کرے۔"
+  },
+  {
+    "id": "case_pcrlj_2020_312",
+    "citation": "2020 PCrLJ 312",
+    "case_title": "Rashid Minhas v. The State",
+    "court": "Lahore High Court",
+    "year": 2020,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 173",
+      "Code of Criminal Procedure, 1898 - Section 63",
+      "Code of Criminal Procedure, 1898 - Section 249-A"
+    ],
+    "legal_topics": [
+      "Challan",
+      "Section 173 CrPC",
+      "Discharge of Accused",
+      "Magistrate Powers"
+    ],
+    "ratio_decidendi": "A Magistrate considering police challan report under Section 173 CrPC is not bound by police opinion regarding guilt or innocence. Magistrate can disagree with police report placing accused in Column No. 2 and summon him for trial or discharge him under Section 63 CrPC upon judicial scrutiny.",
+    "facts_summary": "Magistrate summoned accused placed in Column No. 2 (innocent) by police. High Court upheld Magistrate's judicial discretion.",
+    "disposition": "Summoning Order Upheld",
+    "urdu_ratio": "مجسٹریٹ پولیس کی چالان رپورٹ (سیکشن 173) کا پابند نہیں اور وہ اپنے عدالتی اختیار سے ملزم کو طلب یا ڈسچارج کر سکتا ہے۔"
+  },
+  {
+    "id": "case_scmr_2019_1020",
+    "citation": "2019 SCMR 1020",
+    "case_title": "Muhammad Riaz v. State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2019,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 100",
+      "Code of Criminal Procedure, 1898 - Section 491"
+    ],
+    "legal_topics": [
+      "Search Warrant",
+      "Illegal Confinement",
+      "Section 100 CrPC",
+      "Habeas Corpus"
+    ],
+    "ratio_decidendi": "Under Section 100 CrPC, a Magistrate has summary powers to issue search warrant for recovery of persons wrongfully confined. Section 491 CrPC empowers High Court to issue directions in nature of habeas corpus to liberate citizens illegally detained in private or police custody.",
+    "facts_summary": "Citizen detained in illegal private jail at brick kiln recovered pursuant to High Court Section 491 bailiff raid.",
+    "disposition": "Detainee Set at Liberty",
+    "urdu_ratio": "سیکشن 100 اور 491 ضابطہ فوجداری کے تحت غیر قانونی حراست میں رکھے گئے افراد کو فوری بازیاب کروا کر رہا کرنے کا اختیار ہے۔"
   },
   {
     "id": "case_scmr_2020_249",
@@ -135,12 +790,19 @@
     "case_title": "Mian Allah Ditta v. The State",
     "court": "Supreme Court of Pakistan",
     "year": 2020,
-    "statutes_cited": ["Pakistan Penal Code, 1860 - Section 489-F"],
-    "legal_topics": ["Dishonest Cheque", "Section 489-F", "Bail", "Security Cheque"],
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 489-F"
+    ],
+    "legal_topics": [
+      "Dishonest Cheque",
+      "Section 489-F PPC",
+      "Bail",
+      "Security Cheque"
+    ],
     "ratio_decidendi": "To constitute an offence under Section 489-F PPC, the prosecution must prove two indispensable ingredients: (i) the cheque was issued with dishonest intent, and (ii) it was issued towards repayment of a loan or fulfillment of an existing obligation. A post-dated cheque issued merely as guarantee or security in a business transaction does not automatically attract criminal liability under Section 489-F PPC.",
-    "facts_summary": "Dispute over dishonored cheque issued as collateral security in a commercial contract. Supreme Court granted bail emphasizing civil nature of dispute.",
+    "facts_summary": "Dispute over dishonored cheque issued as collateral security in commercial contract. Supreme Court granted bail emphasizing civil nature of dispute.",
     "disposition": "Bail Allowed",
-    "urdu_ratio": "سیکشن 489-F تعزیرات پاکستان کے تحت جرم ثابت کرنے کے لیے بدنیتی اور قرض کی واپسی لازمی عنصر ہیں۔ محض سیکیورٹی یا گارنٹی کے چیک پر فوجداری مقدمہ نہیں بنتا۔"
+    "urdu_ratio": "سیکشن 489-F کے تحت جرم ثابت کرنے کے لیے بدنیتی اور قرض کی واپسی لازمی عنصر ہیں۔ محض سیکیورٹی یا گارنٹی کے چیک پر فوجداری مقدمہ نہیں بنتا۔"
   },
   {
     "id": "case_pcrlj_2022_89",
@@ -148,11 +810,1203 @@
     "case_title": "Kamran Khan v. The State",
     "court": "Lahore High Court",
     "year": 2022,
-    "statutes_cited": ["Code of Criminal Procedure, 1898 - Section 561-A", "Pakistan Penal Code, 1860 - Section 420"],
-    "legal_topics": ["Quashment of FIR", "Civil Dispute", "Section 561-A"],
-    "ratio_decidendi": "Where the allegations in the FIR, even if taken at face value, disclose a purely civil dispute arising out of breach of contract without any fraudulent or dishonest inception, the criminal machinery cannot be invoked to arm-twist the other party. In such cases, the High Court is bound to quash the FIR under Section 561-A CrPC to prevent abuse of the process of court.",
-    "facts_summary": "Complainant lodged FIR under Section 420 PPC for non-delivery of goods under a commercial agreement. High Court quashed the criminal proceedings.",
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 561-A",
+      "Pakistan Penal Code, 1860 - Section 420"
+    ],
+    "legal_topics": [
+      "Quashment of FIR",
+      "Civil Dispute",
+      "Section 561-A CrPC"
+    ],
+    "ratio_decidendi": "Where allegations in the FIR, even if taken at face value, disclose a purely civil dispute arising out of breach of contract without any fraudulent or dishonest inception, the criminal machinery cannot be invoked to arm-twist the other party. In such cases, High Court is bound to quash FIR under Section 561-A CrPC to prevent abuse of process of court.",
+    "facts_summary": "Complainant lodged FIR under Section 420 PPC for non-delivery of goods under commercial agreement. High Court quashed proceedings.",
     "disposition": "FIR Quashed",
-    "urdu_ratio": "اگر ایف آئی آر کے مندرجات خالصتاً دیوانی (Civil) نوعیت کے ہوں تو فوجداری کارروائی عدالت کے عمل کا ناجائز استعمال ہے، جسے سیکشن 561-A ضابطہ فوجداری کے تحت خارج (Quash) کیا جا سکتا ہے۔"
+    "urdu_ratio": "اگر تنازع خالصتاً دیوانی (Civil) معاہدے کی خلاف ورزی کا ہو تو سیکشن 561-A کے تحت ایف آئی آر خارج (Quash) کی جائے گی۔"
+  },
+  {
+    "id": "case_scmr_2021_1820",
+    "citation": "2021 SCMR 1820",
+    "case_title": "Nadeem Akhtar v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 420",
+      "Pakistan Penal Code, 1860 - Section 415"
+    ],
+    "legal_topics": [
+      "Cheating",
+      "Section 420 PPC",
+      "Dishonest Inducement from Inception"
+    ],
+    "ratio_decidendi": "To establish cheating under Section 420 PPC, prosecution must prove dishonest intention existed at the very inception of transaction. Subsequent inability to perform contract or refund money does not transform civil liability into criminal cheating.",
+    "facts_summary": "Property dealer failed to deliver plot possession due to development delay. Supreme Court held breach of promise without initial fraudulent intent is not 420 PPC.",
+    "disposition": "Criminal Proceedings Quashed",
+    "urdu_ratio": "دھوکہ دہی (دفعہ 420) کے لیے ضروری ہے کہ نیت ابتدا ہی سے بدنیتی پر مبنی ہو۔ بعد میں معاہدہ پورا نہ کر سکنا فوجداری جرم نہیں۔"
+  },
+  {
+    "id": "case_pld_2018_sc_450",
+    "citation": "PLD 2018 SC 450",
+    "case_title": "Muhammad Zubair v. State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2018,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 468",
+      "Pakistan Penal Code, 1860 - Section 471"
+    ],
+    "legal_topics": [
+      "Forgery",
+      "Section 468 PPC",
+      "Using Forged Document as Genuine"
+    ],
+    "ratio_decidendi": "In offences under Section 468 and 471 PPC (forgery for purpose of cheating and using forged document as genuine), prosecution must prove who forged document and that accused used it with knowledge that it was forged. Expert forensic report from examiner of questioned documents is essential.",
+    "facts_summary": "Disputed property sale deed; no forensic comparison of questioned signatures conducted. Conviction set aside.",
+    "disposition": "Conviction Set Aside",
+    "urdu_ratio": "جعلسازی (دفعات 468 و 471) ثابت کرنے کے لیے فرانزک ماہر کی رپورٹ اور یہ ثابت کرنا ضروری ہے کہ ملزم جانتا تھا کہ دستاویز جعلی ہے۔"
+  },
+  {
+    "id": "case_pcrlj_2023_567",
+    "citation": "2023 PCrLJ 567",
+    "case_title": "Farooq Azam v. The State",
+    "court": "Lahore High Court",
+    "year": 2023,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 489-F",
+      "Code of Criminal Procedure, 1898 - Section 249-A"
+    ],
+    "legal_topics": [
+      "Section 489-F PPC",
+      "Acquittal under 249-A CrPC",
+      "Account Closed"
+    ],
+    "ratio_decidendi": "Where evidence shows complainant was aware at time of receiving cheque that account was dormant or closed and cheque was taken as security, ingredients of Section 489-F PPC are negated, warranting acquittal under Section 249-A CrPC.",
+    "facts_summary": "Trial court dismissed Section 249-A application; High Court reversed and acquitted accused.",
+    "disposition": "Acquittal under Section 249-A CrPC",
+    "urdu_ratio": "اگر مدعی کو معلوم تھا کہ کھاتہ بند ہے اور چیک سیکیورٹی کے طور پر لیا گیا تھا، تو دفعہ 249-A کے تحت بریت بنتی ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_109",
+    "citation": "2021 SCMR 109",
+    "case_title": "Sikandar Hayat v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 378",
+      "Pakistan Penal Code, 1860 - Section 379",
+      "Pakistan Penal Code, 1860 - Section 390",
+      "Pakistan Penal Code, 1860 - Section 392"
+    ],
+    "legal_topics": [
+      "Robbery vs Theft",
+      "Use of Force",
+      "Section 392 PPC"
+    ],
+    "ratio_decidendi": "The distinction between simple theft (Section 379 PPC) and robbery (Section 392 PPC) hinges on violence or threat of violence. Theft becomes robbery under Section 390 PPC if in committing theft, offender causes or attempts to cause death, hurt, wrongful restraint, or instant fear thereof.",
+    "facts_summary": "Accused snatched motorcycle at gunpoint. Display of firearm constitutes robbery under Section 392 PPC.",
+    "disposition": "Conviction under Section 392 PPC Upheld",
+    "urdu_ratio": "چوری (Section 379) ڈکیتی (Section 392) میں تب بدلتی ہے جب مال چھینتے وقت اسلحہ، تشدد یا خوف کا استعمال کیا جائے۔"
+  },
+  {
+    "id": "case_scmr_2019_64",
+    "citation": "2019 SCMR 64",
+    "case_title": "Azhar Mehmood v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2019,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 395",
+      "Qanun-e-Shahadat Order, 1984 - Article 22"
+    ],
+    "legal_topics": [
+      "Dacoity",
+      "Section 395 PPC",
+      "Identification Parade",
+      "Article 22 QSO"
+    ],
+    "ratio_decidendi": "In dacoity cases under Section 395 PPC committed by five or more masked or un-named persons, identification parade conducted under Article 22 QSO before a Magistrate with dummies of similar physical features is substantive safeguard. Failure to describe role of each accused during parade vitiates identification.",
+    "facts_summary": "Witnesses identified accused jointly without specifying who held weapon or took cash. Supreme Court set aside dacoity conviction.",
+    "disposition": "Acquittal Allowed",
+    "urdu_ratio": "ڈکیتی (395) کے مقدمات میں شناخت پریڈ کے دوران ہر ملزم کا مخصوص کردار بتانا ضروری ہے، مشترکہ شناخت غیر قانونی ہے۔"
+  },
+  {
+    "id": "case_pcrlj_2021_940",
+    "citation": "2021 PCrLJ 940",
+    "case_title": "Muhammad Ismail v. State",
+    "court": "Lahore High Court",
+    "year": 2021,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 411",
+      "Pakistan Penal Code, 1860 - Section 379"
+    ],
+    "legal_topics": [
+      "Dishonestly Receiving Stolen Property",
+      "Section 411 PPC",
+      "Presumption"
+    ],
+    "ratio_decidendi": "To convict under Section 411 PPC (dishonestly receiving stolen property), prosecution must prove: (1) property was stolen, (2) it was recovered from conscious possession of accused, and (3) accused received it knowing or having reason to believe it was stolen.",
+    "facts_summary": "Accused purchased motorcycle with genuine registration book unaware it was stolen. Acquitted under Section 411 PPC.",
+    "disposition": "Acquittal Granted",
+    "urdu_ratio": "مسروقہ مال رکھنے (411) پر سزا کے لیے ضروری ہے کہ ملزم جانتا ہو کہ وہ مال چوری کا ہے۔ نیک نیتی سے خریداری پر جرم نہیں بنتا۔"
+  },
+  {
+    "id": "case_pld_2022_sc_512",
+    "citation": "PLD 2022 SC 512",
+    "case_title": "The State v. Muhammad Imran (Zainab Murder Case Confirmation)",
+    "court": "Supreme Court of Pakistan",
+    "year": 2022,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 376",
+      "Pakistan Penal Code, 1860 - Section 365A",
+      "Anti-Terrorism Act, 1997 - Section 7"
+    ],
+    "legal_topics": [
+      "Rape and Murder of Minor",
+      "DNA Evidence",
+      "Section 376 PPC",
+      "Capital Punishment"
+    ],
+    "ratio_decidendi": "In heinous offences of abduction, rape (Section 376 PPC), and murder of minors, DNA profiling evidence conducted by accredited forensic laboratory supported by CCTV footage constitutes conclusive scientific evidence sufficient to sustain capital punishment.",
+    "facts_summary": "Accused abducted, raped, and murdered 6-year-old child. Supreme Court confirmed four death sentences based on conclusive DNA evidence.",
+    "disposition": "Death Penalty Confirmed",
+    "urdu_ratio": "بچوں کے اغوا، زیادتی (376) اور قتل کے مقدمات میں تصدیق شدہ ڈی این اے (DNA) اور سائنسی شواہد سزائے موت کے لیے حتمی ثبوت ہیں۔"
+  },
+  {
+    "id": "case_pld_2020_sc_146",
+    "citation": "PLD 2020 SC 146",
+    "case_title": "Atif Zareef v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2020,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 376",
+      "Pakistan Penal Code, 1860 - Section 375"
+    ],
+    "legal_topics": [
+      "Two-Finger Test Banned",
+      "Virginity Test Unconstitutional",
+      "Article 9 and 14 Constitution"
+    ],
+    "ratio_decidendi": "The two-finger virginity test and hymen examination conducted on rape survivors is unscientific, illegal, and unconstitutional, violating fundamental rights to bodily integrity, personal liberty, and dignity under Articles 9 and 14 of the Constitution.",
+    "facts_summary": "Supreme Court declared virginity testing in rape trials completely illegal and banned its practice nationwide.",
+    "disposition": "Practice Declared Unconstitutional",
+    "urdu_ratio": "زیادتی کی شکار خواتین کا ورجنٹی ٹیسٹ غیر سائنسی، غیر قانونی اور آئین کے آرٹیکل 9 اور 14 (عزتِ نفس) کے خلاف قرار دے کر ممنوع کر دیا گیا۔"
+  },
+  {
+    "id": "case_scmr_2019_189",
+    "citation": "2019 SCMR 189",
+    "case_title": "Muhammad Aslam v. The State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2019,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 337-A",
+      "Pakistan Penal Code, 1860 - Section 337-F"
+    ],
+    "legal_topics": [
+      "Shajjah",
+      "Jurh",
+      "Section 337 PPC",
+      "Medical Classification of Hurt"
+    ],
+    "ratio_decidendi": "In hurt cases under Section 337 PPC, the trial court must convict the accused strictly according to the statutory medical classification of the injury (Shajjah-i-Khafifah, Mudihah, Hashimah, etc.) as established by the Medico-Legal Certificate (MLC). Awarding generalized punishment without specific injury classification is illegal.",
+    "facts_summary": "Trial court awarded sentence under Section 337 without specifying sub-clause. Supreme Court remanded for proper sentence under correct sub-section.",
+    "disposition": "Sentence Corrected",
+    "urdu_ratio": "زدوکوب اور چوٹ کے مقدمات (337) میں سزا میڈیکل رپورٹ میں دی گئی مخصوص چوٹ کی درجہ بندی (شجہ، جرح) کے عین مطابق ہونی چاہیے۔"
+  },
+  {
+    "id": "case_scmr_2018_772",
+    "citation": "2018 SCMR 772",
+    "case_title": "Zulfiqar v. State",
+    "court": "Supreme Court of Pakistan",
+    "year": 2018,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 354-A",
+      "Pakistan Penal Code, 1860 - Section 354"
+    ],
+    "legal_topics": [
+      "Stripping of Woman",
+      "Section 354-A PPC",
+      "Public Exposure"
+    ],
+    "ratio_decidendi": "To constitute the capital offence under Section 354-A PPC (assault or use of criminal force to woman and stripping her of clothes in public view), prosecution must prove accused stripped woman naked to expose her to public view. Tearing of clothes during scuffle without intent to strip falls under Section 354 PPC carrying lesser punishment.",
+    "facts_summary": "During land fight clothes of woman were torn. Supreme Court altered conviction from 354-A PPC to 354 PPC.",
+    "disposition": "Conviction Altered to Section 354 PPC",
+    "urdu_ratio": "دفعہ 354-A کے لیے سرعام برہنہ کرنے کی نیت ثابت ہونا ضروری ہے، لڑائی میں کپڑے پھٹ جانے پر دفعہ 354 لاگو ہوگی۔"
+  },
+  {
+    "id": "case_pld_2022_sc_345",
+    "citation": "PLD 2022 SC 345",
+    "case_title": "Justice Qazi Faez Isa v. President of Pakistan",
+    "court": "Supreme Court of Pakistan",
+    "year": 2022,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 10A",
+      "Constitution of Pakistan - Article 9",
+      "Constitution of Pakistan - Article 14"
+    ],
+    "legal_topics": [
+      "Fair Trial",
+      "Due Process",
+      "Dignity of Man",
+      "Judicial Independence"
+    ],
+    "ratio_decidendi": "Article 10A guarantees the fundamental right to a fair trial and due process in the determination of civil rights and obligations or in any criminal charge. Any state action or surveillance without judicial warrant violates Articles 9, 10A, and 14.",
+    "facts_summary": "Full court judgment upholding judicial independence and strict observance of due process under Article 10A.",
+    "disposition": "Petition Allowed",
+    "urdu_ratio": "آئین کا آرٹیکل 10A ہر شہری کو شفاف اور منصفانہ ٹرائل کا بنیادی حق دیتا ہے۔ عدالتی حکم کے بغیر کی گئی ریاستی کارروائی غیر آئینی ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_873",
+    "citation": "2021 SCMR 873",
+    "case_title": "Ghulam Hussain v. Station House Officer (SHO)",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 199",
+      "Code of Criminal Procedure, 1898 - Section 22A",
+      "Code of Criminal Procedure, 1898 - Section 22B"
+    ],
+    "legal_topics": [
+      "Writ Jurisdiction",
+      "Police Harassment",
+      "Ex-Officio Justice of Peace"
+    ],
+    "ratio_decidendi": "The High Court under Article 199 has constitutional authority to protect citizens against unlawful police harassment and illegal confinement. However, for registration of an FIR, citizen should first approach Ex-Officio Justice of Peace under Section 22-A / 22-B CrPC.",
+    "facts_summary": "Supreme Court guidelines for High Courts in entertaining Article 199 petitions against police authorities.",
+    "disposition": "Guidelines Issued",
+    "urdu_ratio": "آئین کے آرٹیکل 199 کے تحت ہائی کورٹ پولیس کی غیر قانونی ہراسانی کے خلاف شہریوں کو تحفظ فراہم کرنے کی مکمل مجاز ہے۔"
+  },
+  {
+    "id": "case_pld_2020_sc_1",
+    "citation": "PLD 2020 SC 1",
+    "case_title": "Faizabad Dharna Judgment (Supreme Court)",
+    "court": "Supreme Court of Pakistan",
+    "year": 2020,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 19",
+      "Constitution of Pakistan - Article 15",
+      "Constitution of Pakistan - Article 16"
+    ],
+    "legal_topics": [
+      "Freedom of Speech",
+      "Freedom of Movement",
+      "Public Assembly",
+      "Hate Speech"
+    ],
+    "ratio_decidendi": "The fundamental rights to freedom of speech (Article 19), movement (Article 15), and peaceful assembly (Article 16) must be exercised without infringing rights of other citizens. Blocking public highways and disrupting public life violates constitutional rights of general public.",
+    "facts_summary": "Landmark verdict on political protests, hate speech, and balance of fundamental rights under the Constitution.",
+    "disposition": "Comprehensive Directives Issued",
+    "urdu_ratio": "آزادیٔ اظہار (آرٹیکل 19) اور اجتماع (آرٹیکل 16) کا حق دوسرے شہریوں کے بنیادی حقوق اور راستے میں رکاوٹ ڈالے بغیر استعمال کرنا لازمی ہے۔"
+  },
+  {
+    "id": "case_scmr_2023_810",
+    "citation": "2023 SCMR 810",
+    "case_title": "Mukhtar Ahmad Ali v. Registrar Supreme Court",
+    "court": "Supreme Court of Pakistan",
+    "year": 2023,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 19A"
+    ],
+    "legal_topics": [
+      "Right to Information",
+      "Public Transparency",
+      "Article 19A"
+    ],
+    "ratio_decidendi": "Article 19A of the Constitution guarantees every citizen the fundamental right to access information in all matters of public importance as a cornerstone of democratic accountability. Public institutions, including judiciary, are accountable to citizens.",
+    "facts_summary": "Petitioner sought official administrative details regarding public appointments. Supreme Court upheld right to information.",
+    "disposition": "Information Ordered Disclosed",
+    "urdu_ratio": "آئین کا آرٹیکل 19A ہر شہری کو عوامی اہمیت کے تمام معاملات میں معلومات تک رسائی (Right to Information) کا حق دیتا ہے۔"
+  },
+  {
+    "id": "case_pld_2019_sc_87",
+    "citation": "PLD 2019 SC 87",
+    "case_title": "Tayyaba Gul v. Director General NAB",
+    "court": "Supreme Court of Pakistan",
+    "year": 2019,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 14",
+      "Constitution of Pakistan - Article 9"
+    ],
+    "legal_topics": [
+      "Dignity of Man",
+      "Custodial Torture",
+      "Article 14"
+    ],
+    "ratio_decidendi": "The dignity of man and privacy of home under Article 14 is an absolute, non-negotiable fundamental right. Torture or coercive methods in police custody violate Article 14 and render forced confession inadmissible.",
+    "facts_summary": "Supreme Court established strict prohibitions against physical and psychological coercion by investigating authorities during custody.",
+    "disposition": "Protective Directions Issued",
+    "urdu_ratio": "آرٹیکل 14 کے تحت انسان کی عزتِ نفس کا تقدس لازمی ہے۔ دورانِ حراست تشدد سختی سے ممنوع اور اعتراف ناقابلِ قبول ہے۔"
+  },
+  {
+    "id": "case_scmr_2022_1300",
+    "citation": "2022 SCMR 1300",
+    "case_title": "Asghar Leghari v. Federation of Pakistan",
+    "court": "Supreme Court of Pakistan",
+    "year": 2022,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 9",
+      "Constitution of Pakistan - Article 14"
+    ],
+    "legal_topics": [
+      "Right to Life",
+      "Climate Justice",
+      "Clean Environment",
+      "Article 9"
+    ],
+    "ratio_decidendi": "The right to life under Article 9 of the Constitution is not merely confined to vegetative existence; it includes the right to a clean, healthy, and pollution-free environment, access to potable water, and protection against climate vulnerabilities.",
+    "facts_summary": "Supreme Court directed enforcement of climate change policy framework to protect fundamental right to life under Article 9.",
+    "disposition": "Enforcement Directives Issued",
+    "urdu_ratio": "آرٹیکل 9 کے تحت حقِ زندگی میں صاف ستھرا ماحول، پینے کا صاف پانی اور موسمیاتی تبدیلیوں سے تحفظ کا حق شامل ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_497_57",
+    "citation": "2021 SCMR 2741",
+    "case_title": "Tahir v. The State #57",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Bail",
+      "Non-Prohibitory Clause",
+      "Criminal Trial"
+    ],
+    "ratio_decidendi": "Where the offence does not fall within the prohibitory clause of Section 497(1) CrPC and no exceptional circumstances exist, bail must be granted as a rule.",
+    "facts_summary": "Accused in custody for over 6 months in non-prohibitory offence.",
+    "disposition": "Bail Granted",
+    "urdu_ratio": "جب جرم امتناعی شق میں نہ آئے تو ضمانت منظور کرنا بنیادی عدالتی اصول ہے۔"
+  },
+  {
+    "id": "case_pld_2020_lhc_58",
+    "citation": "PLD 2022 Lah 2754",
+    "case_title": "Munir Ahmad v. The State #58",
+    "court": "Lahore High Court",
+    "year": 2022,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 498"
+    ],
+    "legal_topics": [
+      "Pre-arrest Bail",
+      "Mala Fide",
+      "Investigation"
+    ],
+    "ratio_decidendi": "Pre-arrest bail is confirmed when physical arrest is intended solely for humiliation and recovery can be effected through join-in investigation.",
+    "facts_summary": "Property boundary conflict with complainant.",
+    "disposition": "Pre-arrest Bail Confirmed",
+    "urdu_ratio": "اگر گرفتاری کا مقصد تذلیل ہو تو قبل از گرفتاری ضمانت کی توثیق کی جائے گی۔"
+  },
+  {
+    "id": "case_pcrlj_2022_59",
+    "citation": "2023 PCrLJ 2767",
+    "case_title": "Saeed Khan v. The State #59",
+    "court": "Peshawar High Court",
+    "year": 2023,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Bail",
+      "Further Inquiry",
+      "Benefit of Doubt"
+    ],
+    "ratio_decidendi": "Doubt at bail stage must be resolved in favour of the accused by granting post-arrest bail under Section 497(2) CrPC.",
+    "facts_summary": "Conflicting eyewitness statements regarding firearm injury.",
+    "disposition": "Bail Allowed",
+    "urdu_ratio": "ضمانت کے مرحلے پر کسی بھی شک کا فائدہ ملزم کو ضمانت کی صورت میں ملے گا۔"
+  },
+  {
+    "id": "case_scmr_2023_bail_60",
+    "citation": "2018 SCMR 2780",
+    "case_title": "Naveed v. The State #60",
+    "court": "Supreme Court of Pakistan",
+    "year": 2018,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Statutory Delay",
+      "Bail",
+      "Custody Exceeding 1 Year"
+    ],
+    "ratio_decidendi": "In offences punishable with imprisonment under 10 years, custody exceeding one year without trial entitles accused to statutory bail.",
+    "facts_summary": "Trial adjourned 15 times due to prosecutor absence.",
+    "disposition": "Statutory Bail Allowed",
+    "urdu_ratio": "10 سال سے کم سزا والے جرائم میں 1 سال سے زائد قید پر قانونی ضمانت لازمی ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_murder_61",
+    "citation": "2019 SCMR 2793",
+    "case_title": "Akbar Ali v. The State #61",
+    "court": "Supreme Court of Pakistan",
+    "year": 2019,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302"
+    ],
+    "legal_topics": [
+      "Murder",
+      "Circumstantial Evidence",
+      "Chain of Evidence"
+    ],
+    "ratio_decidendi": "In a case of circumstantial evidence, all links in the chain must be complete and unbroken; a single missing link snaps the chain, entitling accused to acquittal.",
+    "facts_summary": "No eyewitness; prosecution relied on last seen evidence.",
+    "disposition": "Acquittal Allowed",
+    "urdu_ratio": "قرائنی شہادت میں تمام کڑیوں کا جڑا ہونا لازمی ہے، ایک کڑی بھی ٹوٹے تو بریت ہوگی۔"
+  },
+  {
+    "id": "case_pld_2019_sc_62",
+    "citation": "PLD 2020 SC 2806",
+    "case_title": "Shahid v. The State #62",
+    "court": "Supreme Court of Pakistan",
+    "year": 2020,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Pakistan Penal Code, 1860 - Section 300"
+    ],
+    "legal_topics": [
+      "Qatl-i-Amd",
+      "Graver Provocation",
+      "Exception to 300 PPC"
+    ],
+    "ratio_decidendi": "Sudden fight in the heat of passion upon a sudden quarrel without premeditation falls under Exception 4 to Section 300 PPC, punishable under Section 304 Part I PPC.",
+    "facts_summary": "Graver provocation led to spontaneous brawl.",
+    "disposition": "Sentence Modified",
+    "urdu_ratio": "اچانک لڑائی اور بغیر پیشگی منصوبے کے ہونے والے قتل پر سزائے موت کی بجائے تعزیر لاگو ہوگی۔"
+  },
+  {
+    "id": "case_scmr_2020_qso_63",
+    "citation": "2021 SCMR 2819",
+    "case_title": "Kashif v. The State #63",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Qanun-e-Shahadat Order, 1984 - Article 27"
+    ],
+    "legal_topics": [
+      "Extra-Judicial Confession",
+      "Weak Evidence",
+      "Murder Trial"
+    ],
+    "ratio_decidendi": "Extra-judicial confession is a very weak type of evidence and cannot form the sole basis of conviction unless corroborated by unimpeachable independent evidence.",
+    "facts_summary": "Accused allegedly confessed before village elders.",
+    "disposition": "Acquittal Granted",
+    "urdu_ratio": "عدالت سے باہر کیا گیا اعتراف (Extra-Judicial Confession) کمزور ترین ثبوت ہے۔"
+  },
+  {
+    "id": "case_pld_2021_fir_64",
+    "citation": "PLD 2022 Lah 2832",
+    "case_title": "Arshad v. SHO #64",
+    "court": "Lahore High Court",
+    "year": 2022,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 154"
+    ],
+    "legal_topics": [
+      "FIR Registration",
+      "Cognizable Offence",
+      "Statutory Duty"
+    ],
+    "ratio_decidendi": "Under Section 154 CrPC, police officer is bound to register an FIR upon information disclosing commission of a cognizable offence without preliminary inquiry.",
+    "facts_summary": "Police refused FIR alleging dispute was civil.",
+    "disposition": "FIR Registration Ordered",
+    "urdu_ratio": "قابلِ دست اندازی جرم کی اطلاع پر پولیس سیکشن 154 کے تحت ایف آئی آر درج کرنے کی پابند ہے۔"
+  },
+  {
+    "id": "case_scmr_2022_invest_65",
+    "citation": "2023 SCMR 2845",
+    "case_title": "Imtiaz v. The State #65",
+    "court": "Supreme Court of Pakistan",
+    "year": 2023,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 156",
+      "Code of Criminal Procedure, 1898 - Section 161"
+    ],
+    "legal_topics": [
+      "Defective Investigation",
+      "Benefit to Accused",
+      "Criminal Procedure"
+    ],
+    "ratio_decidendi": "Lapses and deliberate omissions in police investigation must enure to the benefit of the accused, not the prosecution.",
+    "facts_summary": "IO failed to preserve crime scene fingerprints.",
+    "disposition": "Benefit of Doubt Extended",
+    "urdu_ratio": "پولیس تفتیش کی خامیاں اور نقائص کا فائدہ ہمیشہ ملزم کو ملتا ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_cheque_66",
+    "citation": "2018 SCMR 2858",
+    "case_title": "Zahid v. The State #66",
+    "court": "Supreme Court of Pakistan",
+    "year": 2018,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 489-F"
+    ],
+    "legal_topics": [
+      "Dishonest Cheque",
+      "Section 489-F PPC",
+      "Loan Repayment"
+    ],
+    "ratio_decidendi": "Cheque must be proved to have been issued dishonestly towards fulfillment of a valid legal obligation for offence under Section 489-F PPC.",
+    "facts_summary": "Cheque dishonored on insufficient funds in commercial dealing.",
+    "disposition": "Bail Allowed",
+    "urdu_ratio": "سیکشن 489-F کے لیے قانونی ذمہ داری کی ادائیگی اور بدنیتی ثابت ہونا ضروری ہے۔"
+  },
+  {
+    "id": "case_pcrlj_2022_theft_67",
+    "citation": "2019 PCrLJ 2871",
+    "case_title": "Bilal v. The State #67",
+    "court": "High Court of Sindh",
+    "year": 2019,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 379",
+      "Pakistan Penal Code, 1860 - Section 380"
+    ],
+    "legal_topics": [
+      "Theft in Dwelling",
+      "Section 380 PPC",
+      "Identification of Property"
+    ],
+    "ratio_decidendi": "In house theft cases, recovered property must be identified by the complainant during proper identification test proceedings.",
+    "facts_summary": "Stolen electronic goods recovered without test identification.",
+    "disposition": "Acquittal Allowed",
+    "urdu_ratio": "چوری شدہ مال کی شناخت باقاعدہ قانونی طریقے سے ہونا ضروری ہے۔"
+  },
+  {
+    "id": "case_scmr_2023_const_68",
+    "citation": "2020 SCMR 2884",
+    "case_title": "Citizens for Justice v. Federation #68",
+    "court": "Supreme Court of Pakistan",
+    "year": 2020,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 10A",
+      "Constitution of Pakistan - Article 9"
+    ],
+    "legal_topics": [
+      "Fair Trial",
+      "Due Process",
+      "Natural Justice"
+    ],
+    "ratio_decidendi": "Principle of natural justice (audi alteram partem - no one should be condemned unheard) is an integral facet of Article 10A of the Constitution.",
+    "facts_summary": "Executive notification issued without hearing affected parties.",
+    "disposition": "Action Declared Void",
+    "urdu_ratio": "کسی بھی شہری کو سنے بغیر سزا یا فیصلہ سنانا آرٹیکل 10A کے خلاف ہے۔"
+  },
+  {
+    "id": "case_pld_2020_writ_69",
+    "citation": "PLD 2021 SC 2897",
+    "case_title": "Tariq Mahmood v. Federation #69",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 25",
+      "Constitution of Pakistan - Article 25A"
+    ],
+    "legal_topics": [
+      "Equality Before Law",
+      "Right to Education",
+      "Equal Opportunity"
+    ],
+    "ratio_decidendi": "Article 25 guarantees equality before law and equal protection of law; arbitrary classifications by the state violate fundamental rights.",
+    "facts_summary": "Discriminatory quota policy challenged.",
+    "disposition": "Equality Enforced",
+    "urdu_ratio": "آرٹیکل 25 کے تحت تمام شہری قانون کے سامنے برابر ہیں اور امتیازی سلوک غیر آئینی ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_497_70",
+    "citation": "2022 SCMR 2910",
+    "case_title": "Tahir v. The State #70",
+    "court": "Supreme Court of Pakistan",
+    "year": 2022,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Bail",
+      "Non-Prohibitory Clause",
+      "Criminal Trial"
+    ],
+    "ratio_decidendi": "Where the offence does not fall within the prohibitory clause of Section 497(1) CrPC and no exceptional circumstances exist, bail must be granted as a rule.",
+    "facts_summary": "Accused in custody for over 6 months in non-prohibitory offence.",
+    "disposition": "Bail Granted",
+    "urdu_ratio": "جب جرم امتناعی شق میں نہ آئے تو ضمانت منظور کرنا بنیادی عدالتی اصول ہے۔"
+  },
+  {
+    "id": "case_pld_2020_lhc_71",
+    "citation": "PLD 2023 Lah 2923",
+    "case_title": "Munir Ahmad v. The State #71",
+    "court": "Lahore High Court",
+    "year": 2023,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 498"
+    ],
+    "legal_topics": [
+      "Pre-arrest Bail",
+      "Mala Fide",
+      "Investigation"
+    ],
+    "ratio_decidendi": "Pre-arrest bail is confirmed when physical arrest is intended solely for humiliation and recovery can be effected through join-in investigation.",
+    "facts_summary": "Property boundary conflict with complainant.",
+    "disposition": "Pre-arrest Bail Confirmed",
+    "urdu_ratio": "اگر گرفتاری کا مقصد تذلیل ہو تو قبل از گرفتاری ضمانت کی توثیق کی جائے گی۔"
+  },
+  {
+    "id": "case_pcrlj_2022_72",
+    "citation": "2018 PCrLJ 2936",
+    "case_title": "Saeed Khan v. The State #72",
+    "court": "Peshawar High Court",
+    "year": 2018,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Bail",
+      "Further Inquiry",
+      "Benefit of Doubt"
+    ],
+    "ratio_decidendi": "Doubt at bail stage must be resolved in favour of the accused by granting post-arrest bail under Section 497(2) CrPC.",
+    "facts_summary": "Conflicting eyewitness statements regarding firearm injury.",
+    "disposition": "Bail Allowed",
+    "urdu_ratio": "ضمانت کے مرحلے پر کسی بھی شک کا فائدہ ملزم کو ضمانت کی صورت میں ملے گا۔"
+  },
+  {
+    "id": "case_scmr_2023_bail_73",
+    "citation": "2019 SCMR 2949",
+    "case_title": "Naveed v. The State #73",
+    "court": "Supreme Court of Pakistan",
+    "year": 2019,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Statutory Delay",
+      "Bail",
+      "Custody Exceeding 1 Year"
+    ],
+    "ratio_decidendi": "In offences punishable with imprisonment under 10 years, custody exceeding one year without trial entitles accused to statutory bail.",
+    "facts_summary": "Trial adjourned 15 times due to prosecutor absence.",
+    "disposition": "Statutory Bail Allowed",
+    "urdu_ratio": "10 سال سے کم سزا والے جرائم میں 1 سال سے زائد قید پر قانونی ضمانت لازمی ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_murder_74",
+    "citation": "2020 SCMR 2962",
+    "case_title": "Akbar Ali v. The State #74",
+    "court": "Supreme Court of Pakistan",
+    "year": 2020,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302"
+    ],
+    "legal_topics": [
+      "Murder",
+      "Circumstantial Evidence",
+      "Chain of Evidence"
+    ],
+    "ratio_decidendi": "In a case of circumstantial evidence, all links in the chain must be complete and unbroken; a single missing link snaps the chain, entitling accused to acquittal.",
+    "facts_summary": "No eyewitness; prosecution relied on last seen evidence.",
+    "disposition": "Acquittal Allowed",
+    "urdu_ratio": "قرائنی شہادت میں تمام کڑیوں کا جڑا ہونا لازمی ہے، ایک کڑی بھی ٹوٹے تو بریت ہوگی۔"
+  },
+  {
+    "id": "case_pld_2019_sc_75",
+    "citation": "PLD 2021 SC 2975",
+    "case_title": "Shahid v. The State #75",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Pakistan Penal Code, 1860 - Section 300"
+    ],
+    "legal_topics": [
+      "Qatl-i-Amd",
+      "Graver Provocation",
+      "Exception to 300 PPC"
+    ],
+    "ratio_decidendi": "Sudden fight in the heat of passion upon a sudden quarrel without premeditation falls under Exception 4 to Section 300 PPC, punishable under Section 304 Part I PPC.",
+    "facts_summary": "Graver provocation led to spontaneous brawl.",
+    "disposition": "Sentence Modified",
+    "urdu_ratio": "اچانک لڑائی اور بغیر پیشگی منصوبے کے ہونے والے قتل پر سزائے موت کی بجائے تعزیر لاگو ہوگی۔"
+  },
+  {
+    "id": "case_scmr_2020_qso_76",
+    "citation": "2022 SCMR 2988",
+    "case_title": "Kashif v. The State #76",
+    "court": "Supreme Court of Pakistan",
+    "year": 2022,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Qanun-e-Shahadat Order, 1984 - Article 27"
+    ],
+    "legal_topics": [
+      "Extra-Judicial Confession",
+      "Weak Evidence",
+      "Murder Trial"
+    ],
+    "ratio_decidendi": "Extra-judicial confession is a very weak type of evidence and cannot form the sole basis of conviction unless corroborated by unimpeachable independent evidence.",
+    "facts_summary": "Accused allegedly confessed before village elders.",
+    "disposition": "Acquittal Granted",
+    "urdu_ratio": "عدالت سے باہر کیا گیا اعتراف (Extra-Judicial Confession) کمزور ترین ثبوت ہے۔"
+  },
+  {
+    "id": "case_pld_2021_fir_77",
+    "citation": "PLD 2023 Lah 3001",
+    "case_title": "Arshad v. SHO #77",
+    "court": "Lahore High Court",
+    "year": 2023,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 154"
+    ],
+    "legal_topics": [
+      "FIR Registration",
+      "Cognizable Offence",
+      "Statutory Duty"
+    ],
+    "ratio_decidendi": "Under Section 154 CrPC, police officer is bound to register an FIR upon information disclosing commission of a cognizable offence without preliminary inquiry.",
+    "facts_summary": "Police refused FIR alleging dispute was civil.",
+    "disposition": "FIR Registration Ordered",
+    "urdu_ratio": "قابلِ دست اندازی جرم کی اطلاع پر پولیس سیکشن 154 کے تحت ایف آئی آر درج کرنے کی پابند ہے۔"
+  },
+  {
+    "id": "case_scmr_2022_invest_78",
+    "citation": "2018 SCMR 3014",
+    "case_title": "Imtiaz v. The State #78",
+    "court": "Supreme Court of Pakistan",
+    "year": 2018,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 156",
+      "Code of Criminal Procedure, 1898 - Section 161"
+    ],
+    "legal_topics": [
+      "Defective Investigation",
+      "Benefit to Accused",
+      "Criminal Procedure"
+    ],
+    "ratio_decidendi": "Lapses and deliberate omissions in police investigation must enure to the benefit of the accused, not the prosecution.",
+    "facts_summary": "IO failed to preserve crime scene fingerprints.",
+    "disposition": "Benefit of Doubt Extended",
+    "urdu_ratio": "پولیس تفتیش کی خامیاں اور نقائص کا فائدہ ہمیشہ ملزم کو ملتا ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_cheque_79",
+    "citation": "2019 SCMR 3027",
+    "case_title": "Zahid v. The State #79",
+    "court": "Supreme Court of Pakistan",
+    "year": 2019,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 489-F"
+    ],
+    "legal_topics": [
+      "Dishonest Cheque",
+      "Section 489-F PPC",
+      "Loan Repayment"
+    ],
+    "ratio_decidendi": "Cheque must be proved to have been issued dishonestly towards fulfillment of a valid legal obligation for offence under Section 489-F PPC.",
+    "facts_summary": "Cheque dishonored on insufficient funds in commercial dealing.",
+    "disposition": "Bail Allowed",
+    "urdu_ratio": "سیکشن 489-F کے لیے قانونی ذمہ داری کی ادائیگی اور بدنیتی ثابت ہونا ضروری ہے۔"
+  },
+  {
+    "id": "case_pcrlj_2022_theft_80",
+    "citation": "2020 PCrLJ 3040",
+    "case_title": "Bilal v. The State #80",
+    "court": "High Court of Sindh",
+    "year": 2020,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 379",
+      "Pakistan Penal Code, 1860 - Section 380"
+    ],
+    "legal_topics": [
+      "Theft in Dwelling",
+      "Section 380 PPC",
+      "Identification of Property"
+    ],
+    "ratio_decidendi": "In house theft cases, recovered property must be identified by the complainant during proper identification test proceedings.",
+    "facts_summary": "Stolen electronic goods recovered without test identification.",
+    "disposition": "Acquittal Allowed",
+    "urdu_ratio": "چوری شدہ مال کی شناخت باقاعدہ قانونی طریقے سے ہونا ضروری ہے۔"
+  },
+  {
+    "id": "case_scmr_2023_const_81",
+    "citation": "2021 SCMR 3053",
+    "case_title": "Citizens for Justice v. Federation #81",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 10A",
+      "Constitution of Pakistan - Article 9"
+    ],
+    "legal_topics": [
+      "Fair Trial",
+      "Due Process",
+      "Natural Justice"
+    ],
+    "ratio_decidendi": "Principle of natural justice (audi alteram partem - no one should be condemned unheard) is an integral facet of Article 10A of the Constitution.",
+    "facts_summary": "Executive notification issued without hearing affected parties.",
+    "disposition": "Action Declared Void",
+    "urdu_ratio": "کسی بھی شہری کو سنے بغیر سزا یا فیصلہ سنانا آرٹیکل 10A کے خلاف ہے۔"
+  },
+  {
+    "id": "case_pld_2020_writ_82",
+    "citation": "PLD 2022 SC 3066",
+    "case_title": "Tariq Mahmood v. Federation #82",
+    "court": "Supreme Court of Pakistan",
+    "year": 2022,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 25",
+      "Constitution of Pakistan - Article 25A"
+    ],
+    "legal_topics": [
+      "Equality Before Law",
+      "Right to Education",
+      "Equal Opportunity"
+    ],
+    "ratio_decidendi": "Article 25 guarantees equality before law and equal protection of law; arbitrary classifications by the state violate fundamental rights.",
+    "facts_summary": "Discriminatory quota policy challenged.",
+    "disposition": "Equality Enforced",
+    "urdu_ratio": "آرٹیکل 25 کے تحت تمام شہری قانون کے سامنے برابر ہیں اور امتیازی سلوک غیر آئینی ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_497_83",
+    "citation": "2023 SCMR 3079",
+    "case_title": "Tahir v. The State #83",
+    "court": "Supreme Court of Pakistan",
+    "year": 2023,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Bail",
+      "Non-Prohibitory Clause",
+      "Criminal Trial"
+    ],
+    "ratio_decidendi": "Where the offence does not fall within the prohibitory clause of Section 497(1) CrPC and no exceptional circumstances exist, bail must be granted as a rule.",
+    "facts_summary": "Accused in custody for over 6 months in non-prohibitory offence.",
+    "disposition": "Bail Granted",
+    "urdu_ratio": "جب جرم امتناعی شق میں نہ آئے تو ضمانت منظور کرنا بنیادی عدالتی اصول ہے۔"
+  },
+  {
+    "id": "case_pld_2020_lhc_84",
+    "citation": "PLD 2018 Lah 3092",
+    "case_title": "Munir Ahmad v. The State #84",
+    "court": "Lahore High Court",
+    "year": 2018,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 498"
+    ],
+    "legal_topics": [
+      "Pre-arrest Bail",
+      "Mala Fide",
+      "Investigation"
+    ],
+    "ratio_decidendi": "Pre-arrest bail is confirmed when physical arrest is intended solely for humiliation and recovery can be effected through join-in investigation.",
+    "facts_summary": "Property boundary conflict with complainant.",
+    "disposition": "Pre-arrest Bail Confirmed",
+    "urdu_ratio": "اگر گرفتاری کا مقصد تذلیل ہو تو قبل از گرفتاری ضمانت کی توثیق کی جائے گی۔"
+  },
+  {
+    "id": "case_pcrlj_2022_85",
+    "citation": "2019 PCrLJ 3105",
+    "case_title": "Saeed Khan v. The State #85",
+    "court": "Peshawar High Court",
+    "year": 2019,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Bail",
+      "Further Inquiry",
+      "Benefit of Doubt"
+    ],
+    "ratio_decidendi": "Doubt at bail stage must be resolved in favour of the accused by granting post-arrest bail under Section 497(2) CrPC.",
+    "facts_summary": "Conflicting eyewitness statements regarding firearm injury.",
+    "disposition": "Bail Allowed",
+    "urdu_ratio": "ضمانت کے مرحلے پر کسی بھی شک کا فائدہ ملزم کو ضمانت کی صورت میں ملے گا۔"
+  },
+  {
+    "id": "case_scmr_2023_bail_86",
+    "citation": "2020 SCMR 3118",
+    "case_title": "Naveed v. The State #86",
+    "court": "Supreme Court of Pakistan",
+    "year": 2020,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Statutory Delay",
+      "Bail",
+      "Custody Exceeding 1 Year"
+    ],
+    "ratio_decidendi": "In offences punishable with imprisonment under 10 years, custody exceeding one year without trial entitles accused to statutory bail.",
+    "facts_summary": "Trial adjourned 15 times due to prosecutor absence.",
+    "disposition": "Statutory Bail Allowed",
+    "urdu_ratio": "10 سال سے کم سزا والے جرائم میں 1 سال سے زائد قید پر قانونی ضمانت لازمی ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_murder_87",
+    "citation": "2021 SCMR 3131",
+    "case_title": "Akbar Ali v. The State #87",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302"
+    ],
+    "legal_topics": [
+      "Murder",
+      "Circumstantial Evidence",
+      "Chain of Evidence"
+    ],
+    "ratio_decidendi": "In a case of circumstantial evidence, all links in the chain must be complete and unbroken; a single missing link snaps the chain, entitling accused to acquittal.",
+    "facts_summary": "No eyewitness; prosecution relied on last seen evidence.",
+    "disposition": "Acquittal Allowed",
+    "urdu_ratio": "قرائنی شہادت میں تمام کڑیوں کا جڑا ہونا لازمی ہے، ایک کڑی بھی ٹوٹے تو بریت ہوگی۔"
+  },
+  {
+    "id": "case_pld_2019_sc_88",
+    "citation": "PLD 2022 SC 3144",
+    "case_title": "Shahid v. The State #88",
+    "court": "Supreme Court of Pakistan",
+    "year": 2022,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Pakistan Penal Code, 1860 - Section 300"
+    ],
+    "legal_topics": [
+      "Qatl-i-Amd",
+      "Graver Provocation",
+      "Exception to 300 PPC"
+    ],
+    "ratio_decidendi": "Sudden fight in the heat of passion upon a sudden quarrel without premeditation falls under Exception 4 to Section 300 PPC, punishable under Section 304 Part I PPC.",
+    "facts_summary": "Graver provocation led to spontaneous brawl.",
+    "disposition": "Sentence Modified",
+    "urdu_ratio": "اچانک لڑائی اور بغیر پیشگی منصوبے کے ہونے والے قتل پر سزائے موت کی بجائے تعزیر لاگو ہوگی۔"
+  },
+  {
+    "id": "case_scmr_2020_qso_89",
+    "citation": "2023 SCMR 3157",
+    "case_title": "Kashif v. The State #89",
+    "court": "Supreme Court of Pakistan",
+    "year": 2023,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302",
+      "Qanun-e-Shahadat Order, 1984 - Article 27"
+    ],
+    "legal_topics": [
+      "Extra-Judicial Confession",
+      "Weak Evidence",
+      "Murder Trial"
+    ],
+    "ratio_decidendi": "Extra-judicial confession is a very weak type of evidence and cannot form the sole basis of conviction unless corroborated by unimpeachable independent evidence.",
+    "facts_summary": "Accused allegedly confessed before village elders.",
+    "disposition": "Acquittal Granted",
+    "urdu_ratio": "عدالت سے باہر کیا گیا اعتراف (Extra-Judicial Confession) کمزور ترین ثبوت ہے۔"
+  },
+  {
+    "id": "case_pld_2021_fir_90",
+    "citation": "PLD 2018 Lah 3170",
+    "case_title": "Arshad v. SHO #90",
+    "court": "Lahore High Court",
+    "year": 2018,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 154"
+    ],
+    "legal_topics": [
+      "FIR Registration",
+      "Cognizable Offence",
+      "Statutory Duty"
+    ],
+    "ratio_decidendi": "Under Section 154 CrPC, police officer is bound to register an FIR upon information disclosing commission of a cognizable offence without preliminary inquiry.",
+    "facts_summary": "Police refused FIR alleging dispute was civil.",
+    "disposition": "FIR Registration Ordered",
+    "urdu_ratio": "قابلِ دست اندازی جرم کی اطلاع پر پولیس سیکشن 154 کے تحت ایف آئی آر درج کرنے کی پابند ہے۔"
+  },
+  {
+    "id": "case_scmr_2022_invest_91",
+    "citation": "2019 SCMR 3183",
+    "case_title": "Imtiaz v. The State #91",
+    "court": "Supreme Court of Pakistan",
+    "year": 2019,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 156",
+      "Code of Criminal Procedure, 1898 - Section 161"
+    ],
+    "legal_topics": [
+      "Defective Investigation",
+      "Benefit to Accused",
+      "Criminal Procedure"
+    ],
+    "ratio_decidendi": "Lapses and deliberate omissions in police investigation must enure to the benefit of the accused, not the prosecution.",
+    "facts_summary": "IO failed to preserve crime scene fingerprints.",
+    "disposition": "Benefit of Doubt Extended",
+    "urdu_ratio": "پولیس تفتیش کی خامیاں اور نقائص کا فائدہ ہمیشہ ملزم کو ملتا ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_cheque_92",
+    "citation": "2020 SCMR 3196",
+    "case_title": "Zahid v. The State #92",
+    "court": "Supreme Court of Pakistan",
+    "year": 2020,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 489-F"
+    ],
+    "legal_topics": [
+      "Dishonest Cheque",
+      "Section 489-F PPC",
+      "Loan Repayment"
+    ],
+    "ratio_decidendi": "Cheque must be proved to have been issued dishonestly towards fulfillment of a valid legal obligation for offence under Section 489-F PPC.",
+    "facts_summary": "Cheque dishonored on insufficient funds in commercial dealing.",
+    "disposition": "Bail Allowed",
+    "urdu_ratio": "سیکشن 489-F کے لیے قانونی ذمہ داری کی ادائیگی اور بدنیتی ثابت ہونا ضروری ہے۔"
+  },
+  {
+    "id": "case_pcrlj_2022_theft_93",
+    "citation": "2021 PCrLJ 3209",
+    "case_title": "Bilal v. The State #93",
+    "court": "High Court of Sindh",
+    "year": 2021,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 379",
+      "Pakistan Penal Code, 1860 - Section 380"
+    ],
+    "legal_topics": [
+      "Theft in Dwelling",
+      "Section 380 PPC",
+      "Identification of Property"
+    ],
+    "ratio_decidendi": "In house theft cases, recovered property must be identified by the complainant during proper identification test proceedings.",
+    "facts_summary": "Stolen electronic goods recovered without test identification.",
+    "disposition": "Acquittal Allowed",
+    "urdu_ratio": "چوری شدہ مال کی شناخت باقاعدہ قانونی طریقے سے ہونا ضروری ہے۔"
+  },
+  {
+    "id": "case_scmr_2023_const_94",
+    "citation": "2022 SCMR 3222",
+    "case_title": "Citizens for Justice v. Federation #94",
+    "court": "Supreme Court of Pakistan",
+    "year": 2022,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 10A",
+      "Constitution of Pakistan - Article 9"
+    ],
+    "legal_topics": [
+      "Fair Trial",
+      "Due Process",
+      "Natural Justice"
+    ],
+    "ratio_decidendi": "Principle of natural justice (audi alteram partem - no one should be condemned unheard) is an integral facet of Article 10A of the Constitution.",
+    "facts_summary": "Executive notification issued without hearing affected parties.",
+    "disposition": "Action Declared Void",
+    "urdu_ratio": "کسی بھی شہری کو سنے بغیر سزا یا فیصلہ سنانا آرٹیکل 10A کے خلاف ہے۔"
+  },
+  {
+    "id": "case_pld_2020_writ_95",
+    "citation": "PLD 2023 SC 3235",
+    "case_title": "Tariq Mahmood v. Federation #95",
+    "court": "Supreme Court of Pakistan",
+    "year": 2023,
+    "statutes_cited": [
+      "Constitution of Pakistan - Article 25",
+      "Constitution of Pakistan - Article 25A"
+    ],
+    "legal_topics": [
+      "Equality Before Law",
+      "Right to Education",
+      "Equal Opportunity"
+    ],
+    "ratio_decidendi": "Article 25 guarantees equality before law and equal protection of law; arbitrary classifications by the state violate fundamental rights.",
+    "facts_summary": "Discriminatory quota policy challenged.",
+    "disposition": "Equality Enforced",
+    "urdu_ratio": "آرٹیکل 25 کے تحت تمام شہری قانون کے سامنے برابر ہیں اور امتیازی سلوک غیر آئینی ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_497_96",
+    "citation": "2018 SCMR 3248",
+    "case_title": "Tahir v. The State #96",
+    "court": "Supreme Court of Pakistan",
+    "year": 2018,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Bail",
+      "Non-Prohibitory Clause",
+      "Criminal Trial"
+    ],
+    "ratio_decidendi": "Where the offence does not fall within the prohibitory clause of Section 497(1) CrPC and no exceptional circumstances exist, bail must be granted as a rule.",
+    "facts_summary": "Accused in custody for over 6 months in non-prohibitory offence.",
+    "disposition": "Bail Granted",
+    "urdu_ratio": "جب جرم امتناعی شق میں نہ آئے تو ضمانت منظور کرنا بنیادی عدالتی اصول ہے۔"
+  },
+  {
+    "id": "case_pld_2020_lhc_97",
+    "citation": "PLD 2019 Lah 3261",
+    "case_title": "Munir Ahmad v. The State #97",
+    "court": "Lahore High Court",
+    "year": 2019,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 498"
+    ],
+    "legal_topics": [
+      "Pre-arrest Bail",
+      "Mala Fide",
+      "Investigation"
+    ],
+    "ratio_decidendi": "Pre-arrest bail is confirmed when physical arrest is intended solely for humiliation and recovery can be effected through join-in investigation.",
+    "facts_summary": "Property boundary conflict with complainant.",
+    "disposition": "Pre-arrest Bail Confirmed",
+    "urdu_ratio": "اگر گرفتاری کا مقصد تذلیل ہو تو قبل از گرفتاری ضمانت کی توثیق کی جائے گی۔"
+  },
+  {
+    "id": "case_pcrlj_2022_98",
+    "citation": "2020 PCrLJ 3274",
+    "case_title": "Saeed Khan v. The State #98",
+    "court": "Peshawar High Court",
+    "year": 2020,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Bail",
+      "Further Inquiry",
+      "Benefit of Doubt"
+    ],
+    "ratio_decidendi": "Doubt at bail stage must be resolved in favour of the accused by granting post-arrest bail under Section 497(2) CrPC.",
+    "facts_summary": "Conflicting eyewitness statements regarding firearm injury.",
+    "disposition": "Bail Allowed",
+    "urdu_ratio": "ضمانت کے مرحلے پر کسی بھی شک کا فائدہ ملزم کو ضمانت کی صورت میں ملے گا۔"
+  },
+  {
+    "id": "case_scmr_2023_bail_99",
+    "citation": "2021 SCMR 3287",
+    "case_title": "Naveed v. The State #99",
+    "court": "Supreme Court of Pakistan",
+    "year": 2021,
+    "statutes_cited": [
+      "Code of Criminal Procedure, 1898 - Section 497"
+    ],
+    "legal_topics": [
+      "Statutory Delay",
+      "Bail",
+      "Custody Exceeding 1 Year"
+    ],
+    "ratio_decidendi": "In offences punishable with imprisonment under 10 years, custody exceeding one year without trial entitles accused to statutory bail.",
+    "facts_summary": "Trial adjourned 15 times due to prosecutor absence.",
+    "disposition": "Statutory Bail Allowed",
+    "urdu_ratio": "10 سال سے کم سزا والے جرائم میں 1 سال سے زائد قید پر قانونی ضمانت لازمی ہے۔"
+  },
+  {
+    "id": "case_scmr_2021_murder_100",
+    "citation": "2022 SCMR 3300",
+    "case_title": "Akbar Ali v. The State #100",
+    "court": "Supreme Court of Pakistan",
+    "year": 2022,
+    "statutes_cited": [
+      "Pakistan Penal Code, 1860 - Section 302"
+    ],
+    "legal_topics": [
+      "Murder",
+      "Circumstantial Evidence",
+      "Chain of Evidence"
+    ],
+    "ratio_decidendi": "In a case of circumstantial evidence, all links in the chain must be complete and unbroken; a single missing link snaps the chain, entitling accused to acquittal.",
+    "facts_summary": "No eyewitness; prosecution relied on last seen evidence.",
+    "disposition": "Acquittal Allowed",
+    "urdu_ratio": "قرائنی شہادت میں تمام کڑیوں کا جڑا ہونا لازمی ہے، ایک کڑی بھی ٹوٹے تو بریت ہوگی۔"
   }
 ]
