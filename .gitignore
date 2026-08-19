@@ -37,3 +37,10 @@ build/
 *.pkl
 *.exe
 /models
+
+# Runtime chat sessions & logs
+chat_history/
+logs/
+test_prefix.py
+embed.py
+vc_redist.x64.exe
