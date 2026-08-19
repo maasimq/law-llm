@@ -48,26 +48,28 @@ Every answer is grounded in retrieved statutory text — no hallucination, no in
 
 ## Key Features
 
-### 🗣️ / ⚖️ Two Modes
+### 🗣️ / ⚖️ Dual-Mode Engine & Automatic Header Locking
 
-| | Layman | Advocate |
+| Feature | 🗣️ Layman Mode | ⚖️ Advocate Mode |
 |---|---|---|
-| **Audience** | General public | Legal practitioners |
-| **Output** | Plain-English explanations | Section-by-section legal analysis |
-| **Documents** | ❌ Blocked with redirect | ✅ FIR drafts, legal notices, case briefs |
-| **Mode lock** | Locks on first message | Locks on first message |
+| **Target Audience** | General public, litigants, students | Advocates, legal practitioners, legal advisors |
+| **Output Style** | Plain-English explanations & step-by-step guidance | Section-by-section statutory legal analysis & case briefs |
+| **Document Drafting** | ❌ Blocked with redirect to Advocate mode | ✅ Court-ready FIR drafts (§ 154 CrPC), Bail petitions (§ 497/498 CrPC) |
+| **Header Mode Lock** | Automatically locks to compact top header upon 1st prompt | Automatically locks to compact top header upon 1st prompt |
+| **Topic Tagging** | Supports optional custom conversation topics | Supports optional custom conversation topics |
 
 ---
 
-### 🔍 Multi-Stage Retrieval Pipeline
+### 🔍 Multi-Stage Retrieval & Fallback Pipeline
 
 ```
-Query
+User Query (English / Urdu / Roman Urdu)
   │
-  ├─ 1. Alias Routing      "theft" → PPC § 378/379 (direct lookup, no search)
-  ├─ 2. Exact Section      "Section 302 PPC" → fetched by filename/CSV index
-  ├─ 3. Hybrid Search      Dense (BGE embeddings) + Sparse (BM25) → score fusion
-  └─ 4. Cross-Encoder      ms-marco-MiniLM re-ranks top candidates → top 3 chunks
+  ├─ 1. Query Normalization & Routing   Translation to English if Urdu/Roman Urdu
+  ├─ 2. Exact Section Alias Match      "Section 302 PPC" → Direct lookup
+  ├─ 3. Hybrid Search Fusion           Dense (BAAI/bge-small-en) + Sparse (BM25)
+  ├─ 4. Cross-Encoder Re-Ranking       ms-marco-MiniLM re-ranks top candidates
+  └─ 5. LLM Fallback Orchestration     qwen/qwen3.6-27b ➔ groq/compound (Unlimited TPD) ➔ gpt-oss-20b
 ```
 
 Resolves cross-Act ambiguities automatically — e.g. *PPC § 497* (Adultery) vs *CrPC § 497* (Bail) are never confused.
@@ -83,43 +85,36 @@ Resolves cross-Act ambiguities automatically — e.g. *PPC § 497* (Adultery) vs
 
 ---
 
-### 🌐 Urdu & Roman Urdu Support
+### 🌐 Urdu & Roman Urdu Intelligence
 
-- Queries in Urdu or Roman Urdu are translated to English before retrieval (via `openai/gpt-oss-20b`)
-- Responses are generated back in native Urdu script (نستعلیق) with correct legal headings
-- Islamic legal terms rendered in native script, including Qisas and Diyat terminology used in the Pakistan Penal Code (قتلِ عمد، قصاص، دیت، تعزیر)
-
----
-
-### 💬 Chat Interface
-
-- Persistent multi-session history with auto-generated 2–3 word titles
-- Stage-by-stage loading indicators: *Translating query... → Analyzing laws... → Drafting answer...*
-- Expandable citation cards showing the raw statutory source text
-- Signature judicial precedent cards for court-ready advocate case briefs
-- Dark mode with gold accent design system
+- Queries in Urdu or Roman Urdu are translated to English before retrieval
+- Responses are generated back in native Urdu script (نستعلیق) with correct legal headings and authentic Islamic legal terms (قتلِ عمد، قصاص، دیت، تعزیر)
+- Automatic validation ensuring that Urdu translations match Pakistani legal terminology
 
 ---
 
-## Known Limitations
+### 💬 Streamlit UI & Design System
 
-- **Scope:** Coverage is limited to the PPC, CrPC, Constitution Fundamental Rights (Arts. 8–28), and curated Supreme Court/High Court reported judgments. Other specialized branches (tax, corporate, family) will return an out-of-scope notice.
-- **Drafted documents:** FIRs and case briefs generated in Advocate mode are structured templates with placeholders. They are not filed-ready legal documents and must be reviewed by a licensed advocate before use.
-- **Urdu retrieval:** Urdu and Roman Urdu queries are translated to English before retrieval. Translation quality can affect retrieval accuracy — unusual phrasing or dialect may reduce precision.
+- **Mode Locking on 1st Prompt**: Smooth transition from initial landing hero banner to persistent compact top header bar (`🗣️ Layman` | `⚖️ Advocate`) upon submitting the first prompt
+- **Floating Gold Ring Loader**: Animated spinner (`(O) Translating query...` / `(O) Drafting legal response...`) with clean background isolation
+- **Encapsulated Citation Boxes**: Multi-paragraph statutory excerpts rendered with strict CSS scoping enforcing uniform, crisp `0.82rem` font size without markdown list explosions
+- **Smart Session History**: Multi-session history with LLM-generated concise legal topic titles (e.g. *Section 392 FIR*, *Bail Under 497*)
 
 ---
 
 ## Technology Stack
 
-| Component | Technology |
+| Component | Technology & Specification |
 |---|---|
-| **LLM (Primary)** | Groq — `openai/gpt-oss-120b` |
-| **Translation, Verification & Titles** | Groq — `openai/gpt-oss-20b` (Fallback: `qwen/qwen3.6-27b`) |
-| **Embeddings** | `BAAI/bge-small-en-v1.5` (384-dim) |
+| **LLM (Primary)** | Groq — `qwen/qwen3.6-27b` |
+| **LLM (Fallback - Unlimited TPD)** | Groq — `groq/compound` (Zero-downtime rate limit fallback) |
+| **LLM (Fast & Titles)** | Groq — `groq/compound-mini` / `openai/gpt-oss-20b` |
+| **Embeddings** | `BAAI/bge-small-en-v1.5` (384-dim dense embeddings) |
 | **Re-Ranker** | `cross-encoder/ms-marco-MiniLM-L-6-v2` |
 | **Vector DB** | ChromaDB (`law_collection` + `caselaw_collection`) |
-| **Keyword Index** | BM25 (Rank-BM25) |
-| **Frontend** | Streamlit + Custom CSS |
+| **Sparse Keyword Index** | Rank-BM25 |
+| **Documentation Engine** | `python-docx` for institutional report generation |
+| **Frontend** | Streamlit + Custom CSS Design System |
 | **Language** | Python 3.11 |
 
 ---

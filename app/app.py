@@ -22,7 +22,7 @@ import streamlit as st
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
-from rag_pipeline import run_rag_pipeline, generate_chat_title
+from rag_pipeline import run_rag_pipeline, generate_chat_title, detect_language
 
 # ---------------------------------------------------------------------------
 # Page configuration
@@ -145,6 +145,7 @@ def load_session(session_id: str):
             st.session_state.chat_mode = data.get("chat_mode", "Layman")
             st.session_state.chat_topic = data.get("chat_topic", "")
             st.session_state.topic_set = bool(st.session_state.chat_topic)
+            st.session_state.chat_started = bool(st.session_state.messages) or bool(st.session_state.chat_topic)
             st.session_state.show_topic_input = False
             st.session_state.pop("topic_error", None)
             st.rerun()
@@ -154,6 +155,11 @@ def save_session():
     if not st.session_state.messages:
         return
         
+    # Do not save sessions that ended in temporary API rate-limit errors
+    last_msg = st.session_state.messages[-1]
+    if last_msg.get("role") == "assistant" and ("API Limit Reached" in last_msg.get("content", "") or "rate-limited" in last_msg.get("content", "")):
+        return
+
     # Auto-generate 2-3 word title from first user message and topic
     if not st.session_state.session_title or st.session_state.session_title == "New Conversation":
         first_user_msg = next((m["content"] for m in st.session_state.messages if m["role"] == "user"), "")
@@ -190,6 +196,7 @@ def start_new_session():
     st.session_state.created_at = datetime.datetime.now().isoformat()
     st.session_state.chat_topic = ""
     st.session_state.topic_set = False
+    st.session_state.chat_started = False
     st.session_state.show_topic_input = False
     st.session_state.pop("topic_error", None)
     st.rerun()
@@ -252,8 +259,8 @@ def render_sidebar():
                     is_active = (s["id"] == st.session_state.get("session_id"))
                     btn_type = "primary" if is_active else "secondary"
                     display_title = s['title']
-                    if len(display_title) > 28:
-                        display_title = display_title[:26] + "..."
+                    if len(display_title) > 34:
+                        display_title = display_title[:32] + "..."
                     
                     if st.button(display_title, key=f"load_{s['id']}", use_container_width=True, type=btn_type):
                         load_session(s["id"])
@@ -290,13 +297,58 @@ def render_sidebar():
         )
 
 
-def render_empty_state():
-    """Render the quiet, professional legal hero screen with mode toggle and flat topic entry."""
-    # Show full hero only when no messages exist
-    if not st.session_state.messages:
+def sync_chat_mode_from_pill(widget_key: str):
+    val = st.session_state.get(widget_key)
+    if not val:
+        current = st.session_state.get("chat_mode", "Layman")
+        fallback_val = "🗣️ Layman" if current == "Layman" else "⚖️ Advocate"
+        st.session_state[widget_key] = fallback_val
+        st.session_state.chat_mode = "Layman" if "Layman" in fallback_val else "Advocate"
+    else:
+        st.session_state.chat_mode = "Layman" if "Layman" in val else "Advocate"
+
+def render_header_and_hero():
+    """Render persistent top mode toggle, active topic pill, and initial hero screen in requested layout order."""
+    current_mode = st.session_state.get("chat_mode", "Layman")
+    current_topic = st.session_state.get("chat_topic", "")
+    has_chat_started = (
+        bool(st.session_state.get("chat_started")) or
+        bool(st.session_state.messages) or 
+        bool(st.session_state.get("topic_set")) or 
+        bool(st.session_state.get("pending_question"))
+    )
+    default_pill = "🗣️ Layman" if current_mode == "Layman" else "⚖️ Advocate"
+    st.session_state.persistent_chat_mode_pill = default_pill
+
+    # 1. On active chat pages: show compact top header bar above chat
+    if has_chat_started:
+        st.markdown('<div style="display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 0.2rem; margin-bottom: 0.8rem; flex-wrap: wrap;">', unsafe_allow_html=True)
+        selected_mode = st.pills(
+            "HeaderModeToggleActive",
+            options=["🗣️ Layman", "⚖️ Advocate"],
+            selection_mode="single",
+            label_visibility="collapsed",
+            key="persistent_chat_mode_pill",
+            on_change=lambda: sync_chat_mode_from_pill("persistent_chat_mode_pill")
+        )
+        if selected_mode:
+            st.session_state.chat_mode = "Layman" if "Layman" in selected_mode else "Advocate"
+
+        if current_topic:
+            st.markdown(
+                f'<span style="display:inline-block; background:rgba(212,175,55,0.10); color:#D4AF37; '
+                f'padding:5px 16px; border-radius:20px; font-size:0.85rem; font-weight:500; '
+                f'border:1px solid rgba(212,175,55,0.35);">📌 Topic: {html.escape(current_topic)}</span>',
+                unsafe_allow_html=True
+            )
+        st.markdown('</div>', unsafe_allow_html=True)
+
+    # 2. On empty landing page: render Hero Title FIRST -> Mode Toggle SECOND -> Chat Topic THIRD
+    else:
+        # A. Hero Title (Pakistani Legal Assistant / Law LLM)
         st.markdown(
             f"""
-            <div class="hero-section">
+            <div class="hero-section" style="padding-bottom: 0.8rem;">
                 <div class="hero-section-mark-container">{SECTION_MARK_SVG}</div>
                 <div class="hero-title">Pakistani Legal Assistant</div>
                 <p class="hero-subtitle">Search statutory law and constitutional provisions.</p>
@@ -306,31 +358,28 @@ def render_empty_state():
             unsafe_allow_html=True,
         )
 
-        # Mode Segmented Toggle (Layman / Advocate) — ALWAYS visible on hero screen before first message
-        current_mode = st.session_state.get("chat_mode", "Layman")
-        default_pill = "🗣️ Layman" if current_mode == "Layman" else "⚖️ Advocate"
-        st.markdown('<div style="display: flex; justify-content: center; margin-top: 0.2rem; margin-bottom: 0.1rem;">', unsafe_allow_html=True)
-        selected_pill = st.pills(
-            "Mode",
+        # B. Mode Segmented Toggle (Layman / Advocate) — BELOW Law LLM hero title
+        st.markdown('<div style="display: flex; justify-content: center; margin-top: 0.2rem; margin-bottom: 0.2rem;">', unsafe_allow_html=True)
+        selected_mode = st.pills(
+            "HeroModeToggle",
             options=["🗣️ Layman", "⚖️ Advocate"],
             selection_mode="single",
-            default=default_pill,
-            label_visibility="collapsed"
+            label_visibility="collapsed",
+            key="persistent_chat_mode_pill",
+            on_change=lambda: sync_chat_mode_from_pill("persistent_chat_mode_pill")
         )
         st.markdown('</div>', unsafe_allow_html=True)
-        if selected_pill:
-            new_mode = "Layman" if "Layman" in selected_pill else "Advocate"
-            if new_mode != current_mode:
-                st.session_state.chat_mode = new_mode
-                st.rerun()
+        if selected_mode:
+            st.session_state.chat_mode = "Layman" if "Layman" in selected_mode else "Advocate"
+
         st.markdown(
-            '<div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem; margin-bottom: 1.2rem;">'
+            '<div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem; margin-bottom: 1.5rem;">'
             'Advocate mode enables FIR & document drafting.'
             '</div>',
             unsafe_allow_html=True
         )
 
-        # Integrated topic entry — flat on page background (shown until topic is set/skipped)
+        # C. Chat Topic section — ABOVE input box, BELOW mode toggle
         if not st.session_state.get("topic_set"):
             _, col, _ = st.columns([1, 2.2, 1])
             with col:
@@ -364,6 +413,17 @@ def render_empty_state():
                             st.rerun()
                     st.markdown('</div>', unsafe_allow_html=True)
                 else:
+                    def handle_topic_submit():
+                        val = st.session_state.get("topic_input_field", "").strip()
+                        if val:
+                            st.session_state.pop("topic_error", None)
+                            st.session_state.chat_topic = val
+                            st.session_state.topic_set = True
+                            st.session_state.show_topic_input = False
+                            save_session()
+                        else:
+                            st.session_state.topic_error = "Please enter a topic (at least 1 word)."
+
                     st.markdown(
                         '<p class="topic-hint">Enter topic (at least 1 word):</p>',
                         unsafe_allow_html=True
@@ -372,7 +432,8 @@ def render_empty_state():
                         "Chat topic",
                         placeholder="e.g. Bail, FIR procedure, Theft under PPC...",
                         label_visibility="collapsed",
-                        key="topic_input_field"
+                        key="topic_input_field",
+                        on_change=handle_topic_submit
                     )
 
                     if st.session_state.get("topic_error"):
@@ -385,17 +446,8 @@ def render_empty_state():
                     tc1, tc2 = st.columns([1, 1])
                     with tc1:
                         if st.button("Confirm Topic", use_container_width=True, type="primary"):
-                            val = topic_input.strip()
-                            if not val:
-                                st.session_state.topic_error = "Please enter a topic (at least 1 word)."
-                                st.rerun()
-                            else:
-                                st.session_state.pop("topic_error", None)
-                                st.session_state.chat_topic = val
-                                st.session_state.topic_set = True
-                                st.session_state.show_topic_input = False
-                                save_session()
-                                st.rerun()
+                            handle_topic_submit()
+                            st.rerun()
                     with tc2:
                         if st.button("Cancel", use_container_width=True, type="secondary"):
                             st.session_state.show_topic_input = False
@@ -432,6 +484,14 @@ def clean_statutory_text(raw_text: str) -> str:
         cleaned_lines.append(line)
         
     cleaned_text = '\n'.join(cleaned_lines).strip()
+    # Prevent markdown from turning section numbers like "155. " into giant ordered list items (<ol><li>)
+    cleaned_text = re.sub(r'^\s*(\d+[A-Za-z]?)\.\s+', r'\1 — ', cleaned_text, flags=re.MULTILINE)
+    # Clean OCR schedule table artifacts (e.g. Ditto .. Ditto, 5[May 5[Summons])
+    cleaned_text = re.sub(r'\bDitto\s*\.\.\s*', '', cleaned_text, flags=re.IGNORECASE)
+    cleaned_text = re.sub(r'\bDitto\b', '', cleaned_text, flags=re.IGNORECASE)
+    cleaned_text = re.sub(r'\d+\[([^\]]+)\]', r'\1', cleaned_text)
+    cleaned_text = re.sub(r'\[|\}', '', cleaned_text)
+    cleaned_text = re.sub(r'[ \t]{2,}', ' ', cleaned_text)
     cleaned_text = re.sub(r'\n{3,}', '\n\n', cleaned_text)
     return cleaned_text if cleaned_text else raw_text.strip()
 
@@ -450,43 +510,49 @@ def render_markdown_rtl(text: str):
 
 
 def filter_cited_chunks(answer: str, source_chunks: list[str]) -> list[str]:
-    """Return only chunks whose (Act, Section) pair appears in the LLM's Cited Statutory Sources block."""
-    if "### Cited Statutory Sources" not in answer and "### \u0645\u062a\u0639\u0644\u0642\u06c1 \u0633\u06cc\u06a9\u0634\u0646\u0632" not in answer:
+    """Return chunks whose (Act, Section) pair appears in the LLM's answer or cited sources block."""
+    if not source_chunks or not answer:
         return []
 
-    cited_block = answer
-    for marker in ("### Cited Statutory Sources", "### \u0645\u062a\u0639\u0644\u0642\u06c1 \u0633\u06cc\u06a9\u0634\u0646\u0632"):
+    # If the answer is an explicit refusal, return empty list
+    ans_lower = answer.lower()
+    if ("restricted to advocate mode" in ans_lower or 
+        "outside the scope" in ans_lower or 
+        "not currently in my legal database" in ans_lower or
+        "i am a legal assistant for pakistani law" in ans_lower):
+        return []
+
+    markers = (
+        "### Cited Statutory Sources",
+        "### Statutory Sources",
+        "### متعلقہ سیکشنز",
+        "### متعلقہ دفعات",
+        "### قانونی دفعات",
+        "### قانونی مآخذ",
+        "### حوالہ جات",
+        "### قوانین و دفعات",
+    )
+    
+    cited_block = ""
+    for marker in markers:
         if marker in answer:
             cited_block = answer.split(marker, 1)[1]
             break
-
-    years = {"1860", "1898", "1973", "1979", "1984", "2016", "2018", "2021", "2022", "2023"}
-    cited_pairs = set()
-    bare_sections = set()
-
-    for line in cited_block.split("\n"):
-        line_clean = line.strip()
-        if not line_clean:
-            continue
-        line_lower = line_clean.lower()
-        
-        act_key = None
-        if "ppc" in line_lower or "penal code" in line_lower:
-            act_key = "ppc"
-        elif "crpc" in line_lower or "criminal procedure" in line_lower:
-            act_key = "crpc"
-        elif "constitution" in line_lower or "article" in line_lower:
-            act_key = "constitution"
             
-        nums = [n.upper() for n in re.findall(r'\b\d+[a-zA-Z]?\b', line_clean) if n not in years]
-        for num in nums:
-            if act_key:
-                cited_pairs.add((act_key, num))
-            else:
-                bare_sections.add(num)
+    # Search target text: the cited block if present, otherwise the entire answer
+    search_target = cited_block if cited_block else answer
+    search_target_lower = search_target.lower()
 
-    if not cited_pairs and not bare_sections:
-        return []
+    years = {"1860", "1898", "1973", "1979", "1984", "2016", "2018", "2021", "2022", "2023", "2024", "2025", "2026"}
+    
+    # Extract all section/article numbers mentioned in answer/block
+    mentioned_nums = set(re.findall(r'\b\d+[a-zA-Z]?\b', search_target)) - years
+    
+    # Also detect Urdu numeral words if present
+    urdu_sec_map = {"302": "302", "379": "379", "392": "392", "489": "489", "497": "497", "498": "498", "154": "154", "22": "22", "561": "561", "10": "10", "10A": "10A", "14": "14", "19": "19", "25": "25", "199": "199", "295": "295", "156": "156"}
+    for k in urdu_sec_map:
+        if k in search_target:
+            mentioned_nums.add(k)
 
     filtered = []
     for chunk in source_chunks:
@@ -501,111 +567,34 @@ def filter_cited_chunks(answer: str, source_chunks: list[str]) -> list[str]:
             if first_match:
                 sec_num = first_match.group(1).upper()
 
-        if not sec_num:
-            continue
-
-        chunk_act_str = (act_match.group(1) if act_match else "").lower()
-        if not chunk_act_str:
-            if "constitution" in chunk.lower() or "safeguards" in chunk.lower() or "article" in chunk.lower() or re.search(r'^\s*\d+[a-zA-Z]?\b', chunk):
-                chunk_act_key = "constitution"
-            else:
-                chunk_act_key = None
+        # If section is explicitly extracted from chunk and found in answer text
+        if sec_num:
+            # Check direct number match (e.g. "302", "489F", "10A")
+            sec_base = re.sub(r'[^0-9]', '', sec_num)
+            if (sec_num in mentioned_nums or 
+                sec_base in mentioned_nums or 
+                sec_num.lower() in search_target_lower or 
+                (sec_base and sec_base in search_target_lower)):
+                if chunk not in filtered:
+                    filtered.append(chunk)
+            elif not mentioned_nums:
+                # If no numbers parsed, keep top retrieved chunks
+                if chunk not in filtered:
+                    filtered.append(chunk)
         else:
-            chunk_act_key = "ppc" if "penal code" in chunk_act_str or "ppc" in chunk_act_str else ("crpc" if "procedure" in chunk_act_str or "crpc" in chunk_act_str else ("constitution" if "constitution" in chunk_act_str else None))
-
-        if chunk_act_key and (chunk_act_key, sec_num) in cited_pairs:
-            filtered.append(chunk)
-        elif not cited_pairs and sec_num in bare_sections:
-            filtered.append(chunk)
+            if chunk not in filtered:
+                filtered.append(chunk)
             
+    # If filtered is still empty but source_chunks exist and answer is substantive, retain up to 3 chunks
+    if not filtered and source_chunks:
+        filtered = source_chunks[:3]
+
     return filtered[:3]
 
 
 def extract_verdict_badge(answer: str) -> str:
-    """Extract a one-line bolded verdict summary badge (green/red/amber/gold) to lead with the outcome."""
-    if not answer:
-        return ""
-    ans_lower = answer.lower()
-    
-    # 1. Refusal / Server busy / Out-of-scope
-    if ("restricted to advocate mode" in ans_lower or "outside the scope" in ans_lower or 
-        "not currently in my legal database" in ans_lower or "server busy" in ans_lower or "query too long" in ans_lower):
-        return ""
-        
-    is_urdu = bool(re.search(r'[\u0600-\u06FF]', answer[:300]))
-    
-    # 2. Second FIR barred
-    if ("second fir" in ans_lower or "دوسری ایف آئی آر" in ans_lower) and (
-        "barred" in ans_lower or "prohibited" in ans_lower or "illegal" in ans_lower or 
-        "non-maintainable" in ans_lower or "غیر قانونی" in ans_lower or "نہیں ہو سکتی" in ans_lower or "خارج" in ans_lower):
-        if is_urdu:
-            return '<div class="verdict-banner verdict-red"><span class="verdict-pill">❌ فیصلہ / قانونی نتیجہ</span><span class="verdict-text"><strong>ایک ہی وقوعے کی دوسری ایف آئی آر کا اندراج قطعی ممنوع اور غیر قانونی ہے (نظیر: ثغراں بی بی کیس)</strong></span></div>'
-        return '<div class="verdict-banner verdict-red"><span class="verdict-pill">❌ VERDICT</span><span class="verdict-text"><strong>Registration of a Second FIR is Strictly Barred under Pakistani Law (PLD 2018 SC 595)</strong></span></div>'
-
-    # 3. Bail Allowed / Likely Granted / Further Inquiry
-    if "bail" in ans_lower or "ضمانت" in ans_lower:
-        if ("further inquiry" in ans_lower or "497(2)" in ans_lower or "مزید انکوائری" in ans_lower or 
-            "delayed fir" in ans_lower or "unexplained delay" in ans_lower or "تاخیر" in ans_lower):
-            if is_urdu:
-                return '<div class="verdict-banner verdict-green"><span class="verdict-pill">✅ عدالتی رائے / نتیجہ</span><span class="verdict-text"><strong>ضمانت بعد از گرفتاری کی منظوری کے قوی امکانات ہیں (مزید انکوائری کا کیس - دفعہ 497(2) ضابطہ فوجداری)</strong></span></div>'
-            return '<div class="verdict-banner verdict-green"><span class="verdict-pill">✅ VERDICT</span><span class="verdict-text"><strong>Post-Arrest Bail is Likely to be Granted (Case of Further Inquiry under Section 497(2) CrPC)</strong></span></div>'
-        elif ("statutory delay" in ans_lower or "two years" in ans_lower or "2 years" in ans_lower or "2 سال" in ans_lower):
-            if is_urdu:
-                return '<div class="verdict-banner verdict-green"><span class="verdict-pill">✅ عدالتی نتیجہ</span><span class="verdict-text"><strong>مسلسل 2 سال سے زائد قید پر قانونی حق کی بنیاد پر ضمانت ملنا لازمی ہے (دفعہ 497(1))</strong></span></div>'
-            return '<div class="verdict-banner verdict-green"><span class="verdict-pill">✅ VERDICT</span><span class="verdict-text"><strong>Statutory Bail is Granted as a Matter of Right (Custody Exceeding 2 Years - § 497(1) CrPC)</strong></span></div>'
-        elif ("pre-arrest" in ans_lower or "498" in ans_lower or "قبل از گرفتاری" in ans_lower) and ("mala fide" in ans_lower or "malice" in ans_lower or "بدنیتی" in ans_lower or "harass" in ans_lower):
-            if is_urdu:
-                return '<div class="verdict-banner verdict-green"><span class="verdict-pill">✅ عدالتی نتیجہ</span><span class="verdict-text"><strong>پولیس یا مدعی کی بدنیتی پر قبل از گرفتاری ضمانت کی توثیق ہو سکتی ہے (دفعہ 498)</strong></span></div>'
-            return '<div class="verdict-banner verdict-green"><span class="verdict-pill">✅ VERDICT</span><span class="verdict-text"><strong>Pre-Arrest Bail is Maintainable & Likely to be Confirmed (Mala Fide / Harassment - § 498 CrPC)</strong></span></div>'
-        elif ("prohibitory clause" in ans_lower and ("bar" in ans_lower or "refused" in ans_lower or "unlikely" in ans_lower or "cannot" in ans_lower)):
-            if is_urdu:
-                return '<div class="verdict-banner verdict-red"><span class="verdict-pill">❌ عدالتی نتیجہ</span><span class="verdict-text"><strong>جرم امتناعی شق میں آتا ہے — عمومی حالات میں ضمانت ملنا مشکل ہے تاوقتیکہ ٹھوس استثناء موجود ہو</strong></span></div>'
-            return '<div class="verdict-banner verdict-red"><span class="verdict-pill">❌ VERDICT</span><span class="verdict-text"><strong>Bail is Unlikely / Restricted under Prohibitory Clause of Section 497(1) CrPC</strong></span></div>'
-        elif ("matter of right" in ans_lower or "non-prohibitory" in ans_lower or "bail allowed" in ans_lower or "entitled to bail" in ans_lower):
-            if is_urdu:
-                return '<div class="verdict-banner verdict-green"><span class="verdict-pill">✅ عدالتی نتیجہ</span><span class="verdict-text"><strong>غیر امتناعی دفعات میں ضمانت ملزم کا بنیادی قانونی حق ہے</strong></span></div>'
-            return '<div class="verdict-banner verdict-green"><span class="verdict-pill">✅ VERDICT</span><span class="verdict-text"><strong>Bail is a Matter of Right (Non-Prohibitory Offence - PLD 2020 SC 556)</strong></span></div>'
-
-    # 4. Cheque Dishonor (489-F)
-    if "489-f" in ans_lower or "cheque" in ans_lower or "چیک" in ans_lower:
-        if ("security" in ans_lower or "guarantee" in ans_lower or "سیکیورٹی" in ans_lower):
-            if is_urdu:
-                return '<div class="verdict-banner verdict-amber"><span class="verdict-pill">⚠️ قانونی نتیجہ</span><span class="verdict-text"><strong>محض سیکیورٹی یا گارنٹی چیک پر فوجداری جرم (489-F) نہیں بنتا — دیوانی چارہ جوئی ہوگی</strong></span></div>'
-            return '<div class="verdict-banner verdict-amber"><span class="verdict-pill">⚠️ VERDICT</span><span class="verdict-text"><strong>Security Cheque Negates Criminal Liability under Section 489-F PPC (Civil Nature)</strong></span></div>'
-        elif ("dishonest intent" in ans_lower or "loan repayment" in ans_lower or "قرض" in ans_lower):
-            if is_urdu:
-                return '<div class="verdict-banner verdict-amber"><span class="verdict-pill">⚖️ قانونی نتیجہ</span><span class="verdict-text"><strong>سیکشن 489-F کے لیے بدنیتی اور قرض یا قانونی ذمہ داری کا ثبوت ہونا لازمی ہے</strong></span></div>'
-            return '<div class="verdict-banner verdict-amber"><span class="verdict-pill">⚖️ LEGAL SUMMARY</span><span class="verdict-text"><strong>Criminal Offence requires proof of Dishonest Intent & Existing Loan/Obligation (§ 489-F PPC)</strong></span></div>'
-
-    # 5. Quashment under 561-A / Civil dispute
-    if "561-a" in ans_lower or "quash" in ans_lower or "خارج" in ans_lower or "کوئش" in ans_lower:
-        if is_urdu:
-            return '<div class="verdict-banner verdict-amber"><span class="verdict-pill">⚖️ عدالتی چارہ جوئی</span><span class="verdict-text"><strong>دیوانی نوعیت کے تنازع پر درج فوجداری مقدمہ دفعہ 561-A کے تحت خارج (Quash) کروایا جا سکتا ہے</strong></span></div>'
-        return '<div class="verdict-banner verdict-amber"><span class="verdict-pill">⚖️ LEGAL REMEDY</span><span class="verdict-text"><strong>Criminal Proceedings are Quashable under Section 561-A CrPC (Abuse of Process / Civil Dispute)</strong></span></div>'
-
-    # 6. FIR Registration Duty (154 CrPC / 22-A)
-    if "154" in ans_lower or "police station" in ans_lower or "ایف آئی آر" in ans_lower:
-        if ("bound" in ans_lower or "mandatory" in ans_lower or "پابند" in ans_lower or "لازمی" in ans_lower):
-            if is_urdu:
-                return '<div class="verdict-banner verdict-green"><span class="verdict-pill">✅ قانونی حکم</span><span class="verdict-text"><strong>قابلِ دست اندازی جرم پر پولیس فوری ایف آئی آر درج کرنے کی قانونی پابند ہے (دفعہ 154)</strong></span></div>'
-            return '<div class="verdict-banner verdict-green"><span class="verdict-pill">✅ STATUTORY MANDATE</span><span class="verdict-text"><strong>Police are Statutorily Bound to Register FIR upon Cognizable Information (§ 154 CrPC)</strong></span></div>'
-
-    # 7. Toheen-e-Risalat / Section 295-C PPC
-    if "295-c" in ans_lower or "توہین" in ans_lower or "blasphemy" in ans_lower:
-        if is_urdu:
-            return '<div class="verdict-banner verdict-gold"><span class="verdict-pill">🏛️ عدالتی اصول و تحفظات</span><span class="verdict-text"><strong>سخت ترین معیارِ ثبوت اور ایس پی رینک کے افسر سے لازمی تفتیش قانونی تقاضا ہے (دفعہ 156-A ضابطہ فوجداری)</strong></span></div>'
-        return '<div class="verdict-banner verdict-gold"><span class="verdict-pill">🏛️ LEGAL SAFEGUARD</span><span class="verdict-text"><strong>Highest Standard of Proof & Mandatory SP-Rank Investigation Required (§ 156-A CrPC / PLD 2019 SC 64)</strong></span></div>'
-
-    # 8. Fundamental Rights / Constitutional Remedy (Art. 10A, 14, 19, 199)
-    if "article 10a" in ans_lower or "fair trial" in ans_lower or "article 199" in ans_lower or "writ" in ans_lower:
-        if is_urdu:
-            return '<div class="verdict-banner verdict-gold"><span class="verdict-pill">🏛️ آئینی تحفظ</span><span class="verdict-text"><strong>آئین کے تحت منصفانہ ٹرائل اور ہائی کورٹ رٹ دائرہ اختیار کے ذریعے قانونی تحفظ حاصل ہے</strong></span></div>'
-        return '<div class="verdict-banner verdict-gold"><span class="verdict-pill">🏛️ CONSTITUTIONAL RIGHT</span><span class="verdict-text"><strong>Guaranteed Fundamental Right to Fair Trial & Due Process (Constitution Arts. 10A & 199)</strong></span></div>'
-
-    # Default general verdict for legal answers
-    if is_urdu:
-        return '<div class="verdict-banner verdict-gold"><span class="verdict-pill">⚖️ قانونی تجزیہ و رہنمائی</span><span class="verdict-text"><strong>پاکستانی قوانین اور معزز اعلیٰ عدالتوں کے فیصلوں کی روشنی میں قانونی رہنمائی</strong></span></div>'
-    return '<div class="verdict-banner verdict-gold"><span class="verdict-pill">⚖️ LEGAL ASSESSMENT</span><span class="verdict-text"><strong>Actionable Statutory Provisions & Supreme Court Precedents Applied</strong></span></div>'
+    """Never display top verdict summary banners in responses (user request)."""
+    return ""
 
 
 def render_citations(sources: list[str]):
@@ -623,14 +612,12 @@ def render_citations(sources: list[str]):
         return
 
     st.markdown(
-        """
-        <div class="statutory-module-container">
-            <div class="citations-header">
-                <span class="module-icon">📖</span>
-                <span>CITED STATUTORY SOURCES (قوانین و دفعات)</span>
-            </div>
-        </div>
-        """,
+        '<div class="statutory-module-container">'
+        '<div class="citations-header">'
+        '<span class="module-icon">📖</span>'
+        '<span>CITED STATUTORY SOURCES (قوانین و دفعات)</span>'
+        '</div>'
+        '</div>',
         unsafe_allow_html=True
     )
     for src in valid_sources:
@@ -647,48 +634,45 @@ def render_citations(sources: list[str]):
 
         preview_html = f'<div class="citation-preview">{html.escape(preview_line)}</div>' if preview_line else ''
         
-        st.markdown(
-            f"""
-            <div class="citation-badge-wrapper">
-                <div class="citation-title">
-                    <span class="citation-pill-badge">{html.escape(badge_label)}</span>
-                    <span class="citation-doc-name">{html.escape(doc_title)}</span>
-                </div>
-                {preview_html}
-            </div>
-            """,
-            unsafe_allow_html=True
+        badge_card_html = (
+            f'<div class="citation-badge-wrapper">'
+            f'<div class="citation-title">'
+            f'<span class="citation-pill-badge">{html.escape(badge_label)}</span>'
+            f'<span class="citation-doc-name">{html.escape(doc_title)}</span>'
+            f'</div>'
+            f'{preview_html}'
+            f'</div>'
         )
+        st.markdown(badge_card_html, unsafe_allow_html=True)
+        
         with st.expander(f"▾ View Statutory Source Excerpt — {html.escape(doc_title)} →"):
             escaped_text = html.escape(cleaned_src)
-            st.markdown(
-                f"""
-                <div class="statutory-source-box">
-                    <div class="statutory-code-content">{escaped_text}</div>
-                    <div class="statutory-meta-footer">
-                        <span class="statutory-verified-tag">🛡️ Verified Authentic Text</span>
-                        <span class="statutory-currency-tag">📅 Last currency check: August 2026 (Pakistan Code)</span>
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True
+            formatted_html_text = escaped_text.replace('\n\n', '<br><br>').replace('\n', '<br>')
+            statutory_box_html = (
+                f'<div class="statutory-source-box">'
+                f'<div class="statutory-code-content">{formatted_html_text}</div>'
+                f'<div class="statutory-meta-footer">'
+                f'<span class="statutory-verified-tag">🛡️ Verified Authentic Text</span>'
+                f'</div>'
+                f'</div>'
             )
+            st.markdown(statutory_box_html, unsafe_allow_html=True)
 
 
-def render_case_precedents(cases: list[dict]):
-    """Render signature judicial precedent cards with status badges, ratio decidendi, and customized expanders."""
+def render_case_precedents(cases: list[dict], show_urdu: bool = False):
+    """Render signature judicial precedent cards with status badges, ratio decidendi, and customized expanders.
+    Shows Urdu ratio summary only when query/response is in Urdu or Roman Urdu.
+    """
     if not cases:
         return
 
     st.markdown(
-        """
-        <div class="precedent-module-container">
-            <div class="precedent-header">
-                <span class="module-icon">⚖️</span>
-                <span>RELEVANT JUDICIAL PRECEDENTS (عدالتی نظائر)</span>
-            </div>
-        </div>
-        """,
+        '<div class="precedent-module-container">'
+        '<div class="precedent-header">'
+        '<span class="module-icon">⚖️</span>'
+        '<span>RELEVANT JUDICIAL PRECEDENTS (عدالتی نظائر)</span>'
+        '</div>'
+        '</div>',
         unsafe_allow_html=True
     )
     for c in cases:
@@ -703,29 +687,27 @@ def render_case_precedents(cases: list[dict]):
         statutes = c.get("statutes_cited", "")
         status_val = c.get("status", "Good Law")
 
-        # Determine status pill class & text
+        # Status pill: only display if explicitly overruled or distinguished
         if status_val.lower() == "overruled":
             status_html = '<span class="precedent-status-badge status-overruled">✗ Overruled</span>'
         elif status_val.lower() == "distinguished":
             status_html = '<span class="precedent-status-badge status-distinguished">⚠ Distinguished</span>'
         else:
-            status_html = '<span class="precedent-status-badge status-good">✓ Good Law</span>'
+            status_html = ''
 
-        st.markdown(
-            f"""
-            <div class="precedent-badge-wrapper">
-                <div class="precedent-title">
-                    <span class="precedent-pill-badge">📜 {html.escape(citation)}</span>
-                    <span class="precedent-case-name">{html.escape(title)}</span>
-                    {status_html}
-                </div>
-                <div class="precedent-ratio">
-                    <strong class="precedent-label">Legal Principle (Ratio Decidendi):</strong> {html.escape(ratio)}
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True
+        precedent_card_html = (
+            f'<div class="precedent-badge-wrapper">'
+            f'<div class="precedent-title">'
+            f'<span class="precedent-pill-badge">📜 {html.escape(citation)}</span>'
+            f'<span class="precedent-case-name">{html.escape(title)}</span>'
+            f'{status_html}'
+            f'</div>'
+            f'<div class="precedent-ratio">'
+            f'<strong class="precedent-label">Legal Principle (Ratio Decidendi):</strong> {html.escape(ratio)}'
+            f'</div>'
+            f'</div>'
         )
+        st.markdown(precedent_card_html, unsafe_allow_html=True)
         
         toggle_label = f"▾ View Full Judgment — {title}, {citation} →"
         with st.expander(toggle_label):
@@ -734,48 +716,44 @@ def render_case_precedents(cases: list[dict]):
             facts_html = f"<div class='case-detail-row' style='margin-top: 0.5rem;'><strong class='detail-label'>Facts of the Case:</strong> <span class='detail-val-facts'>{html.escape(facts)}</span></div>" if facts else ""
             
             urdu_html = ""
-            if urdu_ratio:
-                urdu_html = f"""
-                <div class="urdu-summary-box" dir="rtl" lang="ur">
-                    <div class="urdu-header-label">خلاصہ و قانونی نظیر (Urdu Summary):</div>
-                    <div class="urdu-text-content">{html.escape(urdu_ratio)}</div>
-                </div>
-                """
+            if show_urdu and urdu_ratio:
+                urdu_html = (
+                    f'<div class="urdu-summary-box" dir="rtl" lang="ur">'
+                    f'<div class="urdu-header-label">خلاصہ و قانونی نظیر (Urdu Summary):</div>'
+                    f'<div class="urdu-text-content">{html.escape(urdu_ratio)}</div>'
+                    f'</div>'
+                )
             
-            st.markdown(
-                f"""
-                <div class="statutory-source-box case-details-box">
-                    <div class="case-detail-row">
-                        <strong class="detail-label">Forum & Benchmark:</strong> 
-                        <span class="detail-val">{html.escape(court)} ({year})</span>
-                    </div>
-                    {statutes_html}
-                    {ruling_html}
-                    {facts_html}
-                    {urdu_html}
-                    <div class="case-meta-footer">
-                        <span class="case-verified-tag">🛡️ Reported Judgment Precedent</span>
-                        <span class="case-citation-tag">🏛️ Citation: {html.escape(citation)}</span>
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True
+            details_box_html = (
+                f'<div class="statutory-source-box case-details-box">'
+                f'<div class="case-detail-row"><strong class="detail-label">Forum & Benchmark:</strong> <span class="detail-val">{html.escape(court)} ({year})</span></div>'
+                f'{statutes_html}'
+                f'{ruling_html}'
+                f'{facts_html}'
+                f'{urdu_html}'
+                f'<div class="case-meta-footer">'
+                f'<span class="case-verified-tag">🛡️ Reported Judgment Precedent</span>'
+                f'<span class="case-citation-tag">🏛️ Citation: {html.escape(citation)}</span>'
+                f'</div>'
+                f'</div>'
             )
+            st.markdown(details_box_html, unsafe_allow_html=True)
 
 
 def _loading(placeholder, msg: str):
     placeholder.markdown(f'<div class="rag-loading">{msg}</div>', unsafe_allow_html=True)
 
 
-def run_pipeline_with_loading(question: str):
+def run_pipeline_with_loading(question: str, placeholder=None):
     """Run RAG pipeline with sequential stage-based loading messages."""
     from rag_pipeline import answer_question
 
-    placeholder = st.empty()
+    if placeholder is None:
+        placeholder = st.empty()
     mode_val = st.session_state.get("chat_mode", "Layman").lower()
     chat_topic = st.session_state.get("chat_topic", "") or None
 
-    _loading(placeholder, "Translating query...")
+    _loading(placeholder, "Translating query & analyzing laws...")
     res = answer_question(
         question,
         conversation_history=st.session_state.messages,
@@ -825,52 +803,16 @@ if "show_topic_input" not in st.session_state:
 
 render_sidebar()
 
-# HERO / TOPIC SELECTOR (integrated, non-blocking)
-render_empty_state()
-
-# Handle prefill & chat input
-prefill = st.session_state.pop("pending_question", None) if st.session_state.pending_question else None
-
-# Strip emojis for the actual internal state
-current_mode = st.session_state.get("chat_mode", "Layman")
-
-# Check if user has submitted a message in this run or previous runs
-has_submitted = bool(st.session_state.get("main_chat_input")) or bool(st.session_state.pending_question)
-
-# Render locked mode badge centered on top, and active topic badge aligned to the left below it
-if st.session_state.messages or has_submitted or st.session_state.get("chat_topic"):
-    mode_emoji = "🗣️" if current_mode == "Layman" else "⚖️"
-    mode_badge_html = (
-        f'<div style="text-align: center; margin-bottom: 8px;">'
-        f'<span style="display:inline-block; background: rgba(255,255,255,0.05); color: var(--text-secondary); '
-        f'padding: 4px 14px; border-radius: 20px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1);">'
-        f'{mode_emoji} {current_mode} Mode</span></div>'
-    )
-    
-    topic_badge_html = ""
-    if st.session_state.get("chat_topic"):
-        topic_badge_html = (
-            f'<div style="text-align: left; margin-bottom: 6px;">'
-            f'<span style="display:inline-block; background:rgba(212,175,55,0.10); color:#D4AF37; '
-            f'padding:5px 16px; border-radius:20px; font-size:0.85rem; font-weight:500; '
-            f'border:1px solid rgba(212,175,55,0.35); letter-spacing:0.02em;">'
-            f'📌 Topic: {html.escape(st.session_state.chat_topic)}</span></div>'
-        )
-
-    st.markdown(
-        f'<div style="margin-top: 0.5rem; margin-bottom: 1rem;">'
-        f'{mode_badge_html}'
-        f'{topic_badge_html}'
-        f'</div>',
-        unsafe_allow_html=True
-    )
-
+# Detect user input EARLY (before rendering header/hero)
+# st.chat_input must be called here so its value is captured before header rendering
 mode_placeholder = "Ask about Bail, FIR, Theft... / ضمانت، چوری یا قانون کے بارے میں پوچھیں"
-if st.session_state.chat_mode == "Advocate":
+if st.session_state.get("chat_mode") == "Advocate":
     mode_placeholder = "Draft an FIR, prepare a case brief, or ask a legal question..."
 
 user_input = st.chat_input(placeholder=mode_placeholder, key="main_chat_input")
 
+# Handle prefill from sidebar
+prefill = st.session_state.pop("pending_question", None) if st.session_state.get("pending_question") else None
 if prefill and not user_input:
     user_input = prefill
 
@@ -878,11 +820,21 @@ if prefill and not user_input:
 if not user_input and st.session_state.messages and st.session_state.messages[-1]["role"] == "user":
     user_input = st.session_state.messages.pop()["content"]
 
+# Lock chat_started = True the moment we have user input or messages exist
+if user_input or st.session_state.messages:
+    st.session_state.chat_started = True
+    st.session_state.topic_set = True
+
+# PERSISTENT TOP HEADER BAR & HERO SCREEN
+render_header_and_hero()
+
 # Chat History
 if st.session_state.messages:
     st.markdown('<div class="chat-wrapper">', unsafe_allow_html=True)
     for msg in st.session_state.messages:
-        with st.chat_message(msg["role"], avatar="👤" if msg["role"] == "user" else "⚖️"):
+        msg_mode = msg.get("mode", st.session_state.chat_mode.lower())
+        asst_icon = "⚖️" if msg_mode == "advocate" else "🗣️"
+        with st.chat_message(msg["role"], avatar="👤" if msg["role"] == "user" else asst_icon):
             if msg["role"] == "assistant":
                 is_msg_refusal = (
                     "restricted to Advocate mode" in msg["content"] or
@@ -902,43 +854,57 @@ if st.session_state.messages:
                 if msg.get("sources"):
                     render_citations(msg["sources"])
                 if msg.get("cases"):
-                    render_case_precedents(msg["cases"])
+                    msg_content = msg.get("content", "")
+                    msg_is_urdu = bool(re.search(r'[\u0600-\u06FF]', msg_content)) or (detect_language(msg_content) == "urdu")
+                    render_case_precedents(msg["cases"], show_urdu=msg_is_urdu)
 
 # Active user query processing
 if user_input:
-    st.session_state.messages.append({"role": "user", "content": user_input, "sources": [], "cases": []})
+    current_active_mode = st.session_state.get("chat_mode", "Layman")
+    st.session_state.messages.append({
+        "role": "user",
+        "content": user_input,
+        "sources": [],
+        "cases": [],
+        "mode": current_active_mode.lower()
+    })
 
     with st.chat_message("user", avatar="👤"):
         render_markdown_rtl(user_input)
 
+    # Sleek floating loading pill OUTSIDE assistant message box (no giant empty container box)
+    status_placeholder = st.empty()
     try:
         from rag_pipeline import filter_cited_cases
-        answer, raw_source_chunks, urdu_verified, raw_cases = run_pipeline_with_loading(user_input)
+        answer, raw_source_chunks, urdu_verified, raw_cases = run_pipeline_with_loading(user_input, placeholder=status_placeholder)
         source_chunks = filter_cited_chunks(answer, raw_source_chunks)
         cited_cases = filter_cited_cases(answer, raw_cases)
     except Exception as e:
         print(f"[SERVER ERROR] RAG Pipeline Error: {e}", file=sys.stderr)
         err_str = str(e).lower()
         if "429" in err_str or "rate_limit" in err_str or "tokens" in err_str:
-            answer = "⚠️ **Server Busy**\n\nThe assistant is receiving requests too quickly right now — please wait a few seconds and try again."
+            answer = "⚠️ **API Limit Reached / Server Busy**\n\nThe LLM service is temporarily rate-limited. Please wait a few seconds and try again."
         elif "413" in err_str:
-            answer = "⚠️ **Query Too Long**\n\nThis query is a bit long — try shortening it or asking about a specific section or topic."
+            answer = "⚠️ **Query Too Long**\n\nThis query is too long — please try shortening it or asking about a specific section or topic."
         else:
-            answer = "I couldn't find relevant statutory provisions in the PPC, CrPC, or Constitution for that query — try rephrasing, or ask about Bail, FIR, Theft, or Fundamental Rights."
+            answer = f"⚠️ **System Notice**\n\nCould not complete generation: `{html.escape(str(e))}`\n\nPlease retry or choose a topic from the sidebar."
         source_chunks = []
         raw_source_chunks = []
         cited_cases = []
         urdu_verified = True
+    finally:
+        status_placeholder.empty()
 
-    with st.chat_message("assistant", avatar="⚖️"):
-        is_refusal = (
-            "restricted to Advocate mode" in answer or
-            "legal assistant for Pakistani law" in answer or
-            "legal advocate for Pakistani law" in answer or
-            "outside the scope" in answer or
-            "not currently in my legal database" in answer
-        )
+    is_refusal = (
+        "restricted to Advocate mode" in answer or
+        "legal assistant for Pakistani law" in answer or
+        "legal advocate for Pakistani law" in answer or
+        "outside the scope" in answer or
+        "not currently in my legal database" in answer
+    )
 
+    asst_icon = "⚖️" if current_active_mode == "Advocate" else "🗣️"
+    with st.chat_message("assistant", avatar=asst_icon):
         if not is_refusal:
             verdict_html = extract_verdict_badge(answer)
             if verdict_html:
@@ -967,14 +933,16 @@ if user_input:
             render_citations(source_chunks)
             
         if cited_cases and not is_refusal:
-            render_case_precedents(cited_cases)
+            query_is_urdu = bool(re.search(r'[\u0600-\u06FF]', user_input)) or (detect_language(user_input) == "urdu") or bool(re.search(r'[\u0600-\u06FF]', answer))
+            render_case_precedents(cited_cases, show_urdu=query_is_urdu)
 
     st.session_state.messages.append(
         {
             "role": "assistant",
             "content": answer,
             "sources": source_chunks if not is_refusal else [],
-            "cases": cited_cases if not is_refusal else []
+            "cases": cited_cases if not is_refusal else [],
+            "mode": current_active_mode.lower()
         }
     )
     save_session()

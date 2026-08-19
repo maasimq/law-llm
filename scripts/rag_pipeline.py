@@ -21,9 +21,49 @@ LOG_DIR = PROJECT_ROOT / "logs"
 
 load_dotenv()
 client_groq = Groq(api_key=os.getenv("GROQ_API_KEY"))
-LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-120b")
+LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-20b")
 LLM_FAST_MODEL = os.getenv("LLM_FAST_MODEL", "openai/gpt-oss-20b")
 REFUSAL_SENTENCE = "I do not have sufficient information in the provided legal text to answer this question."
+
+# ============================================================
+# SINGLETON IN-MEMORY MODEL & DB CACHE (Prevents per-query disk reloads)
+# ============================================================
+_chroma_client = None
+_law_collection = None
+_caselaw_collection = None
+_embed_model = None
+_cross_encoder = None
+
+def get_chroma_client():
+    global _chroma_client
+    if _chroma_client is None:
+        db_path = PROJECT_ROOT / "data" / "chroma_db"
+        _chroma_client = chromadb.PersistentClient(path=str(db_path))
+    return _chroma_client
+
+def get_law_collection():
+    global _law_collection
+    if _law_collection is None:
+        _law_collection = get_chroma_client().get_collection(name="law_collection")
+    return _law_collection
+
+def get_caselaw_collection():
+    global _caselaw_collection
+    if _caselaw_collection is None:
+        _caselaw_collection = get_chroma_client().get_collection(name="caselaw_collection")
+    return _caselaw_collection
+
+def get_embed_model():
+    global _embed_model
+    if _embed_model is None:
+        _embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
+    return _embed_model
+
+def get_cross_encoder():
+    global _cross_encoder
+    if _cross_encoder is None:
+        _cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+    return _cross_encoder
 
 # ============================================================
 # LEGAL ALIASES — map common terms/shorthand to exact (Act, Section) references
@@ -338,20 +378,11 @@ def rerank_with_cross_encoder(query: str, candidates: list[str], top_k: int = 3)
         return []
     
     try:
-        # Initialize the cross-encoder model (downloads on first use)
-        cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
-        
-        # Prepare pairs for scoring
+        cross_encoder = get_cross_encoder()
         pairs = [[query, doc] for doc in candidates]
-        
-        # Predict scores
         scores = cross_encoder.predict(pairs)
-        
-        # Sort candidates by score descending
         scored = list(zip(candidates, scores))
         scored.sort(key=lambda x: x[1], reverse=True)
-        
-        # Return top_k docs
         return [doc for doc, _ in scored[:top_k]]
     except Exception as e:
         print(f"[CROSS-ENCODER ERROR] Falling back to pre-reranked order: {e}", file=sys.stderr)
@@ -363,10 +394,8 @@ CASE_LAW_CITATION_REGEX = re.compile(r'\b(19\d\d|20\d\d)\s+(SCMR|PLD|PCrLJ|CLC|M
 
 def retrieve_case_precedents(query_text: str, n_results: int = 2) -> list[dict]:
     """Retrieve relevant Pakistani judicial precedents from ChromaDB 'caselaw_collection'."""
-    db_path = PROJECT_ROOT / "data" / "chroma_db"
     try:
-        chroma_client = chromadb.PersistentClient(path=str(db_path))
-        collection = chroma_client.get_collection(name="caselaw_collection")
+        collection = get_caselaw_collection()
     except Exception:
         return []
 
@@ -385,7 +414,7 @@ def retrieve_case_precedents(query_text: str, n_results: int = 2) -> list[dict]:
 
     semantic_matches = []
     try:
-        embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
+        embed_model = get_embed_model()
         query_emb = embed_model.encode([query_text], normalize_embeddings=True).tolist()
         results = collection.query(
             query_embeddings=query_emb,
@@ -453,11 +482,15 @@ def build_rag_prompt(query_text: str, retrieved_docs: list[str], conversation_hi
             role = "User" if msg["role"] == "user" else "Assistant"
             content = msg["content"][:200]
             history_lines.append(f"{role}: {content}")
-        history_block = "\n".join(history_lines)
-
     topic_block = ""
     if chat_topic and chat_topic.strip():
         topic_block = f"\nCHAT TOPIC CONSTRAINT: This conversation is focused on '{chat_topic.strip()}'. If the user's question is unrelated to this topic, politely redirect them back to it.\n"
+
+    lang = detect_language(query_text)
+    if lang == "urdu":
+        topic_block += "\n\nCRITICAL LANGUAGE MANDATE: The user query is in Urdu / Roman Urdu. You MUST write your entire response body in formal Pakistani Urdu script (اردو نستعلیق). Every explanation sentence must be in Urdu.\n"
+    else:
+        topic_block += "\n\nCRITICAL LANGUAGE MANDATE: The user query is in English. You MUST write your entire response in English.\n"
 
     if mode.lower() == "advocate":
         template = load_advocate_prompt_template()
@@ -471,7 +504,7 @@ import time
 
 def generate_answer(prompt: str) -> str:
     """Send the final prompt to the Groq model and return the answer, with auto-retry and model fallback."""
-    models_to_try = [LLM_MODEL, "openai/gpt-oss-120b", "openai/gpt-oss-20b", "qwen/qwen3.6-27b"]
+    models_to_try = ["qwen/qwen3.6-27b", "groq/compound", "openai/gpt-oss-20b"]
     last_exception = None
     for model in models_to_try:
         for attempt in range(2):
@@ -480,19 +513,25 @@ def generate_answer(prompt: str) -> str:
                     messages=[{"role": "user", "content": prompt}],
                     model=model,
                     temperature=0.1,
-                    max_tokens=1024,
+                    max_tokens=4096,
                 )
-                return completion.choices[0].message.content
+                raw_text = completion.choices[0].message.content or ""
+                raw_text = raw_text.replace('\u202f', ' ').replace('\xa0', ' ')
+                cleaned_text = re.sub(r'<think>[\s\S]*?(?:</think>|$)', '', raw_text).strip()
+                if len(cleaned_text) > 30:
+                    return cleaned_text
             except Exception as e:
                 last_exception = e
                 err_str = str(e).lower()
-                if "429" in err_str or "rate_limit" in err_str or "tokens" in err_str:
-                    time.sleep(1.5 * (attempt + 1))
+                if "tokens per day" in err_str or "tpd" in err_str:
+                    break
+                elif "429" in err_str or "rate_limit" in err_str or "tokens" in err_str:
+                    time.sleep(0.5 * (attempt + 1))
                 else:
                     break
     if last_exception:
         raise last_exception
-    raise RuntimeError("Rate limit exceeded")
+    raise RuntimeError("Service temporarily unavailable")
 
 
 def detect_language(query: str) -> str:
@@ -683,20 +722,25 @@ def get_exact_chunk_by_statute(target_act: str, target_sec: str) -> str | None:
 
 def translate_query_to_english(query: str) -> str:
     """Translates Urdu/Roman Urdu queries to English for better retrieval."""
-    try:
-        response = client_groq.chat.completions.create(
-            model=LLM_FAST_MODEL,
-            messages=[
-                {"role": "system", "content": "You are a translation assistant. If the text is in Urdu or Roman Urdu, translate it to English. If it is already in English, return it exactly as is. ONLY output the English translation, no quotation marks or explanations."},
-                {"role": "user", "content": query}
-            ],
-            temperature=0.1,
-            max_tokens=60
-        )
-        return response.choices[0].message.content.strip(' "')
-    except Exception as e:
-        print(f"[QUERY TRANSLATION ERROR] {e}", file=sys.stderr)
-        return query
+    models_to_try = ["qwen/qwen3.6-27b", "openai/gpt-oss-20b"]
+    for model in models_to_try:
+        try:
+            response = client_groq.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": "You are a translation assistant. If the text is in Urdu or Roman Urdu, translate it to English. If it is already in English, return it exactly as is. ONLY output the English translation, no quotation marks or explanations."},
+                    {"role": "user", "content": query}
+                ],
+                temperature=0.1,
+                max_tokens=1500
+            )
+            raw = response.choices[0].message.content or ""
+            cleaned = re.sub(r'<think>[\s\S]*?(?:</think>|$)', '', raw).strip(' "\n.')
+            if cleaned:
+                return cleaned
+        except Exception:
+            continue
+    return query
 
 
 def verify_and_correct_urdu_answer(answer: str, question: str, retrieved_docs: list[str] | None = None) -> tuple[str, bool]:
@@ -719,10 +763,13 @@ def verify_and_correct_urdu_answer(answer: str, question: str, retrieved_docs: l
     system_prompt = (
         "You are an expert Pakistani Legal Fact-Checker and Urdu Legal Editor. "
         "Review and correct the drafted Urdu response for a Pakistani legal assistant before it is shown to the user. "
+        "Output ONLY the direct verified answer. Do NOT generate internal reasoning or think blocks. "
         "\nYOUR TASKS:\n"
         "1. FACT-CHECK: Ensure all cited statutory sections (PPC, CrPC, Constitution) and legal explanations are accurate and match Pakistani law. "
-        "2. LANGUAGE CORRECTION: Ensure formal, grammatically correct Pakistani Urdu in Nastaliq vocabulary. "
-        "   Eliminate any Hindi words, Devanagari characters, awkward machine translations, or grammatical errors. "
+        "2. LANGUAGE CORRECTION: Ensure formal, grammatically correct Pakistani Urdu in authentic Nastaliq vocabulary. "
+        "   - Eliminate any Hindi words, Devanagari characters, awkward machine translations, or grammatical errors. "
+        "   - Strictly eliminate hybrid transliteration artifacts (e.g. '(مurder)', '(کُتل عمد)', '(مُرڈر)') and replace them with standard Pakistani Urdu legal terminology (e.g. 'قتلِ عمد', 'مقدمہ', 'سزا', 'ضمانت'). "
+        "   - Ensure all Urdu section references are properly formatted (e.g. 'دفعہ 302 تعزیراتِ پاکستان (PPC)', 'آرٹیکل 10A آئینِ پاکستان'). "
         "3. FORMAT: Maintain clear markdown formatting, bullet points, and section citation headers. "
         "4. OUTPUT: Output ONLY the verified and corrected Urdu text. Do NOT add any preamble, conversational remarks, or explanation."
     )
@@ -731,25 +778,28 @@ def verify_and_correct_urdu_answer(answer: str, question: str, retrieved_docs: l
     if context_summary:
         user_content = f"Statutory Reference Context:\n{context_summary[:1200]}\n\n" + user_content
 
-    try:
-        response = client_groq.chat.completions.create(
-            model=LLM_FAST_MODEL,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_content}
-            ],
-            temperature=0.1,
-            max_tokens=1500
-        )
-        corrected = response.choices[0].message.content.strip()
-        if corrected and len(corrected) > 40:
-            corr_devanagari = sum(1 for c in corrected if '\u0900' <= c <= '\u097F')
-            if corr_devanagari <= 2:
-                return corrected, True
-        return answer, (devanagari_chars <= 3)
-    except Exception as e:
-        print(f"[URDU VERIFY & CORRECT ERROR] {e}", file=sys.stderr)
-        return answer, True
+    models_to_try = ["qwen/qwen3.6-27b", "openai/gpt-oss-20b"]
+    for model in models_to_try:
+        try:
+            response = client_groq.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_content}
+                ],
+                temperature=0.1,
+                max_tokens=4096
+            )
+            raw_c = response.choices[0].message.content or ""
+            cleaned_c = re.sub(r'<think>[\s\S]*?(?:</think>|$)', '', raw_c).strip()
+            if cleaned_c and len(cleaned_c) > 40:
+                corr_devanagari = sum(1 for c in cleaned_c if '\u0900' <= c <= '\u097F')
+                # Safety check: ensure verification output isn't truncated compared to original answer
+                if corr_devanagari <= 2 and len(cleaned_c) >= len(answer) * 0.6:
+                    return cleaned_c, True
+        except Exception:
+            continue
+    return answer, True
 
 
 def verify_urdu_answer(answer: str, question: str) -> bool:
@@ -803,10 +853,8 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
 
     filter_act = target_act or filter_act or detect_act_from_query(search_query)
 
-    db_path = PROJECT_ROOT / "data" / "chroma_db"
-    chroma_client = chromadb.PersistentClient(path=str(db_path))
-    collection = chroma_client.get_collection(name="law_collection")
-    embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
+    collection = get_law_collection()
+    embed_model = get_embed_model()
 
     # Step 3: Hybrid retrieval — merge dense + BM25 with weighted score fusion
     _stage("Analyzing laws & judicial precedents...")
@@ -911,7 +959,6 @@ def generate_chat_title(user_message: str = "", chat_topic: str | None = None, *
     
     has_legal_kw = any(kw in msg_clean.lower() for kw in ["fir", "ppc", "crpc", "law", "bail", "theft", "murder", "section", "article", "court", "crime", "punishment", "police", "case", "rights"])
     
-    # Check if message is a simple greeting or non-legal conversational phrase
     if not has_legal_kw and not topic_clean and (msg_no_punct in greeting_prefixes or any(msg_no_punct.startswith(p) for p in greeting_prefixes) or len(msg_clean) <= 15):
         return "General Inquiry"
 
@@ -919,34 +966,60 @@ def generate_chat_title(user_message: str = "", chat_topic: str | None = None, *
     if topic_clean:
         prompt_content += f"Topic: {topic_clean}\n"
     if msg_clean:
-        prompt_content += f"User Question: {msg_clean[:200]}"
+        prompt_content += f"User Question: {msg_clean[:250]}"
 
-    try:
-        response = client_groq.chat.completions.create(
-            model=LLM_FAST_MODEL,
-            messages=[
-                {"role": "system", "content": (
-                    "You generate ultra-short chat titles for Pakistani legal assistant queries. "
-                    "Generate an ultra-short title based on the Topic and User Question provided. "
-                    "CRITICAL: The title MUST be EXACTLY 2 to 3 words maximum. Never exceed 3 words. "
-                    "Use Title Case, no punctuation, no quotes, no filler words like 'Chat' or 'Conversation' or 'Overview'. "
-                    "Focus strictly on Pakistani statutory law. Always use PPC for Pakistan Penal Code, CrPC for Code of Criminal Procedure, or Constitution. "
-                    "Output ONLY the 2-3 word title, nothing else."
-                )},
-                {"role": "user", "content": prompt_content}
-            ],
-            temperature=0.1,
-            max_tokens=10
-        )
-        title = response.choices[0].message.content.strip(' "\n.')
-        title = re.sub(r'\bIPC\b', 'PPC', title, flags=re.IGNORECASE)
-        words = title.split()
-        return " ".join(words[:3]) if words else (topic_clean or msg_clean[:20])
-    except Exception as e:
-        print(f"[TITLE GENERATION ERROR] {e}", file=sys.stderr)
-        source = f"{topic_clean} {msg_clean}".strip()
-        words = source.split()
-        return " ".join(words[:3])
+    models_to_try = [LLM_FAST_MODEL, "qwen/qwen3.6-27b", "openai/gpt-oss-20b"]
+    for m in models_to_try:
+        try:
+            response = client_groq.chat.completions.create(
+                model=m,
+                messages=[
+                    {"role": "system", "content": (
+                        "You generate ultra-short chat titles for Pakistani legal assistant queries. "
+                        "Generate an ultra-short title based on the Topic and User Question provided. "
+                        "CRITICAL: The title MUST be EXACTLY 2 to 3 words maximum. Never exceed 3 words. "
+                        "Use Title Case, no punctuation, no quotes, no filler words like 'Chat' or 'Conversation' or 'Overview' or 'Application'. "
+                        "Focus strictly on Pakistani statutory law. Always use PPC for Pakistan Penal Code, CrPC for Code of Criminal Procedure, or Constitution. "
+                        "Output ONLY the 2-3 word title, nothing else."
+                    )},
+                    {"role": "user", "content": prompt_content}
+                ],
+                temperature=0.1,
+                max_tokens=12
+            )
+            title = response.choices[0].message.content.strip(' "\n.')
+            title = re.sub(r'<think>[\s\S]*?(?:</think>|$)', '', title).strip()
+            title = re.sub(r'\bIPC\b', 'PPC', title, flags=re.IGNORECASE)
+            words = title.split()
+            if words and len(words) <= 4:
+                return " ".join(words[:3]).title()
+        except Exception:
+            continue
+
+    # Intelligent legal keyword fallback if LLM is unreachable
+    combined_text = f"{topic_clean} {msg_clean}".lower()
+    sec_match = re.search(r'section\s*(\d+[a-z]?)', combined_text) or re.search(r'(\d+[a-z]?)\s*(ppc|crpc)', combined_text)
+    law_code = "PPC" if "ppc" in combined_text else ("CrPC" if "crpc" in combined_text else "")
+    
+    if "fir" in combined_text and sec_match:
+        return f"FIR Section {sec_match.group(1).upper()}"
+    elif "fir" in combined_text:
+        return "FIR Application"
+    elif "bail" in combined_text and sec_match:
+        return f"Bail Section {sec_match.group(1).upper()}"
+    elif "bail" in combined_text:
+        return "Bail Petition"
+    elif "robbery" in combined_text or "392" in combined_text:
+        return "Robbery Section 392"
+    elif "theft" in combined_text or "379" in combined_text:
+        return "Theft Section 379"
+    elif "murder" in combined_text or "302" in combined_text:
+        return "Murder Section 302"
+    elif sec_match:
+        return f"Section {sec_match.group(1).upper()} {law_code}".strip()
+    
+    words = [w for w in combined_text.split() if w not in ["draft", "a", "formal", "application", "to", "the", "for", "under", "in"]]
+    return " ".join(words[:3]).title() if words else "Legal Inquiry"
 
 
 def run_logging_pipeline(questions: list[str], log_file: str | None = None, filter_act: str | None = None):
