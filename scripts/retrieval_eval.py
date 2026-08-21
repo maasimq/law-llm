@@ -23,6 +23,12 @@ if str(SCRIPT_DIR) not in sys.path:
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
+import os
+import logging
+logging.getLogger("chromadb.telemetry.posthog").setLevel(logging.CRITICAL)
+logging.getLogger("chromadb.telemetry").setLevel(logging.CRITICAL)
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
+
 import chromadb
 from sentence_transformers import SentenceTransformer
 from bm25_index import BM25KeywordIndex
@@ -165,15 +171,34 @@ def chunk_matches_expected_strict(chunk_text: str, act_substr: str, section_num:
     return section_found
 
 
+import os
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
+import chromadb
+from chromadb.config import Settings
+from sentence_transformers import SentenceTransformer
+
+_eval_chroma_client = None
+_eval_collection = None
+_eval_embed_model = None
+
+def get_eval_resources():
+    global _eval_chroma_client, _eval_collection, _eval_embed_model
+    if _eval_chroma_client is None:
+        db_path = PROJECT_ROOT / "data" / "chroma_db"
+        _eval_chroma_client = chromadb.PersistentClient(path=str(db_path), settings=Settings(anonymized_telemetry=False))
+        _eval_collection = _eval_chroma_client.get_collection(name="law_collection")
+        try:
+            _eval_embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5", local_files_only=True)
+        except Exception:
+            _eval_embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
+    return _eval_collection, _eval_embed_model
+
 def retrieve_only(query: str, top_k: int = 5):
     """Run retrieval pipeline without LLM generation. Returns list of chunk texts."""
     target_act, target_sec = extract_requested_statute(query)
     filter_act = target_act or detect_act_from_query(query)
 
-    db_path = PROJECT_ROOT / "data" / "chroma_db"
-    chroma_client = chromadb.PersistentClient(path=str(db_path))
-    collection = chroma_client.get_collection(name="law_collection")
-    embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
+    collection, embed_model = get_eval_resources()
 
     # Step 1a: Alias lookup
     alias_chunks = resolve_alias_chunks(query)

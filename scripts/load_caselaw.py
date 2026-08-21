@@ -45,7 +45,8 @@ def ingest_caselaw():
     print(f"Loaded {len(cases)} case precedents from {DATA_FILE.name}")
     print(f"Connecting to ChromaDB at {DB_PATH}...")
     
-    chroma_client = chromadb.PersistentClient(path=str(DB_PATH))
+    from chromadb.config import Settings
+    chroma_client = chromadb.PersistentClient(path=str(DB_PATH), settings=Settings(anonymized_telemetry=False))
     collection = chroma_client.get_or_create_collection(
         name="caselaw_collection",
         metadata={"description": "Pakistani Judicial Precedents (SCMR, PLD, PCrLJ, CLC)"}

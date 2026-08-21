@@ -5,7 +5,15 @@ Tests retrieval, filtering, prompt injection, and LLM answer generation.
 import sys
 import os
 import json
+import logging
 from pathlib import Path
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+logging.getLogger("chromadb.telemetry.posthog").setLevel(logging.CRITICAL)
+logging.getLogger("chromadb.telemetry").setLevel(logging.CRITICAL)
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
 
 # Setup path
 SCRIPT_DIR = Path(__file__).resolve().parent.parent / "scripts"
@@ -30,8 +38,9 @@ def test_chromadb_collection():
     """Test 1: Verify ChromaDB caselaw_collection has the expected 100 items."""
     separator("TEST 1: ChromaDB caselaw_collection integrity")
     import chromadb
+    from chromadb.config import Settings
     db_path = Path("data/chroma_db")
-    client = chromadb.PersistentClient(path=str(db_path))
+    client = chromadb.PersistentClient(path=str(db_path), settings=Settings(anonymized_telemetry=False))
     collection = client.get_collection(name="caselaw_collection")
     count = collection.count()
     print(f"  Collection count: {count}")

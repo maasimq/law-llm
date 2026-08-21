@@ -9,7 +9,13 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
+import logging
+logging.getLogger("chromadb.telemetry.posthog").setLevel(logging.CRITICAL)
+logging.getLogger("chromadb.telemetry").setLevel(logging.CRITICAL)
+
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
 import chromadb
+from chromadb.config import Settings
 from dotenv import load_dotenv
 from groq import Groq
 from sentence_transformers import SentenceTransformer, CrossEncoder
@@ -38,7 +44,7 @@ def get_chroma_client():
     global _chroma_client
     if _chroma_client is None:
         db_path = PROJECT_ROOT / "data" / "chroma_db"
-        _chroma_client = chromadb.PersistentClient(path=str(db_path))
+        _chroma_client = chromadb.PersistentClient(path=str(db_path), settings=Settings(anonymized_telemetry=False))
     return _chroma_client
 
 def get_law_collection():
@@ -56,13 +62,19 @@ def get_caselaw_collection():
 def get_embed_model():
     global _embed_model
     if _embed_model is None:
-        _embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
+        try:
+            _embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5", local_files_only=True)
+        except Exception:
+            _embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
     return _embed_model
 
 def get_cross_encoder():
     global _cross_encoder
     if _cross_encoder is None:
-        _cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+        try:
+            _cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2", local_files_only=True)
+        except Exception:
+            _cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
     return _cross_encoder
 
 # ============================================================
@@ -504,26 +516,51 @@ import time
 
 def generate_answer(prompt: str) -> str:
     """Send the final prompt to the Groq model and return the answer, with auto-retry and model fallback."""
-    models_to_try = ["qwen/qwen3.6-27b", "groq/compound", "openai/gpt-oss-20b"]
+    models_to_try = [
+        ("qwen/qwen3.6-27b", 6000),
+        ("groq/compound", 6000),
+        ("openai/gpt-oss-20b", 3000),
+    ]
     last_exception = None
-    for model in models_to_try:
+    for model, max_tok in models_to_try:
+        call_kwargs = {
+            "messages": [{"role": "user", "content": prompt}],
+            "model": model,
+            "temperature": 0.1,
+            "max_tokens": max_tok,
+        }
+        if "qwen" in model or "gpt-oss" in model:
+            call_kwargs["reasoning_format"] = "hidden"
+
         for attempt in range(2):
             try:
-                completion = client_groq.chat.completions.create(
-                    messages=[{"role": "user", "content": prompt}],
-                    model=model,
-                    temperature=0.1,
-                    max_tokens=4096,
-                )
-                raw_text = completion.choices[0].message.content or ""
+                completion = client_groq.chat.completions.create(**call_kwargs)
+                choice = completion.choices[0]
+                finish_reason = getattr(choice, "finish_reason", None)
+                raw_text = choice.message.content or ""
                 raw_text = raw_text.replace('\u202f', ' ').replace('\xa0', ' ')
-                cleaned_text = re.sub(r'<think>[\s\S]*?(?:</think>|$)', '', raw_text).strip()
+                
+                # Robust cleaning of <think> tags (both complete and unclosed)
+                if "</think>" in raw_text:
+                    cleaned_text = re.sub(r'<think>[\s\S]*?</think>', '', raw_text).strip()
+                else:
+                    cleaned_text = re.sub(r'<think>[\s\S]*$', '', raw_text).strip()
+
+                # If finish_reason indicates token limit exhaustion and output is too short/empty, try fallback
+                if finish_reason == "length" and len(cleaned_text) < 100:
+                    continue
+
                 if len(cleaned_text) > 30:
                     return cleaned_text
             except Exception as e:
                 last_exception = e
                 err_str = str(e).lower()
                 if "tokens per day" in err_str or "tpd" in err_str:
+                    break
+                elif "413" in err_str:
+                    if call_kwargs["max_tokens"] > 2500:
+                        call_kwargs["max_tokens"] = 2000
+                        continue
                     break
                 elif "429" in err_str or "rate_limit" in err_str or "tokens" in err_str:
                     time.sleep(0.5 * (attempt + 1))
@@ -532,6 +569,22 @@ def generate_answer(prompt: str) -> str:
     if last_exception:
         raise last_exception
     raise RuntimeError("Service temporarily unavailable")
+
+
+def is_conversational(query: str) -> bool:
+    """Detect if a user prompt is purely conversational (greeting, thanks, identity) rather than a legal question."""
+    q_clean = re.sub(r'[^\w\s]', '', query.strip().lower())
+    greetings = {"hi", "hello", "hey", "greetings", "thanks", "thank you", "assalam", "aoa", "good morning", "good evening", "how are you", "who are you", "help", "kya haal hai", "salam"}
+    legal_keywords = {"fir", "ppc", "crpc", "law", "bail", "theft", "murder", "section", "article", "court", "crime", "punishment", "police", "case", "rights", "chori", "saza", "qanoon", "adawlat", "judge", "constitution"}
+    
+    words = set(q_clean.split())
+    if any(kw in q_clean for kw in legal_keywords):
+        return False
+    if q_clean in greetings or any(q_clean.startswith(g + " ") for g in greetings):
+        return True
+    if len(words) <= 3 and words.intersection(greetings):
+        return True
+    return False
 
 
 def detect_language(query: str) -> str:
@@ -725,17 +778,23 @@ def translate_query_to_english(query: str) -> str:
     models_to_try = ["qwen/qwen3.6-27b", "openai/gpt-oss-20b"]
     for model in models_to_try:
         try:
-            response = client_groq.chat.completions.create(
-                model=model,
-                messages=[
+            call_kwargs = {
+                "model": model,
+                "messages": [
                     {"role": "system", "content": "You are a translation assistant. If the text is in Urdu or Roman Urdu, translate it to English. If it is already in English, return it exactly as is. ONLY output the English translation, no quotation marks or explanations."},
                     {"role": "user", "content": query}
                 ],
-                temperature=0.1,
-                max_tokens=1500
-            )
+                "temperature": 0.1,
+                "max_tokens": 2048
+            }
+            if "qwen" in model or "gpt-oss" in model:
+                call_kwargs["reasoning_format"] = "hidden"
+            response = client_groq.chat.completions.create(**call_kwargs)
             raw = response.choices[0].message.content or ""
-            cleaned = re.sub(r'<think>[\s\S]*?(?:</think>|$)', '', raw).strip(' "\n.')
+            if "</think>" in raw:
+                cleaned = re.sub(r'<think>[\s\S]*?</think>', '', raw).strip(' "\n.')
+            else:
+                cleaned = re.sub(r'<think>[\s\S]*$', '', raw).strip(' "\n.')
             if cleaned:
                 return cleaned
         except Exception:
@@ -781,17 +840,23 @@ def verify_and_correct_urdu_answer(answer: str, question: str, retrieved_docs: l
     models_to_try = ["qwen/qwen3.6-27b", "openai/gpt-oss-20b"]
     for model in models_to_try:
         try:
-            response = client_groq.chat.completions.create(
-                model=model,
-                messages=[
+            call_kwargs = {
+                "model": model,
+                "messages": [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_content}
                 ],
-                temperature=0.1,
-                max_tokens=4096
-            )
+                "temperature": 0.1,
+                "max_tokens": 8192
+            }
+            if "qwen" in model or "gpt-oss" in model:
+                call_kwargs["reasoning_format"] = "hidden"
+            response = client_groq.chat.completions.create(**call_kwargs)
             raw_c = response.choices[0].message.content or ""
-            cleaned_c = re.sub(r'<think>[\s\S]*?(?:</think>|$)', '', raw_c).strip()
+            if "</think>" in raw_c:
+                cleaned_c = re.sub(r'<think>[\s\S]*?</think>', '', raw_c).strip()
+            else:
+                cleaned_c = re.sub(r'<think>[\s\S]*$', '', raw_c).strip()
             if cleaned_c and len(cleaned_c) > 40:
                 corr_devanagari = sum(1 for c in cleaned_c if '\u0900' <= c <= '\u097F')
                 # Safety check: ensure verification output isn't truncated compared to original answer
@@ -909,9 +974,9 @@ def answer_question(question: str, filter_act: str | None = None, n_results: int
     if REFUSAL_SENTENCE in answer or any(kw in answer_lower for kw in refusal_keywords):
         return answer, [], True, []
 
-    # Urdu answer verification & correction via API
+    # Urdu answer verification & correction via API (ONLY for Urdu queries)
     urdu_verified = True
-    if lang == "urdu" or bool(re.search(r'[\u0600-\u06FF]', answer)):
+    if lang == "urdu":
         _stage("Verifying & refining Urdu context...")
         answer, urdu_verified = verify_and_correct_urdu_answer(answer, question, retrieved_docs)
 
@@ -971,9 +1036,9 @@ def generate_chat_title(user_message: str = "", chat_topic: str | None = None, *
     models_to_try = [LLM_FAST_MODEL, "qwen/qwen3.6-27b", "openai/gpt-oss-20b"]
     for m in models_to_try:
         try:
-            response = client_groq.chat.completions.create(
-                model=m,
-                messages=[
+            call_kwargs = {
+                "model": m,
+                "messages": [
                     {"role": "system", "content": (
                         "You generate ultra-short chat titles for Pakistani legal assistant queries. "
                         "Generate an ultra-short title based on the Topic and User Question provided. "
@@ -984,11 +1049,18 @@ def generate_chat_title(user_message: str = "", chat_topic: str | None = None, *
                     )},
                     {"role": "user", "content": prompt_content}
                 ],
-                temperature=0.1,
-                max_tokens=12
-            )
-            title = response.choices[0].message.content.strip(' "\n.')
-            title = re.sub(r'<think>[\s\S]*?(?:</think>|$)', '', title).strip()
+                "temperature": 0.1,
+                "max_tokens": 60
+            }
+            if "qwen" in m or "gpt-oss" in m:
+                call_kwargs["reasoning_format"] = "hidden"
+            response = client_groq.chat.completions.create(**call_kwargs)
+            title = response.choices[0].message.content or ""
+            title = title.strip(' "\n.')
+            if "</think>" in title:
+                title = re.sub(r'<think>[\s\S]*?</think>', '', title).strip()
+            else:
+                title = re.sub(r'<think>[\s\S]*$', '', title).strip()
             title = re.sub(r'\bIPC\b', 'PPC', title, flags=re.IGNORECASE)
             words = title.split()
             if words and len(words) <= 4:

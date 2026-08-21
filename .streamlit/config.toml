@@ -1,3 +1,10 @@
+[server]
+headless = true
+fileWatcherType = "poll"
+
+[client]
+toolbarMode = "minimal"
+
 [theme]
 primaryColor="#D4AF37"
 backgroundColor="#0D1117"

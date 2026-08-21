@@ -30,7 +30,8 @@ def load_and_ingest():
     db_path = os.path.join("data", "chroma_db")
     os.makedirs(db_path, exist_ok=True)
     
-    client = chromadb.PersistentClient(path=db_path)
+    from chromadb.config import Settings
+    client = chromadb.PersistentClient(path=db_path, settings=Settings(anonymized_telemetry=False))
     
     # Delete the existing collection so we can do a fresh, complete ingest
     try:
